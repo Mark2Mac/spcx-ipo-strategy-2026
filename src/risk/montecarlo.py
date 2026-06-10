@@ -1,4 +1,4 @@
-"""Monte Carlo portafoglio: GBM con innovazioni Student-t (fat tails) + jump sull'evento trimestrale."""
+"""Portfolio Monte Carlo: GBM with Student-t innovations (fat tails) + jump on the earnings event."""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -82,8 +82,8 @@ if __name__ == "__main__":
     res = simulate(McConfig(), SpreadPosition())
     rep = report(res)
     max_spread_loss = 2.20 * 100 / 1.08
-    assert res["pnl_spread_eur"].min() >= -max_spread_loss - 1e-6, "hard cap violato!"
+    assert res["pnl_spread_eur"].min() >= -max_spread_loss - 1e-6, "hard cap violated!"
     assert rep["ES95"] >= rep["VaR95"], "ES < VaR: bug"
-    print("TEST OK — hard cap spread rispettato su 10k path")
+    print("TEST OK — spread hard cap holds across 10k paths")
     for k, v in rep.items():
         print(f"  {k}: {v:+.1f}" if isinstance(v, float) and abs(v) > 1 else f"  {k}: {v:.1%}" if isinstance(v, float) else f"  {k}: {v}")

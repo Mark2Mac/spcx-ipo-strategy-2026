@@ -1,4 +1,4 @@
-"""Connector FRED via endpoint CSV pubblico (no API key): tassi risk-free e macro."""
+"""FRED connector via public CSV endpoint (no API key): risk-free rates and macro series."""
 from __future__ import annotations
 
 import io
@@ -31,5 +31,5 @@ def risk_free_rate() -> float:
 
 if __name__ == "__main__":
     rf = risk_free_rate()
-    assert 0.0 <= rf <= 0.15, f"risk-free fuori range: {rf}"
+    assert 0.0 <= rf <= 0.15, f"risk-free out of range: {rf}"
     print(f"TEST OK — T-bill 3M: {rf:.2%}")

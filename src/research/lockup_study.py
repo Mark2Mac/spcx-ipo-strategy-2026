@@ -1,4 +1,4 @@
-"""Event study: prezzo normalizzato attorno alla scadenza lockup di IPO storiche comparabili."""
+"""Event study: normalized price around lockup expiry of comparable historical IPOs."""
 from __future__ import annotations
 
 import pandas as pd
@@ -34,16 +34,16 @@ def lockup_panel() -> pd.DataFrame:
         if s is not None:
             cols[t] = s
     panel = pd.DataFrame(cols)
-    panel["media"] = panel.mean(axis=1)
+    panel["mean"] = panel.mean(axis=1)
     return panel
 
 
 if __name__ == "__main__":
     p = lockup_panel()
-    assert len(p.columns) >= 4, f"solo {list(p.columns)} disponibili"
-    anticipation = p["media"].loc[0] - p["media"].loc[-PRE_DAYS]
-    post = p["media"].loc[20] - p["media"].loc[0]
-    assert anticipation < 0, f"anticipation drop assente: {anticipation:+.1f}"
-    print(f"TEST OK — {len(p.columns)-1} eventi. Pattern: calo PRE-scadenza {anticipation:+.1f} punti "
-          f"(T-{PRE_DAYS}→T0), post-scadenza {post:+.1f} (T0→T+20): il rumor si vende, la news si compra")
+    assert len(p.columns) >= 4, f"only {list(p.columns)} available"
+    anticipation = p["mean"].loc[0] - p["mean"].loc[-PRE_DAYS]
+    post = p["mean"].loc[20] - p["mean"].loc[0]
+    assert anticipation < 0, f"anticipation drop missing: {anticipation:+.1f}"
+    print(f"TEST OK — {len(p.columns)-1} events. Pattern: PRE-expiry drop {anticipation:+.1f} punti "
+          f"(T-{PRE_DAYS}→T0), post-scadenza {post:+.1f} (T0->T+20): the rumor gets sold, the news gets bought")
     print(p.loc[[-30, -10, 0, 10, 20, 40], :].round(1))

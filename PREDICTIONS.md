@@ -1,42 +1,43 @@
-# PREDICTIONS — il registro delle previsioni falsificabili
+# PREDICTIONS — the falsifiable ledger
 
-Scritte il **10 giugno 2026**, due giorni prima del debutto SPCX, da un umano + Fable 5 (Anthropic).
-La colonna *Esito* resta vuota fino alla data di verifica. Nessuna modifica retroattiva alle previsioni: fa fede la history git.
+Written on **June 10, 2026**, two days before the SPCX debut, by a human + Fable 5 (Anthropic).
+The *Outcome* column stays empty until each verification date. Predictions are never edited retroactively: git history is the witness.
 
-## Previsioni sul mercato
+## Market predictions
 
-| # | Previsione | Fonte/razionale | Verifica il | Criterio | Esito |
+| # | Prediction | Source/rationale | Verify on | Criterion | Outcome |
 |---|---|---|---|---|---|
-| P1 | SPCX chiude il day-1 sopra $1T di market cap | Polymarket 99% al 10/6 | 12 giu 2026 | market cap close > $1T | |
-| P2 | SPCX chiude il day-1 sopra $2T | Polymarket 60,5% al 10/6 | 12 giu 2026 | market cap close > $2T | |
-| P3 | Nelle prime 4 settimane il titolo NON scende sotto $135 (supporto da inclusione indici + domanda 4x) | tesi propria, file docs/01 §6 | 10 lug 2026 | min close ≥ $135 | |
-| P4 | Il calo da lockup inizia PRIMA dello sblocco insider (anticipazione), non dopo | event study UBER/RIVN/META/SNAP: -37 punti medi T-30→T0 | T+10 dalla 1ª trimestrale | drawdown pre-sblocco > drawdown post-sblocco | |
-| P5 | A T+30 dalla prima trimestrale SPCX è sotto il prezzo pre-trimestrale | tesi lockup + burn xAI ($2,5B/trim) | T+30 | close(T+30) < close(T-1) | |
-| P6 | Entro fine 2026 SPCX non tocca il fair value Morningstar ($780B ≈ -55%) — il crollo "theft of the century" NON si materializza nell'anno | il mercato resta irrazionale più a lungo del previsto | 31 dic 2026 | min market cap 2026 > $780B | |
+| P1 | SPCX closes day-1 above $1T market cap | Polymarket 99% on Jun 10 | Jun 12, 2026 | close cap > $1T | |
+| P2 | SPCX closes day-1 above $2T | Polymarket 60.5% on Jun 10 | Jun 12, 2026 | close cap > $2T | |
+| P3 | In the first 4 weeks the stock does NOT close below $135 (index-inclusion support + 4x demand) | own thesis, docs/01 §6 | Jul 10, 2026 | min close ≥ $135 | |
+| P4 | The lockup-driven drop starts BEFORE the insider unlock (anticipation), not after | event study UBER/RIVN/META/SNAP: -37 pts avg T-30→T0 | T+10 from first earnings | pre-unlock drawdown > post-unlock drawdown | |
+| P5 | At T+30 from first earnings SPCX trades below its pre-earnings price | lockup thesis + xAI burn ($2.5B/q) | T+30 | close(T+30) < close(T-1) | |
+| P6 | Through end-2026 SPCX never touches Morningstar fair value ($780B ≈ -55%) — the "theft of the century" crash does NOT materialize within the year | markets stay irrational longer | Dec 31, 2026 | min 2026 cap > $780B | |
 
-## Previsioni sul piano (€2.000)
+## Plan predictions (reference implementation)
 
-| # | Previsione | Verifica il | Criterio | Esito |
+| # | Prediction | Verify on | Criterion | Outcome |
 |---|---|---|---|---|
-| K1 | P&L del piano dentro [-€425, +€450] (hard cap strutturale) | 31 dic 2026 | P&L realizzato nel range | |
-| K2 | La perdita peggiore, se arriva, viene dalla tranche GOOGL (beta), non dallo spread | 31 dic 2026 | attribuzione P&L | |
-| K3 | EV ≈ 0 dichiarato ex-ante: il P&L finale è spiegato dal processo, non dalla fortuna direzionale | 31 dic 2026 | retrospettiva nel registro | |
+| K1 | Plan P&L lands inside the structural hard-cap range (≈ -21% to +23% of capital) | Dec 31, 2026 | realized P&L in range | |
+| K2 | The worst loss, if any, comes from the equity tranche (beta), not the spread | Dec 31, 2026 | P&L attribution | |
+| K3 | EV ≈ 0 declared ex-ante: the final P&L is explained by process, not directional luck | Dec 31, 2026 | journal retrospective | |
 
-## La domanda vera dell'esperimento
+## The experiment's real question
 
-> **Un modello AI di frontiera può colmare il gap di informazione e competenza tra un retail
-> da €2.000 e gli investitori istituzionali, abbastanza da produrre decisioni finanziarie
-> consapevoli e di livello professionale?**
+> **Can a frontier AI model close the information and competence gap between a small retail
+> investor and institutional players, enough to produce aware, professional-grade financial
+> decisions?**
 
-Da valutare a posteriori, non sul P&L (un singolo trade è rumore) ma su questi assi:
+To be judged ex-post — not on P&L (one trade is noise) but on these axes:
 
-| Asse | Cosa guardare a posteriori |
+| Axis | What to check later |
 |---|---|
-| Qualità informativa | Le fonti usate (S-1, EDGAR, Morningstar, Polymarket) erano quelle giuste? È sfuggito qualcosa che un professionista aveva? |
-| Calibrazione | Le probabilità assegnate (P1-P6) erano calibrate o sistematicamente ottimiste/pessimiste? |
-| Risk management | Gli hard cap hanno retto? Le regole comportamentali sono state rispettate o aggirate? |
-| Errori evitati | Il modello ha impedito gli errori classici del retail (comprare il day-1, opzioni nude su IV gonfiata, short senza cap, ETF non-PRIIPs)? |
-| Errori introdotti | Il modello ha introdotto errori suoi (eccesso di fiducia nei numeri illustrativi, complessità non necessaria)? |
-| Valore vs alternativa | Confronto con i due benchmark banali: 100% cash e 100% VWCE comprato il 10/6 | 
+| Information quality | Were the sources (S-1, EDGAR, Morningstar, Polymarket) the right ones? Did professionals have something we missed? |
+| Calibration | Were the probabilities (P1-P6) calibrated, or systematically optimistic/pessimistic? |
+| Risk management | Did the hard caps hold? Were the behavioral rules followed or gamed? |
+| Mistakes avoided | Did the model prevent the classic retail errors (buying day-1, naked options on inflated IV, uncapped shorts, non-PRIIPs ETFs)? |
+| Mistakes introduced | Did the model add its own (overconfidence in illustrative numbers, unnecessary complexity)? |
+| Value vs alternatives | Compare with the two trivial benchmarks: 100% cash, and 100% world-ETF bought on Jun 10 |
+| Analysis vs access | Which part of the institutional gap did AI actually close? (Working hypothesis in docs/07: the analysis gap, not the access gap) |
 
-**Nota metodologica**: l'esperimento è onesto solo se il registro (`docs/06`) viene compilato in tempo reale e questo file non viene mai modificato retroattivamente nelle previsioni — solo la colonna Esito si riempie.
+**Methodological note**: the experiment is honest only if the journal (docs/06) is filled in real time and this file's predictions are never touched — only the Outcome column gets filled.

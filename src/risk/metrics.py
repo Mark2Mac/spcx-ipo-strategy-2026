@@ -1,4 +1,4 @@
-"""Metriche di rischio: rendimenti, correlazioni (Pearson + EWMA), VaR/ES, drawdown."""
+"""Risk metrics: returns, correlations (Pearson + EWMA), VaR/ES, drawdown."""
 from __future__ import annotations
 
 import numpy as np

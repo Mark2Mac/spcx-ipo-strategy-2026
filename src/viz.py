@@ -1,4 +1,4 @@
-"""Stile grafico Tufte: massimo rapporto dati/inchiostro, etichette dirette, zero junkchart."""
+"""Tufte chart style: max data-ink ratio, direct labels, zero junkchart."""
 from __future__ import annotations
 
 import matplotlib.pyplot as plt

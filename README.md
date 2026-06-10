@@ -1,121 +1,118 @@
 <div align="center">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/SpaceX-Logo.svg/640px-SpaceX-Logo.svg.png" alt="SpaceX" width="380"/>
+<img src="assets/spacex-logo.png" alt="SpaceX" width="420"/>
 
-# Un retail, €2.000 e un'AI contro la più grande IPO della storia
+# One retail investor, a small account, and an AI<br>vs the largest IPO in history
 
-**Esperimento documentato e falsificabile**: può un modello di frontiera (Fable 5, Anthropic)
-colmare il gap di informazione e competenza tra un piccolo investitore retail e gli istituzionali?
-Banco di prova: l'IPO SpaceX del 12 giugno 2026 — $1.75T di valutazione, 94x i ricavi, il lockup
-più anomalo mai visto.
+**A documented, falsifiable experiment**: can a frontier model (Fable 5, Anthropic) close the
+information and competence gap between a small retail investor and institutional players?
+Test bench: the SpaceX IPO of June 12, 2026 — a $1.75T valuation, 94x revenue, and the most
+unusual insider lockup ever filed.
 
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![Fable 5](https://img.shields.io/badge/AI-Fable%205%20·%20Anthropic-D4A27F)
-![Data](https://img.shields.io/badge/data-SEC%20EDGAR%20·%20Polymarket%20·%20FRED%20·%20yfinance-555)
-![Capitale](https://img.shields.io/badge/capitale-€2.000-2C8C3C)
-![Status](https://img.shields.io/badge/status-esperimento%20in%20corso-FFBE00)
+![Data](https://img.shields.io/badge/data-SEC%20EDGAR%20·%20Polymarket%20·%20FRED%20·%20yfinance%20·%20HN%20·%20Wikipedia-555)
+![Status](https://img.shields.io/badge/status-experiment%20running-FFBE00)
 
-<img src="assets/mc_paths.gif" alt="Monte Carlo SPCX" width="640"/><br>
-<sub><b>2.000 path Monte Carlo</b> — Student-t (fat tails empiriche) + jump sull'evento trimestrale/sblocco insider</sub>
+<img src="assets/mc_paths.gif" alt="SPCX Monte Carlo" width="640"/><br>
+<sub><b>2,000 Monte Carlo paths</b> — Student-t innovations (empirically validated fat tails) + jump on the earnings/insider-unlock event</sub>
 
 </div>
 
 ---
 
-## L'idea, in breve
+## The idea, briefly
 
-Il 12 giugno 2026 SpaceX debutta al Nasdaq: la più grande IPO di sempre. Gli analisti la
-danno sopravvalutata del 55% (Morningstar), Reddit grida al "furto del secolo", Polymarket
-prezza il pop al 60%, e gli insider potranno vendere con uno sblocco accelerato mai visto.
+On June 12, 2026 SpaceX lists on Nasdaq: the biggest IPO ever. Analysts call it 55%
+overvalued (Morningstar), Reddit calls it "the theft of the century", Polymarket prices the
+pop at 60%, and insiders get to sell on an accelerated unlock schedule nobody has seen before.
 
-Un piccolo retail normalmente entra qui dentro con FOMO e zero strumenti. In questo repo,
-invece, un umano con €2.000 e un'AI hanno costruito quello che fa un desk istituzionale:
-ricerca multi-fonte, valutazione, strategia a rischio definito, Monte Carlo validato sui dati,
-event study sui precedenti storici, fiscalità, e un **registro di previsioni falsificabili**
-scritto PRIMA del debutto.
+A small retail investor normally walks into this with FOMO and zero tooling. In this repo,
+a human and an AI built what an institutional desk would instead: multi-source research,
+valuation work, defined-risk strategies, a Monte Carlo validated against real return
+distributions, an event study on historical lockups, signal-quality engineering, tax
+analysis — and a **ledger of falsifiable predictions** written BEFORE the debut.
 
-Tra qualche mese si riapre tutto e si fanno i conti: [**PREDICTIONS.md**](PREDICTIONS.md) è il
-contratto con il futuro — fa fede la history git.
+In a few months everything gets reopened and scored: [**PREDICTIONS.md**](PREDICTIONS.md)
+is the contract with the future — git history is the witness.
 
-## I numeri al 10 giugno 2026 (T-2 dal debutto)
+## The numbers on June 10, 2026 (T-2 to the debut)
 
 | | |
 |---|---|
-| Pricing IPO | $135/azione · valutazione $1.75T · raccolta $75B (record storico) |
-| Fair value Morningstar | $780B (**-55%** dal prezzo IPO) · 94x ricavi vs 22x di Nvidia |
-| Il difetto strutturale | xAI brucia >$6B/anno dentro SpaceX; Starlink (61% dei ricavi) è profittevole |
-| L'anomalia | insider liberi di vendere il 20% **2 giorni dopo la prima trimestrale** (vs 180gg standard) |
-| Polymarket (soldi veri) | 99% chiusura day-1 sopra $1T · 60,5% sopra $2T |
-| Il piano | 60% GOOGL (proxy difensiva) · 20% put spread sul lockup · 20% cash · perdita max hard-capped ~20% |
+| IPO pricing | $135/share · $1.75T valuation · $75B raise (all-time record) |
+| Morningstar fair value | $780B (**-55%** from IPO price) · 94x revenue vs Nvidia's ~22x |
+| The structural flaw | xAI burns >$6B/year inside SpaceX; Starlink (61% of revenue) is profitable |
+| The anomaly | insiders may sell 20% **two days after the first earnings report** (vs the standard 180 days) |
+| Polymarket (real money) | 99% day-1 close above $1T · 60.5% above $2T |
+| The plan | 60% quality proxy (GOOGL) · 20% defined-risk put spread on the lockup · 20% cash · max loss hard-capped ~20% |
 
-## Risultati della ricerca quant, a colpo d'occhio
+## The quant research, at a glance
 
 <div align="center">
 <table>
 <tr>
-<td align="center"><img src="assets/chart_mc_pnl.png" width="420"/><br><sub><b>Distribuzione P&L del piano</b> — 10k simulazioni, VaR/ES annotati: coda destra cappata dallo spread, coda sinistra tutta beta GOOGL</sub></td>
-<td align="center"><img src="assets/chart_corr.png" width="420"/><br><sub><b>Correlazioni</b> — struttura 2 anni vs regime corrente (EWMA λ=0.94): quanto dell'hedge è illusorio</sub></td>
+<td align="center"><img src="assets/chart_mc_pnl.png" width="420"/><br><sub><b>Plan P&L distribution</b> — 10k simulations, VaR/ES annotated: right tail capped by the spread, left tail is all equity beta</sub></td>
+<td align="center"><img src="assets/chart_signal_ranking.png" width="420"/><br><sub><b>Signal quality rubric</b> — skin-in-the-game beats talk: trade on green, treat blue as context, fade red</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/chart_sensitivity.png" width="420"/><br><sub><b>Sensitività</b> — il piano vive o muore sul jump di agosto: EV>0 richiede jump ≤ -5%</sub></td>
-<td align="center"><img src="assets/chart_universe.png" width="420"/><br><sub><b>Universe</b> — portafoglio, "pale e picconi" e benchmark: la pala migliore risk-adjusted è VIRT, non HOOD</sub></td>
+<td align="center"><img src="assets/chart_corr.png" width="420"/><br><sub><b>Correlations</b> — 2-year structure vs current regime (EWMA λ=0.94): how much of the hedge is illusion</sub></td>
+<td align="center"><img src="assets/chart_attention.png" width="420"/><br><sub><b>Attention engineering</b> — cleaned Wikipedia/HN z-scores vs IPO milestones; the lead-lag test shows attention follows price</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="assets/chart_sensitivity.png" width="420"/><br><sub><b>Sensitivity</b> — the plan lives or dies on the August event jump: positive EV needs ≤ -5%</sub></td>
+<td align="center"><img src="assets/chart_universe.png" width="420"/><br><sub><b>Universe</b> — portfolio, picks-and-shovels and space sector: the best risk-adjusted shovel is VIRT, not HOOD</sub></td>
 </tr>
 </table>
 </div>
 
-**La scoperta che ha corretto la tesi** — l'event study su 4 lockup storici (UBER, RIVN, META,
-SNAP) mostra che il calo avviene in *anticipazione* (-37 punti medi nelle 30 sedute prima della
-scadenza) e che il giorno dello sblocco è spesso un minimo locale. Si vende il rumor, si compra
-la news: regola d'uscita aggiornata di conseguenza (chiusura entro T+5 dallo sblocco).
+**The finding that corrected the thesis** — an event study on 4 historical lockups (UBER,
+RIVN, META, SNAP) shows the drop happens in *anticipation* (-37 points on average in the 30
+sessions before expiry) and the unlock day itself is often a local bottom. Sell the rumor,
+buy the news: the exit rule was rewritten accordingly (close within T+5 of the unlock).
 
-## Cosa c'è nel repo
+## What's in the repo
 
 ```
-notebooks/00_master_report.ipynb     ← APRI QUESTO: orchestra tutto, output inclusi
-notebooks/01..03                     pipeline dati · correlazioni · Monte Carlo
-docs/01..06                          tesi · strategie con tutti i conti · cronoprogramma ·
-                                     risk management · fiscalità ITA · trade journal
-docs/html/                           gli stessi notebook in HTML (doppio click, zero setup)
-src/connectors/                      SEC EDGAR · Polymarket · FRED · yfinance + Stooq fallback
-src/risk/ · src/research/            metriche, Monte Carlo, event study, validazione fat-tails
-PREDICTIONS.md                       le previsioni falsificabili — il cuore dell'esperimento
+notebooks/00_master_report.ipynb     ← OPEN THIS: runs everything, outputs embedded
+notebooks/01..04                     data pipeline · correlations · Monte Carlo · signal quality
+docs/01..07                          thesis · strategies with full math · timeline ·
+                                     risk management · tax case study · trade journal ·
+                                     capital tiers (from €1k to €10M+)
+docs/html/                           the notebooks as plain HTML (double-click, zero setup)
+src/connectors/                      SEC EDGAR · Polymarket · FRED · yfinance+Stooq · HN · Wikipedia
+src/risk/ · src/research/            metrics, Monte Carlo, lockup event study,
+                                     fat-tail validation, signal-quality framework
+PREDICTIONS.md                       the falsifiable ledger — the heart of the experiment
 ```
 
-## Riprodurre tutto
+## Reproduce everything
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python tools/build_master.py         # rigenera ed esegue i 4 notebook con dati freschi
-.venv/bin/python -m src.research.lockup_study  # ogni modulo ha il suo smoke test
+.venv/bin/python tools/build_master.py          # rebuilds + executes all 5 notebooks on fresh data
+.venv/bin/python -m src.research.lockup_study   # every module has its own smoke test
 ```
 
-Per leggere i notebook senza alcun setup: apri `docs/html/` nel browser, oppure lasciali
-renderizzare a GitHub online. In VS Code: estensione Jupyter + kernel della venv creata sopra.
+To read the notebooks with no setup at all: open `docs/html/` in a browser, or let GitHub
+render them online. In VS Code: Jupyter extension + the venv kernel created above.
 
-## L'allocazione, per chi vuole solo il punto
+## Why this repo exists
 
-| Tranche | Importo | Strumento | Ruolo | Perdita max |
-|---|---|---|---|---|
-| A | €1.200 (60%) | GOOGL (~5% di SpaceX in pancia) | proxy long difensiva | stop tesi -15% |
-| B | €400 (20%) | put spread SPCX 140/135 set | short sul catalizzatore lockup | **€205, hard cap** |
-| C | €400 (20%) | cash | opzionalità post-trimestrale | €0 |
-
-EV dichiarato ex-ante: ≈ zero. Perdita massima strutturale: ~20% del capitale, nessuno
-scenario azzera il conto. Il piano compra processo e apprendimento, non rendimento atteso.
-
-## Perché esiste questo repo
-
-Non per il P&L — €2.000 con EV≈0 non cambiano la vita di nessuno. Esiste per rispondere,
-con dati e a costo di figuracce pubbliche, a una domanda seria: **l'AI può dare a chi ha
-duemila euro gli strumenti di chi ne gestisce duemila miliardi?** La risposta onesta
-arriverà nella colonna "Esito" di [PREDICTIONS.md](PREDICTIONS.md).
+Not for the P&L — a small account with declared EV≈0 changes nobody's life. It exists to
+answer, with data and at the cost of public embarrassment, a serious question: **can AI give
+someone with two thousand euros the tools of someone managing two trillion?** The working
+hypothesis after building it (see `docs/07`): AI compresses the *analysis* gap to nearly
+zero; the *access* gap — allocations, OTC, borrow, pre-IPO secondaries — is still plumbing
+that no model can route around. The honest answer lands in the Outcome column of
+[PREDICTIONS.md](PREDICTIONS.md).
 
 ---
 
 <div align="center">
 <sub>
-Niente in questo repo è consulenza finanziaria. È un esperimento documentato, con capitale che
-l'autore può permettersi di perdere e regole scritte prima degli eventi.<br>
-Il logo SpaceX appartiene a Space Exploration Technologies Corp. — usato qui a solo scopo identificativo.
+Nothing in this repo is financial advice. It is a documented experiment, run with capital the
+author can afford to lose and rules written before the events.<br>
+The SpaceX logo belongs to Space Exploration Technologies Corp. — used here for identification only.
 </sub>
 </div>

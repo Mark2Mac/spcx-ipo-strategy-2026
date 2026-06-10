@@ -1,4 +1,4 @@
-"""Connector Polymarket Gamma API (gratuita, no auth): quote prediction market come segnale di probabilità."""
+"""Polymarket Gamma API connector (free, no auth): prediction-market odds as probability signal."""
 from __future__ import annotations
 
 import json
@@ -32,7 +32,7 @@ def implied_probability(market: dict, outcome: str = "Yes") -> float | None:
 
 if __name__ == "__main__":
     mkts = search_markets("spacex")
-    assert mkts, "Polymarket FAIL: nessun mercato spacex"
-    print(f"TEST OK — {len(mkts)} mercati SpaceX")
+    assert mkts, "Polymarket FAIL: no spacex markets"
+    print(f"TEST OK — {len(mkts)} SpaceX markets")
     for m in mkts[:4]:
         print(f"  {m['market']}: {m['outcomes']}")

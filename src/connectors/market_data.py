@@ -1,4 +1,4 @@
-"""Connector OHLCV: yfinance primario, Stooq fallback, cache parquet, quality checks."""
+"""OHLCV connector: yfinance primary, Stooq fallback, parquet cache, data-quality checks."""
 from __future__ import annotations
 
 import io
@@ -42,20 +42,21 @@ def quality_report(df: pd.DataFrame, ticker: str) -> dict:
     bd = pd.bdate_range(df.index.min(), df.index.max())
     missing = len(bd.difference(df.index))
     stale_days = (pd.Timestamp.now() - df.index.max()).days
-    issues = []
+    issues, warnings = [], []
     if df["Close"].isna().any():
         issues.append("NaN in Close")
     if (df["Close"] <= 0).any():
         issues.append("non-positive prices")
-    if missing / max(len(bd), 1) > 0.05:
-        issues.append(f"{missing} business days missing (>5%)")
     if stale_days > 5:
         issues.append(f"stale: last bar {stale_days}d old")
+    if missing / max(len(bd), 1) > 0.05:
+        warnings.append(f"{missing} business days missing (>5%)")
     jumps = df["Close"].pct_change().abs()
     if (jumps > 0.5).any():
-        issues.append(f"suspect jump >50% on {jumps.idxmax().date()}")
+        warnings.append(f"jump >50% on {jumps.idxmax().date()} (verify: real move or bad print)")
     return {"ticker": ticker, "rows": len(df), "first": str(df.index.min().date()),
-            "last": str(df.index.max().date()), "missing_bdays": missing, "issues": issues}
+            "last": str(df.index.max().date()), "missing_bdays": missing,
+            "issues": issues, "warnings": warnings}
 
 
 def get_ohlcv(ticker: str, period: str = "2y", force: bool = False) -> pd.DataFrame:

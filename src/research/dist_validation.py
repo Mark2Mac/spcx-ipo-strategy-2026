@@ -1,4 +1,4 @@
-"""Validazione distribuzionale: i rendimenti reali hanno fat tails? Fit Student-t vs Normale su proxy SPCX."""
+"""Distributional validation: do real returns have fat tails? Student-t vs Normal fit on the SPCX proxy."""
 from __future__ import annotations
 
 import numpy as np
@@ -30,7 +30,7 @@ def qq_data(r: np.ndarray, dist, *params) -> tuple[np.ndarray, np.ndarray]:
 
 if __name__ == "__main__":
     f = fit_distributions()
-    assert f["t_wins"], "la Normale batte la t: assunzione MC da rivedere"
-    assert f["excess_kurtosis"] > 0.5, "code non grasse: assunzione MC da rivedere"
+    assert f["t_wins"], "Normal beats t: revisit MC assumption"
+    assert f["excess_kurtosis"] > 0.5, "tails not fat: revisit MC assumption"
     print(f"TEST OK — {f['ticker']}: t-dof={f['t_dof']:.1f}, excess kurtosis={f['excess_kurtosis']:.1f}, "
-          f"loglik t {f['loglik_t']:.0f} > norm {f['loglik_norm']:.0f} → Student-t giustificata")
+          f"loglik t {f['loglik_t']:.0f} > norm {f['loglik_norm']:.0f} -> Student-t justified")

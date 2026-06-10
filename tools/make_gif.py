@@ -1,4 +1,4 @@
-"""Genera assets/mc_paths.gif: fan chart animato dei path Monte Carlo SPCX con bande di percentile."""
+"""Generates assets/mc_paths.gif: animated Monte Carlo fan chart for SPCX with percentile bands."""
 from __future__ import annotations
 
 import sys
@@ -41,12 +41,12 @@ def main() -> None:
     ax.set_xlim(0, days[-1])
     ax.set_ylim(paths.min() * 0.95, np.percentile(paths, 99.5))
     ax.axvline(cfg.event_day, color=PALETTE[1], lw=1, ls="--")
-    ax.annotate("trimestrale +\nsblocco insider", (cfg.event_day, ax.get_ylim()[1] * 0.93),
+    ax.annotate("earnings +\ninsider unlock", (cfg.event_day, ax.get_ylim()[1] * 0.93),
                 fontsize=9, ha="center", color=PALETTE[1])
     ax.axhline(140 - 2.20, color="gray", lw=0.8, ls=":")
-    ax.annotate("breakeven spread 137.8", (2, 138.6), fontsize=8, color="gray")
-    ax.set_title("SPCX — 2.000 path Monte Carlo (Student-t + jump evento), 70 sedute")
-    ax.set_xlabel("sedute da metà luglio"); ax.set_ylabel("$")
+    ax.annotate("spread breakeven 137.8", (2, 138.6), fontsize=8, color="gray")
+    ax.set_title("SPCX — 2,000 Monte Carlo paths (Student-t + event jump), 70 sessions")
+    ax.set_xlabel("sessions from mid-July"); ax.set_ylabel("$")
 
     lines = [ax.plot([], [], lw=0.5, color=PALETTE[0], alpha=0.25)[0] for _ in show]
     med, = ax.plot([], [], lw=2.2, color=PALETTE[1])

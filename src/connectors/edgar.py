@@ -1,4 +1,4 @@
-"""Connector SEC EDGAR (API ufficiale data.sec.gov): filing list, Form 4 watch, full-text search."""
+"""SEC EDGAR connector (official data.sec.gov API): filing list, Form 4 watch, full-text search."""
 from __future__ import annotations
 
 import requests
@@ -45,6 +45,6 @@ def fulltext_search(query: str, forms: str | None = None, limit: int = 10) -> li
 if __name__ == "__main__":
     fil = recent_filings(limit=10)
     assert fil and all("url" in f for f in fil), "EDGAR FAIL"
-    print(f"TEST OK — {len(fil)} filing SpaceX, ultimo: {fil[0]['form']} {fil[0]['date']}")
+    print(f"TEST OK — {len(fil)} SpaceX filings, latest: {fil[0]['form']} {fil[0]['date']}")
     f4 = form4_watch(limit=5)
-    print(f"Form 3/4/144 trovati: {len(f4)}" + (f", ultimo {f4[0]['date']}" if f4 else " (attesi da agosto, post-lockup)"))
+    print(f"Form 3/4/144 found: {len(f4)}" + (f", latest {f4[0]['date']}" if f4 else " (expected from August, post-lockup)"))

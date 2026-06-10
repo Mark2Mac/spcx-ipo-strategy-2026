@@ -1,65 +1,65 @@
 # 04 — Risk management
 
-Il documento più importante del repo. Le regole qui scritte prevalgono su qualsiasi convinzione futura. Se una regola sembra sbagliata durante l'operatività, si chiude la posizione PRIMA e si riscrive la regola POI, mai il contrario.
+The most important document in the repo. The rules written here override any future conviction. If a rule feels wrong during live trading, close the position FIRST and rewrite the rule AFTER — never the reverse.
 
-## 1. Hard cap di perdita (struttura del piano)
+## 1. Hard loss caps (plan structure)
 
-| Posizione | Perdita massima | Tipo di cap |
+| Position | Max loss | Cap type |
 |---|---|---|
-| A — GOOGL €1.200 | -€180 (stop tesi a -15%) | Soft (richiede disciplina) |
-| B — Put spread €205 | -€205 | **Hard (matematico: non puoi perdere di più del debito)** |
-| C — Cash €400 | €0 | Hard |
-| Attrito/fisco | -€25 | Fisso |
-| **Piano intero** | **~-€410 (20,5%)** | |
+| A — equity proxy (60%) | thesis stop at -15% of tranche | Soft (requires discipline) |
+| B — put spread (≤20%) | premium paid | **Hard (mathematical: you cannot lose more than the debit)** |
+| C — cash (20%) | zero | Hard |
+| Friction/taxes | ~1% | Fixed |
+| **Whole plan** | **~20% of capital** | |
 
-Nessuna combinazione di eventi può azzerare il conto. Questo è il requisito "sicurezza > rendimento" tradotto in struttura: il 60% del capitale non tocca mai SPCX, il 20% è cash, e l'unica posizione sul titolo ha perdita massima scolpita nel contratto.
+No combination of events can zero the account. This is "safety > return" translated into structure: 60% of the capital never touches SPCX, 20% is cash, and the only position on the stock has its maximum loss carved into the contract.
 
-## 2. Position sizing — perché questi numeri
+## 2. Position sizing — why these numbers
 
-- Regola classica: 1-2% di rischio per trade. Su €2.000 = €20-40 → **incompatibile con le opzioni** (taglio minimo spread ≈ €200).
-- Adattamento dichiarato: si accetta UN trade a rischio definito al 10% del capitale, compensato da: (a) hard cap matematico, (b) 80% del capitale fuori dal trade, (c) divieto di aggiungere contratti.
-- Formula di controllo prima di ogni ordine: `rischio_massimo_ordine / capitale_totale ≤ 0,105` → se falso, l'ordine non parte.
-- Kelly check (per onestà intellettuale): con P=0,50, odds 1,27 → f* = (0,50×1,27-0,50)/1,27 ≈ 0,11 → il 10% è già full-Kelly, cioè AGGRESSIVO. Mezzo Kelly sarebbe €100, sotto il taglio minimo. Conclusione: il trade B è al limite superiore del sizing razionale; per questo è uno solo e irripetibile prima dell'evento.
+- Classic rule: risk 1-2% per trade. On a small account this is **incompatible with options** (minimum spread ticket ≈ 10% of a €2k account).
+- Declared adaptation: ONE defined-risk trade at ~10% of capital, compensated by (a) the mathematical hard cap, (b) 80% of capital outside the trade, (c) the ban on adding contracts.
+- Pre-order check: `max_order_risk / total_capital ≤ 0.105` → if false, the order does not go out.
+- Kelly check (intellectual honesty): with P=0.50 and 1.27 odds, f* ≈ 0.11 → 10% is already full Kelly, i.e. AGGRESSIVE. Half-Kelly would be below the minimum ticket. Conclusion: trade B sits at the upper bound of rational sizing; that is why it is single and unrepeatable before the event. (At larger capital tiers this constraint disappears — see [07-capital-tiers.md](07-capital-tiers.md).)
 
-## 3. Regole comportamentali (le perdite vere nascono qui)
+## 3. Behavioral rules (where real losses are born)
 
-1. **Mai ordini market** su SPCX o sue opzioni: solo limit. Gli spread bid/ask su un titolo neo-quotato possono superare l'1%.
-2. **Mai operare nelle prime e ultime 0,5h di sessione USA** salvo take-profit pianificati.
-3. **Mai aumentare una posizione in perdita** ("mediare" uno spread = raddoppiare un errore al doppio del costo psicologico).
-4. **Mai più di 1 posizione in derivati aperta** contemporaneamente.
-5. Ogni ordine richiede una riga PRIMA nel registro (file 06) con: tesi, invalidazione, perdita massima. Nessuna riga → nessun ordine.
-6. **Regola delle 24 ore**: ogni deviazione dal piano scritto richiede 24h di attesa tra idea ed esecuzione. L'urgenza percepita è il segnale più affidabile che stai per fare un errore.
-7. FOMO check del day-1: se il 12 giugno SPCX apre a +40% e "senti" di dover entrare — rileggere la riga Rivian/Uber nel file 01. Il pop iniziale è IL meccanismo con cui il retail compra dagli istituzionali.
+1. **No market orders** on SPCX or its options: limit only. Bid/ask on a freshly listed name can exceed 1%.
+2. **No trading in the first/last 30 minutes** of the US session except planned take-profits.
+3. **Never add to a losing position** ("averaging" a spread = doubling a mistake at twice the psychological cost).
+4. **Never more than 1 open derivatives position** at a time.
+5. Every order requires a journal line BEFORE submission (thesis, invalidation, max loss). No line → no order.
+6. **24-hour rule**: any deviation from the written plan waits 24h between idea and execution. Perceived urgency is the most reliable signal you are about to make a mistake.
+7. Day-1 FOMO check: if SPCX opens +40% and you "feel" you must get in — re-read the Rivian/Uber line in [01-context-and-thesis.md](01-context-and-thesis.md). The opening pop IS the mechanism by which retail buys from institutions.
 
-## 4. Condizioni di invalidazione della tesi (scritte ORA, a mente fredda)
+## 4. Thesis-invalidation conditions (written NOW, with a cold head)
 
-La tesi short-agosto è MORTA (chiudere B, non aprire altro short) se si verifica una qualsiasi:
-- Trimestrale: burn xAI < $1,5B (in forte calo) E crescita Starlink > 15% QoQ.
-- T+7 dallo sblocco: prezzo ≥ prezzo di T (il mercato assorbe le vendite insider).
-- SpaceX annuncia spin-off di xAI (rimuove il driver delle perdite dal perimetro).
-- SPCX scende sotto $135 PRIMA dell'ingresso nello spread (edge consumato dal mercato).
+The August-short thesis is DEAD (close B, open nothing else short) on any of:
+- Earnings: xAI burn < $1.5B (sharply down) AND Starlink growth > 15% QoQ.
+- T+7 after the unlock: price ≥ the T price (the market absorbs insider selling).
+- SpaceX announces an xAI spin-off (removes the loss driver from the perimeter).
+- SPCX below $135 BEFORE spread entry (edge consumed by the market).
 
-La tesi long-proxy (GOOGL) è MORTA se:
-- Alphabet vende/svaluta la quota SpaceX, o emergono problemi propri di GOOGL che ne cambiano i fondamentali (a quel punto è una decisione su GOOGL, non su SpaceX).
+The long-proxy thesis (GOOGL) is DEAD if:
+- Alphabet sells/writes down the SpaceX stake, or GOOGL-specific problems change its fundamentals (at which point it is a GOOGL decision, not a SpaceX one).
 
-## 5. Rischi non di mercato (spesso ignorati, spesso fatali)
+## 5. Non-market risks (often ignored, often fatal)
 
-| Rischio | Mitigazione |
+| Risk | Mitigation |
 |---|---|
-| Rischio cambio EUR/USD | Tranche A esposta (~€1.200): un -5% EUR/USD = -€60. Accettato (orizzonte lungo). Tranche C tenuta in EUR fino all'uso |
-| Rischio assegnazione (leg corta spread) | Mai tenere lo spread a scadenza con spot fra gli strike (regola in Fase 5). L'assegnazione comporterebbe acquisto di 100 azioni = $13.500 di notional su un conto da €2.000 → margin call |
-| Rischio liquidità opzioni | Su un titolo neo-quotato gli strike "fini" possono avere book vuoti: usare solo strike a $5 tondi, ordini combo, mai inseguire il mid di più di $0,10 |
-| Rischio broker/operativo | 2FA su IBKR; nessuna API key di trading su macchine condivise; controllare le conferme d'ordine prima dell'invio (un contratto = 100x il prezzo visualizzato) |
-| Rischio informativo | Le date di trimestrale/sblocco vanno verificate sui filing SEC (sec.gov, CIK SpaceX), non su Reddit |
-| Rischio fiscale | Accantonare mentalmente il 26% di ogni gain realizzato: il P&L vero è il netto |
+| EUR/USD | Equity tranche exposed: -5% EUR/USD ≈ -5% on it. Accepted (long horizon). Reserve kept in EUR until used |
+| Assignment (short leg) | Never carry the spread into expiry with spot between strikes (Phase 5 rule). Assignment = buying 100 shares ≈ $13,500 notional → margin call on a small account |
+| Options liquidity | Freshly listed names can have empty books on fine strikes: round $5 strikes only, combo orders, never chase the mid by more than $0.10 |
+| Broker/operational | 2FA; no trading API keys on shared machines; re-read order confirmations (one contract = 100× the displayed price) |
+| Information | Earnings/unlock dates verified on SEC filings (sec.gov), not on Reddit |
+| Tax | Mentally reserve 26% of every realized gain: the real P&L is net |
 
-## 6. Metriche di controllo settimanali (venerdì, 15 minuti)
+## 6. Weekly control metrics (Friday, 15 minutes)
 
-- Valore totale conto in EUR vs €2.000 iniziale.
-- Drawdown corrente vs massimo accettato (-20,5%).
-- Per lo spread: valore mark-to-market, theta residuo, giorni all'evento.
-- Una riga nel registro anche se non è successo niente ("nessuna azione" è un dato).
+- Total account value vs initial.
+- Current drawdown vs accepted maximum (-20%).
+- For the spread: mark-to-market, residual theta, days to the event.
+- One journal line even if nothing happened ("no action" is a data point).
 
-## 7. Il rischio più sottovalutato: te stesso
+## 7. The most underrated risk: yourself
 
-Con €2.000 nessuna strategia cambia la tua vita in positivo; una cattiva abitudine presa adesso (mediare, vendicarsi del mercato, togliere gli stop) scala con il capitale futuro e quella sì può cambiartela in negativo. Questo piano va giudicato al 90% sul processo (regole rispettate?) e al 10% sull'esito (P&L). Un +€240 ottenuto violando le regole è un risultato PEGGIORE di un -€205 ottenuto rispettandole.
+At small scale no strategy changes your life on the upside; a bad habit formed now (averaging down, revenge trading, pulling stops) scales with future capital and THAT can change it on the downside. Judge this plan 90% on process (rules respected?) and 10% on outcome (P&L). A win obtained by breaking the rules is a WORSE result than a loss obtained by following them.
