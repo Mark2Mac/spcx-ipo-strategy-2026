@@ -92,7 +92,8 @@ Realistic summary: top few percent of retail by process; a competent intern's fi
 project by quant-fund standards; ~the cheapest 20% of an institutional stack. The 20% that
 AI made nearly free is real and was previously inaccessible to retail — that IS the
 experiment's positive finding so far. The remaining 80% is bought with money, not
-intelligence.
+intelligence. The constructive counterpart — what retail can deploy to shrink each layer,
+at what cost — is [docs/08-closing-the-gap.md](docs/08-closing-the-gap.md).
 
 ## 6. High-compute extensions: what's worth a Colab T4 (and what is compute theater)
 

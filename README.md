@@ -76,9 +76,9 @@ buy the news: the exit rule was rewritten accordingly (close within T+5 of the u
 ```
 notebooks/00_master_report.ipynb     ← OPEN THIS: runs everything, outputs embedded
 notebooks/01..04                     data pipeline · correlations · Monte Carlo · signal quality
-docs/01..07                          thesis · strategies with full math · timeline ·
+docs/01..08                          thesis · strategies with full math · timeline ·
                                      risk management · tax case study · trade journal ·
-                                     capital tiers (from €1k to €10M+)
+                                     capital tiers (€1k to €10M+) · closing the enterprise gap
 docs/html/                           the notebooks as plain HTML (double-click, zero setup)
 src/connectors/                      SEC EDGAR · Polymarket · FRED · yfinance+Stooq · HN · Wikipedia
 src/risk/ · src/research/            metrics, Monte Carlo, lockup event study,
@@ -93,7 +93,8 @@ checkpoints/                         frozen data snapshots at every milestone (t
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python tools/build_master.py          # rebuilds + executes all 5 notebooks on fresh data
-.venv/bin/python -m src.research.lockup_study   # every module has its own smoke test
+./tools/run_tests.sh                            # full smoke-test suite (12 modules, must print 12/12 PASS)
+.venv/bin/python tools/checkpoint.py <label>    # freeze a dated evidence snapshot (see EVALUATION.md)
 ```
 
 To read the notebooks with no setup at all: open `docs/html/` in a browser, or let GitHub
