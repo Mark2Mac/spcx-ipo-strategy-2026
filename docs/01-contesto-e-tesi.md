@@ -1,6 +1,6 @@
 # 01 — Contesto e tesi
 
-Ricerca condotta il 2026-06-10 via /last30days (76 item: 20 Reddit, 25 HN, 16 Polymarket, 15 GitHub) + supplementi web. Raw data: `~/Documents/Last30Days/spacex-ipo-raw-v3.md`.
+Ricerca condotta il 2026-06-10 con ricerca multi-fonte assistita da AI (76 item: 20 thread Reddit, 25 storie Hacker News, 16 mercati Polymarket, 15 item GitHub) + supplementi web (CNBC, Reuters, Morningstar, Motley Fool, Via Satellite).
 
 ## 1. I fatti dell'IPO
 

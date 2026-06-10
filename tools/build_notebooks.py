@@ -65,7 +65,7 @@ for c in norm.columns:
 direct_label_lines(ax, norm)
 ax.set_title("Universe — ultimi 12 mesi, base 100 (benchmark in grigio)")
 ax.set_ylabel("indice")
-fig.savefig("../data/chart_universe.png", bbox_inches="tight")
+fig.savefig("../assets/chart_universe.png", bbox_inches="tight")
 plt.show()"""),
 ], NB_DIR / "01_data_pipeline.ipynb")
 
@@ -82,7 +82,7 @@ summary"""),
     ("code", """fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 corr_heatmap(axes[0], corr_matrix(rets), "Pearson 2 anni (struttura)")
 corr_heatmap(axes[1], ewma_corr(rets), "EWMA λ=0.94 (regime corrente)")
-fig.tight_layout(); fig.savefig("../data/chart_corr.png", bbox_inches="tight"); plt.show()"""),
+fig.tight_layout(); fig.savefig("../assets/chart_corr.png", bbox_inches="tight"); plt.show()"""),
     ("md", "## Correlazione rolling 60g GOOGL vs mercato\n\nSe sale verso 1 nei drawdown (succede quasi sempre), la diversificazione svanisce quando serve: è il motivo per cui l'unico hedge vero del piano è l'hard cap dello spread, non la correlazione."),
     ("code", """roll = rets["GOOGL"].rolling(60).corr(rets["^GSPC"]).dropna()
 fig, ax = plt.subplots(figsize=(11, 4))
@@ -91,7 +91,7 @@ ax.axhline(roll.mean(), color=PALETTE[1], lw=0.9, ls="--")
 ax.annotate(f"media {roll.mean():.2f}", (roll.index[-1], roll.mean()), xytext=(8, 0), textcoords="offset points", color=PALETTE[1], fontsize=9, va="center")
 ax.set_title("Correlazione rolling 60g — GOOGL vs S&P500")
 ax.set_ylim(0, 1)
-fig.savefig("../data/chart_rolling_corr.png", bbox_inches="tight"); plt.show()"""),
+fig.savefig("../assets/chart_rolling_corr.png", bbox_inches="tight"); plt.show()"""),
     ("md", "## Risk ledger del piano (€2.000)\n\n| Posizione | Rischio | Cap |\n|---|---|---|\n| GOOGL €1.200 | beta × drawdown mercato | soft (stop -15%) |\n| Spread €205 | premio pagato | **hard** |\n| Cash €400 | zero | hard |\n\nIl VaR vero del piano lo calcola il notebook 03 col Monte Carlo: le correlazioni qui sopra sono i suoi input qualitativi."),
 ], NB_DIR / "02_correlation_risk.ipynb")
 
@@ -110,7 +110,7 @@ pd.Series(rep).round(1)"""),
     ("code", """fig, ax = plt.subplots(figsize=(11, 5))
 pnl_distribution(ax, res["pnl_total_eur"], rep["VaR95"], rep["ES95"],
                  f"P&L portafoglio a 70 giorni — 10.000 simulazioni | P(perdita)={rep['p_loss']:.0%}")
-fig.savefig("../data/chart_mc_pnl.png", bbox_inches="tight"); plt.show()"""),
+fig.savefig("../assets/chart_mc_pnl.png", bbox_inches="tight"); plt.show()"""),
     ("md", "## Payoff dello spread a scadenza + dove finiscono i path simulati"),
     ("code", """grid = np.linspace(100, 200, 300)
 payoff_eur = spread.payoff(grid) / 1.08
@@ -127,7 +127,7 @@ be = spread.long_strike - spread.debit
 ax.annotate(f"breakeven {be:.2f}", (be, 0), xytext=(8, 10), textcoords="offset points", fontsize=9)
 ax.set_title("Payoff spread 140/135 set (€) sovrapposto alla densità dei prezzi finali SPCX simulati")
 ax.set_xlabel("SPCX a scadenza ($)"); ax.set_ylabel("P&L spread (€)")
-fig.savefig("../data/chart_payoff.png", bbox_inches="tight"); plt.show()"""),
+fig.savefig("../assets/chart_payoff.png", bbox_inches="tight"); plt.show()"""),
     ("md", "## Sensitività: il P&L medio in funzione del jump dell'evento\n\nLa colonna vertebrale della decisione: la strategia vive o muore sull'ampiezza del jump di agosto. Tutto il resto è rumore."),
     ("code", """from dataclasses import replace
 rows = []
@@ -145,7 +145,7 @@ for xi, yi in zip(x, y):
     ax.annotate(f"{yi:+.0f}", (xi, yi), xytext=(0, 8), textcoords="offset points", ha="center", fontsize=9)
 ax.set_title("P&L medio del portafoglio vs ampiezza del jump all'evento di agosto")
 ax.set_xlabel("jump medio SPCX all'evento (%)"); ax.set_ylabel("€")
-fig.savefig("../data/chart_sensitivity.png", bbox_inches="tight"); plt.show()"""),
+fig.savefig("../assets/chart_sensitivity.png", bbox_inches="tight"); plt.show()"""),
     ("md", "## Conclusioni operative\n\n1. L'hard cap dello spread regge su 10.000 path: la perdita oltre ~€400 viene solo da GOOGL (beta mercato), mai dal derivato.\n2. EV positivo richiede jump evento ≤ -5%: coerente con la soglia P≥44% del file 02.\n3. La coda sinistra (ES95) è dominata dalla tranche A: chi volesse ridurla taglia GOOGL, non lo spread.\n4. **Aggiornare i parametri con i dati reali** appena SPCX quota: `spcx_s0`, `spcx_vol` (dalla IV delle opzioni), `debit` reale. I default sono le stime del file 02."),
 ], NB_DIR / "03_montecarlo.ipynb")
 

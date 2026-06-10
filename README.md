@@ -1,52 +1,121 @@
-# SPCX IPO Strategy 2026 — Piano operativo €2.000
+<div align="center">
 
-> **Disclaimer**: documento educativo/personale. Non è consulenza finanziaria. Tutti i prezzi delle opzioni sono **stime illustrative** da ricalcolare con le quotazioni reali (le opzioni SPCX quoteranno ~fine giugno 2026). Capitale a rischio: solo denaro la cui perdita totale non cambia la tua vita.
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/SpaceX-Logo.svg/640px-SpaceX-Logo.svg.png" alt="SpaceX" width="380"/>
 
-## Contesto in una riga
+# Un retail, €2.000 e un'AI contro la più grande IPO della storia
 
-SpaceX debutta al Nasdaq il **12 giugno 2026** (ticker **SPCX**, $135/azione, valutazione $1.75T, raccolta $75B — la più grande IPO della storia). Tesi: valutazione estrema (94x ricavi), lockup insider anomalo ad agosto, fair value Morningstar $780B (-55%). Strategia: **non inseguire il debutto**, posizionarsi su catalizzatori datati con rischio definito e priorità alla protezione del capitale.
+**Esperimento documentato e falsificabile**: può un modello di frontiera (Fable 5, Anthropic)
+colmare il gap di informazione e competenza tra un piccolo investitore retail e gli istituzionali?
+Banco di prova: l'IPO SpaceX del 12 giugno 2026 — $1.75T di valutazione, 94x i ricavi, il lockup
+più anomalo mai visto.
 
-## Struttura del repo
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
+![Fable 5](https://img.shields.io/badge/AI-Fable%205%20·%20Anthropic-D4A27F)
+![Data](https://img.shields.io/badge/data-SEC%20EDGAR%20·%20Polymarket%20·%20FRED%20·%20yfinance-555)
+![Capitale](https://img.shields.io/badge/capitale-€2.000-2C8C3C)
+![Status](https://img.shields.io/badge/status-esperimento%20in%20corso-FFBE00)
 
-| File | Contenuto |
+<img src="assets/mc_paths.gif" alt="Monte Carlo SPCX" width="640"/><br>
+<sub><b>2.000 path Monte Carlo</b> — Student-t (fat tails empiriche) + jump sull'evento trimestrale/sblocco insider</sub>
+
+</div>
+
+---
+
+## L'idea, in breve
+
+Il 12 giugno 2026 SpaceX debutta al Nasdaq: la più grande IPO di sempre. Gli analisti la
+danno sopravvalutata del 55% (Morningstar), Reddit grida al "furto del secolo", Polymarket
+prezza il pop al 60%, e gli insider potranno vendere con uno sblocco accelerato mai visto.
+
+Un piccolo retail normalmente entra qui dentro con FOMO e zero strumenti. In questo repo,
+invece, un umano con €2.000 e un'AI hanno costruito quello che fa un desk istituzionale:
+ricerca multi-fonte, valutazione, strategia a rischio definito, Monte Carlo validato sui dati,
+event study sui precedenti storici, fiscalità, e un **registro di previsioni falsificabili**
+scritto PRIMA del debutto.
+
+Tra qualche mese si riapre tutto e si fanno i conti: [**PREDICTIONS.md**](PREDICTIONS.md) è il
+contratto con il futuro — fa fede la history git.
+
+## I numeri al 10 giugno 2026 (T-2 dal debutto)
+
+| | |
 |---|---|
-| [01-contesto-e-tesi.md](01-contesto-e-tesi.md) | Dati IPO, fondamentali S-1, tesi rialzista/ribassista, fonti |
-| [02-strategie-operative.md](02-strategie-operative.md) | Le 3 strategie con tutti i calcoli: struttura, breakeven, EV, sensitività |
-| [03-cronoprogramma.md](03-cronoprogramma.md) | Timeline operativa giorno per giorno, 10 giu → 31 dic 2026 |
-| [04-risk-management.md](04-risk-management.md) | Regole hard, position sizing, stop conditions, scenari di invalidazione |
-| [05-fiscalita-italia.md](05-fiscalita-italia.md) | 26%, minusvalenze, IVAFE, quadro RW, trappola ETF, calcoli netti |
-| [06-registro-operazioni.md](06-registro-operazioni.md) | Trade journal: template da compilare a ogni operazione |
-| **`notebooks/00_master_report.ipynb`** | **PUNTO UNICO DI VERIFICA: richiama tutti i moduli, health check, validazioni, tutti i grafici, verdetto** |
-| `notebooks/01_data_pipeline.ipynb` | Pipeline dati testata: yfinance+Stooq fallback, SEC EDGAR, Polymarket, FRED, quality report |
-| `notebooks/02_correlation_risk.ipynb` | Correlazioni Pearson vs EWMA, beta, drawdown, rolling corr, risk ledger |
-| `notebooks/03_montecarlo.ipynb` | 10k path Student-t + jump evento, VaR/ES, payoff, sensitività al jump |
-| `src/` | Connectors (market_data, edgar, polymarket, fred), risk (metrics, montecarlo), research (lockup_study, dist_validation) — tutti con smoke test in `__main__` |
+| Pricing IPO | $135/azione · valutazione $1.75T · raccolta $75B (record storico) |
+| Fair value Morningstar | $780B (**-55%** dal prezzo IPO) · 94x ricavi vs 22x di Nvidia |
+| Il difetto strutturale | xAI brucia >$6B/anno dentro SpaceX; Starlink (61% dei ricavi) è profittevole |
+| L'anomalia | insider liberi di vendere il 20% **2 giorni dopo la prima trimestrale** (vs 180gg standard) |
+| Polymarket (soldi veri) | 99% chiusura day-1 sopra $1T · 60,5% sopra $2T |
+| Il piano | 60% GOOGL (proxy difensiva) · 20% put spread sul lockup · 20% cash · perdita max hard-capped ~20% |
 
-## Dove verificare il lavoro
+## Risultati della ricerca quant, a colpo d'occhio
 
-1. **`notebooks/00_master_report.ipynb`** — apri questo: orchestra tutto e ha gli output embedded (VS Code lo apre nativamente; visibile anche su GitHub web).
-2. Smoke test di ogni modulo: `~/.venvs/quant/bin/python -m src.research.lockup_study` (idem per gli altri).
-3. Rigenerare ed eseguire TUTTO da zero: `~/.venvs/quant/bin/python tools/build_master.py` (~2-3 min, scarica dati freschi).
+<div align="center">
+<table>
+<tr>
+<td align="center"><img src="assets/chart_mc_pnl.png" width="420"/><br><sub><b>Distribuzione P&L del piano</b> — 10k simulazioni, VaR/ES annotati: coda destra cappata dallo spread, coda sinistra tutta beta GOOGL</sub></td>
+<td align="center"><img src="assets/chart_corr.png" width="420"/><br><sub><b>Correlazioni</b> — struttura 2 anni vs regime corrente (EWMA λ=0.94): quanto dell'hedge è illusorio</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="assets/chart_sensitivity.png" width="420"/><br><sub><b>Sensitività</b> — il piano vive o muore sul jump di agosto: EV>0 richiede jump ≤ -5%</sub></td>
+<td align="center"><img src="assets/chart_universe.png" width="420"/><br><sub><b>Universe</b> — portafoglio, "pale e picconi" e benchmark: la pala migliore risk-adjusted è VIRT, non HOOD</sub></td>
+</tr>
+</table>
+</div>
 
-## Setup quant
+**La scoperta che ha corretto la tesi** — l'event study su 4 lockup storici (UBER, RIVN, META,
+SNAP) mostra che il calo avviene in *anticipazione* (-37 punti medi nelle 30 sedute prima della
+scadenza) e che il giorno dello sblocco è spesso un minimo locale. Si vende il rumor, si compra
+la news: regola d'uscita aggiornata di conseguenza (chiusura entro T+5 dallo sblocco).
 
-```bash
-python3 -m venv ~/.venvs/quant && ~/.venvs/quant/bin/pip install -r requirements.txt
-~/.venvs/quant/bin/python tools/build_master.py   # build + exec dei 4 notebook
+## Cosa c'è nel repo
+
+```
+notebooks/00_master_report.ipynb     ← APRI QUESTO: orchestra tutto, output inclusi
+notebooks/01..03                     pipeline dati · correlazioni · Monte Carlo
+docs/01..06                          tesi · strategie con tutti i conti · cronoprogramma ·
+                                     risk management · fiscalità ITA · trade journal
+docs/html/                           gli stessi notebook in HTML (doppio click, zero setup)
+src/connectors/                      SEC EDGAR · Polymarket · FRED · yfinance + Stooq fallback
+src/risk/ · src/research/            metriche, Monte Carlo, event study, validazione fat-tails
+PREDICTIONS.md                       le previsioni falsificabili — il cuore dell'esperimento
 ```
 
-Post-IPO (dal ~22 giu): aggiornare in `03_montecarlo` i parametri `spcx_s0`, `spcx_vol` (dalla IV reale delle opzioni) e `debit`; da agosto `src/connectors/edgar.py form4_watch()` mostra le vendite insider reali entro 2 giorni dal fatto.
+## Riprodurre tutto
 
-## Allocazione master
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python tools/build_master.py         # rigenera ed esegue i 4 notebook con dati freschi
+.venv/bin/python -m src.research.lockup_study  # ogni modulo ha il suo smoke test
+```
+
+Per leggere i notebook senza alcun setup: apri `docs/html/` nel browser, oppure lasciali
+renderizzare a GitHub online. In VS Code: estensione Jupyter + kernel della venv creata sopra.
+
+## L'allocazione, per chi vuole solo il punto
 
 | Tranche | Importo | Strumento | Ruolo | Perdita max |
 |---|---|---|---|---|
-| A | €1.200 (60%) | GOOGL | Proxy long difensiva | Beta mercato (no hard cap, stop -15%) |
-| B | €400 (20%) | Put spread SPCX | Short su catalizzatore lockup | €205 (hard cap, rischio definito) |
-| C | €400 (20%) | Cash USD/EUR | Opzionalità post-trimestrale | €0 |
+| A | €1.200 (60%) | GOOGL (~5% di SpaceX in pancia) | proxy long difensiva | stop tesi -15% |
+| B | €400 (20%) | put spread SPCX 140/135 set | short sul catalizzatore lockup | **€205, hard cap** |
+| C | €400 (20%) | cash | opzionalità post-trimestrale | €0 |
 
-**Perdita massima teorica del piano: ~€385-425 (19-21% del capitale). Nessuno scenario azzera il conto.**
+EV dichiarato ex-ante: ≈ zero. Perdita massima strutturale: ~20% del capitale, nessuno
+scenario azzera il conto. Il piano compra processo e apprendimento, non rendimento atteso.
 
-## Principio guida
+## Perché esiste questo repo
 
-> Su un evento così mediatico l'edge retail è sottile e l'EV complessivo è vicino a zero. Il valore del piano non è "arricchirsi" ma: (1) perdita massima nota in anticipo, (2) esposizione al ciclo IPO-lockup con struttura professionale, (3) processo replicabile per le prossime occasioni. Priorità dichiarata dall'investitore: **sicurezza > rendimento**.
+Non per il P&L — €2.000 con EV≈0 non cambiano la vita di nessuno. Esiste per rispondere,
+con dati e a costo di figuracce pubbliche, a una domanda seria: **l'AI può dare a chi ha
+duemila euro gli strumenti di chi ne gestisce duemila miliardi?** La risposta onesta
+arriverà nella colonna "Esito" di [PREDICTIONS.md](PREDICTIONS.md).
+
+---
+
+<div align="center">
+<sub>
+Niente in questo repo è consulenza finanziaria. È un esperimento documentato, con capitale che
+l'autore può permettersi di perdere e regole scritte prima degli eventi.<br>
+Il logo SpaceX appartiene a Space Exploration Technologies Corp. — usato qui a solo scopo identificativo.
+</sub>
+</div>
