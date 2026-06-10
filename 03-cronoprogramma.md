@@ -58,6 +58,7 @@ Giorno T = pubblicazione prima trimestrale. T+2 = primo giorno di vendita inside
 - [ ] T: leggere i numeri. Tre dati decidono tutto: burn xAI trimestrale (atteso ~$2,5B), crescita abbonati Starlink, guidance. Annotare.
 - [ ] T+2 → T+7: finestra critica. Monitoraggio giornaliero (apertura + chiusura).
 - [ ] **Take profit**: se il valore dello spread raggiunge $3,90+ (= 70% del max gain): chiudere con ordine combo limit. Incasso ~€360, profit ~+€155 netto commissioni.
+- [ ] **Regola d'uscita da event study** (notebook 00, sez. 6 — UBER/RIVN/META/SNAP): il calo da lockup è da ANTICIPAZIONE (-37 punti medi T-30→T0) e T0 è spesso minimo locale (+19 punti T0→T+20). Quindi: chiudere lo spread ENTRO T+5 dallo sblocco, qualunque sia il P&L — non aspettare una continuazione del calo che storicamente non arriva.
 - [ ] **Falsificazione**: se a T+7 SPCX non è scesa sotto il prezzo di T (gli insider non vendono o il mercato assorbe): chiudere lo spread recuperando il valore residuo (stima 30-50% del debito ≈ €60-100). Perdita contenuta ~€105-145 invece di €205. Annotare la lezione.
 - [ ] **Scenario crollo violento** (SPCX < $120 in pochi giorni): lo spread va vicino al massimo. Chiudere a $4,50+ senza aspettare $5 (la liquidità sugli spread ITM peggiora).
 - [ ] Decisione tranche C: SOLO dopo T+7.

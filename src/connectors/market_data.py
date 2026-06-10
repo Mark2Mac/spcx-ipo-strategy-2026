@@ -12,9 +12,10 @@ DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 CACHE_MAX_AGE_H = 12
 
 
-def _cache_path(ticker: str) -> Path:
+def _cache_path(ticker: str, period: str) -> Path:
     DATA_DIR.mkdir(exist_ok=True)
-    return DATA_DIR / f"ohlcv_{ticker.replace('^', 'IDX_').replace('.', '_')}.parquet"
+    safe = ticker.replace("^", "IDX_").replace(".", "_")
+    return DATA_DIR / f"ohlcv_{safe}_{period}.parquet"
 
 
 def _from_yfinance(ticker: str, period: str) -> pd.DataFrame:
@@ -58,7 +59,7 @@ def quality_report(df: pd.DataFrame, ticker: str) -> dict:
 
 
 def get_ohlcv(ticker: str, period: str = "2y", force: bool = False) -> pd.DataFrame:
-    cache = _cache_path(ticker)
+    cache = _cache_path(ticker, period)
     if not force and cache.exists() and (time.time() - cache.stat().st_mtime) < CACHE_MAX_AGE_H * 3600:
         return pd.read_parquet(cache)
     try:
