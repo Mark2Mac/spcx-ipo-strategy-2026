@@ -8,7 +8,7 @@ import nbformat as nbf
 ROOT = Path(__file__).resolve().parents[1]
 NB_DIR = ROOT / "notebooks"
 
-UNIVERSE = ["GOOGL", "TSLA", "NDAQ", "HOOD", "VIRT", "GS", "MS", "RKLB", "ASTS", "LMT", "^GSPC", "^NDX", "^VIX"]
+from src.config import UNIVERSE  # noqa: F401
 
 BOOT = """import sys, warnings
 from pathlib import Path
@@ -35,7 +35,7 @@ nb([
     ("code", BOOT),
     ("md", "## 1. OHLCV with quality gate\n\nData-engineering rule: nothing enters the process without passing the checks. **Issues** (NaN, non-positive prices, staleness) block the pipeline; **warnings** (gaps, >50% jumps) are surfaced for human review — extreme moves can be real (ASTS +50% on the AT&T deal, ^VIX Fed-day spikes), so they must be flagged, not auto-dropped."),
     ("code", f"""from src.connectors.market_data import get_universe
-UNIVERSE = {UNIVERSE!r}
+from src.config import UNIVERSE  # noqa: F401
 prices, reports = get_universe(UNIVERSE, period="2y")
 qa = pd.DataFrame(reports).set_index("ticker")
 assert qa["issues"].map(len).sum() == 0, f"QUALITY FAIL: {{qa[qa.issues.map(len)>0]}}"

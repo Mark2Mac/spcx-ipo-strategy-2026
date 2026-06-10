@@ -84,6 +84,8 @@ src/connectors/                      SEC EDGAR · Polymarket · FRED · yfinance
 src/risk/ · src/research/            metrics, Monte Carlo, lockup event study,
                                      fat-tail validation, signal-quality framework
 PREDICTIONS.md                       the falsifiable ledger — the heart of the experiment
+EVALUATION.md                        pre-registered evaluation protocol + honest limits
+checkpoints/                         frozen data snapshots at every milestone (tools/checkpoint.py)
 ```
 
 ## Reproduce everything

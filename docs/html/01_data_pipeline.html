@@ -7796,7 +7796,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af097501">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1028c0ef">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7806,7 +7806,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b983588d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9707db3d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7828,7 +7828,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=65fe25da">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=73bfa1bd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7838,7 +7838,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=564e07f1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f0d7d04a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7847,7 +7847,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">src.connectors.market_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_universe</span>
-<span class="n">UNIVERSE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'GOOGL'</span><span class="p">,</span> <span class="s1">'TSLA'</span><span class="p">,</span> <span class="s1">'NDAQ'</span><span class="p">,</span> <span class="s1">'HOOD'</span><span class="p">,</span> <span class="s1">'VIRT'</span><span class="p">,</span> <span class="s1">'GS'</span><span class="p">,</span> <span class="s1">'MS'</span><span class="p">,</span> <span class="s1">'RKLB'</span><span class="p">,</span> <span class="s1">'ASTS'</span><span class="p">,</span> <span class="s1">'LMT'</span><span class="p">,</span> <span class="s1">'^GSPC'</span><span class="p">,</span> <span class="s1">'^NDX'</span><span class="p">,</span> <span class="s1">'^VIX'</span><span class="p">]</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">src.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">UNIVERSE</span>  <span class="c1"># noqa: F401</span>
 <span class="n">prices</span><span class="p">,</span> <span class="n">reports</span> <span class="o">=</span> <span class="n">get_universe</span><span class="p">(</span><span class="n">UNIVERSE</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="s2">"2y"</span><span class="p">)</span>
 <span class="n">qa</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">reports</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"ticker"</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">qa</span><span class="p">[</span><span class="s2">"issues"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"QUALITY FAIL: </span><span class="si">{</span><span class="n">qa</span><span class="p">[</span><span class="n">qa</span><span class="o">.</span><span class="n">issues</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
@@ -8026,7 +8026,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3b04d0a6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f11746a3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8036,7 +8036,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1e062279">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b31d7ddd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8093,7 +8093,7 @@ a.anchor-link {
 <tbody>
 <tr>
 <th>0</th>
-<td>8-A12B</td>
+<td>CERT</td>
 <td>2026-06-10</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
@@ -8105,26 +8105,26 @@ a.anchor-link {
 </tr>
 <tr>
 <th>2</th>
-<td>CERT</td>
+<td>8-A12B</td>
 <td>2026-06-10</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
 <th>3</th>
-<td>FWP</td>
-<td>2026-06-09</td>
+<td>CERT</td>
+<td>2026-06-10</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
 <th>4</th>
 <td>FWP</td>
-<td>2026-06-08</td>
+<td>2026-06-09</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
 <th>5</th>
 <td>FWP</td>
-<td>2026-06-05</td>
+<td>2026-06-08</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
@@ -8136,7 +8136,7 @@ a.anchor-link {
 <tr>
 <th>7</th>
 <td>FWP</td>
-<td>2026-06-04</td>
+<td>2026-06-05</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
@@ -8147,38 +8147,38 @@ a.anchor-link {
 </tr>
 <tr>
 <th>9</th>
-<td>S-1/A</td>
-<td>2026-06-03</td>
+<td>FWP</td>
+<td>2026-06-04</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
 <th>10</th>
 <td>S-1/A</td>
-<td>2026-06-01</td>
+<td>2026-06-03</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
 <th>11</th>
+<td>S-1/A</td>
+<td>2026-06-01</td>
+<td>https://www.sec.gov/Archives/edgar/data/118141...</td>
+</tr>
+<tr>
+<th>12</th>
 <td>S-1</td>
 <td>2026-05-20</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
-<th>12</th>
+<th>13</th>
 <td>DRS/A</td>
 <td>2026-05-07</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 <tr>
-<th>13</th>
+<th>14</th>
 <td>DRS</td>
 <td>2026-03-30</td>
-<td>https://www.sec.gov/Archives/edgar/data/118141...</td>
-</tr>
-<tr>
-<th>14</th>
-<td>D</td>
-<td>2022-08-05</td>
 <td>https://www.sec.gov/Archives/edgar/data/118141...</td>
 </tr>
 </tbody>
@@ -8189,7 +8189,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=93b7a52c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=122bc7a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8199,7 +8199,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4f1a608e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1adfcd7a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8251,23 +8251,23 @@ a.anchor-link {
 <tr>
 <th>0</th>
 <td>SpaceX IPO closing market cap above $3T?</td>
-<td>0.0750</td>
-<td>0.9250</td>
-<td>1825762</td>
+<td>0.0700</td>
+<td>0.9300</td>
+<td>1826608</td>
 </tr>
 <tr>
 <th>1</th>
 <td>SpaceX IPO closing market cap above $2T?</td>
 <td>0.6250</td>
 <td>0.3750</td>
-<td>1108700</td>
+<td>1108716</td>
 </tr>
 <tr>
 <th>2</th>
 <td>SpaceX IPO closing market cap above $1.8T?</td>
 <td>0.8050</td>
 <td>0.1950</td>
-<td>934841</td>
+<td>935041</td>
 </tr>
 <tr>
 <th>3</th>
@@ -8288,7 +8288,7 @@ a.anchor-link {
 <td>SpaceX IPO closing market cap above $2.4T?</td>
 <td>0.2450</td>
 <td>0.7550</td>
-<td>871168</td>
+<td>872168</td>
 </tr>
 <tr>
 <th>6</th>
@@ -8302,14 +8302,14 @@ a.anchor-link {
 <td>SpaceX IPO closing market cap above $1T?</td>
 <td>0.9895</td>
 <td>0.0105</td>
-<td>736256</td>
+<td>736264</td>
 </tr>
 <tr>
 <th>8</th>
 <td>Will SpaceX IPO by June 30, 2026?</td>
 <td>0.9955</td>
 <td>0.0045</td>
-<td>683105</td>
+<td>683107</td>
 </tr>
 <tr>
 <th>9</th>
@@ -8326,7 +8326,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d84d0423">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a26e1162">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8336,7 +8336,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4911a109">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=67df626a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8366,7 +8366,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=023e4592">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e7cce926">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8376,7 +8376,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2a9ad190">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b8caccde">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

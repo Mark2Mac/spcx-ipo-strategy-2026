@@ -1,0 +1,182 @@
+[
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $3T?",
+  "outcomes": {
+   "Yes": 0.07,
+   "No": 0.93
+  },
+  "volume": 1826608.9028790009
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $2T?",
+  "outcomes": {
+   "Yes": 0.625,
+   "No": 0.375
+  },
+  "volume": 1108716.6219080042
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $1.8T?",
+  "outcomes": {
+   "Yes": 0.805,
+   "No": 0.195
+  },
+  "volume": 935041.3032989992
+ },
+ {
+  "event": "SpaceX IPO Closing Market Cap",
+  "market": "Will SpaceX's market cap be between $2.5T and $3.0T at market close on IPO day?",
+  "outcomes": {
+   "Yes": 0.1575,
+   "No": 0.8425
+  },
+  "volume": 912268.8883910014
+ },
+ {
+  "event": "SpaceX IPO by ___ ?",
+  "market": "Will SpaceX IPO by May 31, 2026?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 906312.6627489983
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $2.4T?",
+  "outcomes": {
+   "Yes": 0.245,
+   "No": 0.755
+  },
+  "volume": 872168.9274829992
+ },
+ {
+  "event": "SpaceX IPO Closing Market Cap (Lowest Strikes)",
+  "market": "Will SpaceX's market cap be greater than $1T at market close on IPO day?",
+  "outcomes": {
+   "Yes": 0.9885,
+   "No": 0.0115
+  },
+  "volume": 744491.5804849985
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $1T?",
+  "outcomes": {
+   "Yes": 0.9895,
+   "No": 0.0105
+  },
+  "volume": 736264.8347260006
+ },
+ {
+  "event": "SpaceX IPO by ___ ?",
+  "market": "Will SpaceX IPO by June 30, 2026?",
+  "outcomes": {
+   "Yes": 0.9955,
+   "No": 0.0045
+  },
+  "volume": 683107.8790580007
+ },
+ {
+  "event": "SpaceX IPO Closing Market Cap (Lowest Strikes)",
+  "market": "Will SpaceX not IPO by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.002,
+   "No": 0.998
+  },
+  "volume": 664624.2849170015
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $2.6T?",
+  "outcomes": {
+   "Yes": 0.17,
+   "No": 0.83
+  },
+  "volume": 636920.6539029999
+ },
+ {
+  "event": "SpaceX IPO by ___ ?",
+  "market": "Will SpaceX IPO by April 30, 2026?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 627524.3541179997
+ },
+ {
+  "event": "SpaceX IPO Closing Market Cap (Lowest Strikes)",
+  "market": "Will SpaceX's market cap be between $800B and $900B at market close on IPO day?",
+  "outcomes": {
+   "Yes": 0.0005,
+   "No": 0.9995
+  },
+  "volume": 571137.5113110017
+ },
+ {
+  "event": "SpaceX IPO Closing Market Cap",
+  "market": "Will SpaceX's market cap be between $3.0T and $3.5T at market close on IPO day?",
+  "outcomes": {
+   "Yes": 0.0535,
+   "No": 0.9465
+  },
+  "volume": 542810.5288470007
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.0175,
+   "No": 0.9825
+  },
+  "volume": 537816.1690660004
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $2.2T?",
+  "outcomes": {
+   "Yes": 0.415,
+   "No": 0.585
+  },
+  "volume": 527858.522561
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $1.6T?",
+  "outcomes": {
+   "Yes": 0.9085,
+   "No": 0.0915
+  },
+  "volume": 520834.99011799984
+ },
+ {
+  "event": "SpaceX IPO by ___ ?",
+  "market": "Will SpaceX IPO by March 31, 2026?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 508146.95969400025
+ },
+ {
+  "event": "SpaceX IPO Closing Market Cap (Lowest Strikes)",
+  "market": "Will SpaceX's market cap be between $900B and $1T at market close on IPO day?",
+  "outcomes": {
+   "Yes": 0.0005,
+   "No": 0.9995
+  },
+  "volume": 507369.290477
+ },
+ {
+  "event": "SpaceX IPO by ___ ?",
+  "market": "Will SpaceX IPO by June 15, 2026?",
+  "outcomes": {
+   "Yes": 0.986,
+   "No": 0.014
+  },
+  "volume": 450507.1983690001
+ }
+]
