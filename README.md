@@ -16,6 +16,22 @@ SpaceX debutta al Nasdaq il **12 giugno 2026** (ticker **SPCX**, $135/azione, va
 | [04-risk-management.md](04-risk-management.md) | Regole hard, position sizing, stop conditions, scenari di invalidazione |
 | [05-fiscalita-italia.md](05-fiscalita-italia.md) | 26%, minusvalenze, IVAFE, quadro RW, trappola ETF, calcoli netti |
 | [06-registro-operazioni.md](06-registro-operazioni.md) | Trade journal: template da compilare a ogni operazione |
+| `notebooks/01_data_pipeline.ipynb` | Pipeline dati testata: yfinance+Stooq fallback, SEC EDGAR, Polymarket, FRED, quality report |
+| `notebooks/02_correlation_risk.ipynb` | Correlazioni Pearson vs EWMA, beta, drawdown, rolling corr, risk ledger |
+| `notebooks/03_montecarlo.ipynb` | 10k path Student-t + jump evento, VaR/ES, payoff, sensitività al jump |
+| `src/` | Connectors (market_data, edgar, polymarket, fred) e moduli risk (metrics, montecarlo), tutti con smoke test in `__main__` |
+
+## Setup quant
+
+```bash
+python3 -m venv ~/.venvs/quant && ~/.venvs/quant/bin/pip install -r requirements.txt
+# test pipeline:
+~/.venvs/quant/bin/python src/connectors/market_data.py
+# rigenerare + rieseguire i notebook:
+~/.venvs/quant/bin/python tools/build_notebooks.py
+```
+
+Post-IPO (dal ~22 giu): aggiornare in `03_montecarlo` i parametri `spcx_s0`, `spcx_vol` (dalla IV reale delle opzioni) e `debit`; da agosto `src/connectors/edgar.py form4_watch()` mostra le vendite insider reali entro 2 giorni dal fatto.
 
 ## Allocazione master
 
