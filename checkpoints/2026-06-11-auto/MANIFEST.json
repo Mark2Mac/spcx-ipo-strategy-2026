@@ -1,7 +1,7 @@
 {
  "checkpoint": "2026-06-11-auto",
- "created_utc": "2026-06-11T08:40:24.005374+00:00",
- "git_head": "d0bec3b5c6b4ab635cb23e61da40a5e756971ad5",
+ "created_utc": "2026-06-11T23:02:44.412849+00:00",
+ "git_head": "c74fb448c42bcb510554f2d84c4258bcec4a6634",
  "python": "3.13.13",
  "universe": [
   "GOOGL",
@@ -19,17 +19,17 @@
   "^VIX"
  ],
  "artifacts": {
-  "universe_prices.parquet": "cd8d6b00c359bd1a",
-  "quality_reports.json": "9708c0ddce4923b6",
-  "polymarket.json": "635b9cd4bc755be3",
-  "edgar_filings.json": "e3a9f71e673bf554",
-  "hn_attention.csv": "0f7989dc8fe09221",
+  "universe_prices.parquet": "be067f5eab21de4a",
+  "quality_reports.json": "745c8fd54c725f22",
+  "polymarket.json": "283d7bcf6d748659",
+  "edgar_filings.json": "ba9dcf4fdb9a92bb",
+  "hn_attention.csv": "bbd31959158bcf6a",
   "wikipedia_pageviews.csv": "5202e78504d324c5",
-  "risk_free.json": "2c0b47243ad45120",
-  "benchmarks.json": "97e084ac3687e009",
+  "risk_free.json": "3a80b3b442db7a1d",
+  "benchmarks.json": "62ec30d93b558219",
   "spcx_market.json": "622ea7ba610b60a1",
   "montecarlo.json": "c7aea7719b282371",
-  "pip_freeze.txt": "8f8c4a64ea6a7721"
+  "pip_freeze.txt": "b5c5fedeba5fc889"
  },
  "purpose": "Frozen evidence for the ex-post evaluation protocol in EVALUATION.md"
 }

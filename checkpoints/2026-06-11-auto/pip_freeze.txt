@@ -35,12 +35,12 @@ numpy==2.4.6
 packaging==26.2
 pandas==3.0.3
 parso==0.8.7
-peewee==4.0.6
+peewee==4.0.7
 pexpect==4.9.0
 pillow==12.2.0
 platformdirs==4.10.0
 prompt_toolkit==3.0.52
-protobuf==7.35.0
+protobuf==7.35.1
 psutil==7.2.2
 ptyprocess==0.7.0
 pure_eval==0.2.3

@@ -1,5 +1,15 @@
 [
  {
+  "form": "FWP",
+  "date": "2026-06-11",
+  "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042466/spaceexplorationtechnologi.htm"
+ },
+ {
+  "form": "CERT",
+  "date": "2026-06-10",
+  "url": "https://www.sec.gov/Archives/edgar/data/1181412/000087679626000014/SPCX_8A_Cert_0001181412.pdf"
+ },
+ {
   "form": "CERT",
   "date": "2026-06-10",
   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000135445726000562/SPCX_8A_Cert_0001181412.pdf"
@@ -13,11 +23,6 @@
   "form": "8-A12B",
   "date": "2026-06-10",
   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042107/spaceexplorationtechnologi.htm"
- },
- {
-  "form": "CERT",
-  "date": "2026-06-10",
-  "url": "https://www.sec.gov/Archives/edgar/data/1181412/000087679626000014/SPCX_8A_Cert_0001181412.pdf"
  },
  {
   "form": "FWP",
@@ -193,10 +198,5 @@
   "form": "REGDEX",
   "date": "2005-03-11",
   "url": "https://www.sec.gov/Archives/edgar/data/1181412/999999999705011871/9999999997-05-011871.paper"
- },
- {
-  "form": "REGDEX/A",
-  "date": "2002-12-26",
-  "url": "https://www.sec.gov/Archives/edgar/data/1181412/999999999702062386/9999999997-02-062386.paper"
  }
 ]

@@ -3,37 +3,46 @@
   "event": "SpaceX IPO closing market cap above ___ ?",
   "market": "SpaceX IPO closing market cap above $3T?",
   "outcomes": {
-   "Yes": 0.065,
-   "No": 0.935
+   "Yes": 0.07,
+   "No": 0.93
   },
-  "volume": 1872369.444281
+  "volume": 1994512.0344300002
  },
  {
   "event": "SpaceX IPO closing market cap above ___ ?",
   "market": "SpaceX IPO closing market cap above $2T?",
   "outcomes": {
-   "Yes": 0.625,
-   "No": 0.375
+   "Yes": 0.685,
+   "No": 0.315
   },
-  "volume": 1127480.5677930047
+  "volume": 1320751.986126006
  },
  {
   "event": "SpaceX IPO closing market cap above ___ ?",
   "market": "SpaceX IPO closing market cap above $1.8T?",
   "outcomes": {
-   "Yes": 0.835,
-   "No": 0.165
+   "Yes": 0.845,
+   "No": 0.155
   },
-  "volume": 1038596.5106979992
+  "volume": 1144713.5370489995
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $2.4T?",
+  "outcomes": {
+   "Yes": 0.265,
+   "No": 0.735
+  },
+  "volume": 993720.3349049989
  },
  {
   "event": "SpaceX IPO Closing Market Cap",
   "market": "Will SpaceX's market cap be between $2.5T and $3.0T at market close on IPO day?",
   "outcomes": {
-   "Yes": 0.15,
-   "No": 0.85
+   "Yes": 0.1635,
+   "No": 0.8365
   },
-  "volume": 913475.9979310014
+  "volume": 929883.7765630013
  },
  {
   "event": "SpaceX IPO by ___ ?",
@@ -46,57 +55,48 @@
  },
  {
   "event": "SpaceX IPO closing market cap above ___ ?",
-  "market": "SpaceX IPO closing market cap above $2.4T?",
-  "outcomes": {
-   "Yes": 0.245,
-   "No": 0.755
-  },
-  "volume": 900032.2404579988
- },
- {
-  "event": "SpaceX IPO closing market cap above ___ ?",
   "market": "SpaceX IPO closing market cap above $1T?",
   "outcomes": {
-   "Yes": 0.9935,
-   "No": 0.0065
+   "Yes": 0.9885,
+   "No": 0.0115
   },
-  "volume": 754574.4019600002
- },
- {
-  "event": "SpaceX IPO Closing Market Cap (Lowest Strikes)",
-  "market": "Will SpaceX's market cap be greater than $1T at market close on IPO day?",
-  "outcomes": {
-   "Yes": 0.992,
-   "No": 0.008
-  },
-  "volume": 751047.2527939985
- },
- {
-  "event": "SpaceX IPO by ___ ?",
-  "market": "Will SpaceX IPO by June 30, 2026?",
-  "outcomes": {
-   "Yes": 0.9975,
-   "No": 0.0025
-  },
-  "volume": 686423.2266520006
+  "volume": 775096.6199879993
  },
  {
   "event": "SpaceX IPO closing market cap above ___ ?",
   "market": "SpaceX IPO closing market cap above $2.6T?",
   "outcomes": {
-   "Yes": 0.145,
-   "No": 0.855
+   "Yes": 0.15,
+   "No": 0.85
   },
-  "volume": 679319.6287559996
+  "volume": 758333.7536229995
  },
  {
-  "event": "SpaceX IPO Closing Market Cap (Lowest Strikes)",
-  "market": "Will SpaceX not IPO by December 31, 2027?",
+  "event": "SpaceX IPO by ___ ?",
+  "market": "Will SpaceX IPO by June 30, 2026?",
   "outcomes": {
-   "Yes": 0.002,
-   "No": 0.998
+   "Yes": 0.9985,
+   "No": 0.0015
   },
-  "volume": 665492.1964170017
+  "volume": 696322.1021520008
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $1.6T?",
+  "outcomes": {
+   "Yes": 0.954,
+   "No": 0.046
+  },
+  "volume": 678208.8105079993
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $2.2T?",
+  "outcomes": {
+   "Yes": 0.485,
+   "No": 0.515
+  },
+  "volume": 647428.5384019996
  },
  {
   "event": "SpaceX IPO by ___ ?",
@@ -108,49 +108,40 @@
   "volume": 627524.3541179997
  },
  {
-  "event": "SpaceX IPO Closing Market Cap (Lowest Strikes)",
-  "market": "Will SpaceX's market cap be between $800B and $900B at market close on IPO day?",
-  "outcomes": {
-   "Yes": 0.0035,
-   "No": 0.9965
-  },
-  "volume": 576079.5553110017
- },
- {
   "event": "SpaceX IPO Closing Market Cap",
   "market": "Will SpaceX's market cap be between $3.0T and $3.5T at market close on IPO day?",
   "outcomes": {
-   "Yes": 0.0525,
-   "No": 0.9475
+   "Yes": 0.0345,
+   "No": 0.9655
   },
-  "volume": 550674.1817750008
+  "volume": 559131.478650001
  },
  {
   "event": "SpaceX IPO closing market cap above ___ ?",
-  "market": "SpaceX IPO closing market cap above $1.6T?",
+  "market": "SpaceX IPO closing market cap above $2.8T?",
   "outcomes": {
-   "Yes": 0.923,
-   "No": 0.077
+   "Yes": 0.105,
+   "No": 0.895
   },
-  "volume": 545495.6424169997
+  "volume": 522731.95610100037
  },
  {
   "event": "SpaceX IPO closing market cap above ___ ?",
-  "market": "SpaceX IPO closing market cap above $2.2T?",
+  "market": "SpaceX IPO closing market cap above $1.4T?",
   "outcomes": {
-   "Yes": 0.395,
-   "No": 0.605
+   "Yes": 0.969,
+   "No": 0.031
   },
-  "volume": 542810.5215609994
+  "volume": 517011.2326479998
  },
  {
-  "event": "SpaceX IPO Closing Market Cap (Lowest Strikes)",
-  "market": "Will SpaceX's market cap be between $900B and $1T at market close on IPO day?",
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $1.2T?",
   "outcomes": {
-   "Yes": 0.0005,
-   "No": 0.9995
+   "Yes": 0.977,
+   "No": 0.023
   },
-  "volume": 536840.900477
+  "volume": 514611.20995000016
  },
  {
   "event": "SpaceX IPO by ___ ?",
@@ -162,21 +153,30 @@
   "volume": 508146.95969400025
  },
  {
-  "event": "SpaceX IPO closing market cap above ___ ?",
-  "market": "SpaceX IPO closing market cap above $2.8T?",
+  "event": "SpaceX IPO by ___ ?",
+  "market": "Will SpaceX IPO by June 15, 2026?",
   "outcomes": {
-   "Yes": 0.075,
-   "No": 0.925
+   "Yes": 0.9985,
+   "No": 0.0015
   },
-  "volume": 484993.7399380002
+  "volume": 502177.9303489999
  },
  {
   "event": "SpaceX IPO closing market cap above ___ ?",
-  "market": "SpaceX IPO closing market cap above $1.2T?",
+  "market": "SpaceX IPO closing market cap above $4T?",
   "outcomes": {
-   "Yes": 0.9785,
-   "No": 0.0215
+   "Yes": 0.016,
+   "No": 0.984
   },
-  "volume": 469381.4422610003
+  "volume": 482688.4732739994
+ },
+ {
+  "event": "SpaceX IPO closing market cap above ___ ?",
+  "market": "SpaceX IPO closing market cap above $3.2T?",
+  "outcomes": {
+   "Yes": 0.049,
+   "No": 0.951
+  },
+  "volume": 390099.0723369999
  }
 ]
