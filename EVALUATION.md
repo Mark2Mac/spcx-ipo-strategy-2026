@@ -32,6 +32,13 @@ yfinance silently revises), so the snapshots ARE the evidence base.
 Checkpoints are committed to git and never edited. A missing checkpoint is itself a
 recorded outcome (process failure).
 
+**Automation**: `.github/workflows/checkpoint.yml` snapshots automatically every Monday
+and Thursday after the US close (runs on GitHub's servers — no local machine needed) and
+each automated commit keeps the schedule alive. Milestone checkpoints are fired manually:
+`gh workflow run scheduled-checkpoint -f label=day1` (or the Actions tab). Every snapshot
+includes the SPCX option chains with IV once listed, guarded by an `identity_suspect` flag
+(the ticker currently collides with a pre-2026 ETF — see LOGBOOK bug 8).
+
 ## 2. Evaluation metrics (fixed now)
 
 1. **Prediction scoring**: fill the Outcome column of [PREDICTIONS.md](PREDICTIONS.md);

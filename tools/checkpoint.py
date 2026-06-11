@@ -67,6 +67,39 @@ def main(label: str | None = None) -> None:
             bench[tkr] = {"error": str(e)[:80]}
     save_json("benchmarks", bench)
 
+    spcx: dict = {"listed": False}
+    try:
+        import yfinance as yf
+
+        t = yf.Ticker("SPCX")
+        hist = t.history(period="1mo", auto_adjust=True)
+        if not hist.empty:
+            spcx = {"listed": True,
+                    "ohlcv_tail": hist.tail(10).reset_index().astype(str).to_dict("records")}
+            chains, strikes = {}, []
+            for exp in (t.options or [])[:6]:
+                oc = t.option_chain(exp)
+                cols = ["strike", "lastPrice", "bid", "ask", "impliedVolatility",
+                        "volume", "openInterest"]
+                chains[exp] = {"calls": oc.calls[cols].to_dict("records"),
+                               "puts": oc.puts[cols].to_dict("records")}
+                strikes += list(oc.calls["strike"]) + list(oc.puts["strike"])
+            spcx["option_chains"] = chains
+            last = float(hist["Close"].iloc[-1])
+            flags = []
+            if float(hist["Volume"].tail(5).sum()) == 0:
+                flags.append("zero volume: placeholder/when-issued quote, not real trading")
+            if strikes:
+                med = sorted(strikes)[len(strikes) // 2]
+                if not 0.5 <= med / last <= 2.0:
+                    flags.append(f"strike/price mismatch (median strike {med} vs close {last}): "
+                                 "likely ticker collision with the pre-2026 SPCX ETF")
+            spcx["identity_suspect"] = bool(flags)
+            spcx["quality_flags"] = flags
+    except Exception as e:
+        spcx["note"] = f"not yet listed or fetch failed: {str(e)[:80]}"
+    save_json("spcx_market", spcx)
+
     cfg, spread = McConfig(), SpreadPosition()
     save_json("montecarlo", {"config": asdict(cfg), "spread": asdict(spread),
                              "report": report(simulate(cfg, spread))})

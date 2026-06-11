@@ -49,8 +49,19 @@ ex-ante probabilities added to PREDICTIONS (amendment, pre-debut); benchmarks
    the total was padded by the GOOGL drift assumption. Fix: decompose, and state that the
    crossover is prior-dependent until real IV exists.
 
-**Open items for the next session**: checkpoint `day1` on Jun 12 evening; real IV into
-`McConfig` once options list (~Jun 24).
+**Later the same day — autonomy + a ticker-collision catch**:
+- Checkpoints extended to capture SPCX OHLCV + full option chains (with IV) once listed.
+- **Bug 8, the best catch so far**: yfinance already answers for "SPCX" — with a $135
+  zero-volume placeholder quote AND option chains (strikes $21-32) belonging to the
+  pre-2026 SPCX ETF. Without a guard, the snapshots would have archived the WRONG
+  instrument as SpaceX. Fix: identity validation (volume + strike/price coherence) writes
+  `identity_suspect` + `quality_flags` into every snapshot instead of trusting the symbol.
+- GitHub Actions workflow added: automated snapshots Mon+Thu after US close, plus manual
+  `workflow_dispatch` with milestone labels. The historical record now collects itself;
+  the human only fires milestone labels and keeps the trade journal.
+
+**Open items for the next session**: checkpoint `day1` on Jun 12 evening (manual dispatch);
+real IV into `McConfig` once options list and `identity_suspect` turns false (~Jun 24).
 
 ---
 

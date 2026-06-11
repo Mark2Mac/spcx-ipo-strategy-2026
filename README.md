@@ -54,6 +54,11 @@ is the contract with the future; git history is the notary.
 | ⏳ | ~Oct 25 | Day 135: lockup fully open, first "true" price | checkpoint `day135` |
 | ⏳ | Dec 31 | Final scoring — every prediction gets its Outcome | checkpoint `final`, then `VERDICT.md` |
 
+<sub>The record keeps itself: a GitHub Action snapshots every data source twice a week
+(Polymarket odds, SPCX option chains with IV, prices, filings — the things that cannot be
+reconstructed later), with no local machine involved. Milestone labels are fired manually
+from the Actions tab.</sub>
+
 ## The numbers on June 10, 2026 (T-2 to the debut)
 
 | | |

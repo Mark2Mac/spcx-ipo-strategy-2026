@@ -1,0 +1,49 @@
+name: scheduled-checkpoint
+
+on:
+  schedule:
+    # Mon & Thu 21:30 UTC (after US close). Self-sustaining: each commit counts as repo
+    # activity, so GitHub never disables the schedule for inactivity.
+    - cron: "30 21 * * 1,4"
+  workflow_dispatch:
+    inputs:
+      label:
+        description: "Milestone label (e.g. day1, options-listed, earnings-T)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run checkpoint
+        run: |
+          LABEL="${{ github.event.inputs.label }}"
+          if [ -n "$LABEL" ]; then
+            python tools/checkpoint.py "$LABEL"
+          else
+            python tools/checkpoint.py auto
+          fi
+
+      - name: Commit and push snapshot
+        run: |
+          git config user.name "checkpoint-bot"
+          git config user.email "checkpoint-bot@users.noreply.github.com"
+          git add checkpoints/
+          git diff --cached --quiet && { echo "nothing new"; exit 0; }
+          git commit -m "checkpoint: automated snapshot $(date -u +%F)"
+          git pull --rebase origin main
+          git push
