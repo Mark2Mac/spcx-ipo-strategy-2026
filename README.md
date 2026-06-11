@@ -83,6 +83,15 @@ Full analysis in [EVALUATION.md](EVALUATION.md) §5, mitigation playbook in
 > up from ~5% pre-AI. The bet of this experiment: the reachable half is the half that
 > prevents ruin.
 
+**A note on currency.** Amounts are in EUR on purpose: this is deliberately a *European*
+retail experiment, and the frictions that come with that — EUR/USD exposure, the PRIIPs
+rules that block US ETFs, local taxation — are not glossed over but engineered around
+([docs/02](docs/02-strategies.md), [docs/05](docs/05-tax-italy.md)). The EURUSD rate is
+frozen in every checkpoint, the prediction hard-caps are expressed in percentages, and a
+US reader can mentally substitute dollars everywhere except those two documents. An
+experiment that pretended to be currency-less would be hiding exactly the constraints
+that make retail reality different from a textbook.
+
 ## The quant research, at a glance
 
 <div align="center">
