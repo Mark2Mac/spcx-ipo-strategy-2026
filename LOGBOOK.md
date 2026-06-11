@@ -60,6 +60,12 @@ ex-ante probabilities added to PREDICTIONS (amendment, pre-debut); benchmarks
   `workflow_dispatch` with milestone labels. The historical record now collects itself;
   the human only fires milestone labels and keeps the trade journal.
 
+**Disaster recovery**: private mirror `spcx-ipo-strategy-2026-mirror` created with full
+history + tags. Its `mirror-ops` default branch runs a daily pull-based sync (no secrets:
+it clones the public repo anonymously and force-updates its own `main` + tags). Degrades
+gracefully while the upstream is private; activates automatically upon publication. If the
+public repo is ever banned/deleted, the mirror holds the last good state of everything.
+
 **Open items for the next session**: checkpoint `day1` on Jun 12 evening (manual dispatch);
 real IV into `McConfig` once options list and `identity_suspect` turns false (~Jun 24).
 

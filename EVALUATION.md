@@ -39,6 +39,10 @@ each automated commit keeps the schedule alive. Milestone checkpoints are fired 
 includes the SPCX option chains with IV once listed, guarded by an `identity_suspect` flag
 (the ticker currently collides with a pre-2026 ETF — see LOGBOOK bug 8).
 
+**Disaster recovery**: a private mirror (`spcx-ipo-strategy-2026-mirror`) re-syncs `main`
+and tags daily from the public repo via its own scheduled workflow (pull-based, no shared
+secrets). If the public repo disappears, the evaluation runs from the mirror.
+
 ## 2. Evaluation metrics (fixed now)
 
 1. **Prediction scoring**: fill the Outcome column of [PREDICTIONS.md](PREDICTIONS.md);
