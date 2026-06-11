@@ -1,0 +1,96 @@
+{
+ "listed": true,
+ "ohlcv_tail": [
+  {
+   "Date": "2026-06-09 00:00:00-04:00",
+   "Open": "0.0",
+   "High": "135.0",
+   "Low": "135.0",
+   "Close": "135.0",
+   "Volume": "0",
+   "Dividends": "0.0",
+   "Stock Splits": "0.0"
+  }
+ ],
+ "option_chains": {
+  "2026-06-18": {
+   "calls": [
+    {
+     "strike": 25.0,
+     "lastPrice": 0.15,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 28.0,
+     "lastPrice": 0.04,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 29.0,
+     "lastPrice": 1.0,
+     "bid": 0.0,
+     "ask": 0.5,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": NaN,
+     "openInterest": 1
+    }
+   ],
+   "puts": [
+    {
+     "strike": 24.0,
+     "lastPrice": 2.2,
+     "bid": 0.0,
+     "ask": 4.0,
+     "impliedVolatility": 8.085942446289062,
+     "volume": NaN,
+     "openInterest": 1
+    }
+   ]
+  },
+  "2026-09-18": {
+   "calls": [
+    {
+     "strike": 21.0,
+     "lastPrice": 2.1,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 2,
+     "openInterest": 0
+    },
+    {
+     "strike": 28.0,
+     "lastPrice": 0.2,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 1,
+     "openInterest": 0
+    },
+    {
+     "strike": 32.0,
+     "lastPrice": 0.3,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 5,
+     "openInterest": 0
+    }
+   ],
+   "puts": []
+  }
+ },
+ "identity_suspect": true,
+ "quality_flags": [
+  "zero volume: placeholder/when-issued quote, not real trading",
+  "strike/price mismatch (median strike 28.0 vs close 135.0): likely ticker collision with the pre-2026 SPCX ETF"
+ ]
+}
