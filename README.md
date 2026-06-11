@@ -21,20 +21,38 @@ unusual insider lockup ever filed.
 
 ---
 
-## The idea, briefly
+## The story so far
 
-On June 12, 2026 SpaceX lists on Nasdaq: the biggest IPO ever. Analysts call it 55%
-overvalued (Morningstar), Reddit calls it "the theft of the century", Polymarket prices the
-pop at 60%, and insiders get to sell on an accelerated unlock schedule nobody has seen before.
+Two days before the largest IPO in human history, a retail investor with a small account
+asked an AI a simple question: *is this a once-in-a-generation opportunity, or the most
+elaborate exit liquidity event ever staged?*
 
-A small retail investor normally walks into this with FOMO and zero tooling. In this repo,
-a human and an AI built what an institutional desk would instead: multi-source research,
-valuation work, defined-risk strategies, a Monte Carlo validated against real return
-distributions, an event study on historical lockups, signal-quality engineering, tax
-analysis — and a **ledger of falsifiable predictions** written BEFORE the debut.
+The honest answer turned out to be neither — and getting there took an evening of actual
+work. Analysts call SpaceX 55% overvalued (Morningstar). Reddit calls it "the theft of the
+century". Polymarket prices the day-1 pop at 60%. And the S-1 contains a lockup clause
+nobody has seen before: insiders free to sell 20% of their stock **two days after the first
+earnings report**, instead of the usual six months.
 
-In a few months everything gets reopened and scored: [**PREDICTIONS.md**](PREDICTIONS.md)
-is the contract with the future — git history is the witness.
+A retail investor normally walks into this with FOMO and a brokerage app. This repo walks
+in with what an institutional desk would bring instead: multi-source research, valuation
+work, defined-risk strategies, a Monte Carlo validated against real return distributions,
+an event study on every comparable lockup since 2012, signal-quality engineering, tax math —
+and a **ledger of falsifiable predictions, written and frozen before the debut**.
+
+In a few months everything gets reopened and scored. [**PREDICTIONS.md**](PREDICTIONS.md)
+is the contract with the future; git history is the notary.
+
+## Follow along — the experiment in real time
+
+| | Date | Milestone | Evidence frozen |
+|---|---|---|---|
+| ✅ | Jun 10, 2026 | Research, plan, predictions — all pre-registered | `checkpoints/2026-06-10-baseline` |
+| ⏳ | Jun 12 | **The debut** — P1 and P2 resolve on day one | checkpoint `day1` |
+| ⏳ | ~Jun 24 | SPCX options list: the model's guessed IV meets reality | checkpoint `options-listed` |
+| ⏳ | Jul 6-17 | Spread entry window — or its written fallbacks | checkpoint `entry-window` |
+| ⏳ | ~Aug | First earnings + the insider unlock (the whole thesis) | checkpoints `earnings-T`, `unlock-T7` |
+| ⏳ | ~Oct 25 | Day 135: lockup fully open, first "true" price | checkpoint `day135` |
+| ⏳ | Dec 31 | Final scoring — every prediction gets its Outcome | checkpoint `final`, then `VERDICT.md` |
 
 ## The numbers on June 10, 2026 (T-2 to the debut)
 
@@ -126,6 +144,7 @@ src/risk/ · src/research/            metrics, Monte Carlo, lockup event study,
                                      fat-tail validation, signal-quality framework
 PREDICTIONS.md                       the falsifiable ledger — the heart of the experiment
 EVALUATION.md                        pre-registered evaluation protocol + honest limits
+LOGBOOK.md                           append-only build chronology: decisions and bugs, dated
 checkpoints/                         frozen data snapshots at every milestone (tools/checkpoint.py)
 ```
 
@@ -150,6 +169,21 @@ hypothesis after building it (see `docs/07`): AI compresses the *analysis* gap t
 zero; the *access* gap — allocations, OTC, borrow, pre-IPO secondaries — is still plumbing
 that no model can route around. The honest answer lands in the Outcome column of
 [PREDICTIONS.md](PREDICTIONS.md).
+
+## A note to whoever reopens this repo months from now
+
+Maybe it's the author. Maybe it's another AI, asked to grade the first one. Either way:
+
+1. Don't trust your memory of how this played out — load `checkpoints/` and compare frozen
+   snapshots. Live data sources revise themselves; the snapshots don't.
+2. The rules of the game are in [EVALUATION.md](EVALUATION.md) and they were written before
+   the events. Changing the metrics now is cheating; say so if you catch yourself doing it.
+3. [LOGBOOK.md](LOGBOOK.md) records what was decided when, and which bugs the process caught.
+   The mistakes are part of the dataset — that was the point.
+4. Whatever the P&L says, the question to answer is the one above: did the analysis hold up,
+   were the probabilities calibrated, did the discipline survive contact with the market?
+
+Write `VERDICT.md`. Be harsher than feels polite.
 
 ---
 

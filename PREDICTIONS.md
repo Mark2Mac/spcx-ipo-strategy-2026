@@ -5,22 +5,26 @@ The *Outcome* column stays empty until each verification date. Predictions are n
 
 ## Market predictions
 
-| # | Prediction | Source/rationale | Verify on | Criterion | Outcome |
-|---|---|---|---|---|---|
-| P1 | SPCX closes day-1 above $1T market cap | Polymarket 99% on Jun 10 | Jun 12, 2026 | close cap > $1T | |
-| P2 | SPCX closes day-1 above $2T | Polymarket 60.5% on Jun 10 | Jun 12, 2026 | close cap > $2T | |
-| P3 | In the first 4 weeks the stock does NOT close below $135 (index-inclusion support + 4x demand) | own thesis, docs/01 §6 | Jul 10, 2026 | min close ≥ $135 | |
-| P4 | The lockup-driven drop starts BEFORE the insider unlock (anticipation), not after | event study UBER/RIVN/META/SNAP: -37 pts avg T-30→T0 | T+10 from first earnings | pre-unlock drawdown > post-unlock drawdown | |
-| P5 | At T+30 from first earnings SPCX trades below its pre-earnings price | lockup thesis + xAI burn ($2.5B/q) | T+30 | close(T+30) < close(T-1) | |
-| P6 | Through end-2026 SPCX never touches Morningstar fair value ($780B ≈ -55%) — the "theft of the century" crash does NOT materialize within the year | markets stay irrational longer | Dec 31, 2026 | min 2026 cap > $780B | |
+> **Amendment 2026-06-11 (pre-debut, T-1)**: explicit ex-ante probabilities added so the
+> Brier score in EVALUATION.md §2 is computable. Set before any market outcome was known;
+> no other field touched. Git diff is the proof.
+
+| # | Prediction | Source/rationale | P(ex-ante) | Verify on | Criterion | Outcome |
+|---|---|---|---|---|---|---|
+| P1 | SPCX closes day-1 above $1T market cap | Polymarket 99% on Jun 10 | **0.97** | Jun 12, 2026 | close cap > $1T | |
+| P2 | SPCX closes day-1 above $2T | Polymarket 60.5% on Jun 10 | **0.60** | Jun 12, 2026 | close cap > $2T | |
+| P3 | In the first 4 weeks the stock does NOT close below $135 (index-inclusion support + 4x demand) | own thesis, docs/01 §6 | **0.70** | Jul 10, 2026 | min close ≥ $135 | |
+| P4 | The lockup-driven drop starts BEFORE the insider unlock (anticipation), not after | event study UBER/RIVN/META/SNAP: -37 pts avg T-30→T0 | **0.65** | T+10 from first earnings | pre-unlock drawdown > post-unlock drawdown | |
+| P5 | At T+30 from first earnings SPCX trades below its pre-earnings price | lockup thesis + xAI burn ($2.5B/q) | **0.55** | T+30 | close(T+30) < close(T-1) | |
+| P6 | Through end-2026 SPCX never touches Morningstar fair value ($780B ≈ -55%) — the "theft of the century" crash does NOT materialize within the year | markets stay irrational longer | **0.80** | Dec 31, 2026 | min 2026 cap > $780B | |
 
 ## Plan predictions (reference implementation)
 
-| # | Prediction | Verify on | Criterion | Outcome |
-|---|---|---|---|---|
-| K1 | Plan P&L lands inside the structural hard-cap range (≈ -21% to +23% of capital) | Dec 31, 2026 | realized P&L in range | |
-| K2 | The worst loss, if any, comes from the equity tranche (beta), not the spread | Dec 31, 2026 | P&L attribution | |
-| K3 | EV ≈ 0 declared ex-ante: the final P&L is explained by process, not directional luck | Dec 31, 2026 | journal retrospective | |
+| # | Prediction | P(ex-ante) | Verify on | Criterion | Outcome |
+|---|---|---|---|---|---|
+| K1 | Plan P&L lands inside the structural hard-cap range (≈ -21% to +23% of capital) | **0.97** | Dec 31, 2026 | realized P&L in range | |
+| K2 | The worst loss, if any, comes from the equity tranche (beta), not the spread | **0.75** | Dec 31, 2026 | P&L attribution | |
+| K3 | EV ≈ 0 declared ex-ante: the final P&L is explained by process, not directional luck | **0.60** | Dec 31, 2026 | journal retrospective | |
 
 ## The experiment's real question
 

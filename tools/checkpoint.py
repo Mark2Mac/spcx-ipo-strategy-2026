@@ -58,6 +58,15 @@ def main(label: str | None = None) -> None:
 
     save_json("risk_free", {"rate_3m_tbill": risk_free_rate()})
 
+    bench = {}
+    for tkr in ("VWCE.DE", "EURUSD=X"):
+        try:
+            px = get_universe([tkr], period="1mo")[0][tkr].dropna()
+            bench[tkr] = {"last_close": float(px.iloc[-1]), "date": str(px.index[-1].date())}
+        except Exception as e:
+            bench[tkr] = {"error": str(e)[:80]}
+    save_json("benchmarks", bench)
+
     cfg, spread = McConfig(), SpreadPosition()
     save_json("montecarlo", {"config": asdict(cfg), "spread": asdict(spread),
                              "report": report(simulate(cfg, spread))})

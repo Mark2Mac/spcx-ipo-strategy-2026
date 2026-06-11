@@ -20,6 +20,7 @@ yfinance silently revises), so the snapshots ARE the evidence base.
 | When | Label | Why |
 |---|---|---|
 | 2026-06-10 | `baseline` | T-2 state: everything the predictions were based on |
+| 2026-06-11 | `T-1-pricing` | final pre-debut odds + benchmark closes (VWCE/EURUSD) |
 | 2026-06-12 eve | `day1` | debut close, Polymarket resolution of P1/P2 |
 | ~2026-06-24 | `options-listed` | first real IV — the MC's guessed parameters meet reality |
 | Jul 6-17 (entry or cancel) | `entry-window` | spread executed or fallback triggered: record which |
@@ -34,13 +35,13 @@ recorded outcome (process failure).
 ## 2. Evaluation metrics (fixed now)
 
 1. **Prediction scoring**: fill the Outcome column of [PREDICTIONS.md](PREDICTIONS.md);
-   compute the Brier score on P1-P6 using the probabilities implied by their rationale
-   (P1: 0.99, P2: 0.605, P3-P6: stated as own-thesis ⇒ score at 0.60 unless the ledger
-   says otherwise). Honest caveat: n=9 predictions has near-zero statistical power —
-   report the score, do not oversell it.
+   compute the Brier score on P1-P6 and K1-K3 using the **P(ex-ante) column** (fixed
+   2026-06-11, pre-debut, by dated amendment). Honest caveat: n=9 predictions has
+   near-zero statistical power — report the score, do not oversell it.
 2. **P&L attribution**: realized plan P&L vs the two trivial benchmarks frozen in the
-   baseline checkpoint (100% cash at the checkpointed 3M T-bill rate; 100% world equity
-   ETF bought Jun 10). Attribution by tranche (equity / spread / cash) per prediction K2.
+   checkpoints (100% cash at the checkpointed 3M T-bill rate; 100% world equity ETF —
+   VWCE.DE close and EURUSD are in each checkpoint's `benchmarks.json` from
+   `T-1-pricing` onward). Attribution by tranche (equity / spread / cash) per K2.
 3. **Process compliance**: journal audit ([docs/06](docs/06-trade-journal.md)) — every
    order preceded by an entry? Any rule of [docs/04](docs/04-risk-management.md) violated?
    Score = violations count, weighted by severity. This metric dominates: K3 says the
@@ -56,7 +57,10 @@ recorded outcome (process failure).
 ## 3. Instructions to the future evaluator (human or AI)
 
 1. Clone the repo at HEAD; do NOT use live data to reconstruct the past — load
-   `checkpoints/2026-06-10-baseline/` and compare with later checkpoints.
+   `checkpoints/2026-06-10-baseline/` and compare with later checkpoints. Read
+   [LOGBOOK.md](LOGBOOK.md) for the decision-and-bug chronology; the rendered state of
+   every chart/notebook at each date is recoverable from git history (`docs/html/`,
+   `assets/` are committed at every milestone).
 2. Fill PREDICTIONS.md Outcome column with citations (checkpoint file + field).
 3. Run `tools/build_master.py` on current data; diff conclusions vs the frozen notebooks
    (`docs/html/` archives the rendered versions of today).
