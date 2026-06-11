@@ -47,21 +47,61 @@ is the contract with the future — git history is the witness.
 | Polymarket (real money) | 99% day-1 close above $1T · 60.5% above $2T |
 | The plan | 60% quality proxy (GOOGL) · 20% defined-risk put spread on the lockup · 20% cash · max loss hard-capped ~20% |
 
+## Retail vs enterprise, with no sugarcoating
+
+How much of each institutional layer can a retail investor + AI actually reach today?
+Full analysis in [EVALUATION.md](EVALUATION.md) §5, mitigation playbook in
+[docs/08-closing-the-gap.md](docs/08-closing-the-gap.md).
+
+| Layer | Reachable today | | How |
+|---|---|---|---|
+| Process discipline | `▰▰▰▰▰▰▰▰▰▱` | ~90% | pre-registration, journals, checkpoints — pure will, €0 |
+| Models | `▰▰▰▰▰▰▰▱▱▱` | ~50-70% | open-source MC/GARCH, free academic factors, validated fat tails |
+| Data | `▰▰▰▰▰▱▱▱▱▱` | ~40-60% | EDGAR, Polymarket, FRED free; intraday/IV for <$300; self-archived checkpoints |
+| Execution | `▰▰▱▱▱▱▱▱▱▱` | ~20% | refuse the speed game: limit orders, weeks-long horizons, smallness as edge |
+| Access | `▰▱▱▱▱▱▱▱▱▱` | ~10-20% | securities lending, defined-risk option replication — the rest is bought |
+
+> Summed up where it matters for position trading: **roughly half** of a desk's capability,
+> up from ~5% pre-AI. The bet of this experiment: the reachable half is the half that
+> prevents ruin.
+
 ## The quant research, at a glance
 
 <div align="center">
 <table>
 <tr>
-<td align="center"><img src="assets/chart_mc_pnl.png" width="420"/><br><sub><b>Plan P&L distribution</b> — 10k simulations, VaR/ES annotated: right tail capped by the spread, left tail is all equity beta</sub></td>
-<td align="center"><img src="assets/chart_signal_ranking.png" width="420"/><br><sub><b>Signal quality rubric</b> — skin-in-the-game beats talk: trade on green, treat blue as context, fade red</sub></td>
+<td align="center"><img src="assets/chart_mc_pnl.png" width="420"/><br><sub><b>Plan P&L distribution</b> — 10k simulations; red mass = losing region; the left tail is all equity beta, the spread is hard-capped</sub></td>
+<td align="center"><img src="assets/chart_payoff.png" width="420"/><br><sub><b>Spread payoff vs simulated outcomes</b> — profit/loss zones shaded over the density of final SPCX prices</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/chart_corr.png" width="420"/><br><sub><b>Correlations</b> — 2-year structure vs current regime (EWMA λ=0.94): how much of the hedge is illusion</sub></td>
-<td align="center"><img src="assets/chart_attention.png" width="420"/><br><sub><b>Attention engineering</b> — cleaned Wikipedia/HN z-scores vs IPO milestones; the lead-lag test shows attention follows price</sub></td>
+<td align="center"><img src="assets/chart_sensitivity.png" width="420"/><br><sub><b>Sensitivity, decomposed</b> — judge the trade on the spread-only line: the total is padded by the GOOGL drift assumption</sub></td>
+<td align="center"><img src="assets/chart_signal_ranking.png" width="420"/><br><sub><b>Signal quality rubric</b> — what people DO with money outranks what they SAY; thresholds mark context vs trade-on-it</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/chart_sensitivity.png" width="420"/><br><sub><b>Sensitivity</b> — the plan lives or dies on the August event jump: positive EV needs ≤ -5%</sub></td>
-<td align="center"><img src="assets/chart_universe.png" width="420"/><br><sub><b>Universe</b> — portfolio, picks-and-shovels and space sector: the best risk-adjusted shovel is VIRT, not HOOD</sub></td>
+<td align="center"><img src="assets/chart_corr.png" width="420"/><br><sub><b>Correlations</b> — 2-year structure vs current regime; the boxed cell is the "Musk beta" (GOOGL×TSLA)</sub></td>
+<td align="center"><img src="assets/chart_attention.png" width="420"/><br><sub><b>Attention timeline</b> — cleaned Wikipedia/HN z-scores spike ON the milestones: they confirm, they don't anticipate</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="assets/chart_universe.png" width="420"/><br><sub><b>Universe</b> — direct labels with 12-month change; the best risk-adjusted shovel is VIRT, not HOOD</sub></td>
+<td align="center"><img src="assets/chart_rolling_corr.png" width="420"/><br><sub><b>Diversification dead zone</b> — how often the defensive tranche stops diversifying exactly when needed</sub></td>
+</tr>
+</table>
+</div>
+
+## Data quality engineering — garbage in, garbage out, audited
+
+A dedicated notebook (`05_data_quality`) audits every input: coverage scorecards,
+issues-vs-warnings triage, and the pipeline bugs the gates caught — **shown, not hidden**.
+
+<div align="center">
+<table>
+<tr>
+<td align="center"><img src="assets/chart_dq_scorecard.png" width="420"/><br><sub><b>Coverage scorecard</b> — per-ticker business-day coverage; blocking issues vs human-review warnings</sub></td>
+<td align="center"><img src="assets/chart_dq_jumps.png" width="420"/><br><sub><b>Flagged outliers, inspected</b> — every >50% move survived review (real events): warn, never auto-drop</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="assets/chart_dq_hn_truncation.png" width="420"/><br><sub><b>The pagination bug, visualized twice</b> — naive fixes lost history silently; only time-windowed pagination covers the request</sub></td>
+<td align="center"><img src="assets/chart_cleaning.png" width="420"/><br><sub><b>Winsorization, accounted for</b> — every clipped point marked and counted; for prices the spikes are information, for attention they are noise</sub></td>
 </tr>
 </table>
 </div>
@@ -75,7 +115,8 @@ buy the news: the exit rule was rewritten accordingly (close within T+5 of the u
 
 ```
 notebooks/00_master_report.ipynb     ← OPEN THIS: runs everything, outputs embedded
-notebooks/01..04                     data pipeline · correlations · Monte Carlo · signal quality
+notebooks/01..05                     data pipeline · correlations · Monte Carlo · signal quality ·
+                                     data-quality audit
 docs/01..08                          thesis · strategies with full math · timeline ·
                                      risk management · tax case study · trade journal ·
                                      capital tiers (€1k to €10M+) · closing the enterprise gap
@@ -92,7 +133,7 @@ checkpoints/                         frozen data snapshots at every milestone (t
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python tools/build_master.py          # rebuilds + executes all 5 notebooks on fresh data
+.venv/bin/python tools/build_master.py          # rebuilds + executes all 6 notebooks on fresh data
 ./tools/run_tests.sh                            # full smoke-test suite (12 modules, must print 12/12 PASS)
 .venv/bin/python tools/checkpoint.py <label>    # freeze a dated evidence snapshot (see EVALUATION.md)
 ```

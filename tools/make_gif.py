@@ -37,15 +37,22 @@ def main() -> None:
     days = np.arange(paths.shape[1])
     p5, p50, p95 = (np.percentile(paths, q, axis=0) for q in (5, 50, 95))
 
-    fig, ax = plt.subplots(figsize=(9, 5))
+    be = 140 - 2.20
+    pct_below = (paths[:, -1] < be).mean()
+    fig, ax = plt.subplots(figsize=(9, 5.2))
     ax.set_xlim(0, days[-1])
     ax.set_ylim(paths.min() * 0.95, np.percentile(paths, 99.5))
     ax.axvline(cfg.event_day, color=PALETTE[1], lw=1, ls="--")
     ax.annotate("earnings +\ninsider unlock", (cfg.event_day, ax.get_ylim()[1] * 0.93),
                 fontsize=9, ha="center", color=PALETTE[1])
-    ax.axhline(140 - 2.20, color="gray", lw=0.8, ls=":")
-    ax.annotate("spread breakeven 137.8", (2, 138.6), fontsize=8, color="gray")
-    ax.set_title("SPCX — 2,000 Monte Carlo paths (Student-t + event jump), 70 sessions")
+    ax.axhspan(ax.get_ylim()[0], be, color="#7A9E7E", alpha=0.07)
+    ax.axhline(be, color="gray", lw=0.8, ls=":")
+    ax.annotate(f"spread breakeven {be:.1f} — {pct_below:.0%} of paths end below it",
+                (2, be + 1.5), fontsize=8.5, color="#3d5c40", fontweight="bold")
+    ax.text(0, 1.10, f"{pct_below:.0%} of 2,000 simulated paths end below the spread breakeven",
+            transform=ax.transAxes, fontsize=12.5, fontweight="bold", va="bottom")
+    ax.text(0, 1.04, "SPCX Monte Carlo — Student-t fat tails + jump on the August event, 70 sessions, 5th-95th percentile band",
+            transform=ax.transAxes, fontsize=9, color="#666666", va="bottom")
     ax.set_xlabel("sessions from mid-July"); ax.set_ylabel("$")
 
     lines = [ax.plot([], [], lw=0.5, color=PALETTE[0], alpha=0.25)[0] for _ in show]

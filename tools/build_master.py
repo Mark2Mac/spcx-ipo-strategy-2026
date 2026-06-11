@@ -70,8 +70,10 @@ fig, ax = plt.subplots(figsize=(11, 5))
 for c in norm.columns:
     b = c.startswith("^")
     ax.plot(norm.index, norm[c], lw=0.9 if b else 1.4, color="#AAAAAA" if b else None, alpha=0.7 if b else 1)
-direct_label_lines(ax, norm)
-ax.set_title("Universe, 12 months, base 100 — benchmarks in gray")
+fmt = {{c: f"{{c}} {{norm[c].dropna().iloc[-1]-100:+.0f}}%" for c in norm.columns}}
+direct_label_lines(ax, norm, fmt=fmt)
+headline(ax, f"{{max(norm.columns, key=lambda c: norm[c].dropna().iloc[-1])}} led the universe over the trailing 12 months",
+         "rebased to 100 · benchmarks in gray · labels show the 12-month change")
 plt.show()
 qa[["rows", "first", "last", "missing_bdays", "warnings"]]"""),
     ("md", "## 3. SEC EDGAR + Polymarket, live\n\nFrom August, `form4_watch()` is the insider-sales monitor (public by law within 2 business days)."),
@@ -106,7 +108,7 @@ plt.show()"""),
 rets = log_returns(prices.dropna())
 fig, axes = plt.subplots(1, 2, figsize=(15, 6.5))
 corr_heatmap(axes[0], corr_matrix(rets), "Pearson 2 years")
-corr_heatmap(axes[1], ewma_corr(rets), "EWMA λ=0.94 (last ~30d)")
+corr_heatmap(axes[1], ewma_corr(rets), "EWMA λ=0.94 (last ~30d)", highlight=("GOOGL", "TSLA"))
 fig.tight_layout(); plt.show()
 summary_table(prices.dropna())"""),
     ("md", "## 6. VERTICAL VALIDATION — are the fat tails in the data?\n\nThe MC assumes Student-t with dof=4. Here we fit the t on real returns of the volatility proxy (TSLA: same key-man risk as SPCX) and compare with the Normal. If the Normal won, the MC would need rework."),
@@ -152,12 +154,16 @@ rep = report(res)
 assert res["pnl_spread_eur"].min() >= -(spread.debit*100*spread.contracts/1.08) - 1e-6, "HARD CAP VIOLATED"
 fig, ax = plt.subplots(figsize=(11, 5))
 pnl_distribution(ax, res["pnl_total_eur"], rep["VaR95"], rep["ES95"],
-                 f"P&L 70d, 10k paths | P(loss)={rep['p_loss']:.0%} | event jump {cfg.jump_mean:+.0%}")
+                 f"P(loss) = {rep['p_loss']:.0%}, and the left tail is all equity beta — the spread is hard-capped",
+                 f"10,000 paths · 70 trading days · Student-t dof=4 · event jump {cfg.jump_mean:+.0%} ± {cfg.jump_std:.0%}")
 plt.show()
 rows = []
 for jm in [-0.20, -0.15, -0.10, -0.08, -0.05, 0.0, 0.05]:
-    r2 = report(simulate(replace(cfg, jump_mean=jm, seed=11), spread))
-    rows.append({"jump": f"{jm:+.0%}", "mean P&L": round(r2["mean"]), "P(loss)": f"{r2['p_loss']:.0%}", "ES95": round(r2["ES95"])})
+    res2 = simulate(replace(cfg, jump_mean=jm, seed=11), spread)
+    r2 = report(res2)
+    rows.append({"jump": f"{jm:+.0%}", "total mean": round(r2["mean"]),
+                 "spread-only mean": round(float(res2["pnl_spread_eur"].mean())),
+                 "P(loss)": f"{r2['p_loss']:.0%}", "ES95": round(r2["ES95"])})
 pd.DataFrame(rows).set_index("jump")"""),
     ("md", """## 9. Master report verdict
 
@@ -165,7 +171,7 @@ pd.DataFrame(rows).set_index("jump")"""),
 2. **Signals graded**: trade only on score ≥ 7 sources (prices/IV, Form 4, Polymarket, EDGAR); attention data is context, Reddit is contrarian-only (section 4).
 3. **Model validated**: empirical fat tails (kurtosis ~4, fitted t-dof ~5) justify the Student-t MC (section 6).
 4. **Thesis refined by history**: lockup drops are anticipation-driven (-37 pts avg T-30->T0 across 4 precedents); exit by T+5 after the unlock (section 7).
-5. **Plan risk**: the spread hard cap holds on every path; the left tail is entirely equity beta (section 8).
+5. **Plan risk**: the spread hard cap holds on every path; the left tail is entirely equity beta. Judge the trade on the spread-only sensitivity line — the total is padded by the GOOGL drift assumption (section 8).
 6. **Post-IPO updates** (~Jun 22): real `spcx_s0`, `spcx_vol` from listed-option IV, real `debit`; from August, monitor `form4_watch()`.
 
 Capital-tier playbooks (from thousands to millions) live in `docs/07-capital-tiers.md`."""),
