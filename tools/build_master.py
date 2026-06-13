@@ -151,7 +151,7 @@ from dataclasses import replace
 cfg, spread = McConfig(), SpreadPosition()
 res = simulate(cfg, spread)
 rep = report(res)
-assert res["pnl_spread_eur"].min() >= -(spread.debit*100*spread.contracts/1.08) - 1e-6, "HARD CAP VIOLATED"
+assert res["pnl_spread_eur"].min() >= -(spread.debit*100*spread.contracts/cfg.fx_eurusd) - 1e-6, "HARD CAP VIOLATED"
 fig, ax = plt.subplots(figsize=(11, 5))
 pnl_distribution(ax, res["pnl_total_eur"], rep["VaR95"], rep["ES95"],
                  f"P(loss) = {rep['p_loss']:.0%}, and the left tail is all equity beta — the spread is hard-capped",

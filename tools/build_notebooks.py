@@ -110,7 +110,7 @@ nb([
     ("code", """from src.risk.montecarlo import McConfig, SpreadPosition, simulate, report
 cfg, spread = McConfig(), SpreadPosition()
 res = simulate(cfg, spread)
-max_loss_spread = spread.debit * 100 * spread.contracts / 1.08
+max_loss_spread = spread.debit * 100 * spread.contracts / cfg.fx_eurusd
 assert res["pnl_spread_eur"].min() >= -max_loss_spread - 1e-6, "HARD CAP VIOLATED"
 rep = report(res)
 pd.Series(rep).round(1)"""),
@@ -122,7 +122,7 @@ pnl_distribution(ax, res["pnl_total_eur"], rep["VaR95"], rep["ES95"],
 fig.savefig("../assets/chart_mc_pnl.png", bbox_inches="tight"); plt.show()"""),
     ("md", "## Spread payoff at expiry + where the simulated paths land"),
     ("code", """grid = np.linspace(100, 200, 300)
-payoff_eur = spread.payoff(grid) / 1.08
+payoff_eur = spread.payoff(grid) / cfg.fx_eurusd
 fig, ax = plt.subplots(figsize=(11, 4.5))
 ax2 = ax.twinx()
 ax2.hist(res["spcx_final"], bins=80, color=PALETTE[0], alpha=0.25)
