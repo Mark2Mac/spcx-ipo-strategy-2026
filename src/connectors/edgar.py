@@ -3,7 +3,8 @@ from __future__ import annotations
 
 import requests
 
-UA = {"User-Agent": "spcx-ipo-strategy research Mark2Mac@users.noreply.github.com"}
+# SEC fair-access requires a real, deliverable contact; it 403s @users.noreply.github.com.
+UA = {"User-Agent": "spcx-ipo-strategy research negation_annuity762@simplelogin.com"}
 SPACEX_CIK = "0001181412"
 
 

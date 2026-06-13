@@ -8,7 +8,7 @@ from pathlib import Path
 import pandas as pd
 import requests
 
-UA = {"User-Agent": "spcx-ipo-strategy research Mark2Mac@users.noreply.github.com"}
+UA = {"User-Agent": "spcx-ipo-strategy research negation_annuity762@simplelogin.com"}
 API = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user"
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 CACHE_MAX_AGE_H = 12
