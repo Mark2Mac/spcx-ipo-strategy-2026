@@ -51,11 +51,14 @@ def daily_attention(query: str, days: int = 90) -> pd.DataFrame:
         return pd.DataFrame(columns=["stories", "points", "comments"])
     g = df.groupby("date").agg(stories=("title", "count"), points=("points", "sum"),
                                comments=("comments", "sum"))
-    idx = pd.date_range(pd.Timestamp.now().normalize() - pd.Timedelta(days=days),
-                        g.index.max(), freq="D")
-    cov = len(g) and (g.index.min() - idx[0]).days
+    start = pd.Timestamp.now().normalize() - pd.Timedelta(days=days)
+    # clamp end so a window whose data ends before `start` can't make date_range empty
+    # (which used to crash on idx[0]). reindex still zero-fills any interior gaps.
+    end = max(g.index.max(), start)
+    idx = pd.date_range(start, end, freq="D")
+    cov = (g.index.min() - start).days
     out = g.reindex(idx, fill_value=0)
-    out.attrs["coverage_gap_days"] = int(cov or 0)
+    out.attrs["coverage_gap_days"] = int(cov)
     return out
 
 

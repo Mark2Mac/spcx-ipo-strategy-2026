@@ -18,6 +18,10 @@ def _cache_path(ticker: str, period: str) -> Path:
     return DATA_DIR / f"ohlcv_{safe}_{period}.parquet"
 
 
+def _source_path(cache: Path) -> Path:
+    return cache.with_suffix(".source")
+
+
 def _from_yfinance(ticker: str, period: str) -> pd.DataFrame:
     import yfinance as yf
 
@@ -56,13 +60,18 @@ def quality_report(df: pd.DataFrame, ticker: str) -> dict:
         warnings.append(f"jump >50% on {jumps.idxmax().date()} (verify: real move or bad print)")
     return {"ticker": ticker, "rows": len(df), "first": str(df.index.min().date()),
             "last": str(df.index.max().date()), "missing_bdays": missing,
+            "source": df.attrs.get("source", "unknown"),
             "issues": issues, "warnings": warnings}
 
 
 def get_ohlcv(ticker: str, period: str = "2y", force: bool = False) -> pd.DataFrame:
     cache = _cache_path(ticker, period)
+    src_file = _source_path(cache)
     if not force and cache.exists() and (time.time() - cache.stat().st_mtime) < CACHE_MAX_AGE_H * 3600:
-        return pd.read_parquet(cache)
+        df = pd.read_parquet(cache)
+        # parquet drops .attrs; restore source from sidecar so provenance survives a cache hit.
+        df.attrs["source"] = src_file.read_text().strip() if src_file.exists() else "unknown"
+        return df
     try:
         df = _from_yfinance(ticker, period)
         df.attrs["source"] = "yfinance"
@@ -70,13 +79,15 @@ def get_ohlcv(ticker: str, period: str = "2y", force: bool = False) -> pd.DataFr
         df = _from_stooq(ticker)
         df.attrs["source"] = "stooq"
     df.to_parquet(cache)
+    src_file.write_text(df.attrs["source"])
     return df
 
 
-def get_universe(tickers: list[str], period: str = "2y") -> tuple[pd.DataFrame, list[dict]]:
+def get_universe(tickers: list[str], period: str = "2y",
+                 force: bool = False) -> tuple[pd.DataFrame, list[dict]]:
     closes, reports = {}, []
     for t in tickers:
-        df = get_ohlcv(t, period)
+        df = get_ohlcv(t, period, force=force)
         closes[t] = df["Close"]
         reports.append(quality_report(df, t))
     return pd.DataFrame(closes).sort_index(), reports

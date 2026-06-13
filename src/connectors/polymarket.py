@@ -15,13 +15,17 @@ def search_markets(query: str, limit: int = 12) -> list[dict]:
     for ev in r.json().get("events", []):
         for m in ev.get("markets", []):
             try:
-                prices = json.loads(m.get("outcomePrices") or "[]")
+                prices = [float(p) for p in json.loads(m.get("outcomePrices") or "[]")]
                 outcomes = json.loads(m.get("outcomes") or "[]")
-            except json.JSONDecodeError:
+            except (json.JSONDecodeError, ValueError, TypeError):
                 prices, outcomes = [], []
+            try:
+                volume = float(m.get("volume") or 0)
+            except (ValueError, TypeError):
+                volume = 0.0
             out.append({"event": ev["title"], "market": m.get("question"),
-                        "outcomes": dict(zip(outcomes, [float(p) for p in prices])),
-                        "volume": float(m.get("volume") or 0)})
+                        "outcomes": dict(zip(outcomes, prices)),
+                        "volume": volume})
     out.sort(key=lambda x: -x["volume"])
     return out[:limit]
 

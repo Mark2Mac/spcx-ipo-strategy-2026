@@ -36,6 +36,7 @@ class McConfig:
     googl_drift: float = 0.06
     rho: float = 0.45
     t_dof: int = 4
+    fx_eurusd: float = 1.16  # USD->EUR for spread P&L; override with live rate at call site
     seed: int = 7
 
 
@@ -59,10 +60,11 @@ def simulate(cfg: McConfig, spread: SpreadPosition) -> dict:
     pnl_spread_usd = spread.payoff(spcx)
     pnl_spread_usd = np.maximum(pnl_spread_usd, -spread.debit * 100 * spread.contracts)
     pnl_googl_eur = cfg.googl_value_eur * (googl - 1)
-    pnl_total_eur = pnl_googl_eur + pnl_spread_usd / 1.08
+    pnl_spread_eur = pnl_spread_usd / cfg.fx_eurusd
+    pnl_total_eur = pnl_googl_eur + pnl_spread_eur
 
     return {"spcx_final": spcx, "pnl_googl_eur": pnl_googl_eur,
-            "pnl_spread_eur": pnl_spread_usd / 1.08, "pnl_total_eur": pnl_total_eur}
+            "pnl_spread_eur": pnl_spread_eur, "pnl_total_eur": pnl_total_eur}
 
 
 def report(res: dict, level: float = 0.95) -> dict:
@@ -79,9 +81,10 @@ def report(res: dict, level: float = 0.95) -> dict:
 
 
 if __name__ == "__main__":
-    res = simulate(McConfig(), SpreadPosition())
+    cfg = McConfig()
+    res = simulate(cfg, SpreadPosition())
     rep = report(res)
-    max_spread_loss = 2.20 * 100 / 1.08
+    max_spread_loss = 2.20 * 100 / cfg.fx_eurusd
     assert res["pnl_spread_eur"].min() >= -max_spread_loss - 1e-6, "hard cap violated!"
     assert rep["ES95"] >= rep["VaR95"], "ES < VaR: bug"
     print("TEST OK — spread hard cap holds across 10k paths")

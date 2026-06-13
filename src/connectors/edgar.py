@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import requests
 
-UA = {"User-Agent": "spcx-ipo-strategy research contact@example.com"}
+UA = {"User-Agent": "spcx-ipo-strategy research Mark2Mac@users.noreply.github.com"}
 SPACEX_CIK = "0001181412"
 
 

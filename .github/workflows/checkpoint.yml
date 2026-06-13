@@ -15,6 +15,12 @@ on:
 permissions:
   contents: write
 
+# Serialize runs: a schedule firing while a manual dispatch is mid-push would race two
+# commits onto main and break the rebase/push. Never cancel an in-flight checkpoint.
+concurrency:
+  group: scheduled-checkpoint
+  cancel-in-progress: false
+
 jobs:
   checkpoint:
     runs-on: ubuntu-latest
@@ -45,5 +51,10 @@ jobs:
           git add checkpoints/
           git diff --cached --quiet && { echo "nothing new"; exit 0; }
           git commit -m "checkpoint: automated snapshot $(date -u +%F)"
-          git pull --rebase origin main
-          git push
+          # INDEX.md is appended on both sides; -X union avoids a line-level rebase conflict.
+          # Retry to absorb a push that loses the race against a concurrent run.
+          for attempt in 1 2 3; do
+            git pull --rebase -X union origin main && git push && exit 0
+            echo "push attempt $attempt failed, retrying"; sleep 5
+          done
+          echo "push failed after retries"; exit 1

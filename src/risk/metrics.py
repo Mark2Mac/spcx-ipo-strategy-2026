@@ -41,7 +41,7 @@ def annualized_vol(returns: pd.Series) -> float:
 
 def beta(asset: pd.Series, market: pd.Series) -> float:
     a, m = asset.align(market, join="inner")
-    return float(np.cov(a, m)[0, 1] / np.var(m))
+    return float(np.cov(a, m)[0, 1] / np.var(m, ddof=1))
 
 
 def summary_table(prices: pd.DataFrame, market_col: str = "^GSPC") -> pd.DataFrame:
