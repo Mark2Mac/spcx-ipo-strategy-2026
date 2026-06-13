@@ -6,7 +6,7 @@ import json
 import subprocess
 import sys
 from dataclasses import asdict
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,9 +27,17 @@ def main(label: str | None = None) -> None:
     from src.config import UNIVERSE
     from src.risk.montecarlo import McConfig, SpreadPosition, report, simulate
 
-    tag = f"{date.today():%Y-%m-%d}" + (f"-{label}" if label else "")
+    now = datetime.now(timezone.utc)
+    day = f"{now:%Y-%m-%d}"
+    # A: auto snapshots carry a HHMM suffix so multiple same-day runs never share a dir.
+    # Milestone labels stay clean (the name is the point) and must be unique by hand.
+    tag = f"{day}-{now:%H%M}-auto" if label in (None, "", "auto") else f"{day}-{label}"
     out = ROOT / "checkpoints" / tag
-    out.mkdir(parents=True, exist_ok=True)
+    # B: never silently overwrite a frozen snapshot — the whole system relies on immutability.
+    if out.exists():
+        sys.exit(f"checkpoint {tag} already exists — refusing to overwrite a frozen snapshot. "
+                 "Pick a distinct milestone label.")
+    out.mkdir(parents=True)
     artifacts: dict[str, str] = {}
 
     def save_json(name: str, payload) -> None:
@@ -111,19 +119,21 @@ def main(label: str | None = None) -> None:
     (out / "pip_freeze.txt").write_text(freeze)
     artifacts["pip_freeze.txt"] = sha256(out / "pip_freeze.txt")
 
-    manifest = {"checkpoint": tag, "created_utc": datetime.now(timezone.utc).isoformat(),
+    manifest = {"checkpoint": tag, "created_utc": now.isoformat(),
                 "git_head": git_head, "python": sys.version.split()[0],
                 "universe": UNIVERSE, "artifacts": artifacts,
                 "purpose": "Frozen evidence for the ex-post evaluation protocol in EVALUATION.md"}
     (out / "MANIFEST.json").write_text(json.dumps(manifest, indent=1))
 
     index = ROOT / "checkpoints" / "INDEX.md"
+    header = ("# Checkpoint index\n\nOne frozen snapshot per milestone. "
+              "Never modified after creation — git history is the witness.\n\n"
+              "| Checkpoint | Git HEAD | Contents | Milestone note |\n|---|---|---|---|\n")
     line = f"| {tag} | {git_head[:8]} | {len(artifacts)} artifacts | |\n"
-    if not index.exists():
-        index.write_text("# Checkpoint index\n\nOne frozen snapshot per milestone. "
-                         "Never modified after creation — git history is the witness.\n\n"
-                         "| Checkpoint | Git HEAD | Contents | Milestone note |\n|---|---|---|---|\n")
-    index.write_text(index.read_text() + line)
+    body = index.read_text() if index.exists() else header
+    if f"| {tag} |" not in body:  # tag is unique by construction, but never duplicate a row
+        body += line
+    index.write_text(body)
     print(f"checkpoint {tag}: {len(artifacts)} artifacts, manifest written")
 
 
