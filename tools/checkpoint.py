@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import subprocess
 import sys
 from dataclasses import asdict
@@ -40,9 +41,18 @@ def main(label: str | None = None) -> None:
     out.mkdir(parents=True)
     artifacts: dict[str, str] = {}
 
+    def _finite(obj):  # NaN/inf -> None so output is strict-valid JSON (pandas leaks NaN via to_dict)
+        if isinstance(obj, float):
+            return obj if math.isfinite(obj) else None
+        if isinstance(obj, dict):
+            return {k: _finite(v) for k, v in obj.items()}
+        if isinstance(obj, (list, tuple)):
+            return [_finite(v) for v in obj]
+        return obj
+
     def save_json(name: str, payload) -> None:
         p = out / f"{name}.json"
-        p.write_text(json.dumps(payload, indent=1, default=str))
+        p.write_text(json.dumps(_finite(payload), indent=1, default=str, allow_nan=False))
         artifacts[p.name] = sha256(p)
 
     prices, qa = get_universe(UNIVERSE, period="2y")
