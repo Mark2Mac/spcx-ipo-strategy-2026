@@ -112,6 +112,7 @@ def main(label: str | None = None) -> None:
                 fx_eurusd = float(px.iloc[-1])
         except Exception as e:
             bench[tkr] = {"error": str(e)[:80]}
+            errors[f"benchmark:{tkr}"] = f"{type(e).__name__}: {str(e)[:150]}"
     save_json("benchmarks", bench)
 
     spcx: dict = {"listed": False}
@@ -145,6 +146,7 @@ def main(label: str | None = None) -> None:
             spcx["quality_flags"] = flags
     except Exception as e:
         spcx["note"] = f"not yet listed or fetch failed: {str(e)[:80]}"
+        errors["spcx"] = f"{type(e).__name__}: {str(e)[:150]}"
     save_json("spcx_market", spcx)
 
     cfg = McConfig(fx_eurusd=fx_eurusd) if fx_eurusd and fx_eurusd > 0 else McConfig()
