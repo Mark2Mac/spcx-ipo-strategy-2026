@@ -154,8 +154,19 @@ def main(label: str | None = None) -> None:
             shares = info.get("sharesOutstanding") or info.get("impliedSharesOutstanding")
             spcx["shares_outstanding"] = shares
             spcx["market_cap_reported"] = info.get("marketCap")
-            spcx["market_cap_computed"] = float(last) * shares if shares else None
+            cap_c = float(last) * shares if shares else None
+            spcx["market_cap_computed"] = cap_c
             spcx["last_close"] = last
+            # Sanity band for SpaceX cap: ~$100B (deep-discount floor) to ~$10T (above any
+            # cited bull case). Outside this, shares_outstanding is almost certainly the
+            # delisted SPCX ETF's count, not SpaceX's — flag so scoring won't trust the cap.
+            SPCX_CAP_MIN, SPCX_CAP_MAX = 1e11, 1e13
+            if cap_c is not None and not (SPCX_CAP_MIN <= cap_c <= SPCX_CAP_MAX):
+                spcx["quality_flags"].append(
+                    f"market cap ${cap_c/1e9:.1f}B outside plausible SpaceX band "
+                    "($100B-$10T): shares_outstanding likely ETF-collision — verify vs 424B4")
+                spcx["identity_suspect"] = True
+            spcx["cap_sane"] = cap_c is not None and SPCX_CAP_MIN <= cap_c <= SPCX_CAP_MAX
     except Exception as e:
         spcx["note"] = f"not yet listed or fetch failed: {str(e)[:80]}"
         errors["spcx"] = f"{type(e).__name__}: {str(e)[:150]}"

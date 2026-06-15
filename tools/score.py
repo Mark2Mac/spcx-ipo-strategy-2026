@@ -50,17 +50,25 @@ def main() -> None:
 
     cap = spcx.get("market_cap_computed") or spcx.get("market_cap_reported")
     suspect = spcx.get("identity_suspect")
+    # cap_sane is absent in pre-sanity-check checkpoints; treat unknown as not-sane only when
+    # a cap exists (older checkpoints with a cap but no flag still get the band test here).
+    cap_sane = spcx.get("cap_sane")
+    if cap_sane is None and cap is not None:
+        cap_sane = 1e11 <= cap <= 1e13
     note = ""
     if not spcx.get("listed"):
         note = "SPCX not listed in latest checkpoint"
     elif cap is None:
         note = ("market cap not capturable yet — checkpoint predates shares_outstanding "
                 "capture; re-run tools/checkpoint.py to freeze it")
+    elif not cap_sane:
+        note = (f"market cap ${cap/1e9:.1f}B outside plausible SpaceX band — shares_outstanding "
+                "likely ETF-collision; refusing to score until verified against 424B4")
 
     for pid, p in sorted(SCOREABLE.items()):
         if TODAY < p["verify"]:
             outcome, detail = "pending", f"verify on {p['verify']}"
-        elif cap is None:
+        elif cap is None or not cap_sane:
             outcome, detail = "unverifiable", note
         else:
             hit = cap > p["threshold"]
