@@ -1,17 +1,17 @@
 {
- "scored_from_checkpoint": "2026-06-15-harden-verify",
+ "scored_from_checkpoint": "2026-06-15-2314-auto",
  "scored_on": "2026-06-15",
- "today_utc": "2026-06-15T09:44:02.462272+00:00",
+ "today_utc": "2026-06-15T23:15:24.713005+00:00",
  "results": {
   "P1": {
    "outcome": "TRUE",
    "p_ex_ante": 0.97,
-   "detail": "cap $2.105T (424B4 total shares x verified close) vs threshold $1.0T [yfinance Class-A-only cap $1.205T undercounts; dual-class corrected]"
+   "detail": "cap $2.517T (424B4 total shares x verified close) vs threshold $1.0T [yfinance Class-A-only cap $1.441T undercounts; dual-class corrected]"
   },
   "P2": {
    "outcome": "TRUE",
    "p_ex_ante": 0.6,
-   "detail": "cap $2.105T (424B4 total shares x verified close) vs threshold $2.0T [yfinance Class-A-only cap $1.205T undercounts; dual-class corrected]"
+   "detail": "cap $2.517T (424B4 total shares x verified close) vs threshold $2.0T [yfinance Class-A-only cap $1.441T undercounts; dual-class corrected]"
   }
  }
 }

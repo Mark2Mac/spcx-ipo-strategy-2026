@@ -1,0 +1,42 @@
+{
+ "listed": true,
+ "last_close": 192.5,
+ "price_source": "yfinance",
+ "ohlcv_tail": [
+  {
+   "Date": "2026-06-12 00:00:00",
+   "Open": 150.0,
+   "High": 176.52000427246094,
+   "Low": 149.33999633789062,
+   "Close": 160.9499969482422,
+   "Volume": 519234800
+  },
+  {
+   "Date": "2026-06-15 00:00:00",
+   "Open": 171.80999755859375,
+   "High": 192.9499969482422,
+   "Low": 168.36000061035156,
+   "Close": 192.5,
+   "Volume": 243783175
+  }
+ ],
+ "shares_424b4": 13075865175,
+ "shares_424b4_asof": "2026-03-31",
+ "market_cap_424b4": 2517104046187.5,
+ "option_chains": {
+  "2026-06-18": {
+   "calls": [],
+   "puts": []
+  },
+  "2026-09-18": {
+   "calls": [],
+   "puts": []
+  }
+ },
+ "shares_outstanding": 7488063555,
+ "market_cap_reported": 2519989485568,
+ "market_cap_computed": 1441452234337.5,
+ "cap_sane": true,
+ "identity_suspect": false,
+ "quality_flags": []
+}

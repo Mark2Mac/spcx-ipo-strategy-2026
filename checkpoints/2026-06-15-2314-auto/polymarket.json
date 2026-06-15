@@ -1,0 +1,128 @@
+[
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.0295,
+   "No": 0.9705
+  },
+  "volume": 576079.4660239998
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $2.5T and $3.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.2705,
+   "No": 0.7295
+  },
+  "volume": 37892.816681000026
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $1.5T and $2.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.195,
+   "No": 0.805
+  },
+  "volume": 36086.354567000024
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $2.0T and $2.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.275,
+   "No": 0.725
+  },
+  "volume": 35256.86071699999
+ },
+ {
+  "event": "SpaceX IPO: Closing Price Up/Down End of First Month?",
+  "market": "SpaceX IPO: Closing Price Up/Down End of First Month?",
+  "outcomes": {
+   "Up": 0.715,
+   "Down": 0.285
+  },
+  "volume": 32740.743295000015
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $3.0T and $3.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.1705,
+   "No": 0.8295
+  },
+  "volume": 32045.86824400002
+ },
+ {
+  "event": "SpaceX IPO: Closing Share Price Up/Down on Second Day?",
+  "market": "SpaceX IPO: Closing Share Price Up/Down on Second Day?",
+  "outcomes": {
+   "Up": 0.995,
+   "Down": 0.005
+  },
+  "volume": 32020.104479000005
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be less than $1.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.007,
+   "No": 0.993
+  },
+  "volume": 29436.663717000007
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be at least $3.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.067,
+   "No": 0.933
+  },
+  "volume": 23419.693516000003
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31?",
+  "outcomes": {
+   "Yes": 0.36,
+   "No": 0.64
+  },
+  "volume": 22628.720826999976
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $1.0T and $1.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.0335,
+   "No": 0.9665
+  },
+  "volume": 20944.694225000017
+ },
+ {
+  "event": "SpaceX IPO: Open Up/Down on Second Day",
+  "market": "SpaceX IPO: Open Up/Down on Second Day",
+  "outcomes": {
+   "Up": 0.9995,
+   "Down": 0.0005
+  },
+  "volume": 20271.077091999996
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by September 30?",
+  "outcomes": {
+   "Yes": 0.185,
+   "No": 0.815
+  },
+  "volume": 6963.421001
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX not IPO by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 1012.58
+ }
+]
