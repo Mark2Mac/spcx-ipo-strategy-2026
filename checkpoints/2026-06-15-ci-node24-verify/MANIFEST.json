@@ -1,0 +1,38 @@
+{
+ "checkpoint": "2026-06-15-ci-node24-verify",
+ "created_utc": "2026-06-15T09:15:03.108505+00:00",
+ "git_head": "880dd24482f5b110203e5fa6a5396a615f879ff6",
+ "python": "3.13.13",
+ "universe": [
+  "GOOGL",
+  "TSLA",
+  "NDAQ",
+  "HOOD",
+  "VIRT",
+  "GS",
+  "MS",
+  "RKLB",
+  "ASTS",
+  "LMT",
+  "^GSPC",
+  "^NDX",
+  "^VIX"
+ ],
+ "artifacts": {
+  "universe_prices.parquet": "222f7e571b2091c4",
+  "quality_reports.json": "dc675ae477460d3e",
+  "sources.json": "c686ea1eacb27a05",
+  "polymarket.json": "03300f72442c8e04",
+  "edgar_filings.json": "7572d91d9cca7848",
+  "hn_attention.csv": "aa7c7b4af8539545",
+  "hn_meta.json": "09ce855fddd95f8a",
+  "wikipedia_pageviews.csv": "45ce0e44cd595865",
+  "risk_free.json": "7a8625c6a5497c78",
+  "benchmarks.json": "f83fc63e9b0c5665",
+  "spcx_market.json": "f43ac7c46c8c76ef",
+  "montecarlo.json": "bae0e389b92e15c9",
+  "pip_freeze.txt": "96d6f59f2e742c2f"
+ },
+ "errors": {},
+ "purpose": "Frozen evidence for the ex-post evaluation protocol in EVALUATION.md"
+}
