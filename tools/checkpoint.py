@@ -78,13 +78,23 @@ def main(label: str | None = None) -> None:
         save_json("quality_reports", qa)
         save_json("sources", {r["ticker"]: r.get("source", "unknown") for r in qa})
 
+    # An upstream returning an empty payload (no exception) looks identical to a successful
+    # fetch and would silently freeze a blank artifact on a key day. Record empty-but-no-error
+    # so it lands in errors{} and trips the run gate, instead of passing as green.
+    def note_empty(name: str, is_empty: bool) -> None:
+        if is_empty:
+            errors[name] = "empty payload (fetch succeeded but returned no data)"
+            print(f"  ! {name} empty payload", file=sys.stderr)
+
     pm = guard("polymarket", lambda: search_markets("spacex", limit=20))
     if pm is not None:
         save_json("polymarket", pm)
+        note_empty("polymarket", not pm)
 
     fil = guard("edgar", lambda: recent_filings(limit=40))
     if fil is not None:
         save_json("edgar_filings", fil)
+        note_empty("edgar", not fil)
 
     hn = guard("hackernews", lambda: daily_attention("spacex", days=180))
     if hn is not None:
@@ -92,12 +102,14 @@ def main(label: str | None = None) -> None:
         hn.to_csv(p)
         artifacts[p.name] = sha256(p)
         save_json("hn_meta", {"coverage_gap_days": int(hn.attrs.get("coverage_gap_days", 0))})
+        note_empty("hackernews", hn.empty)
 
     wiki = guard("wikipedia", lambda: pageviews("SpaceX", days=180))
     if wiki is not None:
         p = out / "wikipedia_pageviews.csv"
         wiki.to_csv(p)
         artifacts[p.name] = sha256(p)
+        note_empty("wikipedia", wiki.empty)
 
     rf = guard("risk_free", risk_free_rate)
     if rf is not None:
@@ -116,61 +128,70 @@ def main(label: str | None = None) -> None:
     save_json("benchmarks", bench)
 
     spcx: dict = {"listed": False}
+    SHARES_424B4_ASOF = "2026-03-31"  # 424B4 share-count basis date
     try:
-        import yfinance as yf
+        from src.connectors.market_data import get_ohlcv
 
-        t = yf.Ticker("SPCX")
-        hist = t.history(period="1mo", auto_adjust=True)
+        # Price via the universe connector: yfinance primary, Stooq fallback. Removes the
+        # raw-yfinance single point of failure for the most important series on a key day.
+        hist = get_ohlcv("SPCX", period="1mo", force=True)
         if not hist.empty:
-            spcx = {"listed": True,
-                    "ohlcv_tail": hist.tail(10).reset_index().to_dict("records")}
-            chains, strikes = {}, []
-            for exp in (t.options or [])[:6]:
-                oc = t.option_chain(exp)
-                cols = ["strike", "lastPrice", "bid", "ask", "impliedVolatility",
-                        "volume", "openInterest"]
-                chains[exp] = {"calls": oc.calls[cols].to_dict("records"),
-                               "puts": oc.puts[cols].to_dict("records")}
-                strikes += list(oc.calls["strike"]) + list(oc.puts["strike"])
-            spcx["option_chains"] = chains
-            last = float(hist["Close"].iloc[-1])
             flags = []
+            last = float(hist["Close"].iloc[-1])
+            spcx = {"listed": True, "last_close": last,
+                    "price_source": hist.attrs.get("source", "unknown"),
+                    "ohlcv_tail": hist.tail(10).reset_index().to_dict("records")}
             if float(hist["Volume"].tail(5).sum()) == 0:
                 flags.append("zero volume: placeholder/when-issued quote, not real trading")
+            # Authoritative total from the 424B4 (dual-class: yfinance sharesOutstanding is
+            # Class A only). 6,824,641,355 Class A + 555,555,555 IPO + 5,695,668,265 Class B.
+            # Needs no live source beyond the close, so cap survives a full yfinance outage.
+            spcx["shares_424b4"] = 6_824_641_355 + 555_555_555 + 5_695_668_265
+            spcx["shares_424b4_asof"] = SHARES_424B4_ASOF
+            spcx["market_cap_424b4"] = last * spcx["shares_424b4"]
+            # Drift guard: a 10-Q/10-K filed after the 424B4 basis means the share count may
+            # have moved (Musk performance tranche, secondaries) — flag to re-verify.
+            newer = [f for f in (fil or []) if f.get("form", "").upper().replace(" ", "") in
+                     ("10-Q", "10-K", "10-K/A", "20-F") and f.get("date", "") > SHARES_424B4_ASOF]
+            if newer:
+                flags.append(f"periodic filing(s) {[f['form'] for f in newer][:3]} dated after "
+                             f"424B4 basis {SHARES_424B4_ASOF} — re-verify shares_424b4")
+            # Options + .info are yfinance-only; best-effort, never fail the snapshot over them.
+            chains, strikes = {}, []
+            try:
+                import yfinance as yf
+                t = yf.Ticker("SPCX")
+                for exp in (t.options or [])[:6]:
+                    oc = t.option_chain(exp)
+                    cols = ["strike", "lastPrice", "bid", "ask", "impliedVolatility",
+                            "volume", "openInterest"]
+                    chains[exp] = {"calls": oc.calls[cols].to_dict("records"),
+                                   "puts": oc.puts[cols].to_dict("records")}
+                    strikes += list(oc.calls["strike"]) + list(oc.puts["strike"])
+                info = t.info or {}
+            except Exception as oe:
+                info = {}
+                spcx["yfinance_extras_note"] = f"options/info unavailable: {str(oe)[:80]}"
+            spcx["option_chains"] = chains
             if strikes:
                 med = sorted(strikes)[len(strikes) // 2]
                 if not 0.5 <= med / last <= 2.0:
                     flags.append(f"strike/price mismatch (median strike {med} vs close {last}): "
                                  "likely ticker collision with the pre-2026 SPCX ETF")
-            spcx["identity_suspect"] = bool(flags)
-            spcx["quality_flags"] = flags
-            # Freeze shares outstanding so P1/P2 (close cap vs $1T/$2T) stay verifiable later:
-            # Polymarket resolves and vanishes, and price alone can't reconstruct market cap.
-            # market_cap_computed uses the verified close, independent of yfinance's own cap field.
-            try:
-                info = t.info or {}
-            except Exception:
-                info = {}
             shares = info.get("sharesOutstanding") or info.get("impliedSharesOutstanding")
             spcx["shares_outstanding"] = shares
             spcx["market_cap_reported"] = info.get("marketCap")
-            cap_c = float(last) * shares if shares else None
+            cap_c = last * shares if shares else None
             spcx["market_cap_computed"] = cap_c
-            spcx["last_close"] = last
-            # Authoritative total from the 424B4 (dual-class: yfinance sharesOutstanding is
-            # Class A only). 6,824,641,355 Class A + 555,555,555 IPO + 5,695,668,265 Class B.
-            spcx["shares_424b4"] = 6_824_641_355 + 555_555_555 + 5_695_668_265
-            spcx["market_cap_424b4"] = float(last) * spcx["shares_424b4"]
-            # Sanity band for SpaceX cap: ~$100B (deep-discount floor) to ~$10T (above any
-            # cited bull case). Outside this, shares_outstanding is almost certainly the
-            # delisted SPCX ETF's count, not SpaceX's — flag so scoring won't trust the cap.
+            # Cap sanity band: ~$100B floor to ~$10T ceiling. The authoritative 424B4 cap is
+            # the one scored; this guards the yfinance-derived figure against ETF-collision.
             SPCX_CAP_MIN, SPCX_CAP_MAX = 1e11, 1e13
             if cap_c is not None and not (SPCX_CAP_MIN <= cap_c <= SPCX_CAP_MAX):
-                spcx["quality_flags"].append(
-                    f"market cap ${cap_c/1e9:.1f}B outside plausible SpaceX band "
-                    "($100B-$10T): shares_outstanding likely ETF-collision — verify vs 424B4")
-                spcx["identity_suspect"] = True
-            spcx["cap_sane"] = cap_c is not None and SPCX_CAP_MIN <= cap_c <= SPCX_CAP_MAX
+                flags.append(f"market cap ${cap_c/1e9:.1f}B outside plausible SpaceX band "
+                             "($100B-$10T): shares_outstanding likely ETF-collision — verify vs 424B4")
+            spcx["cap_sane"] = SPCX_CAP_MIN <= spcx["market_cap_424b4"] <= SPCX_CAP_MAX
+            spcx["identity_suspect"] = bool(flags)
+            spcx["quality_flags"] = flags
     except Exception as e:
         spcx["note"] = f"not yet listed or fetch failed: {str(e)[:80]}"
         errors["spcx"] = f"{type(e).__name__}: {str(e)[:150]}"
