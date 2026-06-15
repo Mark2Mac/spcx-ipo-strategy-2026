@@ -14,6 +14,14 @@ ROOT = Path(__file__).resolve().parents[1]
 CKPT = ROOT / "checkpoints"
 TODAY = date.today()
 
+# Authoritative total share count from the 424B4 prospectus (SEC Reg. No. 333-296070),
+# the frozen gold source. SpaceX is dual-class: yfinance.sharesOutstanding reports Class A
+# only (~7.49B), undercounting market cap by ~40% and wrongly flipping P2 to FALSE — never
+# trust it for scoring. Total = 6,824,641,355 Class A (as of 2026-03-31, post Class C
+# reclassification + preferred conversion) + 555,555,555 Class A newly issued in the IPO
+# + 5,695,668,265 Class B.
+SPCX_SHARES_424B4 = 6_824_641_355 + 555_555_555 + 5_695_668_265  # 13,075,865,175
+
 # Pre-registered, from PREDICTIONS.md. P(ex-ante) is here only to echo it in the report;
 # the criterion is what gets evaluated. Thresholds in USD.
 SCOREABLE = {
@@ -48,22 +56,26 @@ def main() -> None:
         print("no checkpoint with spcx_market.json found")
         return
 
-    cap = spcx.get("market_cap_computed") or spcx.get("market_cap_reported")
-    suspect = spcx.get("identity_suspect")
-    # cap_sane is absent in pre-sanity-check checkpoints; treat unknown as not-sane only when
-    # a cap exists (older checkpoints with a cap but no flag still get the band test here).
-    cap_sane = spcx.get("cap_sane")
-    if cap_sane is None and cap is not None:
-        cap_sane = 1e11 <= cap <= 1e13
+    # Score on the authoritative cap = cross-validated close * 424B4 total shares. Fall back
+    # to checkpoint fields only if last_close is missing (older snapshots).
+    last = spcx.get("last_close")
+    cap = last * SPCX_SHARES_424B4 if last else (
+        spcx.get("market_cap_computed") or spcx.get("market_cap_reported"))
+    cap_src = "424B4 total shares x verified close" if last else "checkpoint cap field"
+    cap_sane = cap is not None and 1e11 <= cap <= 1e13
+    # Transparency: yfinance.sharesOutstanding is Class A only; show the gap we're correcting.
+    yf_cap = spcx.get("market_cap_computed")
+    div = ""
+    if last and yf_cap and abs(yf_cap - cap) / cap > 0.15:
+        div = f" [yfinance Class-A-only cap ${yf_cap/1e12:.3f}T undercounts; dual-class corrected]"
     note = ""
     if not spcx.get("listed"):
         note = "SPCX not listed in latest checkpoint"
     elif cap is None:
-        note = ("market cap not capturable yet — checkpoint predates shares_outstanding "
-                "capture; re-run tools/checkpoint.py to freeze it")
+        note = "no close captured yet — re-run tools/checkpoint.py"
     elif not cap_sane:
-        note = (f"market cap ${cap/1e9:.1f}B outside plausible SpaceX band — shares_outstanding "
-                "likely ETF-collision; refusing to score until verified against 424B4")
+        note = (f"authoritative cap ${cap/1e9:.1f}B outside plausible band — "
+                "verify close and 424B4 share count")
 
     for pid, p in sorted(SCOREABLE.items()):
         if TODAY < p["verify"]:
@@ -73,9 +85,8 @@ def main() -> None:
         else:
             hit = cap > p["threshold"]
             outcome = "TRUE" if hit else "FALSE"
-            detail = f"cap ${cap/1e12:.3f}T vs threshold ${p['threshold']/1e12:.1f}T"
-            if suspect:
-                detail += " [identity_suspect: cap from verified close, option chain ignored]"
+            detail = (f"cap ${cap/1e12:.3f}T ({cap_src}) vs threshold "
+                      f"${p['threshold']/1e12:.1f}T{div}")
         results[pid] = {"outcome": outcome, "p_ex_ante": p["p"], "detail": detail}
         rows.append(f"| {pid} | {p['label']} | {p['p']} | {outcome} | {detail} |")
 

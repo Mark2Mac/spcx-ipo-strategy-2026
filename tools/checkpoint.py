@@ -157,6 +157,10 @@ def main(label: str | None = None) -> None:
             cap_c = float(last) * shares if shares else None
             spcx["market_cap_computed"] = cap_c
             spcx["last_close"] = last
+            # Authoritative total from the 424B4 (dual-class: yfinance sharesOutstanding is
+            # Class A only). 6,824,641,355 Class A + 555,555,555 IPO + 5,695,668,265 Class B.
+            spcx["shares_424b4"] = 6_824_641_355 + 555_555_555 + 5_695_668_265
+            spcx["market_cap_424b4"] = float(last) * spcx["shares_424b4"]
             # Sanity band for SpaceX cap: ~$100B (deep-discount floor) to ~$10T (above any
             # cited bull case). Outside this, shares_outstanding is almost certainly the
             # delisted SPCX ETF's count, not SpaceX's — flag so scoring won't trust the cap.
