@@ -1,0 +1,102 @@
+{
+ "listed": true,
+ "last_close": 160.9499969482422,
+ "price_source": "yfinance",
+ "ohlcv_tail": [
+  {
+   "Date": "2026-06-12 00:00:00",
+   "Open": 150.0,
+   "High": 176.52000427246094,
+   "Low": 149.33999633789062,
+   "Close": 160.9499969482422,
+   "Volume": 519234800
+  }
+ ],
+ "shares_424b4": 13075865175,
+ "shares_424b4_asof": "2026-03-31",
+ "market_cap_424b4": 2104560460011.8762,
+ "option_chains": {
+  "2026-06-18": {
+   "calls": [
+    {
+     "strike": 25.0,
+     "lastPrice": 0.15,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 28.0,
+     "lastPrice": 0.04,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 29.0,
+     "lastPrice": 1.0,
+     "bid": 0.0,
+     "ask": 0.5,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": null,
+     "openInterest": 1
+    }
+   ],
+   "puts": [
+    {
+     "strike": 24.0,
+     "lastPrice": 2.2,
+     "bid": 0.0,
+     "ask": 4.0,
+     "impliedVolatility": 12.121096174316406,
+     "volume": null,
+     "openInterest": 1
+    }
+   ]
+  },
+  "2026-09-18": {
+   "calls": [
+    {
+     "strike": 21.0,
+     "lastPrice": 2.1,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 2,
+     "openInterest": 0
+    },
+    {
+     "strike": 28.0,
+     "lastPrice": 0.2,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 1,
+     "openInterest": 0
+    },
+    {
+     "strike": 32.0,
+     "lastPrice": 0.3,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 5,
+     "openInterest": 0
+    }
+   ],
+   "puts": []
+  }
+ },
+ "shares_outstanding": 7488063555,
+ "market_cap_reported": 2106972831744,
+ "market_cap_computed": 1205203806325.4937,
+ "cap_sane": true,
+ "identity_suspect": true,
+ "quality_flags": [
+  "strike/price mismatch (median strike 28.0 vs close 160.9499969482422): likely ticker collision with the pre-2026 SPCX ETF"
+ ]
+}

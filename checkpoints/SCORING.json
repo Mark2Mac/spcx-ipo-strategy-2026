@@ -1,7 +1,7 @@
 {
- "scored_from_checkpoint": "2026-06-15-ci-node24-verify",
+ "scored_from_checkpoint": "2026-06-15-harden-verify",
  "scored_on": "2026-06-15",
- "today_utc": "2026-06-15T09:15:50.134317+00:00",
+ "today_utc": "2026-06-15T09:44:02.462272+00:00",
  "results": {
   "P1": {
    "outcome": "TRUE",
