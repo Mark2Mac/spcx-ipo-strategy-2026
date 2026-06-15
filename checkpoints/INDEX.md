@@ -9,3 +9,4 @@ One frozen snapshot per milestone. Never modified after creation — git history
 | 2026-06-11-auto | c74fb448 | 11 artifacts | Evening (UTC) snapshot. An earlier same-day auto run (HEAD d0bec3b5) was overwritten in place before the tag-collision fix; its frozen data survives in git at commit 6faf899. |
 | 2026-06-13-ci-verify | 416d6ba2 | 13 artifacts | |
 | 2026-06-15-day1-score | 86dd7d7b | 13 artifacts | |
+| 2026-06-15-day1-rescore | f43d4a26 | 13 artifacts | |
