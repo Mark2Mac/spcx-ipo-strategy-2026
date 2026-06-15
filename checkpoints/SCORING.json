@@ -1,0 +1,17 @@
+{
+ "scored_from_checkpoint": "2026-06-13-ci-verify",
+ "scored_on": "2026-06-15",
+ "today_utc": "2026-06-15T08:50:15.899668+00:00",
+ "results": {
+  "P1": {
+   "outcome": "unverifiable",
+   "p_ex_ante": 0.97,
+   "detail": "market cap not capturable yet \u2014 checkpoint predates shares_outstanding capture; re-run tools/checkpoint.py to freeze it"
+  },
+  "P2": {
+   "outcome": "unverifiable",
+   "p_ex_ante": 0.6,
+   "detail": "market cap not capturable yet \u2014 checkpoint predates shares_outstanding capture; re-run tools/checkpoint.py to freeze it"
+  }
+ }
+}

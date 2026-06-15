@@ -144,6 +144,18 @@ def main(label: str | None = None) -> None:
                                  "likely ticker collision with the pre-2026 SPCX ETF")
             spcx["identity_suspect"] = bool(flags)
             spcx["quality_flags"] = flags
+            # Freeze shares outstanding so P1/P2 (close cap vs $1T/$2T) stay verifiable later:
+            # Polymarket resolves and vanishes, and price alone can't reconstruct market cap.
+            # market_cap_computed uses the verified close, independent of yfinance's own cap field.
+            try:
+                info = t.info or {}
+            except Exception:
+                info = {}
+            shares = info.get("sharesOutstanding") or info.get("impliedSharesOutstanding")
+            spcx["shares_outstanding"] = shares
+            spcx["market_cap_reported"] = info.get("marketCap")
+            spcx["market_cap_computed"] = float(last) * shares if shares else None
+            spcx["last_close"] = last
     except Exception as e:
         spcx["note"] = f"not yet listed or fetch failed: {str(e)[:80]}"
         errors["spcx"] = f"{type(e).__name__}: {str(e)[:150]}"
