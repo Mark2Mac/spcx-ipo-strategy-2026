@@ -1,0 +1,173 @@
+[
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.0115,
+   "No": 0.9885
+  },
+  "volume": 587551.6853089998
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $1.5T and $2.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.18,
+   "No": 0.82
+  },
+  "volume": 131682.89844400005
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $2.5T and $3.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.2125,
+   "No": 0.7875
+  },
+  "volume": 97951.50562500009
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $2.0T and $2.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.485,
+   "No": 0.515
+  },
+  "volume": 88964.37219000001
+ },
+ {
+  "event": "SpaceX IPO: Closing Price Up/Down End of First Month?",
+  "market": "SpaceX IPO: Closing Price Up/Down End of First Month?",
+  "outcomes": {
+   "Up": 0.775,
+   "Down": 0.225
+  },
+  "volume": 83687.53870500004
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $3.0T and $3.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.0565,
+   "No": 0.9435
+  },
+  "volume": 80461.24104599998
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be less than $1.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.013,
+   "No": 0.987
+  },
+  "volume": 77490.62768499998
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $1.0T and $1.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.059,
+   "No": 0.941
+  },
+  "volume": 72713.830144
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be at least $3.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.011,
+   "No": 0.989
+  },
+  "volume": 71404.757181
+ },
+ {
+  "event": "SpaceX vs Tesla - higher valuation on June 30?",
+  "market": "SpaceX vs Tesla - higher valuation on June 30?",
+  "outcomes": {
+   "SpaceX": 0.9795,
+   "Tesla": 0.0205
+  },
+  "volume": 35000.271815000015
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31?",
+  "outcomes": {
+   "Yes": 0.35,
+   "No": 0.65
+  },
+  "volume": 30069.30522899999
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by September 30?",
+  "outcomes": {
+   "Yes": 0.225,
+   "No": 0.775
+  },
+  "volume": 24043.745370999997
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will SpaceX Starship Flight Test 13 Superheavy explode?",
+  "outcomes": {
+   "Yes": 0.735,
+   "No": 0.265
+  },
+  "volume": 9008.755071
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will SpaceX Starship Flight Test 13 launch by June 30?",
+  "outcomes": {
+   "Yes": 0.007,
+   "No": 0.993
+  },
+  "volume": 6167.070182000021
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will SpaceX Starship Flight Test 13 launch by July 31?",
+  "outcomes": {
+   "Yes": 0.58,
+   "No": 0.42
+  },
+  "volume": 5554.144884000032
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will SpaceX Starship Flight Test 13 launch by August 31?",
+  "outcomes": {
+   "Yes": 0.885,
+   "No": 0.115
+  },
+  "volume": 1226.616085
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX not IPO by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 1012.58
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will the Starship for SpaceX Starship Flight Test 13 achieve a successful splashdown?",
+  "outcomes": {
+   "Yes": 0.76,
+   "No": 0.24
+  },
+  "volume": 569.132297
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will the chopsticks catch SpaceX Starship Flight Test 13 Superheavy booster?",
+  "outcomes": {
+   "Yes": 0.07,
+   "No": 0.93
+  },
+  "volume": 445.09753700000005
+ }
+]
