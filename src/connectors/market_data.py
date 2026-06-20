@@ -32,10 +32,37 @@ def _from_yfinance(ticker: str, period: str) -> pd.DataFrame:
     return df[["Open", "High", "Low", "Close", "Volume"]].dropna(subset=["Close"])
 
 
+# Stooq names indices with a caret prefix and a stooq-specific code, not the Yahoo symbol.
+# lstrip('^') produced 'gspc'/'ndx'/'vix' which 404 — the fallback silently failed for every
+# index, the exact tickers most likely to need it on a yfinance outage.
+_STOOQ_INDEX = {"^GSPC": "^spx", "^NDX": "^ndx", "^VIX": "^vix", "^DJI": "^dji", "^RUT": "^rut"}
+
+
+def _stooq_symbol(ticker: str) -> str:
+    if ticker in _STOOQ_INDEX:
+        return _STOOQ_INDEX[ticker]
+    if ticker.startswith("^"):
+        return ticker.lower()  # unknown index: keep the caret rather than mangle it
+    return ticker.lower() + ".us"
+
+
+# A browser-like UA: stooq serves a JS anti-bot challenge (HTTP 200 + HTML, no CSV) to bare
+# clients from some IPs. Without it the fallback can get HTML instead of data.
+_STOOQ_UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) spcx-ipo-strategy research"}
+
+
 def _from_stooq(ticker: str) -> pd.DataFrame:
-    sym = ticker.lower().lstrip("^") + (".us" if not ticker.startswith("^") else "")
-    r = requests.get(f"https://stooq.com/q/d/l/?s={sym}&i=d", timeout=20)
+    sym = _stooq_symbol(ticker)
+    r = requests.get("https://stooq.com/q/d/l/", params={"s": sym, "i": "d"},
+                     headers=_STOOQ_UA, timeout=20)
     r.raise_for_status()
+    # Guard the worst silent-corruption path: a 200 challenge/error page is HTML, not CSV.
+    # Parsing it as CSV would yield garbage columns; detect non-CSV and fail explicitly so the
+    # per-ticker isolation in get_universe records a clean error instead of a malformed frame.
+    head = r.text.lstrip()[:200].lower()
+    if not r.text.lstrip().startswith("Date,") or "<html" in head or "<meta" in head:
+        raise ValueError(f"stooq returned non-CSV for {ticker} (sym {sym}): "
+                         f"likely anti-bot challenge or unknown symbol")
     df = pd.read_csv(io.StringIO(r.text), parse_dates=["Date"], index_col="Date")
     if df.empty:
         raise ValueError(f"stooq empty for {ticker}")
@@ -85,12 +112,22 @@ def get_ohlcv(ticker: str, period: str = "2y", force: bool = False) -> pd.DataFr
 
 def get_universe(tickers: list[str], period: str = "2y",
                  force: bool = False) -> tuple[pd.DataFrame, list[dict]]:
+    # Isolate each ticker: a single symbol failing on BOTH yfinance and Stooq must not abort
+    # the whole snapshot. The failure is recorded as a blocking issue in that ticker's report
+    # (so the run gate trips), while every healthy series is still frozen.
     closes, reports = {}, []
     for t in tickers:
-        df = get_ohlcv(t, period, force=force)
-        closes[t] = df["Close"]
-        reports.append(quality_report(df, t))
-    return pd.DataFrame(closes).sort_index(), reports
+        try:
+            df = get_ohlcv(t, period, force=force)
+            closes[t] = df["Close"]
+            reports.append(quality_report(df, t))
+        except Exception as e:
+            reports.append({"ticker": t, "rows": 0, "first": None, "last": None,
+                            "missing_bdays": None, "source": "unavailable",
+                            "issues": [f"fetch failed (yfinance+stooq): {type(e).__name__}: {str(e)[:120]}"],
+                            "warnings": []})
+    frame = pd.DataFrame(closes).sort_index() if closes else pd.DataFrame()
+    return frame, reports
 
 
 if __name__ == "__main__":
