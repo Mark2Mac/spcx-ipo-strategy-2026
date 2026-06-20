@@ -21,7 +21,8 @@ def _fetch_window(query: str, t0: int, t1: int, max_pages: int) -> list[dict]:
         for h in hits:
             rows.append({"date": pd.Timestamp(h["created_at_i"], unit="s").normalize(),
                          "title": h.get("title"), "points": h.get("points") or 0,
-                         "comments": h.get("num_comments") or 0, "url": h.get("url")})
+                         "comments": h.get("num_comments") or 0, "url": h.get("url"),
+                         "id": h.get("objectID")})
         if page >= data.get("nbPages", 1) - 1 or not hits:
             break
         page += 1
@@ -42,7 +43,13 @@ def search_stories(query: str, days: int = 90, max_pages: int = 10,
             rows.extend(_fetch_window(query, t0, t1, max_pages))
             t0 = t1
     df = pd.DataFrame(rows)
-    return df.drop_duplicates(subset=["title"]) if not df.empty else df
+    if df.empty:
+        return df
+    # Dedup on the stable story id (objectID) to drop only window-overlap re-fetches. The old
+    # subset=["title"] collapsed a recurring identical title (e.g. repeated launch threads)
+    # posted on different days into one row, zeroing attention on every later day.
+    key = "id" if df["id"].notna().any() else None
+    return df.drop_duplicates(subset=[key]) if key else df.drop_duplicates(subset=["date", "title"])
 
 
 def daily_attention(query: str, days: int = 90) -> pd.DataFrame:
