@@ -1,0 +1,35 @@
+name: reminders
+
+# Opens a GitHub issue when a project milestone enters its window — each issue body already
+# contains the verbose, copy-paste prompt to hand back to Claude Code. Idempotent (see
+# tools/check_reminders.py): dated milestones open once; the weekly health check keeps at most
+# one open issue at a time. The schedule keeps itself alive — every issue counts as activity.
+on:
+  schedule:
+    - cron: "0 7 * * 1"   # Mondays 07:00 UTC (after the weekend, before the week's work)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: reminders
+  cancel-in-progress: false
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: pip install requests
+      - name: Open due reminder issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          REMINDER_ASSIGNEE: ${{ github.repository_owner }}
+        run: python tools/check_reminders.py --apply

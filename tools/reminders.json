@@ -1,0 +1,59 @@
+[
+ {
+  "key": "weekly-health",
+  "type": "weekly",
+  "title": "Weekly check: SPCX pipeline health",
+  "labels": ["reminder", "health"],
+  "body": "Routine weekly health check (auto-opened each Monday; only one stays open at a time — close this after you run the check). Paste this prompt to Claude Code:\n\n```\nFai un check di salute completo della pipeline SPCX (repo Mark2Mac/spcx-ipo-strategy-2026 + mirror). Clona entrambi e verifica, riportando verde/rosso per ciascun punto con la causa di ogni anomalia:\n1. L'ultimo run `scheduled-checkpoint` su GitHub Actions e' `success` (e che sia partito nei giorni schedulati lun/gio).\n2. `tools/gate.py`: l'ultimo MANIFEST ha `errors{}` vuoto (nessuna sorgente in errore o vuota).\n3. `tools/verify_checkpoints.py`: TUTTI i checkpoint hanno hash che combaciano col MANIFEST (evidenza intatta, zero tampering).\n4. L'ultimo snapshot ha 13 artifact, SPCX `listed:true`, `identity_suspect:false`, e 0 `issues` nei quality_reports (solo eventuali warning su jump reali).\n5. `checkpoints/SCORING.md`: P1/P2 = TRUE calcolate dal close day-1 CONGELATO ($160.95 -> $2.105T), NON da un close rolling recente. Se il cap mostrato non e' ~$2.105T, e' un regresso del fix #6.\n6. Mirror in parita': sha di `main` pubblico == sha di `main` del mirror; e l'ultimo run `sync-from-public` e' `success`.\n7. La suite gira: `pytest tests/ -q` verde e `./tools/run_tests.sh` 12/12 (se hai rete).\nSe trovi un problema, proponi il fix e, se te lo confermo, aprilo come PR con test di regressione.\n```"
+ },
+ {
+  "key": "spread-entry",
+  "type": "dated",
+  "due": "2026-07-06",
+  "lead_days": 3,
+  "post_grace_days": 14,
+  "title": "Check: spread entry window (Jul 6–17, 2026)",
+  "labels": ["reminder", "milestone"],
+  "body": "Milestone: finestra di entry del put spread (Jul 6–17). Paste questo prompt a Claude Code:\n\n```\nSiamo nella finestra di entry dello spread SPCX (Jul 6-17 2026). Fai e riporta i numeri reali vs baseline:\n1. Recupera l'IV reale delle opzioni SPCX (verifica prima `identity_suspect:false` nell'ultimo checkpoint, cosi' le opzioni sono lo strumento giusto e non l'ETF). Prendi l'ATM IV per la scadenza di agosto (mese dell'unlock).\n2. Confronta con i parametri del Monte Carlo baseline (`McConfig`: spcx_vol 0.70, spcx_s0 150 placeholder). Aggiorna spcx_s0 al close reale, spcx_vol all'IV reale, e `debit` dello spread al prezzo reale. NB: questo tocca SOLO i parametri del modello, NON `PREDICTIONS.md` ne' le metriche pre-registrate.\n3. Ri-esegui il Monte Carlo dello spread coi parametri reali e verifica che l'hard-cap della perdita regga su OGNI path (l'assert in montecarlo). Riporta P(loss), VaR95, ES95 nuovi vs baseline.\n4. Congela un checkpoint con label `entry-window` (workflow_dispatch su scheduled-checkpoint, input label=entry-window).\n5. Aggiorna il trade journal `docs/06-trade-journal.md` con l'entry effettiva (additivo).\n6. Aggiorna il layer post-IPO (notebook 06) coi nuovi dati realizzati, lasciando congelato il baseline.\nApri tutto come PR con i numeri nel body; mergia solo se te lo confermo.\n```"
+ },
+ {
+  "key": "earnings-unlock",
+  "type": "dated",
+  "due": "2026-08-03",
+  "lead_days": 5,
+  "post_grace_days": 21,
+  "title": "Check: earnings + insider unlock — the thesis (Aug 2026)",
+  "labels": ["reminder", "milestone", "critical"],
+  "body": "Milestone CHIAVE: primo earnings + insider unlock — il cuore dell'esperimento. Paste questo prompt a Claude Code:\n\n```\nMilestone critica SPCX: primo earnings report + insider unlock (la tesi dell'intero esperimento). Sii rigoroso e documenta tutto:\n1. `form4_watch()` ora DEVE restituire Form 3/4/144 reali (le vendite insider sono pubbliche per legge entro 2 giorni). Elenca le vendite, chi vende, quanto, a che prezzo.\n2. RI-VERIFICA `shares_424b4`: cerca su EDGAR il nuovo 10-Q/10-K (il drift-guard nel checkpoint si accende se filed dopo il basis 2026-03-31). Se il conteggio azioni e' cambiato (Musk performance tranche da 1,000,000,000 Class B, secondaries, RSU vesting), AGGIORNA il conteggio in `score.py` e `checkpoint.py` PRIMA di scorare qualsiasi predizione cap-dipendente. Documenta la fonte (numero di registrazione SEC).\n3. Congela checkpoint label `earnings-T`, poi a +7 giorni label `unlock-T7`.\n4. Verifica l'event-study contro la realta': il drop e' avvenuto in ANTICIPAZIONE (la media storica e' -37pt da T-30 a T0)? Il giorno dell'unlock (T0) e' stato un minimo locale? La exit-rule (chiudere entro T+5 dall'unlock) ha retto? Se la realta' contraddice lo studio storico, dillo chiaramente.\n5. Scora le predizioni P3-P6/K1-K3 con verify-date passata usando `score.py`, SEMPRE pinnando all'evidenza congelata del checkpoint giusto (mai un close rolling — e' il bug #6).\n6. Append in `LOGBOOK.md` e scrivi un nuovo audit datato nel mirror (`AUDIT-YYYY-MM-DD.md` su branch mirror-ops, mai su main).\nApri PR; per le predizioni e le metriche pre-registrate non cambiare nulla — sarebbe barare.\n```"
+ },
+ {
+  "key": "day135",
+  "type": "dated",
+  "due": "2026-10-25",
+  "lead_days": 3,
+  "post_grace_days": 21,
+  "title": "Check: day-135 lockup fully open — first 'true' price (Oct 2026)",
+  "labels": ["reminder", "milestone"],
+  "body": "Milestone: day-135, lockup completamente aperto, primo prezzo 'vero'. Paste questo prompt a Claude Code:\n\n```\nMilestone SPCX day-135 (lockup pienamente aperto, primo prezzo 'vero', senza piu' vincoli insider). Fai:\n1. Congela checkpoint label `day135` (workflow_dispatch).\n2. Confronta il prezzo SPCX attuale col cono Monte Carlo baseline riancorato al close day-1 reale ($160.95): il realizzato e' dentro la banda 5-95%? Dove sta (mediana/coda)?\n3. Aggiorna il layer post-IPO (notebook 06 + chart + gif `mc_paths_post_ipo`) coi nuovi punti realizzati — layer ADDITIVO, baseline pre-registrato congelato.\n4. Scora tutte le predizioni con verify-date passata (`score.py`), pinnate all'evidenza congelata.\n5. `verify_checkpoints.py` deve essere pulito su tutti gli snapshot.\nRiporta il predetto-vs-realizzato aggiornato e apri PR.\n```"
+ },
+ {
+  "key": "final-scoring",
+  "type": "dated",
+  "due": "2026-12-31",
+  "lead_days": 3,
+  "post_grace_days": 30,
+  "title": "Check: final scoring + VERDICT.md (Dec 31, 2026)",
+  "labels": ["reminder", "milestone", "critical"],
+  "body": "Milestone finale: scoring di chiusura dell'esperimento. Paste questo prompt a Claude Code:\n\n```\nScoring finale dell'esperimento SPCX. Fai con la massima onesta':\n1. `score.py` su TUTTE le predizioni (P1-P6, K1-K3) con verify-date passata, ognuna pinnata al checkpoint dell'evidenza congelata (mai close rolling).\n2. Calibrazione: confronta le P ex-ante (da PREDICTIONS.md, in sola lettura) con gli outcome realizzati. Calcola il Brier score se sensato; di' chiaramente se il modello era over/under-confident.\n3. Scrivi `VERDICT.md` — piu' duro di quanto sia comodo, come chiede il README: l'analisi ha tenuto? le probabilita' erano calibrate? la disciplina e' sopravvissuta al contatto col mercato? Cosa rifaresti diverso?\n4. `verify_checkpoints.py`: integrita' di TUTTI i checkpoint confermata prima di chiudere (l'evidenza e' il testimone).\n5. Audit finale datato nel mirror (branch mirror-ops).\nNON modificare le predizioni o le metriche pre-registrate — sarebbe barare; se ti accorgi di volerlo fare, scrivilo. Apri PR con VERDICT.md.\n```"
+ },
+ {
+  "key": "mirror-token-renew",
+  "type": "dated",
+  "due": "2027-06-01",
+  "lead_days": 21,
+  "post_grace_days": 60,
+  "title": "Renew MIRROR_TOKEN PAT (expires 2027-06-01)",
+  "labels": ["reminder", "ops", "critical"],
+  "body": "Ops: il PAT `MIRROR_TOKEN` scade 2027-06-01 — dopo, il sync del mirror si rompe (non puo' piu' pushare i file workflow). Paste questo prompt a Claude Code (o segui a mano MIRROR_OPS.md §4):\n\n```\nRinnova il PAT MIRROR_TOKEN del repo mirror SPCX (scade 2027-06-01). Procedura (MIRROR_OPS.md §4):\n1. Genera un fine-grained PAT: resource owner Mark2Mac, accesso a SOLO `spcx-ipo-strategy-2026-mirror` (il target del push, NON il repo pubblico), permessi Contents Read/Write + Workflows Read/Write (Metadata read e' automatico). NON allargare lo scope.\n2. `gh secret set MIRROR_TOKEN --repo Mark2Mac/spcx-ipo-strategy-2026-mirror` e incolla il token.\n3. Trigger un sync di prova: `gh workflow run sync-from-public --repo Mark2Mac/spcx-ipo-strategy-2026-mirror`.\n4. Verifica che concluda `success` e che lo sha di main pubblico == sha di main del mirror.\nConferma a fine procedura che la parita' e' ripristinata.\n```"
+ }
+]
