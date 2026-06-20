@@ -38,6 +38,7 @@ def test_source_survives_cache_hit(tmp_path, monkeypatch):
 def test_stooq_fallback_source(tmp_path, monkeypatch):
     monkeypatch.setattr(md, "DATA_DIR", tmp_path)
     monkeypatch.setattr(md, "_from_yfinance", lambda t, p: (_ for _ in ()).throw(ValueError("yf down")))
+    monkeypatch.setattr(md, "_from_yahoo_chart", lambda t, p: (_ for _ in ()).throw(ValueError("yahoo down")))
     monkeypatch.setattr(md, "_from_stooq", lambda t: _fake_df())
     df = md.get_ohlcv("GOOGL", "6mo", force=True)
     assert df.attrs["source"] == "stooq"
