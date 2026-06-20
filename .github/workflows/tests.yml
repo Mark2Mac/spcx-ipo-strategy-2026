@@ -1,0 +1,41 @@
+name: tests
+
+# Closes the gap that the regression suite never ran in CI: checkpoint.yml only collects
+# data. This runs the offline unit/regression tests + checkpoint integrity on every push/PR,
+# so a refactor that breaks scoring or a connector is caught before it reaches a snapshot.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt pytest
+
+      # Deterministic, offline, mocked: scoring, market-data resilience, HN dedup, checkpoint
+      # sanitization, integrity verifier. Must always pass.
+      - name: Unit + regression suite
+        run: python -m pytest tests/ -q
+
+      # Frozen-evidence integrity: re-derives every artifact hash vs MANIFEST. Any tampered or
+      # missing snapshot fails the build.
+      - name: Checkpoint integrity
+        run: python tools/verify_checkpoints.py
+
+      # Live connector smoke (yfinance/EDGAR/HN/etc). Network-dependent, so non-blocking:
+      # surfaces upstream breakage without red-flagging an unrelated PR on a flaky API.
+      - name: Live connector smoke (non-blocking)
+        continue-on-error: true
+        run: ./tools/run_tests.sh python
