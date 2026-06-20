@@ -69,6 +69,49 @@ public repo is ever banned/deleted, the mirror holds the last good state of ever
 **Open items for the next session**: checkpoint `day1` on Jun 12 evening (manual dispatch);
 real IV into `McConfig` once options list and `identity_suspect` turns false (~Jun 24).
 
+## 2026-06-15 (T+3) — first real run, audit, dual-class fix
+
+**Built**: auto-scoring of elapsed predictions (`tools/score.py`, read-only on PREDICTIONS).
+Self-archived first post-debut snapshots.
+
+**Bugs caught and fixed** (PRs #1–#5, full write-up in the private mirror `AUDIT-2026-06-15.md`):
+9. Benchmark/SPCX fetch failures were not surfaced in MANIFEST `errors{}` — routed in.
+10. **CRITICAL: dual-class market-cap undercount.** `yfinance.sharesOutstanding` returns Class A
+    only (~7.49B) → cap $1.205T → would have scored **P2 FALSE**. The 424B4 prospectus is
+    dual-class: 13,075,865,175 total shares → cap **$2.105T → P2 TRUE**. Caught because two
+    yfinance fields disagreed. Scoring now uses the authoritative 424B4 count.
+11. Empty-payload-as-success, no alert on partial failure, yfinance monoculture on SPCX, share
+    drift — hardened (`note_empty`, `tools/gate.py`, Stooq fallback, drift flag).
+
+## 2026-06-20 (T+8) — second audit, resilience fixes, post-IPO review
+
+**Built**: CI test workflow (`.github/workflows/tests.yml` — the suite never ran in CI before),
+`tools/verify_checkpoints.py` (automates the immutability claim; 10/10 checkpoints verified
+clean), QA plan (`docs/09`), and this notebook 06 post-IPO review layer.
+
+**Bugs caught and fixed** (PRs #6–#9, mirror `AUDIT-2026-06-20.md`):
+12. **HIGH: scoring drift.** `score.py` scored the day-1 predictions off the *latest* checkpoint's
+    rolling close (185 → $2.419T) instead of the frozen 2026-06-12 close (160.95 → $2.105T). Once
+    SPCX closed below $152.95 on any checkpoint day, P2 would auto-flip to FALSE — a resolved fact
+    un-resolved. Fixed: `day1_snapshot()` pins to the immutable debut bar.
+13. Stooq fallback 404'd for every index (`^GSPC/^NDX/^VIX`: wrong symbols) and one dead ticker
+    wiped the whole universe (no per-ticker isolation). Both fixed; also guard against Stooq's new
+    anti-bot challenge serving HTML-as-CSV.
+14. HN dedup by `title` collapsed recurring headlines across days → dedup by `objectID`.
+
+**Key decision**: keep the pre-registration frozen. Notebook 06 is an *added* predicted-vs-realized
+layer — it never touches PREDICTIONS.md, the metrics, or the baseline notebooks/charts.
+
+**Resolved (from the Jun 11 open items)**: `day1` checkpoint captured (the 2026-06-12 close is
+frozen and immutable); `identity_suspect` cleared by Jun 18, real options listed.
+
+**The debut, scored**: $135 IPO → $160.95 day-1 close (+19.2%), $2.105T cap → **P1 and P2 both
+TRUE**. Calibration held (Polymarket cap>$2T ~0.63, our P2 0.60, both right). The model under-vol'd:
+assumed 70% vs listed ATM IV ~88% for the August expiry — the put spread is richer than baseline.
+
+**Open items**: add a second independent SPCX price source (yfinance near-monoculture; Stooq
+degrading); July spread entry; August earnings + insider unlock; `form4_watch()` goes live.
+
 ---
 
 *Template for future entries: date (T±n) — built / key decisions / bugs caught / frozen / open items.*

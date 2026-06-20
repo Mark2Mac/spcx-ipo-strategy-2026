@@ -47,8 +47,8 @@ is the contract with the future; git history is the notary.
 | | Date | Milestone | Evidence frozen |
 |---|---|---|---|
 | ✅ | Jun 10, 2026 | Research, plan, predictions — all pre-registered | `checkpoints/2026-06-10-baseline` |
-| ⏳ | Jun 12 | **The debut** — P1 and P2 resolve on day one | checkpoint `day1` |
-| ⏳ | ~Jun 24 | SPCX options list: the model's guessed IV meets reality | checkpoint `options-listed` |
+| ✅ | Jun 12 | **The debut** — P1 and P2 both resolved **TRUE** (+19.2% pop, $2.105T cap) | `checkpoints/…-day1-score`, `checkpoints/SCORING.md` |
+| ✅ | Jun 18 | SPCX options listed: the model's guessed IV met reality (70% assumed vs ~88% real) | [`notebooks/06`](notebooks/06_post_ipo_review.ipynb) |
 | ⏳ | Jul 6-17 | Spread entry window — or its written fallbacks | checkpoint `entry-window` |
 | ⏳ | ~Aug | First earnings + the insider unlock (the whole thesis) | checkpoints `earnings-T`, `unlock-T7` |
 | ⏳ | ~Oct 25 | Day 135: lockup fully open, first "true" price | checkpoint `day135` |
@@ -143,12 +143,39 @@ RIVN, META, SNAP) shows the drop happens in *anticipation* (-37 points on averag
 sessions before expiry) and the unlock day itself is often a local bottom. Sell the rumor,
 buy the news: the exit rule was rewritten accordingly (close within T+5 of the unlock).
 
+## Six days in — predicted vs realized (the pre-registration stays frozen)
+
+The debut happened. [`notebooks/06_post_ipo_review.ipynb`](notebooks/06_post_ipo_review.ipynb) is
+an **added** scoring layer — it never edits `PREDICTIONS.md`, the metrics, or the baseline charts;
+it reads the **frozen** day-1 checkpoint and pre-debut odds and holds them against live reality.
+
+<div align="center">
+<img src="assets/chart_post_ipo.png" width="640"/><br>
+<sub><b>Realized path vs the frozen-config Monte Carlo cone</b> — the baseline Student-t MC
+re-anchored to the real $160.95 debut close; the first six sessions land inside the 5–95% envelope,
+hugging the upper band</sub>
+</div>
+
+| | Pre-registered / market expectation | Realized | Verdict |
+|---|---|---|---|
+| **P1** cap > $1T | our P 0.97 · Polymarket ~0.99 | $2.105T | **TRUE** ✓ |
+| **P2** cap > $2T | our P 0.60 · Polymarket ~0.63 | $2.105T | **TRUE** ✓ |
+| Day-1 pop | — | $135 → $160.95 = **+19.2%** | — |
+| **IV reality check** | MC assumed **70%** vol | listed ATM IV (Aug unlock) **~88%** | model **under-vol'd by ~18pts** |
+
+Calibration held (crowd and our P both on the right side of $2T, near its probability); the model
+under-priced volatility, so the July put spread is richer than the baseline implied — judge the
+entry on real IV, exactly as the sensitivity note warned. Full scoring in
+[`checkpoints/SCORING.md`](checkpoints/SCORING.md). Still ahead and untouched: the July spread
+entry, the August earnings + insider unlock, and `form4_watch()` going live.
+
 ## What's in the repo
 
 ```
 notebooks/00_master_report.ipynb     ← OPEN THIS: runs everything, outputs embedded
 notebooks/01..05                     data pipeline · correlations · Monte Carlo · signal quality ·
                                      data-quality audit
+notebooks/06_post_ipo_review.ipynb   predicted-vs-realized scoring layer (frozen baseline untouched)
 docs/01..08                          thesis · strategies with full math · timeline ·
                                      risk management · tax case study · trade journal ·
                                      capital tiers (€1k to €10M+) · closing the enterprise gap
