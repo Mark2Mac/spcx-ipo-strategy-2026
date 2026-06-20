@@ -1,4 +1,4 @@
-"""OHLCV connector: yfinance primary, Stooq fallback, parquet cache, data-quality checks."""
+"""OHLCV connector: yfinance -> Yahoo chart API -> Stooq (3-tier), parquet cache, data-quality checks."""
 from __future__ import annotations
 
 import io
@@ -30,6 +30,37 @@ def _from_yfinance(ticker: str, period: str) -> pd.DataFrame:
         raise ValueError(f"yfinance empty for {ticker}")
     df.index = pd.to_datetime(df.index).tz_localize(None)
     return df[["Open", "High", "Low", "Close", "Volume"]].dropna(subset=["Close"])
+
+
+# Yahoo's v8 chart endpoint, hit directly (no yfinance library in the path). Independent of the
+# most common failure mode — a yfinance release breaking against a Yahoo change — and keyless, so
+# it needs no secret. This is the second source for the SPCX close that P1/P2 scoring depends on.
+_YAHOO_UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) spcx-ipo-strategy research"}
+
+
+def _from_yahoo_chart(ticker: str, period: str) -> pd.DataFrame:
+    from urllib.parse import quote
+
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(ticker)}"
+    r = requests.get(url, params={"range": period, "interval": "1d"},
+                     headers=_YAHOO_UA, timeout=20)
+    r.raise_for_status()
+    result = (r.json().get("chart") or {}).get("result") or [None]
+    res = result[0]
+    if not res or "timestamp" not in res:
+        raise ValueError(f"yahoo-chart empty for {ticker}")
+    ts = res["timestamp"]
+    q = res["indicators"]["quote"][0]
+    # Prefer adjclose to match yfinance auto_adjust=True; fall back to raw close.
+    adj = (res["indicators"].get("adjclose") or [{}])[0].get("adjclose")
+    close = adj if adj else q["close"]
+    idx = pd.to_datetime(ts, unit="s", utc=True).tz_convert(None).normalize()
+    df = pd.DataFrame({"Open": q["open"], "High": q["high"], "Low": q["low"],
+                       "Close": close, "Volume": q["volume"]}, index=idx)
+    df = df.dropna(subset=["Close"])
+    if df.empty:
+        raise ValueError(f"yahoo-chart empty for {ticker}")
+    return df[["Open", "High", "Low", "Close", "Volume"]]
 
 
 # Stooq names indices with a caret prefix and a stooq-specific code, not the Yahoo symbol.
@@ -99,12 +130,22 @@ def get_ohlcv(ticker: str, period: str = "2y", force: bool = False) -> pd.DataFr
         # parquet drops .attrs; restore source from sidecar so provenance survives a cache hit.
         df.attrs["source"] = src_file.read_text().strip() if src_file.exists() else "unknown"
         return df
-    try:
-        df = _from_yfinance(ticker, period)
-        df.attrs["source"] = "yfinance"
-    except Exception:
-        df = _from_stooq(ticker)
-        df.attrs["source"] = "stooq"
+    # Three independent tiers: yfinance lib -> Yahoo chart API direct -> Stooq. The middle tier
+    # removes the yfinance-library single point of failure (its most common breakage) without a
+    # secret; Stooq is a different backend entirely. Try each, keep the first that returns data.
+    sources = (("yfinance", lambda: _from_yfinance(ticker, period)),
+               ("yahoo-chart", lambda: _from_yahoo_chart(ticker, period)),
+               ("stooq", lambda: _from_stooq(ticker)))
+    df, last_err = None, None
+    for name, fn in sources:
+        try:
+            df = fn()
+            df.attrs["source"] = name
+            break
+        except Exception as e:
+            last_err = e
+    if df is None:
+        raise RuntimeError(f"all price sources failed for {ticker}: {type(last_err).__name__}: {last_err}")
     df.to_parquet(cache)
     src_file.write_text(df.attrs["source"])
     return df
@@ -112,7 +153,7 @@ def get_ohlcv(ticker: str, period: str = "2y", force: bool = False) -> pd.DataFr
 
 def get_universe(tickers: list[str], period: str = "2y",
                  force: bool = False) -> tuple[pd.DataFrame, list[dict]]:
-    # Isolate each ticker: a single symbol failing on BOTH yfinance and Stooq must not abort
+    # Isolate each ticker: a single symbol failing on ALL three price sources must not abort
     # the whole snapshot. The failure is recorded as a blocking issue in that ticker's report
     # (so the run gate trips), while every healthy series is still frozen.
     closes, reports = {}, []
@@ -124,7 +165,7 @@ def get_universe(tickers: list[str], period: str = "2y",
         except Exception as e:
             reports.append({"ticker": t, "rows": 0, "first": None, "last": None,
                             "missing_bdays": None, "source": "unavailable",
-                            "issues": [f"fetch failed (yfinance+stooq): {type(e).__name__}: {str(e)[:120]}"],
+                            "issues": [f"fetch failed (all 3 sources): {type(e).__name__}: {str(e)[:120]}"],
                             "warnings": []})
     frame = pd.DataFrame(closes).sort_index() if closes else pd.DataFrame()
     return frame, reports
