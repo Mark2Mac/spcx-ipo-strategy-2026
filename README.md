@@ -150,10 +150,11 @@ an **added** scoring layer — it never edits `PREDICTIONS.md`, the metrics, or 
 it reads the **frozen** day-1 checkpoint and pre-debut odds and holds them against live reality.
 
 <div align="center">
-<img src="assets/chart_post_ipo.png" width="640"/><br>
+<img src="assets/mc_paths_post_ipo.gif" width="640"/><br>
 <sub><b>Realized path vs the frozen-config Monte Carlo cone</b> — the baseline Student-t MC
-re-anchored to the real $160.95 debut close; the first six sessions land inside the 5–95% envelope,
-hugging the upper band</sub>
+re-anchored to the real $160.95 debut close, the realized SPCX path (red) revealed on top; the
+first six sessions land inside the 5–95% envelope, hugging the upper band. Static version:
+<a href="assets/chart_post_ipo.png">chart_post_ipo.png</a></sub>
 </div>
 
 | | Pre-registered / market expectation | Realized | Verdict |
