@@ -1,0 +1,182 @@
+[
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.004,
+   "No": 0.996
+  },
+  "volume": 602940.6980589998
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $1.5T and $2.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.425,
+   "No": 0.575
+  },
+  "volume": 266396.6478659999
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $1.0T and $1.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.0225,
+   "No": 0.9775
+  },
+  "volume": 263156.75240099983
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $2.5T and $3.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.0095,
+   "No": 0.9905
+  },
+  "volume": 220181.69043200003
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $2.0T and $2.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.54,
+   "No": 0.46
+  },
+  "volume": 203655.7894959996
+ },
+ {
+  "event": "SpaceX IPO: Closing Price Up/Down End of First Month?",
+  "market": "SpaceX IPO: Closing Price Up/Down End of First Month?",
+  "outcomes": {
+   "Up": 0.345,
+   "Down": 0.655
+  },
+  "volume": 196275.33719900003
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be less than $1.0T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.002,
+   "No": 0.998
+  },
+  "volume": 153228.4672589999
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be between $3.0T and $3.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.001,
+   "No": 0.999
+  },
+  "volume": 128971.83233199995
+ },
+ {
+  "event": "SpaceX Closing Market Cap End of IPO Month",
+  "market": "Will SpaceX's market cap be at least $3.5T at market close on last trading day of IPO month?",
+  "outcomes": {
+   "Yes": 0.0005,
+   "No": 0.9995
+  },
+  "volume": 114245.91088299998
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have 200 or more launches in 2026?",
+  "outcomes": {
+   "Yes": 0.045,
+   "No": 0.955
+  },
+  "volume": 105242.22518100003
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 160-179 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.25,
+   "No": 0.75
+  },
+  "volume": 94333.79988
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 180-199 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.071,
+   "No": 0.929
+  },
+  "volume": 58908.23051499998
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 140-159 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.626,
+   "No": 0.374
+  },
+  "volume": 47107.316303999985
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31?",
+  "outcomes": {
+   "Yes": 0.39,
+   "No": 0.61
+  },
+  "volume": 46541.423988999995
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by September 30?",
+  "outcomes": {
+   "Yes": 0.275,
+   "No": 0.725
+  },
+  "volume": 42293.140958
+ },
+ {
+  "event": "How many SpaceX launches in June 2026?",
+  "market": "Will SpaceX have 14+ launches in June 2026?",
+  "outcomes": {
+   "Yes": 0.885,
+   "No": 0.115
+  },
+  "volume": 12385.174727000003
+ },
+ {
+  "event": "How many SpaceX launches in June 2026?",
+  "market": "Will SpaceX have fewer than 11 launches in June 2026?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 11372.683788000006
+ },
+ {
+  "event": "How many SpaceX launches in June 2026?",
+  "market": "Will SpaceX have exactly 11 launches in June 2026?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 10574.892218999996
+ },
+ {
+  "event": "How many SpaceX launches in June 2026?",
+  "market": "Will SpaceX have exactly 13 launches in June 2026?",
+  "outcomes": {
+   "Yes": 0.11,
+   "No": 0.89
+  },
+  "volume": 5702.186542000002
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have less than 100 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.006,
+   "No": 0.994
+  },
+  "volume": 3884.896387999999
+ }
+]

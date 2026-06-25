@@ -1,6 +1,6 @@
 # Auto-scoring (predictions whose verify-date has passed)
 
-Source checkpoint: `2026-06-13-ci-verify` — scored 2026-06-22. Read-only on PREDICTIONS.md; this file is regenerated, not authoritative.
+Source checkpoint: `2026-06-13-ci-verify` — scored 2026-06-25. Read-only on PREDICTIONS.md; this file is regenerated, not authoritative.
 
 | # | Prediction | P(ex-ante) | Outcome | Detail |
 |---|---|---|---|---|
