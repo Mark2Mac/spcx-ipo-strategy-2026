@@ -35,6 +35,7 @@ def main() -> None:
     realized = get_ohlcv("SPCX", period="1mo", force=True)["Close"]
     realized = realized[realized.index >= "2026-06-12"].to_numpy()
     rx = np.arange(len(realized))
+    side = "above" if realized[-1] >= p50[len(realized) - 1] else "below"
 
     fig, ax = plt.subplots(figsize=(9, 5.2))
     ax.set_xlim(0, days[-1])
@@ -44,7 +45,7 @@ def main() -> None:
                 fontsize=9, ha="center", color=PALETTE[1])
     ax.text(0, 1.10, f"Realized SPCX path vs the frozen-config Monte Carlo cone (anchored to the ${close_d1:.2f} debut close)",
             transform=ax.transAxes, fontsize=11.5, fontweight="bold", va="bottom")
-    ax.text(0, 1.04, "baseline Student-t MC re-anchored to reality · the first six sessions land inside the 5th-95th band",
+    ax.text(0, 1.04, f"baseline Student-t MC re-anchored to reality · {len(realized)} sessions in, the realized close sits {side} the median",
             transform=ax.transAxes, fontsize=9, color="#666666", va="bottom")
     ax.set_xlabel("sessions since debut"); ax.set_ylabel("$")
 

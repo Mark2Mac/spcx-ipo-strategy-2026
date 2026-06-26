@@ -143,7 +143,7 @@ RIVN, META, SNAP) shows the drop happens in *anticipation* (-37 points on averag
 sessions before expiry) and the unlock day itself is often a local bottom. Sell the rumor,
 buy the news: the exit rule was rewritten accordingly (close within T+5 of the unlock).
 
-## Six days in — predicted vs realized (the pre-registration stays frozen)
+## Two weeks in — predicted vs realized (the pre-registration stays frozen)
 
 The debut happened. [`notebooks/06_post_ipo_review.ipynb`](notebooks/06_post_ipo_review.ipynb) is
 an **added** scoring layer — it never edits `PREDICTIONS.md`, the metrics, or the baseline charts;
@@ -152,8 +152,10 @@ it reads the **frozen** day-1 checkpoint and pre-debut odds and holds them again
 <div align="center">
 <img src="assets/mc_paths_post_ipo.gif" width="640"/><br>
 <sub><b>Realized path vs the frozen-config Monte Carlo cone</b> — the baseline Student-t MC
-re-anchored to the real $160.95 debut close, the realized SPCX path (red) revealed on top; the
-first six sessions land inside the 5–95% envelope, hugging the upper band. Static version:
+re-anchored to the real $160.95 debut close, the realized SPCX path (red) revealed on top. Nine
+sessions in, the pop has <b>round-tripped</b>: a spike to ~$211 (briefly above the frozen 95th
+percentile) unwound through the median to $153 — just below the debut close, now in the lower half
+of the cone, still inside it. Static version:
 <a href="assets/chart_post_ipo.png">chart_post_ipo.png</a></sub>
 </div>
 
@@ -166,7 +168,9 @@ first six sessions land inside the 5–95% envelope, hugging the upper band. Sta
 
 Calibration held (crowd and our P both on the right side of $2T, near its probability); the model
 under-priced volatility, so the July put spread is richer than the baseline implied — judge the
-entry on real IV, exactly as the sensitivity note warned. Full scoring in
+entry on real IV, exactly as the sensitivity note warned. The two-week round-trip from $211 back to
+$153 is that under-priced vol made visible: the day-1 fact stays frozen and TRUE, while the
+post-debut tape does what 88% IV said it would. Full scoring in
 [`checkpoints/SCORING.md`](checkpoints/SCORING.md). Still ahead and untouched: the July spread
 entry, the August earnings + insider unlock, and `form4_watch()` going live.
 

@@ -35,7 +35,7 @@ CELLS = [
 > **frozen** day-1 checkpoint + pre-debut Polymarket odds and holds them against **live, realized**
 > data. Everything dated before 2026-06-12 is the contract; everything here is the scoring.
 
-What it answers, six days after the debut:
+What it answers, two weeks after the debut (T+9 sessions):
 1. How did the day-1 bet resolve? (P1/P2)
 2. Were the probabilities — ours and the market's — calibrated?
 3. The IV reality check the README promised: did the model's assumed vol meet the listed-option IV?
@@ -114,19 +114,21 @@ ax.plot(x, p50, color=PALETTE[0], lw=1.2, ls="--", label="MC median")
 ax.plot(rx, realized.values, color=BAD, lw=2.2, marker="o", ms=4, label="realized close")
 ax.annotate(f"${realized.values[-1]:.0f}", (rx[-1], realized.values[-1]),
             xytext=(8, 0), textcoords="offset points", va="center", color=BAD, fontsize=10)
-inside = (realized.values[-1] >= p5[len(realized) - 1]) and (realized.values[-1] <= p95[len(realized) - 1])
-headline(ax, f"Realized path is {'inside' if inside else 'OUTSIDE'} the frozen-config cone, near the upper band",
-         "baseline Student-t MC re-anchored to the real $160.95 debut close · first 6 sessions overlaid")
+last = len(realized) - 1
+inside = (realized.values[-1] >= p5[last]) and (realized.values[-1] <= p95[last])
+side = "above" if realized.values[-1] >= p50[last] else "below"
+headline(ax, f"Realized path is {'inside' if inside else 'OUTSIDE'} the frozen-config cone, now {side} the median",
+         f"baseline Student-t MC re-anchored to the real $160.95 debut close · {len(realized)} sessions overlaid")
 ax.set_xlabel("trading days since debut"); ax.set_ylabel("SPCX price ($)")
 ax.legend(loc="upper left")
 fig.savefig("../assets/chart_post_ipo.png", bbox_inches="tight")
 plt.show()"""),
-    ("md", """## 5. Verdict so far (2026-06-20, T+6)
+    ("md", """## 5. Verdict so far (2026-06-25, T+9)
 
 - **Day-1 bet resolved correctly**: +19.2% pop, $2.105T cap → **P1 and P2 both TRUE**, scored on the frozen close (the scoring-drift bug that would have un-resolved this is fixed, PR #6).
 - **Calibration held**: Polymarket priced cap>$2T at ~0.63 and our pre-registered P2 was 0.60 — both on the right side, both near the realized truth. No overconfidence to flag yet.
-- **The model under-vol'd**: assumed 70% vs listed ATM IV ~88% for the August expiry. The put spread the plan buys in July is therefore *more expensive* than the baseline implied — judge the entry on real IV, exactly as the sensitivity note warned.
-- **Reality stayed in the cone**, hugging the upper band: the realized path spiked to ~$211 then settled to $185, well within the frozen-config 5–95% envelope.
+- **The model under-vol'd**: assumed 70% vs listed ATM IV ~88% for the August expiry. The put spread the plan buys in July is therefore *more expensive* than the baseline implied — judge the entry on real IV, exactly as the sensitivity note warned. The two-week round-trip below is the realized version of that under-priced vol.
+- **The pop round-tripped**: the realized path spiked to ~$211 on session 3 — briefly *above* the frozen 95th-percentile band — then unwound through the median to **$153** by T+9, just below the $160.95 debut close. Still inside the cone, but now in its lower half, not the upper band it was hugging six sessions in. The day-1 fact is frozen and unaffected; the post-debut tape is simply doing what 88% IV said it would.
 
 **Still ahead and untouched**: the July spread entry, the August earnings + insider unlock (the whole thesis), and `form4_watch()` going live. The pre-registration stands; this page only keeps score."""),
 ]
