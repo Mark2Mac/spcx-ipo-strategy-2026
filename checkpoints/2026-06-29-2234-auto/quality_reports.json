@@ -1,0 +1,136 @@
+[
+ {
+  "ticker": "GOOGL",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "TSLA",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "NDAQ",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "HOOD",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "VIRT",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "GS",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "MS",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "RKLB",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "ASTS",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": [
+   "jump >50% on 2024-08-15 (verify: real move or bad print)"
+  ]
+ },
+ {
+  "ticker": "LMT",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "^GSPC",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "^NDX",
+  "rows": 500,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 21,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": []
+ },
+ {
+  "ticker": "^VIX",
+  "rows": 501,
+  "first": "2024-07-01",
+  "last": "2026-06-29",
+  "missing_bdays": 20,
+  "source": "yfinance",
+  "issues": [],
+  "warnings": [
+   "jump >50% on 2024-12-18 (verify: real move or bad print)"
+  ]
+ }
+]
