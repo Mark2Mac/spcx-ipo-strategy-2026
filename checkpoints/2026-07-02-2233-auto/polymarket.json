@@ -1,0 +1,128 @@
+[
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 606999.673596
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by September 30?",
+  "outcomes": {
+   "Yes": 0.095,
+   "No": 0.905
+  },
+  "volume": 137753.13664500017
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31?",
+  "outcomes": {
+   "Yes": 0.245,
+   "No": 0.755
+  },
+  "volume": 60841.804419999964
+ },
+ {
+  "event": "Two SpaceX Starships dock together by\u2026?",
+  "market": "Will two SpaceX Starships dock together by December 31, 2026?",
+  "outcomes": {
+   "Yes": 0.215,
+   "No": 0.785
+  },
+  "volume": 29695.23588599999
+ },
+ {
+  "event": "Google x SpaceX agree to put data centers in space by...?",
+  "market": "Google x SpaceX agree to put data centers in space by June 30?",
+  "outcomes": {
+   "Yes": 0.01,
+   "No": 0.99
+  },
+  "volume": 23401.108781000145
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will SpaceX Starship Flight Test 13 Superheavy explode?",
+  "outcomes": {
+   "Yes": 0.78,
+   "No": 0.22
+  },
+  "volume": 16662.019252
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will SpaceX Starship Flight Test 13 launch by July 31?",
+  "outcomes": {
+   "Yes": 0.38,
+   "No": 0.62
+  },
+  "volume": 13369.23856000004
+ },
+ {
+  "event": "SpaceX IPO: Officially added to Nasdaq-100 in 2026?",
+  "market": "SpaceX IPO: Officially added to Nasdaq-100 in 2026?",
+  "outcomes": {
+   "Yes": 0.995,
+   "No": 0.005
+  },
+  "volume": 11702.706149000003
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will SpaceX Starship Flight Test 13 launch by June 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 6534.552848000014
+ },
+ {
+  "event": "Two SpaceX Starships dock together by\u2026?",
+  "market": "Will two SpaceX Starships dock together by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.66,
+   "No": 0.34
+  },
+  "volume": 6308.065619999999
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will SpaceX Starship Flight Test 13 launch by August 31?",
+  "outcomes": {
+   "Yes": 0.84,
+   "No": 0.16
+  },
+  "volume": 2622.7545859999996
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will the chopsticks catch SpaceX Starship Flight Test 13 Superheavy booster?",
+  "outcomes": {
+   "Yes": 0.011,
+   "No": 0.989
+  },
+  "volume": 1334.3568579999992
+ },
+ {
+  "event": "SpaceX Starship Flight Test 13",
+  "market": "Will the Starship for SpaceX Starship Flight Test 13 achieve a successful splashdown?",
+  "outcomes": {
+   "Yes": 0.8,
+   "No": 0.2
+  },
+  "volume": 781.485529
+ },
+ {
+  "event": "Google x SpaceX agree to put data centers in space by...?",
+  "market": "Google x SpaceX agree to put data centers in space by December 31?",
+  "outcomes": {
+   "Yes": 0.435,
+   "No": 0.565
+  },
+  "volume": 160.25596600000006
+ }
+]
