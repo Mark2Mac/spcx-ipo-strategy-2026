@@ -48,8 +48,8 @@
   "event": "SpaceX Starship Flight Test 13",
   "market": "Will SpaceX Starship Flight Test 13 launch by July 31?",
   "outcomes": {
-   "Yes": 0.25,
-   "No": 0.75
+   "Yes": 0.245,
+   "No": 0.755
   },
   "volume": 18036.10455400004
  },
@@ -66,17 +66,17 @@
   "event": "SpaceX IPO: Officially added to S&P 500 in 2026?",
   "market": "SpaceX IPO: Officially added to S&P 500 in 2026?",
   "outcomes": {
-   "Yes": 0.062,
-   "No": 0.938
+   "Yes": 0.0565,
+   "No": 0.9435
   },
-  "volume": 14739.602767999999
+  "volume": 15272.422768
  },
  {
   "event": "Two SpaceX Starships dock together by\u2026?",
   "market": "Will two SpaceX Starships dock together by December 31, 2027?",
   "outcomes": {
-   "Yes": 0.85,
-   "No": 0.15
+   "Yes": 0.865,
+   "No": 0.135
   },
   "volume": 7723.045619999999
  },

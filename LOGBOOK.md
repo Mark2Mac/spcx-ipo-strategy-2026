@@ -134,8 +134,11 @@ once identity_suspect turns false*).
 - **Stand-down, no order.** Entry gate is *Sep ATM IV < 55%*; realized IV ~83-87%. Spot
   ($162) and debit (~$1.99) passed, IV did not. Bought nothing — inflated post-IPO IV is a
   gift to the market maker (Phase 2 Fallback 1). Retry Jul 24 @ 60%, else cancel B.
-- Model params updated (s0 150→162, vol 0.70→0.874, debit 2.20→1.99); frozen baseline lives
-  in the immutable checkpoints + `docs/html`, not in the source defaults.
+- `McConfig` kept **frozen** at the ex-ante baseline (150/0.70/2.20) — it is the object
+  notebook 06 scores "assumed vs realized IV" against, so mutating it would break that
+  calibration. Realized params (close, Aug ATM IV, BS debit) are derived from archived
+  checkpoint evidence and applied **explicitly** in notebook 07. (An earlier revision of this
+  work wrongly edited the McConfig defaults; reverted once the parallel 06 layer surfaced.)
 - P1/P2 (resolved TRUE on the Jun 12 debut) are left to the existing scoring path
   (`tools/score.py` + `checkpoints/SCORING.md`); `PREDICTIONS.md` stays frozen, untouched.
 - This layer is notebook **07** (`07_entry_decision`), distinct from the frozen **06**
