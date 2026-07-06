@@ -12,7 +12,7 @@ TRADING_DAYS = 252
 class SpreadPosition:
     long_strike: float = 140.0
     short_strike: float = 135.0
-    debit: float = 1.99  # realized: 140/135 Sep put spread, BS@Sep-ATM-IV, entry window 2026-07-06 (last-based 2.25)
+    debit: float = 2.20  # ex-ante baseline (pre-listing); realized entry-window figure lives in notebook 07
     contracts: int = 1
 
     def payoff(self, spot_final: np.ndarray) -> np.ndarray:
@@ -26,8 +26,8 @@ class McConfig:
     n_paths: int = 10_000
     horizon_days: int = 70
     event_day: int = 45
-    spcx_s0: float = 162.0  # realized SPCX close 2026-07-02 (was 150.0 placeholder)
-    spcx_vol: float = 0.874  # realized ATM IV, Aug (unlock month) expiry, 2026-07-06 (was 0.70 placeholder)
+    spcx_s0: float = 150.0  # ex-ante baseline placeholder; realized close applied in notebook 07
+    spcx_vol: float = 0.70  # ex-ante baseline (pre-listing assumption, scored vs realized IV in notebook 06)
     spcx_drift: float = 0.0
     jump_mean: float = -0.08
     jump_std: float = 0.12

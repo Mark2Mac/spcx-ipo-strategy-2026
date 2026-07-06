@@ -37,8 +37,7 @@ The baseline notebooks (00-05), the 06 post-IPO **calibration** review, and `PRE
     ("code", f"""import json
 CK = Path.cwd().parent / "checkpoints" / "{CKPT}"
 spcx = json.load(open(CK / "spcx_market.json"))
-mc   = json.load(open(CK / "montecarlo.json"))
-close = spcx["ohlcv_tail"][-1]["Close"]
+close = spcx.get("last_close") or spcx["ohlcv_tail"][-1]["Close"]
 print(f"checkpoint {CKPT} | SPCX close {{close:.2f}} | identity_suspect={{spcx['identity_suspect']}}")"""),
     ("md", """## 1. Identity resolution — the option chain is really SpaceX now
 
@@ -47,17 +46,35 @@ SpaceX IPO'd **2026-06-12** (Nasdaq: SPCX, priced \\$135, day-1 close \\$160.95,
 median_strike = med[len(med)//2] if med else float("nan")
 print(f"median listed strike {median_strike:.1f} vs close {close:.1f} -> ratio {median_strike/close:.2f} (guard passes if 0.5-2.0)")
 print(f"identity_suspect = {spcx['identity_suspect']}   quality_flags = {spcx['quality_flags']}")"""),
-    ("md", """## 2. Baseline placeholders vs realized parameters
+    ("md", """## 2. Frozen baseline vs realized parameters
 
-The Monte-Carlo baseline ran on illustrative placeholders (`spcx_s0=150`, `spcx_vol=0.70`, `debit=2.20`). The entry-window checkpoint replaces them with realized values: the last SPCX close, the **August (unlock-month) ATM implied vol** back-solved from the ATM option `lastPrice` (the free feed carries no live bid/ask, so IV is Black-Scholes-inverted and cross-checked against realized vol), and the real 140/135 Sep put-spread debit."""),
+`McConfig` stays the **frozen ex-ante model** (`spcx_s0=150`, `spcx_vol=0.70`, `debit=2.20`) — the same object notebook 06 scores its "assumed 70% vs realized IV" calibration against, so it is never mutated here. This notebook derives the **realized** inputs from archived checkpoint evidence and applies them explicitly: the last SPCX close (`spcx_ohlcv.parquet`), the **August (unlock-month) ATM implied vol** (`derived_atm_iv`, Black-Scholes-inverted from the option `lastPrice` because the free feed has no live bid/ask), and the 140/135 Sep put-spread debit BS-priced at that IV."""),
     ("code", """from src.risk.montecarlo import McConfig, SpreadPosition
-base_cfg, base_spread = McConfig(spcx_s0=150.0, spcx_vol=0.70, fx_eurusd=1.16), SpreadPosition(debit=2.20)
-real_cfg  = McConfig(spcx_s0=mc["config"]["spcx_s0"], spcx_vol=mc["config"]["spcx_vol"], fx_eurusd=mc["config"]["fx_eurusd"])
-real_spread = SpreadPosition(debit=mc["spread"]["debit"])
+from dataclasses import replace
+from math import log, sqrt, erf, exp as _exp
+import datetime as _dt
+
+base_cfg, base_spread = McConfig(), SpreadPosition()               # frozen ex-ante model
+
+real_close = float(pd.read_parquet(CK / "spcx_ohlcv.parquet")["Close"].iloc[-1])
+aug = [v["avg_iv"] for e, v in spcx["derived_atm_iv"].items() if e.startswith("2026-08") and v["avg_iv"]]
+real_vol = round(sum(aug)/len(aug), 3) if aug else base_cfg.spcx_vol   # Aug ATM IV, archived
+
+def _bs_put(S, K, T, sig, r=0.036):
+    if T <= 0 or sig <= 0: return max(0.0, K - S)
+    nc = lambda x: 0.5 * (1 + erf(x / sqrt(2)))
+    d1 = (log(S/K) + (r + 0.5*sig*sig)*T) / (sig*sqrt(T)); d2 = d1 - sig*sqrt(T)
+    return K*_exp(-r*T)*nc(-d2) - S*nc(-d1)
+asof = _dt.date.fromisoformat(str(spcx["ohlcv_tail"][-1]["Date"])[:10])
+T_sep = (_dt.date(2026, 9, 18) - asof).days / 365
+real_debit = round(_bs_put(real_close, 140, T_sep, real_vol) - _bs_put(real_close, 135, T_sep, real_vol), 2)
+
+real_cfg = replace(base_cfg, spcx_s0=real_close, spcx_vol=real_vol)
+real_spread = SpreadPosition(debit=real_debit)
 pd.DataFrame({
-    "baseline (placeholder)": [base_cfg.spcx_s0, base_cfg.spcx_vol, base_spread.debit, base_cfg.fx_eurusd],
-    "realized (entry window)": [real_cfg.spcx_s0, real_cfg.spcx_vol, real_spread.debit, round(real_cfg.fx_eurusd,4)],
-}, index=["spcx_s0", "spcx_vol (Aug ATM IV)", "spread debit", "fx_eurusd"])"""),
+    "baseline (ex-ante, frozen)": [base_cfg.spcx_s0, base_cfg.spcx_vol, base_spread.debit],
+    "realized (entry window)": [round(real_cfg.spcx_s0, 2), real_cfg.spcx_vol, real_spread.debit],
+}, index=["spcx_s0", "spcx_vol (Aug ATM IV)", "spread debit"])"""),
     ("md", """## 3. Monte Carlo re-run — hard cap must hold on every path
 
 Same engine (GBM + Student-t fat tails + event-day jump), only the three parameters swapped. The structural claim to defend is that the debit spread's loss is **capped at the premium paid on every single path** — a design property, not a probabilistic one."""),
@@ -76,7 +93,7 @@ pd.DataFrame({
 })"""),
     ("code", """fig, axes = plt.subplots(1, 2, figsize=(12, 4.2), sharey=True)
 pnl_distribution(axes[0], base_res["pnl_total_eur"], base_rep["VaR95"], base_rep["ES95"],
-                 "Baseline (placeholder params)", "s0=150, vol=0.70, debit=2.20")
+                 "Baseline (ex-ante model)", f"s0={base_cfg.spcx_s0:.0f}, vol={base_cfg.spcx_vol:.2f}, debit={base_spread.debit:.2f}")
 pnl_distribution(axes[1], real_res["pnl_total_eur"], real_rep["VaR95"], real_rep["ES95"],
                  "Realized (entry window)", f"s0={real_cfg.spcx_s0:.0f}, vol={real_cfg.spcx_vol:.2f}, debit={real_spread.debit:.2f}")
 plt.tight_layout(); plt.savefig("../assets/chart_pnl_baseline_vs_real.png", dpi=130, bbox_inches="tight"); plt.show()"""),
@@ -112,10 +129,9 @@ plt.tight_layout(); plt.savefig("../assets/chart_mc_vs_realized.png", dpi=130, b
     ("md", """## 5. The entry decision — IV gate not met, stand-down
 
 Strategy B enters only when **all three** Phase-2 conditions hold at once. On 2026-07-06 the IV crush the plan waited for has not arrived: SPCX still trades at post-IPO frenzy vol (~83-87%) against a ≤55% gate. Per **Phase 2 Fallback 1**, buying options here is a gift to the market maker — no order is placed; retry Jul 24 at the relaxed 60% threshold (which ~83% still fails), else cancel Strategy B. This is a *valid* outcome: the plan's discipline held. See `docs/06-trade-journal.md` §2 #001."""),
-    ("code", """sep_iv, aug_iv = 0.827, 0.874  # ATM IV back-solved from lastPrice, entry window
-gate = pd.DataFrame([
-    ["September ATM IV", "< 55%", f"~{sep_iv:.0%} (Aug ~{aug_iv:.0%})", sep_iv < 0.55],
-    ["SPCX spot", "> $140", f"${close:.2f}", close > 140],
+    ("code", """gate = pd.DataFrame([
+    ["ATM IV (Aug unlock)", "< 55%", f"~{real_vol:.0%}", real_vol < 0.55],
+    ["SPCX spot", "> $140", f"${real_close:.2f}", real_close > 140],
     ["140/135 Sep debit", "<= $2.30", f"~${real_spread.debit:.2f}", real_spread.debit <= 2.30],
 ], columns=["condition", "threshold", "realized", "met"])
 print("ENTRY DECISION:", "ENTER" if gate["met"].all() else "STAND-DOWN (no order)")
