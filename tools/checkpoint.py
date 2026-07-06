@@ -42,7 +42,7 @@ def _bs_price(cp: str, S: float, K: float, T: float, sig: float, r: float) -> fl
 def _iv_from_last(cp: str, S: float, K: float, T: float, price: float, r: float) -> float | None:
     # Free feeds give a broken impliedVolatility column and no live bid/ask; back-solve IV from the
     # last trade instead (bisection). The archived derived IV is the study's only usable vol signal.
-    if not (price and price > 0 and S > 0 and K > 0 and T > 0):
+    if not (price and math.isfinite(price) and price > 0 and S > 0 and K > 0 and T > 0):
         return None
     lo, hi = 1e-4, 5.0
     for _ in range(60):
