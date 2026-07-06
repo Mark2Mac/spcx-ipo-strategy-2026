@@ -12,7 +12,7 @@ TRADING_DAYS = 252
 class SpreadPosition:
     long_strike: float = 140.0
     short_strike: float = 135.0
-    debit: float = 2.20
+    debit: float = 1.99  # realized: 140/135 Sep put spread, BS@Sep-ATM-IV, entry window 2026-07-06 (last-based 2.25)
     contracts: int = 1
 
     def payoff(self, spot_final: np.ndarray) -> np.ndarray:
@@ -26,8 +26,8 @@ class McConfig:
     n_paths: int = 10_000
     horizon_days: int = 70
     event_day: int = 45
-    spcx_s0: float = 150.0
-    spcx_vol: float = 0.70
+    spcx_s0: float = 162.0  # realized SPCX close 2026-07-02 (was 150.0 placeholder)
+    spcx_vol: float = 0.874  # realized ATM IV, Aug (unlock month) expiry, 2026-07-06 (was 0.70 placeholder)
     spcx_drift: float = 0.0
     jump_mean: float = -0.08
     jump_std: float = 0.12
@@ -84,7 +84,7 @@ if __name__ == "__main__":
     cfg = McConfig()
     res = simulate(cfg, SpreadPosition())
     rep = report(res)
-    max_spread_loss = 2.20 * 100 / cfg.fx_eurusd
+    max_spread_loss = SpreadPosition().debit * 100 / cfg.fx_eurusd  # cap = debit paid, tracks the real value
     assert res["pnl_spread_eur"].min() >= -max_spread_loss - 1e-6, "hard cap violated!"
     assert rep["ES95"] >= rep["VaR95"], "ES < VaR: bug"
     print("TEST OK — spread hard cap holds across 10k paths")

@@ -28,6 +28,55 @@ def _finite(obj):  # NaN/inf -> None so output is strict-valid JSON (pandas leak
     return obj
 
 
+def _bs_price(cp: str, S: float, K: float, T: float, sig: float, r: float) -> float:
+    if T <= 0 or sig <= 0:
+        return max(0.0, (S - K) if cp == "c" else (K - S))
+    ncdf = lambda x: 0.5 * (1 + math.erf(x / math.sqrt(2)))
+    d1 = (math.log(S / K) + (r + 0.5 * sig * sig) * T) / (sig * math.sqrt(T))
+    d2 = d1 - sig * math.sqrt(T)
+    if cp == "c":
+        return S * ncdf(d1) - K * math.exp(-r * T) * ncdf(d2)
+    return K * math.exp(-r * T) * ncdf(-d2) - S * ncdf(-d1)
+
+
+def _iv_from_last(cp: str, S: float, K: float, T: float, price: float, r: float) -> float | None:
+    # Free feeds give a broken impliedVolatility column and no live bid/ask; back-solve IV from the
+    # last trade instead (bisection). The archived derived IV is the study's only usable vol signal.
+    if not (price and price > 0 and S > 0 and K > 0 and T > 0):
+        return None
+    lo, hi = 1e-4, 5.0
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        if _bs_price(cp, S, K, T, mid, r) > price:
+            hi = mid
+        else:
+            lo = mid
+    return round((lo + hi) / 2, 4)
+
+
+def _derived_atm_iv(chains: dict, spot: float, asof, r: float) -> dict:
+    from datetime import date as _date
+    out = {}
+    for exp, sides in chains.items():
+        try:
+            T = (_date.fromisoformat(exp) - asof).days / 365
+        except Exception:
+            continue
+        rec = {"atm_strike": None, "call_iv": None, "put_iv": None, "avg_iv": None, "T_years": round(T, 4)}
+        for side, cp in (("calls", "c"), ("puts", "p")):
+            rows = sides.get(side) or []
+            if not rows:
+                continue
+            atm = min(rows, key=lambda o: abs(o["strike"] - spot))
+            iv = _iv_from_last(cp, spot, atm["strike"], T, atm.get("lastPrice"), r)
+            rec["atm_strike"] = atm["strike"]
+            rec["call_iv" if cp == "c" else "put_iv"] = iv
+        ivs = [v for v in (rec["call_iv"], rec["put_iv"]) if v is not None]
+        rec["avg_iv"] = round(sum(ivs) / len(ivs), 4) if ivs else None
+        out[exp] = rec
+    return out
+
+
 def main(label: str | None = None) -> None:
     from src.connectors.edgar import recent_filings
     from src.connectors.fred import risk_free_rate
@@ -141,6 +190,16 @@ def main(label: str | None = None) -> None:
             spcx = {"listed": True, "last_close": last,
                     "price_source": hist.attrs.get("source", "unknown"),
                     "ohlcv_tail": hist.tail(10).reset_index().to_dict("records")}
+            # Full SPCX price history as a committed artifact: the target series revises and is
+            # never reconstructible later, so the snapshot (not the gitignored data/) is the evidence.
+            try:
+                full = get_ohlcv("SPCX", period="max", force=True)
+                if not full.empty:
+                    pth = out / "spcx_ohlcv.parquet"
+                    full[["Open", "High", "Low", "Close", "Volume"]].to_parquet(pth)
+                    artifacts[pth.name] = sha256(pth)
+            except Exception as fe:
+                spcx["ohlcv_full_note"] = f"full history unavailable: {str(fe)[:80]}"
             if float(hist["Volume"].tail(5).sum()) == 0:
                 flags.append("zero volume: placeholder/when-issued quote, not real trading")
             # Authoritative total from the 424B4 (dual-class: yfinance sharesOutstanding is
@@ -173,6 +232,7 @@ def main(label: str | None = None) -> None:
                 info = {}
                 spcx["yfinance_extras_note"] = f"options/info unavailable: {str(oe)[:80]}"
             spcx["option_chains"] = chains
+            spcx["derived_atm_iv"] = _derived_atm_iv(chains, last, now.date(), rf if rf else 0.036)
             if strikes:
                 med = sorted(strikes)[len(strikes) // 2]
                 if not 0.5 <= med / last <= 2.0:
