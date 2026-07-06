@@ -7,6 +7,7 @@ Rule: **one entry BEFORE every order** (section 2), weekly update (section 3), r
 | Date | Total value | vs initial | Drawdown | Notes |
 |---|---|---|---|---|
 | 2026-06-10 | baseline | 0% | 0% | Plan created. No positions |
+| 2026-07-06 | baseline | 0% | 0% | Entry-window check (Jul 6-17). No SPCX position opened — IV gate not met (see §2 #001) |
 
 ## 2. Orders (fill in BEFORE submitting)
 
@@ -28,13 +29,34 @@ Emotional state:  (one honest word: calm / FOMO / revenge / boredom)
 
 ### Orders placed
 
-_(empty — populate in Phase 1)_
+```
+ID:               #001
+Date/time:        2026-07-06 (entry window Jul 6-17, Phase 2)
+Instrument:       SPCX bear put spread 140/135 Sep26
+Direction:        short (bearish, defined-risk debit spread)
+Thesis (1 line):  lockup/earnings drop ~August; profit if SPCX falls toward 135-140 by Sep expiry
+Invalidation:     spot < 135 before entry (front-run) OR IV never crushes below gate
+Max risk:         debit paid × 100 (~$199 at BS-IV) — within 10.5% cap; NOT PLACED
+Take profit:      spread value ≥ 70% of width, close on combo limit
+Order:            NOT SUBMITTED — see decision below
+Emotional state:  calm
+```
+
+**Decision: NO ENTRY (stand-down).** Entry conditions checked on 2026-07-06:
+
+| Condition (Phase 2) | Threshold | Realized | Met |
+|---|---|---|---|
+| September ATM IV | < 55% | ~83% (Aug ~87%) | ❌ |
+| SPCX spot | > $140 | $162.00 (close Jul 2) | ✅ |
+| 140/135 Sep debit | ≤ $2.30 | ~$1.99 BS / $2.25 last | ✅ |
+
+The IV crush the plan waited for has not happened — SPCX still trades at post-IPO frenzy vol (~83-87% vs the ≤55% gate). Per Phase 2 **Fallback 1**: do not buy inflated IV (that is "a gift to the market maker"); retry Jul 24 at the relaxed 60% threshold — which ~83% still fails — else cancel Strategy B and cash stays cash. No order placed. Data caveat: yfinance free feed had zero option bid/ask; IV back-solved from ATM `lastPrice` via Black-Scholes, cross-checked against ~120% realized vol (ex-day1).
 
 ## 3. Weekly checks (Friday, 15 min)
 
 | Date | SPCX spot | Sep ATM IV | Spread value | GOOGL | Account value | Action |
 |---|---|---|---|---|---|---|
-| | | | | | | |
+| 2026-07-06 | $162.00 | ~83% (Aug ~87%) | 140/135 debit ~$1.99 | n/a | baseline | Stand-down: IV > 55% gate, no entry (§2 #001) |
 
 ## 4. Closed trades — retrospective
 
@@ -53,9 +75,10 @@ Lesson (1 line):
 
 | Date | Event | Data | Plan implication |
 |---|---|---|---|
-| 2026-06-11 | IPO pricing | expected $135 | |
-| 2026-06-12 | Day-1: open/high/close/volume | | |
-| | SPCX options listed | | start IV tracking |
+| 2026-06-11 | IPO pricing | priced $135 | at low end; short thesis intact |
+| 2026-06-12 | Day-1: open/high/close/volume | open 150.00 / high 176.52 / close 160.95 / vol 519.2M | +19% day-1; observe only, no trade (Phase 1) |
+| ~2026-06-19 | SPCX options listed | ticker resolves to SpaceX (was colliding with defunct SPCX SPAC ETF) | IV tracking started |
+| 2026-07-06 | Entry-window check | spot $162.00, Aug ATM IV ~87% / Sep ~83%, 140/135 Sep debit ~$1.99 | IV > 55% gate → stand-down (§2 #001) |
 | | Nasdaq-100 inclusion | | |
 | | Earnings date announced | | update timeline Phase 4 |
 | | Earnings: xAI burn / Starlink subs / guidance | | thesis confirmed or falsified |
@@ -64,7 +87,7 @@ Lesson (1 line):
 ## 6. Deadline reminders
 
 - [ ] ~Jun 19-24: check SPCX options listing
-- [ ] Jul 6-17: strategy B entry window (conditions in [03-timeline.md](03-timeline.md), Phase 2)
+- [x] Jul 6-17: strategy B entry window — checked 2026-07-06: IV ~83-87% > 55% gate → stand-down, no entry (§2 #001). Retry Jul 24 @ 60%.
 - [ ] Sep 16: final spread decision (NEVER into expiry between the strikes)
 - [ ] ~Oct 25: day 135, full review
 - [ ] Dec: year-end tax optimization ([05-tax-italy.md](05-tax-italy.md))

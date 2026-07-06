@@ -49,7 +49,7 @@ is the contract with the future; git history is the notary.
 | ✅ | Jun 10, 2026 | Research, plan, predictions — all pre-registered | `checkpoints/2026-06-10-baseline` |
 | ✅ | Jun 12 | **The debut** — P1 and P2 both resolved **TRUE** (+19.2% pop, $2.105T cap) | `checkpoints/…-day1-score`, `checkpoints/SCORING.md` |
 | ✅ | Jun 18 | SPCX options listed: the model's guessed IV met reality (70% assumed vs ~88% real) | [`notebooks/06`](notebooks/06_post_ipo_review.ipynb) |
-| ⏳ | Jul 6-17 | Spread entry window — or its written fallbacks | checkpoint `entry-window` |
+| ✅ | Jul 6-17 | Spread entry window — IV **83-87% > 55% gate** → written **stand-down**, no order | [`notebooks/07`](notebooks/07_entry_decision.ipynb) · checkpoint `entry-window` |
 | ⏳ | ~Aug | First earnings + the insider unlock (the whole thesis) | checkpoints `earnings-T`, `unlock-T7` |
 | ⏳ | ~Oct 25 | Day 135: lockup fully open, first "true" price | checkpoint `day135` |
 | ⏳ | Dec 31 | Final scoring — every prediction gets its Outcome | checkpoint `final`, then `VERDICT.md` |
@@ -58,6 +58,28 @@ is the contract with the future; git history is the notary.
 (Polymarket odds, SPCX option chains with IV, prices, filings — the things that cannot be
 reconstructed later), with no local machine involved. Milestone labels are fired manually
 from the Actions tab.</sub>
+
+## Post-IPO update — the model meets the market (Jul 6, 2026)
+
+The debut happened. SpaceX priced at $135, melted up to a $211 close on day 2, then fell
+back to ~$162. The entry-window layer ([`notebooks/07_entry_decision.ipynb`](notebooks/07_entry_decision.ipynb),
+frozen in `checkpoints/2026-07-06-entry-window`) overlays what actually happened on the
+model's forecast cone — and records the first live decision. (Calibration scoring of the
+day-1 predictions lives separately in [`notebooks/06`](notebooks/06_post_ipo_review.ipynb).)
+
+<div align="center">
+<img src="assets/chart_mc_vs_realized.png" width="820"/><br>
+<sub><b>Realized SPCX vs the Monte Carlo cone</b> — the initial IPO froth briefly pierced the
+95% band (the model, anchored on ~87% IV, under-called the melt-up), then price fell back
+inside. Strikes 140/135 dotted, breakeven 138.</sub>
+</div>
+
+**First live decision — stand-down.** Strategy B enters only if *September ATM IV < 55%*
+**and** spot > $140 **and** debit ≤ $2.30. On Jul 6 spot ($162) and debit (~$1.99) passed,
+but realized IV is **~83-87%** — the IV crush never came. Per the pre-written Phase-2
+fallback, **no option was bought** (inflated IV is a gift to the market maker); cash stays
+cash, retry Jul 24 at a relaxed 60% threshold. The discipline held: the plan refused a
+bad-EV entry it was tempted into. Full record in [`docs/06-trade-journal.md`](docs/06-trade-journal.md) §2 #001.
 
 ## The numbers on June 10, 2026 (T-2 to the debut)
 
@@ -171,16 +193,19 @@ under-priced volatility, so the July put spread is richer than the baseline impl
 entry on real IV, exactly as the sensitivity note warned. The two-week round-trip from $211 back to
 $153 is that under-priced vol made visible: the day-1 fact stays frozen and TRUE, while the
 post-debut tape does what 88% IV said it would. Full scoring in
-[`checkpoints/SCORING.md`](checkpoints/SCORING.md). Still ahead and untouched: the July spread
-entry, the August earnings + insider unlock, and `form4_watch()` going live.
+[`checkpoints/SCORING.md`](checkpoints/SCORING.md). The July spread entry was then evaluated on
+Jul 6 and **stood down** — IV ~83-87% never cleared the 55% gate (see the post-IPO section above and
+[`notebooks/07`](notebooks/07_entry_decision.ipynb)). Still ahead: the August earnings + insider
+unlock, and `form4_watch()` going live.
 
 ## What's in the repo
 
 ```
 notebooks/00_master_report.ipynb     ← OPEN THIS: runs everything, outputs embedded
 notebooks/01..05                     data pipeline · correlations · Monte Carlo · signal quality ·
-                                     data-quality audit
-notebooks/06_post_ipo_review.ipynb   predicted-vs-realized scoring layer (frozen baseline untouched)
+                                     data-quality audit  (frozen baseline, pre-IPO)
+notebooks/06_post_ipo_review.ipynb   predicted-vs-realized scoring layer (P1/P2 calibration)
+notebooks/07_entry_decision.ipynb    entry-window layer: real IV, MC-vs-realized overlay, stand-down
 docs/01..08                          thesis · strategies with full math · timeline ·
                                      risk management · tax case study · trade journal ·
                                      capital tiers (€1k to €10M+) · closing the enterprise gap
@@ -198,10 +223,34 @@ checkpoints/                         frozen data snapshots at every milestone (t
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python tools/build_master.py          # rebuilds + executes all 6 notebooks on fresh data
-./tools/run_tests.sh                            # full smoke-test suite (12 modules, must print 12/12 PASS)
+./tools/run_tests.sh                            # smoke-test suite (12 modules, must print 12/12 PASS)
+.venv/bin/python -m pytest -q                   # unit tests (19, must all pass)
+.venv/bin/python tools/build_master.py          # rebuild + execute the baseline notebooks on fresh data
+.venv/bin/python tools/build_notebook_07.py     # rebuild the entry-window layer (reads the frozen checkpoint)
 .venv/bin/python tools/checkpoint.py <label>    # freeze a dated evidence snapshot (see EVALUATION.md)
 ```
+
+**Verify the frozen evidence (no trust required).** Every checkpoint carries a `MANIFEST.json`
+with a SHA256 per artifact, the git HEAD, and the pip freeze — so a third party can confirm
+the snapshot was not edited after the fact:
+
+```bash
+# recompute each artifact's hash and diff against the manifest
+.venv/bin/python - <<'PY'
+import json, hashlib, pathlib
+ck = pathlib.Path("checkpoints/2026-07-06-entry-window")
+man = json.load(open(ck/"MANIFEST.json"))
+for name, want in man["artifacts"].items():
+    got = hashlib.sha256((ck/name).read_bytes()).hexdigest()[:16]
+    print(f"{'OK ' if got==want else 'MISMATCH'} {name}")
+PY
+```
+
+The realized parameters that feed the model are auditable end-to-end, all inside the frozen
+checkpoint (`data/` is scratch and gitignored — the snapshots are the evidence): full SPCX
+price history in `spcx_ohlcv.parquet`, the archived IV term structure in `spcx_market.json`
+(`derived_atm_iv`, back-solved from the option `lastPrice` because the free feed carries no
+live bid/ask), and the Monte Carlo inputs/outputs in `montecarlo.json`.
 
 To read the notebooks with no setup at all: open `docs/html/` in a browser, or let GitHub
 render them online. In VS Code: Jupyter extension + the venv kernel created above.

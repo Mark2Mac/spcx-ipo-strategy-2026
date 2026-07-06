@@ -10,7 +10,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.risk.montecarlo import McConfig, TRADING_DAYS  # noqa: E402
+from src.risk.montecarlo import McConfig, SpreadPosition, TRADING_DAYS  # noqa: E402
 from src.viz import PALETTE, tufte_style  # noqa: E402
 
 
@@ -37,7 +37,7 @@ def main() -> None:
     days = np.arange(paths.shape[1])
     p5, p50, p95 = (np.percentile(paths, q, axis=0) for q in (5, 50, 95))
 
-    be = 140 - 2.20
+    be = SpreadPosition().long_strike - SpreadPosition().debit
     pct_below = (paths[:, -1] < be).mean()
     fig, ax = plt.subplots(figsize=(9, 5.2))
     ax.set_xlim(0, days[-1])

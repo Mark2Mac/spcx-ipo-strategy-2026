@@ -114,4 +114,46 @@ degrading); July spread entry; August earnings + insider unlock; `form4_watch()`
 
 ---
 
+## 2026-07-06 (entry window, T+24) — real IV meets the model, first live decision
+
+**Built**: post-IPO realized layer. Closed the open item from Jun 11 (*real IV into McConfig
+once identity_suspect turns false*).
+- `notebooks/07_entry_decision.ipynb` (+ self-contained `tools/build_notebook_07.py`): identity
+  re-check on live data, baseline-vs-realized params, MC re-run, and the MC-cone-vs-realized
+  overlay chart. Baseline notebooks 00-05 and `PREDICTIONS.md` left frozen.
+- `checkpoints/2026-07-06-entry-window`: the pre-registered `entry-window` snapshot
+  (EVALUATION.md schedule). `identity_suspect` now **false**; McConfig frozen on real params.
+- `checkpoint.py` now archives `derived_atm_iv` (BS-inverted from option `lastPrice`) per
+  expiry — the free feed's `impliedVolatility` column is broken and there are no live bid/ask,
+  so this is the study's only usable vol signal, and it is now captured on every auto-snapshot.
+- `checkpoint.py` also archives the full SPCX price history (`spcx_ohlcv.parquet`) into every
+  snapshot — the non-reconstructible target series is now committed evidence, not just a
+  10-row tail (and not the gitignored `data/`).
+
+**Key decisions**:
+- **Stand-down, no order.** Entry gate is *Sep ATM IV < 55%*; realized IV ~83-87%. Spot
+  ($162) and debit (~$1.99) passed, IV did not. Bought nothing — inflated post-IPO IV is a
+  gift to the market maker (Phase 2 Fallback 1). Retry Jul 24 @ 60%, else cancel B.
+- Model params updated (s0 150→162, vol 0.70→0.874, debit 2.20→1.99); frozen baseline lives
+  in the immutable checkpoints + `docs/html`, not in the source defaults.
+- P1/P2 (resolved TRUE on the Jun 12 debut) are left to the existing scoring path
+  (`tools/score.py` + `checkpoints/SCORING.md`); `PREDICTIONS.md` stays frozen, untouched.
+- This layer is notebook **07** (`07_entry_decision`), distinct from the frozen **06**
+  post-IPO *calibration* review — the two are complementary, not duplicates.
+
+**Bugs caught** (continuing the shared numbering):
+- **Bug 15**: importing `tools.build_notebooks` runs its module-level build → silently
+  regenerated (output-stripped) the frozen baseline notebooks 01-05. Restored from git; made
+  `build_notebook_07.py` self-contained so generating the new layer never touches the baseline.
+- **Bug 16**: MC `__main__` hard-cap assert hardcoded the literal `2.20` instead of
+  `spread.debit`; would have gone stale the moment the debit changed. Now tracks `SpreadPosition().debit`.
+- **Bug 17**: `make_gif.py` breakeven hardcoded `140 - 2.20`; now `long_strike - debit`.
+
+**Frozen**: `checkpoints/2026-07-06-entry-window` (14 artifacts, SHA256 manifest, 0 errors).
+
+**Open items**: monitor Jul 24 fallback (IV still ~83% → likely cancel B); `earnings-T`
+checkpoint when SpaceX announces the first earnings date (drives the whole Phase 4).
+
+---
+
 *Template for future entries: date (T±n) — built / key decisions / bugs caught / frozen / open items.*

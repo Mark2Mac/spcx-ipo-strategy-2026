@@ -18,3 +18,4 @@ One frozen snapshot per milestone. Never modified after creation — git history
 | 2026-06-25-2253-auto | ea43b509 | 13 artifacts | |
 | 2026-06-29-2234-auto | 83bbc9f5 | 13 artifacts | |
 | 2026-07-02-2233-auto | c7556f1d | 13 artifacts | |
+| 2026-07-06-entry-window | 301817a2 | 14 artifacts | Strategy-B entry window (Jul 6-17). SPCX identity resolved (SpaceX live, `identity_suspect:false`); realized close $162, Aug ATM IV ~87% (now archived as `derived_atm_iv` term structure). IV > 55% gate → **no entry, stand-down** (Phase 2 Fallback 1). MC re-run on real params. |
