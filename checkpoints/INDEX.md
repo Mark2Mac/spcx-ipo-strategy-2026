@@ -21,3 +21,4 @@ One frozen snapshot per milestone. Never modified after creation — git history
 | 2026-07-06-entry-window | 301817a2 | 14 artifacts | Strategy-B entry window (Jul 6-17). SPCX identity resolved (SpaceX live, `identity_suspect:false`); Aug ATM IV ~87% archived as `derived_atm_iv` term structure + full `spcx_ohlcv.parquet`. `montecarlo.json` is the frozen baseline MC (like every snapshot); the realized-param re-run and stand-down decision live in `notebooks/07_entry_decision`. IV > 55% gate → **no entry, stand-down**. |
 | 2026-07-06-2243-auto | 0b77f981 | 14 artifacts | |
 | 2026-07-09-2247-auto | 9b112896 | 14 artifacts | |
+| 2026-07-13-2224-auto | 67c0f23f | 14 artifacts | |
