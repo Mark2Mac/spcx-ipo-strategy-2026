@@ -54,6 +54,13 @@ def _iv_from_last(cp: str, S: float, K: float, T: float, price: float, r: float)
     return round((lo + hi) / 2, 4)
 
 
+def _select_expiries(all_exps: list[str]) -> list[str]:
+    # First 6 near expiries + the study expiries (spread expiry Sep 18, unlock-month Aug
+    # monthlies) — the entry gate reads Sep ATM IV, so it must be archived evidence.
+    study = [e for e in all_exps if e.startswith("2026-08") or e == "2026-09-18"]
+    return list(dict.fromkeys(all_exps[:6] + study))
+
+
 def _derived_atm_iv(chains: dict, spot: float, asof, r: float) -> dict:
     from datetime import date as _date
     out = {}
@@ -220,7 +227,7 @@ def main(label: str | None = None) -> None:
             try:
                 import yfinance as yf
                 t = yf.Ticker("SPCX")
-                for exp in (t.options or [])[:6]:
+                for exp in _select_expiries(list(t.options or [])):
                     oc = t.option_chain(exp)
                     cols = ["strike", "lastPrice", "bid", "ask", "impliedVolatility",
                             "volume", "openInterest"]
