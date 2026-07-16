@@ -13,9 +13,9 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from src.connectors.market_data import get_ohlcv  # noqa: E402
 from src.risk.montecarlo import McConfig  # noqa: E402
 from src.viz import BAD, PALETTE, tufte_style  # noqa: E402
+from tools.evidence import latest_checkpoint, realized_closes  # noqa: E402
 from tools.make_gif import simulate_paths  # noqa: E402
 from tools.score import day1_snapshot  # noqa: E402
 
@@ -32,8 +32,9 @@ def main() -> None:
     days = np.arange(paths.shape[1])
     p5, p50, p95 = (np.percentile(paths, q, axis=0) for q in (5, 50, 95))
 
-    realized = get_ohlcv("SPCX", period="1mo", force=True)["Close"]
-    realized = realized[realized.index >= "2026-06-12"].to_numpy()
+    # Same committed evidence as make_mc_vs_realized.py — a live fetch here once let the gif
+    # and the static chart show different values (bug 19).
+    realized = realized_closes(latest_checkpoint(ROOT / "checkpoints"))
     rx = np.arange(len(realized))
     side = "above" if realized[-1] >= p50[len(realized) - 1] else "below"
 
