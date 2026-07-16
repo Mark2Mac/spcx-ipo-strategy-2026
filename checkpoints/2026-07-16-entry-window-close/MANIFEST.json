@@ -1,0 +1,39 @@
+{
+ "checkpoint": "2026-07-16-entry-window-close",
+ "created_utc": "2026-07-16T09:38:21.918547+00:00",
+ "git_head": "412c9364daabfd1a4a72888498469ac9fedaea66",
+ "python": "3.13.14",
+ "universe": [
+  "GOOGL",
+  "TSLA",
+  "NDAQ",
+  "HOOD",
+  "VIRT",
+  "GS",
+  "MS",
+  "RKLB",
+  "ASTS",
+  "LMT",
+  "^GSPC",
+  "^NDX",
+  "^VIX"
+ ],
+ "artifacts": {
+  "universe_prices.parquet": "1fee5e51b7bd6705",
+  "quality_reports.json": "847b907d7878aebb",
+  "sources.json": "c686ea1eacb27a05",
+  "polymarket.json": "eaf8866da0dc9b12",
+  "edgar_filings.json": "34a8d2c9726d6899",
+  "hn_attention.csv": "7ce100b32828641e",
+  "hn_meta.json": "09ce855fddd95f8a",
+  "wikipedia_pageviews.csv": "d52e3c13dc792b45",
+  "risk_free.json": "be1120756fb6081a",
+  "benchmarks.json": "882d5f37b8687c34",
+  "spcx_ohlcv.parquet": "3fcd851383a8b4d2",
+  "spcx_market.json": "b202f86f45f8b2d6",
+  "montecarlo.json": "cd6b36ef4fa2e1f6",
+  "pip_freeze.txt": "35c087884c119b7d"
+ },
+ "errors": {},
+ "purpose": "Frozen evidence for the ex-post evaluation protocol in EVALUATION.md"
+}
