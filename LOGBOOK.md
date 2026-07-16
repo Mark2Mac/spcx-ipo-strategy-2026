@@ -159,4 +159,33 @@ checkpoint when SpaceX announces the first earnings date (drives the whole Phase
 
 ---
 
+## 2026-07-16 (entry-window close, T+34) — window closes with no entry, front-run confirmed
+
+**Built**: window-close re-check (issue #18). No new model layer — notebook 07 stays frozen
+as the record of the Jul 6 decision; this entry only measures the window's final state.
+- `checkpoints/2026-07-16-entry-window-close`: frozen via workflow_dispatch (label
+  deliberately *not* `entry-window` — that name belongs to the pre-registered Jul 6 snapshot).
+  `identity_suspect` false; close $135.27; derived Aug ATM IV ~86%, Sep ~80%.
+- MC re-run with realized params (s0=135.27, vol=0.858 Aug ATM IV mean, debit=2.89, notebook 07
+  derivation, McConfig untouched): hard cap held on all 10k paths (worst spread -€249.1 = cap).
+  p_loss 0.38 / VaR95 €332 / ES95 €404 / mean €55 vs baseline 0.38 / €306 / €378 / €69.
+- `docs/06-trade-journal.md`: §2 window-close table, §3 weekly row, §5 event, §6 reminders (additive).
+- Notebook 06 realized overlay + post-IPO gif refreshed through Jul 15 close (baseline cells frozen).
+
+**Key decisions**:
+- **Window closes with NO ENTRY — all three gates fail.** IV ~80-86% (gate <55%), spot $135.27
+  (gate >$140), debit $2.89 (cap $2.30). The anticipated drop happened *without* a position:
+  spot $162 → $135.27 in seven sessions, a hair above the $135 front-run invalidation. The
+  thesis was directionally right and the entry gates still said no — buying the spread now
+  would pay $2.89 for a $5 width with the move already spent. Process held in both directions.
+- Jul 24 Fallback-1 retry is effectively moot (IV still fails 60%, spot gate dead); expected
+  outcome is formal cancellation of Strategy B unless spot > $140 with IV < 60% by then.
+
+**Frozen**: `checkpoints/2026-07-16-entry-window-close` (0 errors).
+
+**Open items**: Jul 24 formal Fallback-1 decision (likely cancel B); `earnings-T` checkpoint
+when SpaceX announces the first earnings date.
+
+---
+
 *Template for future entries: date (T±n) — built / key decisions / bugs caught / frozen / open items.*
