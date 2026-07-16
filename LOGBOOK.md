@@ -193,6 +193,18 @@ as the record of the Jul 6 decision; this entry only measures the window's final
 - `docs/html/06_post_ipo_review.html` was a stale Jul 6 render and `nbconvert` wasn't even in
   the venv (README promises zero-setup HTML). Re-rendered; `nbconvert>=7.16` pinned in
   requirements so the render step is reproducible.
+- **Bug 19** (third pass, user-reported): the README showed **two "cone vs realized" visuals
+  telling different stories** — `chart_mc_vs_realized.png` was notebook 07's frozen Jul-6 export
+  (realized ending $156, "back inside") next to a gif refreshed through Jul 15 ($135). Root
+  causes: (a) a *decision-record* export doubling as a *living* README asset, (b) three visuals
+  reading three data sources (pinned checkpoint / live fetch / live fetch), (c) same-day
+  checkpoint dirs sorting wrong lexically (`-entry-window-close` > `-1457-auto`). Fixes:
+  `tools/evidence.py` (single evidence reader: latest checkpoint by MANIFEST `created_utc`,
+  realized closes, unlock-month IV) now feeds **all** post-IPO visuals; new
+  `tools/make_mc_vs_realized.py` regenerates the png as a living overlay from the same evidence
+  (the Jul-6 record stays embedded in frozen notebook 07); notebook 06's cone horizon now grows
+  with the tape (fixed 45 would IndexError ~mid-Aug); README captions updated to the window-close
+  reality. 4 regression tests (`test_evidence.py`).
 
 **Frozen**: `checkpoints/2026-07-16-entry-window-close` (0 errors).
 

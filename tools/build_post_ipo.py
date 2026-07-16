@@ -92,10 +92,17 @@ if real_iv:
     print(f"-> the baseline understated vol by {real_iv-assumed_vol:+.0%}. Realized regime is "
           f"fatter than the placeholder; a put spread is priced richer than the model assumed.")"""),
     ("md", "## 4. Realized path vs the Monte Carlo cone\n\nBaseline MC (Student-t dof=4, the frozen config) re-anchored to the **actual** day-1 close $160.95 — not the old $150 placeholder. The realized closes are overlaid. The question is not whether the median was right (it never is) but whether reality stayed inside the cone."),
-    ("code", """from src.connectors.market_data import get_ohlcv
+    ("code", """# Committed evidence, same series every post-IPO visual reads (bug 19: a live fetch here
+# let this chart, the gif and chart_mc_vs_realized drift apart within the same README).
+from tools.evidence import latest_checkpoint, realized_closes
+realized = realized_closes(latest_checkpoint(CKPT))
+rx = np.arange(len(realized))
+
 cfg = McConfig()
 rng = np.random.default_rng(cfg.seed)
-n, days, dt = 3000, 45, 1 / 252
+# Horizon grows with the realized series so the cone never runs out (was a fixed 45,
+# which would IndexError once the tape passed it, ~mid-Aug).
+n, days, dt = 3000, max(45, len(realized) + 10), 1 / 252
 scale = np.sqrt(cfg.t_dof / (cfg.t_dof - 2))
 z = rng.standard_t(cfg.t_dof, size=(n, days)) / scale
 logret = (cfg.spcx_drift - 0.5 * cfg.spcx_vol**2) * dt + cfg.spcx_vol * np.sqrt(dt) * z
@@ -104,19 +111,15 @@ paths = np.column_stack([np.full(n, close_d1), paths])
 p5, p50, p95 = np.percentile(paths, [5, 50, 95], axis=0)
 x = np.arange(days + 1)
 
-realized = get_ohlcv("SPCX", period="1mo", force=True)["Close"]
-realized = realized[realized.index >= "2026-06-12"]
-rx = np.arange(len(realized))
-
 fig, ax = plt.subplots(figsize=(11, 5.5))
 ax.fill_between(x, p5, p95, color=PALETTE[0], alpha=0.18, label="MC 5–95% (vol=70%)")
 ax.plot(x, p50, color=PALETTE[0], lw=1.2, ls="--", label="MC median")
-ax.plot(rx, realized.values, color=BAD, lw=2.2, marker="o", ms=4, label="realized close")
-ax.annotate(f"${realized.values[-1]:.0f}", (rx[-1], realized.values[-1]),
+ax.plot(rx, realized, color=BAD, lw=2.2, marker="o", ms=4, label="realized close")
+ax.annotate(f"${realized[-1]:.0f}", (rx[-1], realized[-1]),
             xytext=(8, 0), textcoords="offset points", va="center", color=BAD, fontsize=10)
 last = len(realized) - 1
-inside = (realized.values[-1] >= p5[last]) and (realized.values[-1] <= p95[last])
-side = "above" if realized.values[-1] >= p50[last] else "below"
+inside = (realized[-1] >= p5[last]) and (realized[-1] <= p95[last])
+side = "above" if realized[-1] >= p50[last] else "below"
 headline(ax, f"Realized path is {'inside' if inside else 'OUTSIDE'} the frozen-config cone, now {side} the median",
          f"baseline Student-t MC re-anchored to the real $160.95 debut close · {len(realized)} sessions overlaid")
 ax.set_xlabel("trading days since debut"); ax.set_ylabel("SPCX price ($)")

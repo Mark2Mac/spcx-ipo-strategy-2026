@@ -59,27 +59,31 @@ is the contract with the future; git history is the notary.
 reconstructed later), with no local machine involved. Milestone labels are fired manually
 from the Actions tab.</sub>
 
-## Post-IPO update — the model meets the market (Jul 6, 2026)
+## Post-IPO update — the model meets the market (updated Jul 16, 2026)
 
-The debut happened. SpaceX priced at $135, melted up to a $211 close on day 2, then fell
-back to ~$162. The entry-window layer ([`notebooks/07_entry_decision.ipynb`](notebooks/07_entry_decision.ipynb),
-frozen in `checkpoints/2026-07-06-entry-window`) overlays what actually happened on the
-model's forecast cone — and records the first live decision. (Calibration scoring of the
+The debut happened. SpaceX priced at $135, melted up to a $211 close on day 2, then gave the
+whole move back — ~$135 by mid-July. The entry-window layer ([`notebooks/07_entry_decision.ipynb`](notebooks/07_entry_decision.ipynb),
+frozen in `checkpoints/2026-07-06-entry-window`) records the first live decision; the chart
+below is the *living* version of its overlay, regenerated from the latest frozen checkpoint by
+[`tools/make_mc_vs_realized.py`](tools/make_mc_vs_realized.py). (Calibration scoring of the
 day-1 predictions lives separately in [`notebooks/06`](notebooks/06_post_ipo_review.ipynb).)
 
 <div align="center">
 <img src="assets/chart_mc_vs_realized.png" width="820"/><br>
-<sub><b>Realized SPCX vs the Monte Carlo cone</b> — the initial IPO froth briefly pierced the
-95% band (the model, anchored on ~87% IV, under-called the melt-up), then price fell back
-inside. Strikes 140/135 dotted, breakeven 138.</sub>
+<sub><b>Realized SPCX vs the realized-IV Monte Carlo cone</b> — the initial IPO froth briefly
+pierced the 95% band (the model under-called the melt-up), then price round-tripped through
+the median to the 140/135 strikes (dotted). Cone propagated with the archived unlock-month
+ATM IV; evidence checkpoint named in the subtitle.</sub>
 </div>
 
-**First live decision — stand-down.** Strategy B enters only if *September ATM IV < 55%*
+**First live decision — stand-down, twice.** Strategy B enters only if *September ATM IV < 55%*
 **and** spot > $140 **and** debit ≤ $2.30. On Jul 6 spot ($162) and debit (~$1.99) passed,
-but realized IV is **~83-87%** — the IV crush never came. Per the pre-written Phase-2
-fallback, **no option was bought** (inflated IV is a gift to the market maker); cash stays
-cash, retry Jul 24 at a relaxed 60% threshold. The discipline held: the plan refused a
-bad-EV entry it was tempted into. Full record in [`docs/06-trade-journal.md`](docs/06-trade-journal.md) §2 #001.
+but realized IV was **~83-87%** — the IV crush never came; per the pre-written Phase-2
+fallback, **no option was bought** (inflated IV is a gift to the market maker). By the window
+close (Jul 16) the anticipated drop had arrived *without* a position — spot $135.27, debit
+$2.89 — and **all three gates failed**: the front-run case the plan pre-registered as its
+invalidation. Cash stayed cash; the Jul 24 relaxed retry is expected to formally cancel
+Strategy B. Full record in [`docs/06-trade-journal.md`](docs/06-trade-journal.md) §2 #001.
 
 ## The numbers on June 10, 2026 (T-2 to the debut)
 
@@ -174,10 +178,12 @@ it reads the **frozen** day-1 checkpoint and pre-debut odds and holds them again
 <div align="center">
 <img src="assets/mc_paths_post_ipo.gif" width="640"/><br>
 <sub><b>Realized path vs the frozen-config Monte Carlo cone</b> — the baseline Student-t MC
-re-anchored to the real $160.95 debut close, the realized SPCX path (red) revealed on top. Nine
-sessions in, the pop has <b>round-tripped</b>: a spike to ~$211 (briefly above the frozen 95th
-percentile) unwound through the median to $153 — just below the debut close, now in the lower half
-of the cone, still inside it. Static version:
+re-anchored to the real $160.95 debut close, the realized SPCX path (red) revealed on top.
+Twenty-three sessions in, the pop has fully <b>round-tripped</b>: a spike to ~$211 (briefly above
+the frozen 95th percentile) unwound through the median to ~$135 — back to the IPO price, in the
+lower half of the cone, still inside it. Every post-IPO visual reads the same frozen-checkpoint
+evidence (<code>tools/evidence.py</code>), so the gif, this cone and
+<a href="assets/chart_post_ipo.png">chart_post_ipo.png</a> always agree. Static version:
 <a href="assets/chart_post_ipo.png">chart_post_ipo.png</a></sub>
 </div>
 
