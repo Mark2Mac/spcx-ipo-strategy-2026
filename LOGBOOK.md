@@ -181,10 +181,24 @@ as the record of the Jul 6 decision; this entry only measures the window's final
 - Jul 24 Fallback-1 retry is effectively moot (IV still fails 60%, spot gate dead); expected
   outcome is formal cancellation of Strategy B unless spot > $140 with IV < 60% by then.
 
+**Bugs caught** (continuing the shared numbering, second pass same day — autonomy audit):
+- **Bug 18**: `checkpoint.py` archived only the first 6 option expiries — the **Sep 18 spread
+  expiry (the entry-gate IV) was never frozen evidence**, and late-Aug unlock-month expiries
+  fell off as weeklies accumulated. Every gate decision so far cited Sep IV from a *live*
+  fetch, not the archived snapshot. Fixed: `_select_expiries()` = near-6 + all 2026-08 + the
+  2026-09-18 study expiry, deduped; regression tests added.
+- Stale ops docs: weekly-health reminder prompt still expected "13 artifacts" (now 14) and
+  never checked Sep IV presence; no reminder existed for the Jul 24 Fallback-1 decision.
+  Both fixed in `tools/reminders.json` (new dated reminder `fallback1-retry`, lead 2 days).
+- `docs/html/06_post_ipo_review.html` was a stale Jul 6 render and `nbconvert` wasn't even in
+  the venv (README promises zero-setup HTML). Re-rendered; `nbconvert>=7.16` pinned in
+  requirements so the render step is reproducible.
+
 **Frozen**: `checkpoints/2026-07-16-entry-window-close` (0 errors).
 
-**Open items**: Jul 24 formal Fallback-1 decision (likely cancel B); `earnings-T` checkpoint
-when SpaceX announces the first earnings date.
+**Open items**: Jul 24 formal Fallback-1 decision (likely cancel B; reminder now automated);
+`earnings-T` checkpoint when SpaceX announces the first earnings date; first post-fix
+auto-snapshot must show `derived_atm_iv["2026-09-18"]` (verify triggered same day).
 
 ---
 
