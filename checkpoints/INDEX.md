@@ -23,3 +23,4 @@ One frozen snapshot per milestone. Never modified after creation — git history
 | 2026-07-09-2247-auto | 9b112896 | 14 artifacts | |
 | 2026-07-13-2224-auto | 67c0f23f | 14 artifacts | |
 | 2026-07-16-entry-window-close | 412c9364 | 14 artifacts | Window-close check (issue #18). All three entry gates fail: spot $135.27 (< $140, a hair above the $135 front-run invalidation), Sep ATM IV ~80% / Aug ~86% (gate < 55%), 140/135 Sep debit ~$2.89 (cap $2.30). The anticipated drop happened without a position → **no entry**; Jul 24 Fallback-1 expected to formally cancel Strategy B. Decision record: journal §2 + LOGBOOK T+34. Note: Sep IV here still from live fetch (this snapshot predates the bug-18 capture fix). |
+| 2026-07-16-1457-auto | ec12b91a | 14 artifacts | |
