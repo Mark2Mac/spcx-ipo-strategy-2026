@@ -212,6 +212,51 @@ as the record of the Jul 6 decision; this entry only measures the window's final
 `earnings-T` checkpoint when SpaceX announces the first earnings date; first post-fix
 auto-snapshot must show `derived_atm_iv["2026-09-18"]` (verify triggered same day).
 
+## 2026-07-27 (Fallback-1 decision, T+45) — Strategy B formally cancelled, cash stays cash
+
+**Built**: the Fallback-1 retry check (issue #23). No new model layer — notebook 07 stays frozen
+as the Jul 6 record; this entry closes out Strategy B.
+- `checkpoints/2026-07-27-fallback1-decision`: frozen via workflow_dispatch, 14 artifacts,
+  0 errors, `identity_suspect` false, no quality flags. Evidence close **Fri Jul 24 $115.07**;
+  archived `derived_atm_iv` gives **Sep 18 ATM 101.3%**, Aug mean **128.5%**. All three gates
+  read from this snapshot only — no live fetch anywhere in the decision.
+- Counterfactual MC (s0=115.07, vol=1.285 Aug ATM mean, debit=3.66 BS-derived at Sep IV,
+  notebook-07 derivation, `McConfig` untouched): hard cap held on all 10k paths (worst spread
+  path −€315.5 = the cap exactly). Spread-only p_loss 0.24, mean +€12.1, **max gain €115.5 vs
+  max loss €315.5** — the payoff has inverted versus the ex-ante €241/€190.
+- `docs/06-trade-journal.md`: §1 account row, §2 dated Fallback-1 decision table, §3 weekly row,
+  §5 event, §6 reminder ticked + Sep 16 expiry reminder struck as moot (all additive).
+- Post-IPO visuals refreshed off the new evidence (`chart_mc_vs_realized.png`,
+  `chart_post_ipo.png`, `mc_paths_post_ipo.gif`, notebook 06 re-executed); README post-IPO
+  section and milestone table updated from "expected to cancel" to the decision itself.
+- `docs/html/07_entry_decision.html` added — the entry-decision notebook was the only one
+  missing from the zero-setup HTML render the README promises.
+
+**Key decisions**:
+- **Strategy B is CANCELLED. No order was ever placed; the 20% tranche stays cash to Dec 31.**
+  Relaxed Fallback-1 gates: Sep ATM IV 101.3% (gate < 60%), spot $115.07 (gate > $140), debit
+  $3.66 (cap $2.30) — three for three, by wider margins than at the window close. Spot is
+  $19.93 *below* the $135 line, so **Fallback 2 fires independently** ("front-run → do NOT
+  chase with lower strikes"). Two pre-registered fallbacks converge on the same branch.
+- **The thesis was right and the trade is still a no.** SPCX went $162 → $115 in three weeks —
+  the lockup-anticipation drop the plan called. Entering now would pay $3.66 for a $5-wide
+  structure whose move is spent: $1.34 of remaining upside against $3.66 at risk, needing ~73%
+  just to break even. Being directionally right does not licence chasing a consumed edge; that
+  is exactly the failure mode the front-run invalidation was pre-registered to prevent.
+- IV never crushed — it *expanded* into the drop (Sep ATM 80% → 101%, Aug 86% → 129%). The
+  Phase-2 premise ("index inclusion inflates price, IV deflates") was falsified by the tape.
+  Recorded as a falsified premise, not smoothed over.
+
+**Bugs caught**: none this pass. Integrity re-verified: `gate.py` clean on the new snapshot,
+`verify_checkpoints.py` 24/24 hash-matched, mirror at sha parity with public `main`.
+
+**Frozen**: `checkpoints/2026-07-27-fallback1-decision` (14 artifacts, 0 errors).
+
+**Open items**: Strategy A (GOOGL proxy) and the experiment's scoring track continue unchanged;
+`earnings-T` / `unlock-T7` checkpoints when SpaceX announces the first earnings date — now
+pure observation, with no position to manage; day-135 review Oct 25; final scoring + `VERDICT.md`
+Dec 31, which must state plainly that the strategy the whole plan was built around never traded.
+
 ---
 
 *Template for future entries: date (T±n) — built / key decisions / bugs caught / frozen / open items.*

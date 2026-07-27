@@ -50,6 +50,7 @@ is the contract with the future; git history is the notary.
 | ✅ | Jun 12 | **The debut** — P1 and P2 both resolved **TRUE** (+19.2% pop, $2.105T cap) | `checkpoints/…-day1-score`, `checkpoints/SCORING.md` |
 | ✅ | Jun 18 | SPCX options listed: the model's guessed IV met reality (70% assumed vs ~88% real) | [`notebooks/06`](notebooks/06_post_ipo_review.ipynb) |
 | ✅ | Jul 6-17 | Spread entry window — IV **83-87% > 55% gate** → written **stand-down**, no order | [`notebooks/07`](notebooks/07_entry_decision.ipynb) · checkpoint `entry-window` |
+| ✅ | Jul 27 | Fallback-1 retry — all 3 gates fail again → **Strategy B cancelled**, cash stays cash | [`docs/06`](docs/06-trade-journal.md) §2 · checkpoint `fallback1-decision` |
 | ⏳ | ~Aug | First earnings + the insider unlock (the whole thesis) | checkpoints `earnings-T`, `unlock-T7` |
 | ⏳ | ~Oct 25 | Day 135: lockup fully open, first "true" price | checkpoint `day135` |
 | ⏳ | Dec 31 | Final scoring — every prediction gets its Outcome | checkpoint `final`, then `VERDICT.md` |
@@ -59,10 +60,10 @@ is the contract with the future; git history is the notary.
 reconstructed later), with no local machine involved. Milestone labels are fired manually
 from the Actions tab.</sub>
 
-## Post-IPO update — the model meets the market (updated Jul 16, 2026)
+## Post-IPO update — the model meets the market (updated Jul 27, 2026)
 
 The debut happened. SpaceX priced at $135, melted up to a $211 close on day 2, then gave the
-whole move back — ~$135 by mid-July. The entry-window layer ([`notebooks/07_entry_decision.ipynb`](notebooks/07_entry_decision.ipynb),
+whole move back and kept going — **$115 by Jul 24**. The entry-window layer ([`notebooks/07_entry_decision.ipynb`](notebooks/07_entry_decision.ipynb),
 frozen in `checkpoints/2026-07-06-entry-window`) records the first live decision; the chart
 below is the *living* version of its overlay, regenerated from the latest frozen checkpoint by
 [`tools/make_mc_vs_realized.py`](tools/make_mc_vs_realized.py). (Calibration scoring of the
@@ -72,18 +73,26 @@ day-1 predictions lives separately in [`notebooks/06`](notebooks/06_post_ipo_rev
 <img src="assets/chart_mc_vs_realized.png" width="820"/><br>
 <sub><b>Realized SPCX vs the realized-IV Monte Carlo cone</b> — the initial IPO froth briefly
 pierced the 95% band (the model under-called the melt-up), then price round-tripped through
-the median to the 140/135 strikes (dotted). Cone propagated with the archived unlock-month
-ATM IV; evidence checkpoint named in the subtitle.</sub>
+the median, through the 140/135 strikes (dotted) and below them. Cone propagated with the
+archived unlock-month ATM IV; evidence checkpoint named in the subtitle.</sub>
 </div>
 
-**First live decision — stand-down, twice.** Strategy B enters only if *September ATM IV < 55%*
-**and** spot > $140 **and** debit ≤ $2.30. On Jul 6 spot ($162) and debit (~$1.99) passed,
-but realized IV was **~83-87%** — the IV crush never came; per the pre-written Phase-2
-fallback, **no option was bought** (inflated IV is a gift to the market maker). By the window
-close (Jul 16) the anticipated drop had arrived *without* a position — spot $135.27, debit
-$2.89 — and **all three gates failed**: the front-run case the plan pre-registered as its
-invalidation. Cash stayed cash; the Jul 24 relaxed retry is expected to formally cancel
-Strategy B. Full record in [`docs/06-trade-journal.md`](docs/06-trade-journal.md) §2 #001.
+**The first live decision was a stand-down. So were the second and the third.** Strategy B
+enters only if *September ATM IV < 55%* **and** spot > $140 **and** debit ≤ $2.30. On Jul 6
+spot ($162) and debit (~$1.99) passed, but realized IV was **~83-87%** — the IV crush never
+came; per the pre-written Phase-2 fallback, **no option was bought** (inflated IV is a gift to
+the market maker). By the window close (Jul 16) the anticipated drop had arrived *without* a
+position — spot $135.27, debit $2.89, **all three gates failed**: the front-run case the plan
+pre-registered as its own invalidation.
+
+**Jul 27 — Strategy B is cancelled.** The Fallback-1 retry at the relaxed 60% IV threshold
+failed on every gate and by wider margins: spot **$115.07**, Sep ATM IV **101%** (it *expanded*
+into the drop instead of crushing), debit **$3.66** on a $5-wide spread. Spot is $20 below the
+$135 front-run line, so Fallback 2 fires independently. The thesis was right — SPCX fell $162 →
+$115 in three weeks, the lockup-anticipation move the plan called — and the trade is still a no:
+entering here risks $3.66 to make $1.34 on a move already spent. **The strategy the whole plan
+was built around never traded, and that is the plan working.** The 20% tranche stays cash. Full
+record in [`docs/06-trade-journal.md`](docs/06-trade-journal.md) §2 #001.
 
 ## The numbers on June 10, 2026 (T-2 to the debut)
 
@@ -199,10 +208,11 @@ under-priced volatility, so the July put spread is richer than the baseline impl
 entry on real IV, exactly as the sensitivity note warned. The two-week round-trip from $211 back to
 $153 is that under-priced vol made visible: the day-1 fact stays frozen and TRUE, while the
 post-debut tape does what 88% IV said it would. Full scoring in
-[`checkpoints/SCORING.md`](checkpoints/SCORING.md). The July spread entry was then evaluated on
-Jul 6 and **stood down** — IV ~83-87% never cleared the 55% gate (see the post-IPO section above and
-[`notebooks/07`](notebooks/07_entry_decision.ipynb)). Still ahead: the August earnings + insider
-unlock, and `form4_watch()` going live.
+[`checkpoints/SCORING.md`](checkpoints/SCORING.md). The July spread entry was evaluated three
+times — Jul 6, Jul 16, Jul 27 — and **never taken**: IV ran 83% → 101%, never near the 55/60%
+gate, and by the last check spot had front-run the thesis (see the post-IPO section above and
+[`notebooks/07`](notebooks/07_entry_decision.ipynb)). Strategy B is now cancelled. Still ahead:
+the August earnings + insider unlock as pure observation, and `form4_watch()` going live.
 
 ## What's in the repo
 
