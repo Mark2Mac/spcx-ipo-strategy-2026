@@ -1,0 +1,39 @@
+{
+ "checkpoint": "2026-07-27-fallback1-decision",
+ "created_utc": "2026-07-27T12:22:26.209958+00:00",
+ "git_head": "1143f4bf25fda4b7ecf86eb893eb208f83c2a4e2",
+ "python": "3.13.14",
+ "universe": [
+  "GOOGL",
+  "TSLA",
+  "NDAQ",
+  "HOOD",
+  "VIRT",
+  "GS",
+  "MS",
+  "RKLB",
+  "ASTS",
+  "LMT",
+  "^GSPC",
+  "^NDX",
+  "^VIX"
+ ],
+ "artifacts": {
+  "universe_prices.parquet": "d046ff3a98ae9ecd",
+  "quality_reports.json": "27c3c85e260edb15",
+  "sources.json": "c686ea1eacb27a05",
+  "polymarket.json": "2671995da6501d1d",
+  "edgar_filings.json": "34a8d2c9726d6899",
+  "hn_attention.csv": "9979d0f3927f5365",
+  "hn_meta.json": "09ce855fddd95f8a",
+  "wikipedia_pageviews.csv": "97738a2b098eb460",
+  "risk_free.json": "fbbcd5a795b4a62d",
+  "benchmarks.json": "837884df6e69b424",
+  "spcx_ohlcv.parquet": "24c1c2de1cd8de95",
+  "spcx_market.json": "31702cf398cc2d34",
+  "montecarlo.json": "b61ba4bd09b5b09c",
+  "pip_freeze.txt": "a527d9fd75feda9f"
+ },
+ "errors": {},
+ "purpose": "Frozen evidence for the ex-post evaluation protocol in EVALUATION.md"
+}
