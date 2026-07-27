@@ -257,6 +257,51 @@ as the Jul 6 record; this entry closes out Strategy B.
 pure observation, with no position to manage; day-135 review Oct 25; final scoring + `VERDICT.md`
 Dec 31, which must state plainly that the strategy the whole plan was built around never traded.
 
+## 2026-07-28 (T+46) — P3 scored 18 days late, stale reminder prompts defused
+
+**Built**: post-cancel sweep. Weekly health check run end-to-end (it had been sitting open since
+Jun 20, so the weekly cadence had quietly stalled): all seven points green — cron on its Mon/Thu
+beat, `gate.py` clean, `verify_checkpoints.py` **25/25**, latest snapshot 14 artifacts / 0 issues /
+Sep-18 IV present, SCORING pinned to the frozen $2.105T, mirror at sha parity, 58 pytest + 12/12
+smoke. Results posted to issue #14 and #22 (entry-window milestone) closed; no open issues left.
+- Post-IPO visuals refreshed off `2026-07-27-2232-auto` (close $113.50, Sep ATM IV 101.1%) — the
+  evening auto-snapshot had landed after the PR #24 merge, leaving the living assets one session
+  behind their own evidence source.
+
+**Bugs caught** (continuing the shared numbering):
+- **Bug 20 — a resolved prediction sat unscored for 18 days.** `SCOREABLE` in `score.py` only ever
+  held P1/P2. **P3** ("in the first 4 weeks SPCX never closes below $135", verify **Jul 10**) had
+  no entry, so `score.py` reported nothing and the elapsed verify date passed unnoticed — the
+  scorer runs on every checkpoint and was silent by construction. The repo's whole claim is that
+  predictions get scored when their date arrives; this was that claim quietly failing. Fixed: new
+  **`window_min` basis** (minimum close over a *closed* window, price-compared) pinned to the
+  **earliest** checkpoint whose history covers the window end — so the evidence for a resolved
+  prediction never drifts forward with the tape, and a snapshot that stops short of the end date
+  yields `unverifiable` rather than an extrapolation. 6 regression tests, including the one that
+  matters: the $115 late-July tape must **not** flip a prediction that resolved on Jul 10.
+  **P3 = TRUE**, min close **$145.30** (Jul 10) vs the $135 floor, ex-ante P 0.70, evidence
+  `2026-07-13-2224-auto`. `SCORING.md` now carries a per-prediction Evidence column — with mixed
+  bases a single header checkpoint was misleading.
+- **Stale reminder prompts, one of them live.** The `spread-entry` reminder re-fired on Jul 20
+  (issue #22, last day of its grace window) still carrying the pre-PR-#17 instruction to mutate
+  `McConfig` — the exact operation that was reverted and forbidden. Body replaced with a
+  SUPERSEDED banner, original folded into a `<details>` block as the historical record. Worse,
+  `earnings-unlock` fires **Jul 29** and its step 4 asked whether the T+5 exit rule held on a
+  position that no longer exists; rewritten for the no-position reality (honest counterfactual
+  instead of a phantom trade) and pointed at the `window_min` work as the pattern for the
+  event-relative basis P4/P5 will need.
+
+**Key decisions**:
+- Strategy B's cancellation mechanically settles **K2** ("the worst loss, if any, comes from the
+  equity tranche, not the spread") — with no spread there is no spread loss. Recorded here so the
+  Dec 31 scoring counts it as *structurally* resolved, not as a forecasting hit: an ex-ante 0.75
+  that a cancelled leg made trivially true is not calibration evidence, and `VERDICT.md` must say so.
+
+**Frozen**: no new checkpoint — this pass reads `2026-07-27-2232-auto` and the earlier snapshots.
+
+**Open items**: P4/P5 need an event-relative basis in `score.py` once the earnings date is known
+(`earnings-T`); P6/K1/K3 at year end; `earnings-T` / `unlock-T7` checkpoints as pure observation.
+
 ---
 
 *Template for future entries: date (T±n) — built / key decisions / bugs caught / frozen / open items.*

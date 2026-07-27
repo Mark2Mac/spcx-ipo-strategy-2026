@@ -201,6 +201,7 @@ evidence (<code>tools/evidence.py</code>), so the gif, this cone and
 |---|---|---|---|
 | **P1** cap > $1T | our P 0.97 · Polymarket ~0.99 | $2.105T | **TRUE** ✓ |
 | **P2** cap > $2T | our P 0.60 · Polymarket ~0.63 | $2.105T | **TRUE** ✓ |
+| **P3** no close < $135 in the first 4 weeks | our P 0.70 | min close **$145.30** (Jul 10) | **TRUE** ✓ |
 | Day-1 pop | — | $135 → $160.95 = **+19.2%** | — |
 | **IV reality check** | MC assumed **70%** vol | listed ATM IV (Aug unlock) **~88%** | model **under-vol'd by ~18pts** |
 

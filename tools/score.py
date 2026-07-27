@@ -28,13 +28,17 @@ SPCX_SHARES_424B4 = 6_824_641_355 + 555_555_555 + 5_695_668_265  # 13,075,865,17
 DEBUT = date(2026, 6, 12)  # SPCX first trading day; the "day-1 close" basis for P1/P2
 
 # Pre-registered, from PREDICTIONS.md. P(ex-ante) is here only to echo it in the report;
-# the criterion is what gets evaluated. Thresholds in USD. `basis` selects the close used:
-# "day1" = the frozen debut-day close (immutable); future "latest" predictions can be added.
+# the criterion is what gets evaluated. Thresholds in USD. `basis` selects the evidence used:
+# "day1" = the frozen debut-day close, cap-compared (immutable);
+# "window_min" = the minimum close over the closed window [start, verify], price-compared —
+# once the window ends the answer is frozen, so a later drop cannot flip it.
 SCOREABLE = {
     "P1": {"p": 0.97, "verify": date(2026, 6, 12), "threshold": 1e12, "basis": "day1",
            "label": "SPCX day-1 close market cap > $1T"},
     "P2": {"p": 0.60, "verify": date(2026, 6, 12), "threshold": 2e12, "basis": "day1",
            "label": "SPCX day-1 close market cap > $2T"},
+    "P3": {"p": 0.70, "verify": date(2026, 7, 10), "threshold": 135.0, "basis": "window_min",
+           "start": DEBUT, "label": "First 4 weeks: SPCX never closes below $135"},
 }
 
 
@@ -87,6 +91,32 @@ def latest_spcx(ckpt: Path = CKPT) -> tuple[str, dict] | tuple[None, None]:
     return (best_name, best) if best is not None else (None, None)
 
 
+def window_min_close(ckpt: Path, start: date, end: date) -> tuple[str, float, str] | tuple[None, None, None]:
+    """Minimum close in [start, end], from the EARLIEST checkpoint whose history covers `end`.
+
+    Pinning to the earliest covering snapshot keeps a resolved prediction's evidence stable:
+    later checkpoints carry the same (immutable) bars plus newer ones, and the newer bars are
+    outside the window. Returns (checkpoint_name, min_close, min_date); (None, None, None) if
+    no committed evidence reaches the end of the window yet — never extrapolate."""
+    import pandas as pd
+
+    for d in sorted((p for p in ckpt.iterdir() if p.is_dir()), key=_created):
+        f = d / "spcx_ohlcv.parquet"
+        if not f.exists():
+            continue
+        try:
+            closes = pd.read_parquet(f)["Close"]
+        except (OSError, ValueError, KeyError):
+            continue
+        w = closes[(closes.index >= str(start)) & (closes.index <= str(end))]
+        # The window is only decided once the tape actually reaches its end date. Compare on
+        # max(), not the last row — never assume the stored index is sorted.
+        if w.empty or str(w.index.max())[:10] < end.isoformat():
+            continue
+        return d.name, float(w.min()), str(w.idxmin())[:10]
+    return None, None, None
+
+
 def score(ckpt: Path = CKPT, today: date | None = None) -> dict:
     """Pure scorer: returns {pid: {outcome, p_ex_ante, detail, source}}. No file writes."""
     today = today or date.today()
@@ -95,6 +125,24 @@ def score(ckpt: Path = CKPT, today: date | None = None) -> dict:
 
     for pid, p in sorted(SCOREABLE.items()):
         src = None
+        if p["basis"] == "window_min":
+            if today < p["verify"]:
+                results[pid] = {"outcome": "pending", "p_ex_ante": p["p"],
+                                "detail": f"verify on {p['verify']}", "source": None}
+                continue
+            src, low, low_date = window_min_close(ckpt, p["start"], p["verify"])
+            if low is None:
+                outcome = "unverifiable"
+                detail = (f"no checkpoint covers the window through {p['verify']} — "
+                          "re-run tools/checkpoint.py")
+            else:
+                outcome = "TRUE" if low >= p["threshold"] else "FALSE"
+                detail = (f"min close ${low:.2f} on {low_date} over {p['start']}..{p['verify']} "
+                          f"vs floor ${p['threshold']:.2f}")
+            results[pid] = {"outcome": outcome, "p_ex_ante": p["p"], "detail": detail,
+                            "source": src}
+            continue
+
         if p["basis"] == "day1":
             close, snap, src = d1_close, d1, d1_name
         else:  # pragma: no cover - no 'latest'-basis predictions are live yet
@@ -128,20 +176,21 @@ def score(ckpt: Path = CKPT, today: date | None = None) -> dict:
 def main() -> None:
     results = score(CKPT)
     src = next((r["source"] for r in results.values() if r.get("source")), None)
-    rows = [f"| {pid} | {SCOREABLE[pid]['label']} | {r['p_ex_ante']} | {r['outcome']} | {r['detail']} |"
-            for pid, r in results.items()]
+    rows = [f"| {pid} | {SCOREABLE[pid]['label']} | {r['p_ex_ante']} | {r['outcome']} | "
+            f"{r['detail']} | `{r['source'] or '—'}` |" for pid, r in results.items()]
 
     report = {"scored_from_checkpoint": src, "scored_on": str(date.today()),
               "today_utc": datetime.now(timezone.utc).isoformat(),
-              "results": {pid: {k: r[k] for k in ("outcome", "p_ex_ante", "detail")}
+              "results": {pid: {k: r[k] for k in ("outcome", "p_ex_ante", "detail", "source")}
                           for pid, r in results.items()}}
     (CKPT / "SCORING.json").write_text(json.dumps(report, indent=1))
 
     md = ["# Auto-scoring (predictions whose verify-date has passed)\n",
-          f"Source checkpoint: `{src}` — scored {date.today()}. "
+          f"Scored {date.today()}. Each prediction cites its own frozen evidence in the last "
+          "column — different bases pin to different snapshots. "
           "Read-only on PREDICTIONS.md; this file is regenerated, not authoritative.\n",
-          "| # | Prediction | P(ex-ante) | Outcome | Detail |",
-          "|---|---|---|---|---|", *rows]
+          "| # | Prediction | P(ex-ante) | Outcome | Detail | Evidence |",
+          "|---|---|---|---|---|---|", *rows]
     (CKPT / "SCORING.md").write_text("\n".join(md) + "\n")
     print("\n".join(md))
 

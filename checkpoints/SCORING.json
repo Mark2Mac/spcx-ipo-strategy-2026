@@ -1,17 +1,25 @@
 {
  "scored_from_checkpoint": "2026-06-13-ci-verify",
- "scored_on": "2026-07-27",
- "today_utc": "2026-07-27T22:33:01.571053+00:00",
+ "scored_on": "2026-07-28",
+ "today_utc": "2026-07-27T23:07:12.510067+00:00",
  "results": {
   "P1": {
    "outcome": "TRUE",
    "p_ex_ante": 0.97,
-   "detail": "cap $2.105T (424B4 total shares x frozen day-1 close) vs threshold $1.0T"
+   "detail": "cap $2.105T (424B4 total shares x frozen day-1 close) vs threshold $1.0T",
+   "source": "2026-06-13-ci-verify"
   },
   "P2": {
    "outcome": "TRUE",
    "p_ex_ante": 0.6,
-   "detail": "cap $2.105T (424B4 total shares x frozen day-1 close) vs threshold $2.0T"
+   "detail": "cap $2.105T (424B4 total shares x frozen day-1 close) vs threshold $2.0T",
+   "source": "2026-06-13-ci-verify"
+  },
+  "P3": {
+   "outcome": "TRUE",
+   "p_ex_ante": 0.7,
+   "detail": "min close $145.30 on 2026-07-10 over 2026-06-12..2026-07-10 vs floor $135.00",
+   "source": "2026-07-13-2224-auto"
   }
  }
 }
