@@ -8,6 +8,7 @@ Rule: **one entry BEFORE every order** (section 2), weekly update (section 3), r
 |---|---|---|---|---|
 | 2026-06-10 | baseline | 0% | 0% | Plan created. No positions |
 | 2026-07-06 | baseline | 0% | 0% | Entry-window check (Jul 6-17). No SPCX position opened — IV gate not met (see §2 #001) |
+| 2026-07-27 | baseline | 0% | 0% | Fallback-1 decision: Strategy B **cancelled**. Its 20% tranche stays cash for the rest of the experiment (see §2 #001) |
 
 ## 2. Orders (fill in BEFORE submitting)
 
@@ -62,12 +63,25 @@ The IV crush the plan waited for has not happened — SPCX still trades at post-
 
 All three gates now fail. The anticipated drop happened **without a position**: spot fell $162 → $135.27 (Jul 6 → Jul 15), a hair above the $135 invalidation level ("spot < 135 before entry = front-run"). The 140/135 spread is now near-ATM, so its price ($2.89) exceeds the $2.30 cap — the edge the entry was priced on is gone. The Jul 24 retry (relaxed 60% IV) is effectively moot: IV ~80% still fails it AND the spot gate is dead. Strategy B heads to formal cancellation unless spot recovers above $140 with IV < 60% by Jul 24. No order placed; process held under a front-run — the gates did their job in both directions.
 
+**Fallback-1 decision (2026-07-27, evidence close Jul 24) — STRATEGY B FORMALLY CANCELLED.** The Phase-2 Fallback-1 retry at the relaxed 60% IV threshold, checked against `checkpoints/2026-07-27-fallback1-decision` (frozen evidence only, no live fetch):
+
+| Condition (Phase 2, Fallback-1 relaxed) | Threshold | Realized | Met |
+|---|---|---|---|
+| September ATM IV | < 60% (relaxed from 55%) | **101.3%** (Aug ~128.5%) | ❌ |
+| SPCX spot | > $140 | **$115.07** (close Jul 24) | ❌ |
+| 140/135 Sep debit | ≤ $2.30 | **~$3.66** (BS @ Sep IV) | ❌ |
+
+All three fail, and by wider margins than at the window close: spot is now **$115.07**, $19.93 *below* the $135 front-run invalidation, so **Fallback 2 fires independently** ("SPCX already below $135 before entry → do NOT chase with lower strikes → Strategy B cancelled"). IV went the wrong way as well — the crush the plan waited for never arrived; realized vol expanded into the drop (Sep ATM 80% → 101%). The 140/135 spread is now deep ITM: paying ~$3.66 for a $5-wide structure buys $1.34 of remaining upside on a move that is already spent. Per **Phase 2 Fallback 1** ("Still no → **cancel strategy B**; cash stays cash") this is the terminal branch.
+
+**Decision: Strategy B is cancelled. No order was ever placed. The 20% tranche stays cash.** The thesis was directionally right — SPCX went from $162 to $115 in three weeks, exactly the lockup-anticipation drop the plan predicted — and the entry gates still said no, three times running. That is the intended behaviour, not a miss: the plan pre-registered the front-run case as an invalidation *precisely* so that being right about direction could not licence chasing a consumed edge. Buying now would be a new trade dressed in an old thesis. Data caveat: the snapshot was taken Mon Jul 27 pre-open (last close Fri Jul 24) and the free feed carries zero bid/ask on the Sep chain, so the debit is BS-priced at the archived Sep ATM IV via the notebook-07 derivation — the same method used at Jul 6 and Jul 16. `McConfig` and `PREDICTIONS.md` untouched.
+
 ## 3. Weekly checks (Friday, 15 min)
 
 | Date | SPCX spot | Sep ATM IV | Spread value | GOOGL | Account value | Action |
 |---|---|---|---|---|---|---|
 | 2026-07-06 | $162.00 | ~83% (Aug ~87%) | 140/135 debit ~$1.99 | n/a | baseline | Stand-down: IV > 55% gate, no entry (§2 #001) |
 | 2026-07-16 | $135.27 (close Jul 15) | ~80% (Aug ~86%) | 140/135 debit ~$2.89 | n/a | baseline | Window close: all 3 gates fail (IV, spot, debit) — front-run, no entry (§2 #001) |
+| 2026-07-27 | $115.07 (close Jul 24) | ~101% (Aug ~129%) | 140/135 debit ~$3.66 | n/a | baseline | Fallback-1: all 3 gates fail at the relaxed 60% IV; spot < $135 → Fallback 2 too. **Strategy B cancelled** (§2 #001) |
 
 ## 4. Closed trades — retrospective
 
@@ -91,6 +105,7 @@ Lesson (1 line):
 | ~2026-06-19 | SPCX options listed | ticker resolves to SpaceX (was colliding with defunct SPCX SPAC ETF) | IV tracking started |
 | 2026-07-06 | Entry-window check | spot $162.00, Aug ATM IV ~87% / Sep ~83%, 140/135 Sep debit ~$1.99 | IV > 55% gate → stand-down (§2 #001) |
 | 2026-07-16 | Entry-window close check | spot $135.27, Aug ATM IV ~86% / Sep ~80%, 140/135 Sep debit ~$2.89 | all 3 gates fail; drop front-ran entry → Strategy B toward cancel |
+| 2026-07-27 | Fallback-1 decision (relaxed 60% IV) | spot $115.07, Aug ATM IV ~129% / Sep ~101%, 140/135 Sep debit ~$3.66 | all 3 gates fail + Fallback 2 (spot < $135) → **Strategy B cancelled**, tranche stays cash |
 | | Nasdaq-100 inclusion | | |
 | | Earnings date announced | | update timeline Phase 4 |
 | | Earnings: xAI burn / Starlink subs / guidance | | thesis confirmed or falsified |
@@ -100,8 +115,8 @@ Lesson (1 line):
 
 - [ ] ~Jun 19-24: check SPCX options listing
 - [x] Jul 6-17: strategy B entry window — checked 2026-07-06: IV ~83-87% > 55% gate → stand-down, no entry (§2 #001). Retry Jul 24 @ 60%. Window-close check 2026-07-16: spot $135.27 < $140, IV ~80-86%, debit $2.89 > $2.30 — all gates fail, front-run. Jul 24 retry moot unless spot > $140 AND IV < 60%.
-- [ ] Jul 24: Fallback-1 retry decision — expected outcome: formal cancel of Strategy B (spot gate dead)
-- [ ] Sep 16: final spread decision (NEVER into expiry between the strikes)
+- [x] Jul 24: Fallback-1 retry decision — done 2026-07-27 on `checkpoints/2026-07-27-fallback1-decision`: spot $115.07 < $140, Sep ATM IV ~101% > 60% relaxed gate, debit $3.66 > $2.30. All three fail; spot also below the $135 Fallback-2 line → **Strategy B formally cancelled**, no order ever placed (§2 #001).
+- [ ] ~~Sep 16: final spread decision (NEVER into expiry between the strikes)~~ — moot, Strategy B cancelled 2026-07-27; no position exists to manage into expiry
 - [ ] ~Oct 25: day 135, full review
 - [ ] Dec: year-end tax optimization ([05-tax-italy.md](05-tax-italy.md))
 - [ ] Mar 2027: filing documents (RW, RT, RM, IVAFE)

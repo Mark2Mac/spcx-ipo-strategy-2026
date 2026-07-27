@@ -36,11 +36,15 @@ Every action has: date, trigger condition, exact operation, fallback. Post-Augus
   - 140/135 Sep spread debit ≤ $2.30
 - [ ] Execution: combo order "bear put spread" (never the two legs separately — leg risk), limit at mid, up to 3 days of patience.
 - [ ] Log: debit paid, IV at entry, spot, spread greeks (delta, theta).
-- [ ] **Fallback 1**: IV not below 55% by Jul 17 → retry Jul 24 with threshold relaxed to 60%. Still no → **cancel strategy B**; cash stays cash.
-- [ ] **Fallback 2**: SPCX already below $135 before entry → the market front-ran the thesis; do NOT chase with lower strikes. Strategy B cancelled.
+- [x] **Fallback 1**: IV not below 55% by Jul 17 → retry Jul 24 with threshold relaxed to 60%. Still no → **cancel strategy B**; cash stays cash. → *Fired. Retry checked 2026-07-27 on frozen evidence (close Jul 24): Sep ATM IV 101.3%, spot $115.07, debit $3.66 — all three gates fail. **Strategy B cancelled.***
+- [x] **Fallback 2**: SPCX already below $135 before entry → the market front-ran the thesis; do NOT chase with lower strikes. Strategy B cancelled. → *Fired independently: spot $115.07 on Jul 24, $20 below the line.*
 - [ ] **Fallback 3**: earnings date announced after Sep 18 → move expiry to October; recompute budget (Oct costs ~15-20% more; if debit > $2.60 narrow the width or cancel).
 
 ## PHASE 3 — Disciplined waiting (Jul 20 → earnings)
+
+> **Outcome note (2026-07-27):** Strategy B was cancelled at the Fallback-1 decision, so no
+> spread exists. Every position-management item below is moot by construction; Phase 3 reduces
+> to observation and to Strategy A (GOOGL). Kept unedited as the pre-registered plan.
 
 **Goal: touch nothing. The debit spread's theta bleeds slowly while spot stays above 140; that is the planned cost of waiting.**
 
