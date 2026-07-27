@@ -291,6 +291,27 @@ smoke. Results posted to issue #14 and #22 (entry-window milestone) closed; no o
   instead of a phantom trade) and pointed at the `window_min` work as the pattern for the
   event-relative basis P4/P5 will need.
 
+- **Bug 21 — the reminder dedup never worked; issues #15/#18/#22 are one reminder, three times.**
+  Found while checking whether the project is safe to leave unattended. `_issue_exists()` queried
+  `state:all`, which **GitHub search does not support** — the qualifier matched *nothing*, so every
+  dated reminder looked new on every scheduled run and re-opened itself. Proof in the tracker: the
+  `spread-entry` reminder opened three times (Jul 6, 13, 20), once per Monday inside its window.
+  This is not cosmetic noise — duplicate #22 is what put the **forbidden pre-PR-#17 `McConfig`
+  prompt back in front of an agent** on Jul 20 (§3.2 of the mirror audit). The docstring asserting
+  "created at most once" had been false since the file was written. Fixed by dropping the invalid
+  qualifier (omitting `state:` is what searches every state) and keeping `state:open` for the
+  weekly. 3 regression tests with a fake session that reproduces GitHub's behaviour, including the
+  exact-title check so a fuzzy near-miss cannot suppress a real reminder.
+- **Bug 22 — `lead_days` was decorative.** The reminders workflow ran **Mondays only**, so every
+  lead window was silently truncated to whenever the next Monday fell. `earnings-unlock` (5-day
+  lead) would have arrived *on* its due date, and **`day135` (3-day lead, due Sun Oct 25) would
+  have arrived Oct 26 — a day late**. Fixed by running the workflow **daily** and moving the
+  weekly health check's Monday cadence into `due_reminders()` where it belongs, so the schedule no
+  longer silently overrides declared lead times. Every dated reminder now fires on the exact day
+  its window opens (verified out to 2027).
+  Ordering note: bug 22's fix alone would have been *harmful* — a daily runner on top of bug 21
+  would have opened ~27 duplicates for `earnings-unlock` instead of 3. Both fixes ship together.
+
 **Key decisions**:
 - Strategy B's cancellation mechanically settles **K2** ("the worst loss, if any, comes from the
   equity tranche, not the spread") — with no spread there is no spread loss. Recorded here so the
@@ -299,8 +320,24 @@ smoke. Results posted to issue #14 and #22 (entry-window milestone) closed; no o
 
 **Frozen**: no new checkpoint — this pass reads `2026-07-27-2232-auto` and the earlier snapshots.
 
+**Unattended readiness** (the question this pass was really answering): data collection is intact —
+14 artifacts on every snapshot, 0 collection errors, 0 quality issues, every source non-empty and
+stable across the last 10 snapshots (20 Polymarket markets, 40 EDGAR filings, 181-day HN/Wikipedia
+windows, ~500-row universe, SPCX bars growing one per session). The bug-18 fix is holding in
+production: **every** post-fix snapshot archives the Sep-18 gate expiry plus all four August
+expiries. The only null in the price panel is 2026-05-25 (Memorial Day; `^VIX` prints, equities
+don't) — one row in 500, no trailing gaps. Public repo needs **no secrets** (default `GITHUB_TOKEN`);
+`MIRROR_TOKEN` lives only on the mirror and expires 2027-06-01. The mirror's default branch is
+`mirror-ops`, which is why the copied `checkpoint.yml`/`reminders.yml` on its `main` never fire —
+no duplicate snapshots, no duplicate issues. With bugs 21-22 fixed, the automation is trustworthy
+enough to leave alone until the next milestone.
+
 **Open items**: P4/P5 need an event-relative basis in `score.py` once the earnings date is known
 (`earnings-T`); P6/K1/K3 at year end; `earnings-T` / `unlock-T7` checkpoints as pure observation.
+`quality_reports.json` only covers the yfinance connector (13 of 13 reports) — Polymarket, EDGAR,
+HN, Wikipedia and FRED have no quality gate, so a silently-degraded response there would show up
+as a plausible-looking number rather than a flag. Not urgent (all five are currently returning
+stable payloads) but it is the next real gap in the collection layer.
 
 ---
 

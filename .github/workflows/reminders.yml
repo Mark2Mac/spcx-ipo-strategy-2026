@@ -6,7 +6,8 @@ name: reminders
 # one open issue at a time. The schedule keeps itself alive — every issue counts as activity.
 on:
   schedule:
-    - cron: "0 7 * * 1"   # Mondays 07:00 UTC (after the weekend, before the week's work)
+    - cron: "0 7 * * *"   # daily 07:00 UTC — lead_days is honoured on any weekday; the
+    #                       weekly health check keeps its Monday cadence in check_reminders.py
   workflow_dispatch:
 
 permissions:

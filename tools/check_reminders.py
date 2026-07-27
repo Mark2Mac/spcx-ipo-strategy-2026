@@ -26,11 +26,17 @@ def load(path: Path = REMINDERS) -> list[dict]:
 
 
 def due_reminders(reminders: list[dict], today: date) -> list[dict]:
-    """Reminders whose window is open today: weekly always; dated within [due-lead, due+grace]."""
+    """Reminders whose window is open today: weekly on Mondays; dated within [due-lead, due+grace].
+
+    The workflow runs daily so `lead_days` is honoured on whatever weekday the window opens —
+    a Monday-only cron truncated every lead to the next Monday, which made `day135` (due Sun
+    Oct 25, lead 3) fire on Oct 26, a day late. Weekly reminders keep their Monday cadence
+    here, in the logic, instead of inheriting it from the schedule."""
     out = []
     for r in reminders:
         if r.get("type") == "weekly":
-            out.append(r)
+            if today.weekday() == 0:
+                out.append(r)
             continue
         due = date.fromisoformat(r["due"])
         lead = timedelta(days=r.get("lead_days", 0))
@@ -41,8 +47,15 @@ def due_reminders(reminders: list[dict], today: date) -> list[dict]:
 
 
 def _issue_exists(session: requests.Session, repo: str, title: str, open_only: bool) -> bool:
-    state = "open" if open_only else "all"
-    q = f'repo:{repo} is:issue in:title state:{state} "{title}"'
+    """True if an issue with exactly this title exists (open only, or in any state).
+
+    `state:` accepts open/closed — there is no `state:all`. Passing it made GitHub match
+    nothing, so every dated reminder looked new on every run and re-opened itself once per
+    scheduled run (#15/#18/#22 are the same reminder three times). Omitting the qualifier is
+    what actually searches every state. Search is fuzzy, so the exact title is re-checked here."""
+    q = f'repo:{repo} is:issue in:title "{title}"'
+    if open_only:
+        q += " state:open"
     r = session.get(f"{API}/search/issues", params={"q": q}, timeout=30)
     r.raise_for_status()
     return any(it.get("title") == title for it in r.json().get("items", []))
