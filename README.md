@@ -63,7 +63,8 @@ from the Actions tab.</sub>
 ## Post-IPO update — the model meets the market (updated Jul 27, 2026)
 
 The debut happened. SpaceX priced at $135, melted up to a $211 close on day 2, then gave the
-whole move back and kept going — **$115 by Jul 24**. The entry-window layer ([`notebooks/07_entry_decision.ipynb`](notebooks/07_entry_decision.ipynb),
+whole move back and kept going — **through $115 at the Fallback-1 decision close (Jul 24)** and
+lower since; the chart below always shows the latest frozen close. The entry-window layer ([`notebooks/07_entry_decision.ipynb`](notebooks/07_entry_decision.ipynb),
 frozen in `checkpoints/2026-07-06-entry-window`) records the first live decision; the chart
 below is the *living* version of its overlay, regenerated from the latest frozen checkpoint by
 [`tools/make_mc_vs_realized.py`](tools/make_mc_vs_realized.py). (Calibration scoring of the
