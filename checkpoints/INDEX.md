@@ -30,3 +30,4 @@ One frozen snapshot per milestone. Never modified after creation — git history
 | 2026-07-27-fallback1-decision | 1143f4bf | 14 artifacts | Phase-2 **Fallback-1** decision (issue #23). Evidence close Fri Jul 24 **$115.07**; archived `derived_atm_iv` Sep 18 ATM **101.3%**, Aug mean **128.5%**; 140/135 Sep debit **~$3.66** (BS at Sep IV — free feed carries no bid/ask on this chain). All three gates fail at the *relaxed* 60% IV threshold, and spot is below the $135 line so Fallback 2 fires too → **Strategy B formally cancelled**, no order ever placed. Decision record: journal §2 + LOGBOOK T+45. |
 | 2026-07-27-2232-auto | e5ed80d7 | 14 artifacts | |
 | 2026-07-30-2233-auto | ac75320d | 14 artifacts | |
+| 2026-08-03-2232-auto | cf71eff7 | 14 artifacts | |
