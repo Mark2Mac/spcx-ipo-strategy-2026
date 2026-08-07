@@ -1,0 +1,182 @@
+[
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have 200 or more launches in 2026?",
+  "outcomes": {
+   "Yes": 0.045,
+   "No": 0.955
+  },
+  "volume": 105906.031842
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 160-179 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.48,
+   "No": 0.52
+  },
+  "volume": 96360.463613
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 180-199 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.0595,
+   "No": 0.9405
+  },
+  "volume": 60205.693926
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 140-159 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.315,
+   "No": 0.685
+  },
+  "volume": 48676.848453000006
+ },
+ {
+  "event": "What will SpaceX (SPCX) hit in August 2026?",
+  "market": "Will SpaceX (SPCX) hit (HIGH) $140 in August?",
+  "outcomes": {
+   "Yes": 0.27,
+   "No": 0.73
+  },
+  "volume": 18869.981906
+ },
+ {
+  "event": "What will SpaceX (SPCX) hit in August 2026?",
+  "market": "Will SpaceX (SPCX) hit (HIGH) $145 in August?",
+  "outcomes": {
+   "Yes": 0.15,
+   "No": 0.85
+  },
+  "volume": 18096.828491
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by August 31?",
+  "outcomes": {
+   "Yes": 0.35,
+   "No": 0.65
+  },
+  "volume": 12653.662070999999
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have less than 100 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.015,
+   "No": 0.985
+  },
+  "volume": 4898.276563
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 120-139 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.0195,
+   "No": 0.9805
+  },
+  "volume": 4057.107877
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by September 30?",
+  "outcomes": {
+   "Yes": 0.95,
+   "No": 0.05
+  },
+  "volume": 3696.5877779999996
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 100-119 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.029,
+   "No": 0.971
+  },
+  "volume": 3195.7348140000004
+ },
+ {
+  "event": "What will SpaceX (SPCX) hit in August 2026?",
+  "market": "Will SpaceX (SPCX) hit (HIGH) $135 in August?",
+  "outcomes": {
+   "Yes": 0.255,
+   "No": 0.745
+  },
+  "volume": 2768.203429
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will the chopsticks catch SpaceX Starship Flight Test 14 Starship?",
+  "outcomes": {
+   "Yes": 0.535,
+   "No": 0.465
+  },
+  "volume": 2453.5479649999997
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 Superheavy explode?",
+  "outcomes": {
+   "Yes": 0.87,
+   "No": 0.13
+  },
+  "volume": 2225.767595
+ },
+ {
+  "event": "Will SpaceX (SPCX) finish week of August 3 above___?",
+  "market": "Will SpaceX (SPCX) finish week of August 3 above $90?",
+  "outcomes": {
+   "Yes": 0.9945,
+   "No": 0.0055
+  },
+  "volume": 2027.712628
+ },
+ {
+  "event": "What will SpaceX (SPCX) hit in August 2026?",
+  "market": "Will SpaceX (SPCX) hit (LOW) $90 in August?",
+  "outcomes": {
+   "Yes": 0.335,
+   "No": 0.665
+  },
+  "volume": 1689.777916
+ },
+ {
+  "event": "What will SpaceX (SPCX) hit in August 2026?",
+  "market": "Will SpaceX (SPCX) hit (LOW) $80 in August?",
+  "outcomes": {
+   "Yes": 0.185,
+   "No": 0.815
+  },
+  "volume": 1470.4425849999998
+ },
+ {
+  "event": "Will SpaceX (SPCX) finish week of August 3 above___?",
+  "market": "Will SpaceX (SPCX) finish week of August 3 above $85?",
+  "outcomes": {
+   "Yes": 0.9945,
+   "No": 0.0055
+  },
+  "volume": 1311.848371
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will the chopsticks catch SpaceX Starship Flight Test 14 Superheavy booster?",
+  "outcomes": {
+   "Yes": 0.036,
+   "No": 0.964
+  },
+  "volume": 969.618538
+ },
+ {
+  "event": "What will SpaceX (SPCX) hit in August 2026?",
+  "market": "Will SpaceX (SPCX) hit (LOW) $100 in August?",
+  "outcomes": {
+   "Yes": 0.615,
+   "No": 0.385
+  },
+  "volume": 802.296865
+ }
+]

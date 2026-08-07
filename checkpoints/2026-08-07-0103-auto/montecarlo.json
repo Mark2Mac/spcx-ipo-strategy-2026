@@ -1,0 +1,36 @@
+{
+ "config": {
+  "n_paths": 10000,
+  "horizon_days": 70,
+  "event_day": 45,
+  "spcx_s0": 150.0,
+  "spcx_vol": 0.7,
+  "spcx_drift": 0.0,
+  "jump_mean": -0.08,
+  "jump_std": 0.12,
+  "googl_value_eur": 1200.0,
+  "googl_vol": 0.28,
+  "googl_drift": 0.06,
+  "rho": 0.45,
+  "t_dof": 4,
+  "fx_eurusd": 1.1522064208984375,
+  "seed": 7
+ },
+ "spread": {
+  "long_strike": 140.0,
+  "short_strike": 135.0,
+  "debit": 2.2,
+  "contracts": 1
+ },
+ "report": {
+  "mean": 69.56150954308467,
+  "median": 78.96914456838485,
+  "VaR95": 307.69734864488595,
+  "ES95": 379.4532246008072,
+  "p_loss": 0.3754,
+  "p_loss_gt_200": 0.1351,
+  "best_5pct": 433.86872122784706,
+  "worst_path": -620.913556726815
+ },
+ "fx_source": "live EURUSD=X"
+}
