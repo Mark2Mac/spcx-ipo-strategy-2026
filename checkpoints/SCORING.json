@@ -1,7 +1,7 @@
 {
  "scored_from_checkpoint": "2026-06-13-ci-verify",
- "scored_on": "2026-08-07",
- "today_utc": "2026-08-07T01:03:50.080664+00:00",
+ "scored_on": "2026-08-10",
+ "today_utc": "2026-08-10T22:04:51.462723+00:00",
  "results": {
   "P1": {
    "outcome": "TRUE",
