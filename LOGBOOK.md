@@ -339,6 +339,56 @@ HN, Wikipedia and FRED have no quality gate, so a silently-degraded response the
 as a plausible-looking number rather than a flag. Not urgent (all five are currently returning
 stable payloads) but it is the next real gap in the collection layer.
 
+## 2026-08-24 (T+73) — the history crosses the unlock, and two things that had gone stale unseen
+
+**Built**: snapshot `2026-08-24-1812-auto` (14 artifacts) and the post-IPO visuals rebuilt on it.
+The realized series is now **50 sessions**, last close **$135.74**, unlock-month IV **67%** — down
+from the 101.1% Sep ATM of the July pass. The realized path crosses the event line for the first
+time: every published version of the gif stopped 16 sessions short of the earnings + insider
+unlock it was drawn to frame, so the one thing the chart existed to show was the one thing it
+could not.
+
+**Key decisions**: nothing in the pre-registration moves. This is the post-IPO layer only —
+`PREDICTIONS.md`, the baseline notebooks and `assets/mc_paths.gif` are untouched, and the gif
+still reads committed evidence via `realized_closes(latest_checkpoint(...))` rather than a live
+fetch (bug 19 stays closed).
+
+**Bugs caught — two, and both were invisible from inside the thing that was wrong.**
+
+1. *The gif's headline had been clipped mid-word since 28/07/2026*:
+   `Realized SPCX path vs the frozen-config Monte Carlo cone (anchored to the $160.95 de`.
+   Matplotlib neither wraps nor warns — it draws past the right edge and saves with exit 0, so the
+   defect had no symptom anywhere except in the artifact nobody re-read. The anchor moved to the
+   subtitle, which had room, and `assert_fits()` now measures **every** Text artist's drawn extent
+   against the canvas and refuses to save. Seen red before being believed: with the old title
+   restored it reports `spans 146..1287px of 1170` and exits 1. It measures the render, not the
+   string, so a different title at a different dpi is caught by the same line.
+
+2. *The visuals, not the data, were the stale half — and the first read of this pass got it
+   backwards.* A local clone seven commits behind made it look as though evidence had been frozen
+   at `2026-07-27-2232-auto` for four weeks. It had not: the scheduled workflow kept collecting on
+   time, and **seven** snapshots (30/07 through 20/08) were on `origin/main` the whole time. What
+   actually went four weeks without a rebuild is `assets/` — no workflow regenerates the gif or the
+   charts, so the collection layer stayed current while everything anyone *looks at* silently aged.
+   Data freshness and figure freshness are two different guarantees and only one of them is
+   automated. Recorded here rather than quietly fixed, because the fix (rebuild the visuals in the
+   checkpoint workflow) needs runner minutes that the account does not currently have — see below.
+
+**Frozen**: `2026-08-24-1812-auto`. Integrity re-verified across all **33** checkpoints (hashes
+match MANIFEST), `gate.py` clean, smoke suite **12/12 PASS**. Auto-scoring unchanged: P1, P2, P3
+all TRUE.
+
+**Open items**: two reminders are **DUE** — the Aug earnings + insider-unlock check (issue #25) and
+the weekly pipeline health check (issue #26); this snapshot is the evidence they were waiting for.
+The mirror's `sync-from-public` has been red every night since 20/08 for a reason outside this
+repo: the account's Actions quota was exhausted by 20 private third-party mirrors whose workflows
+were left enabled — roughly **3479 weighted runner minutes in 11 days** against a 2000/month
+allowance — and since then every job on a *private* repo is refused before executing a line
+(«recent account payments have failed or your spending limit needs to be increased»). This repo is
+public, which is exactly why its own automation never stopped. The mirrors were disarmed on
+24/08; the quota itself is a billing matter. Still open from the previous pass:
+`quality_reports.json` covers only the yfinance connector.
+
 ---
 
 *Template for future entries: date (T±n) — built / key decisions / bugs caught / frozen / open items.*

@@ -1,0 +1,182 @@
+[
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 606999.673596
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by September 30?",
+  "outcomes": {
+   "Yes": 0.058,
+   "No": 0.942
+  },
+  "volume": 339342.592379
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will the chopsticks catch SpaceX Starship Flight Test 14 Starship?",
+  "outcomes": {
+   "Yes": 0.0415,
+   "No": 0.9585
+  },
+  "volume": 264647.28724
+ },
+ {
+  "event": "How many SpaceX Starship launches reach space in 2026?",
+  "market": "Will 7-8 SpaceX Starship launches successfully reach Space in 2026?",
+  "outcomes": {
+   "Yes": 0.014,
+   "No": 0.986
+  },
+  "volume": 160063.13857199997
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31?",
+  "outcomes": {
+   "Yes": 0.185,
+   "No": 0.815
+  },
+  "volume": 134638.19086200002
+ },
+ {
+  "event": "How many SpaceX Starship launches reach space in 2026?",
+  "market": "Will 5-6 SpaceX Starship launches successfully reach Space in 2026?",
+  "outcomes": {
+   "Yes": 0.37,
+   "No": 0.63
+  },
+  "volume": 115666.69477999999
+ },
+ {
+  "event": "How many SpaceX Starship launches reach space in 2026?",
+  "market": "Will less than 5 SpaceX Starship launches successfully reach Space in 2026?",
+  "outcomes": {
+   "Yes": 0.61,
+   "No": 0.39
+  },
+  "volume": 100624.502155
+ },
+ {
+  "event": "How many SpaceX Starship launches reach space in 2026?",
+  "market": "Will 9-10 SpaceX Starship launches successfully reach Space in 2026?",
+  "outcomes": {
+   "Yes": 0.0025,
+   "No": 0.9975
+  },
+  "volume": 62573.05866000001
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by August 31?",
+  "outcomes": {
+   "Yes": 0.007,
+   "No": 0.993
+  },
+  "volume": 52576.480077
+ },
+ {
+  "event": "Two SpaceX Starships dock together by\u2026?",
+  "market": "Will two SpaceX Starships dock together by December 31, 2026?",
+  "outcomes": {
+   "Yes": 0.075,
+   "No": 0.925
+  },
+  "volume": 41190.49471100001
+ },
+ {
+  "event": "How many SpaceX Starship launches reach space in 2026?",
+  "market": "Will 15-16 SpaceX Starship launches successfully reach Space in 2026?",
+  "outcomes": {
+   "Yes": 0.0025,
+   "No": 0.9975
+  },
+  "volume": 31071.411278000003
+ },
+ {
+  "event": "What will SpaceX (SPCX) hit in August 2026?",
+  "market": "Will SpaceX (SPCX) hit (HIGH) $140 in August?",
+  "outcomes": {
+   "Yes": 1.0,
+   "No": 0.0
+  },
+  "volume": 22892.087048
+ },
+ {
+  "event": "Two SpaceX Starships dock together by\u2026?",
+  "market": "Will two SpaceX Starships dock together by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.7,
+   "No": 0.3
+  },
+  "volume": 22345.343832
+ },
+ {
+  "event": "What will SpaceX (SPCX) hit in August 2026?",
+  "market": "Will SpaceX (SPCX) hit (HIGH) $145 in August?",
+  "outcomes": {
+   "Yes": 1.0,
+   "No": 0.0
+  },
+  "volume": 21910.399702000002
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 Superheavy explode?",
+  "outcomes": {
+   "Yes": 0.795,
+   "No": 0.205
+  },
+  "volume": 18364.215022
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by September 15?",
+  "outcomes": {
+   "Yes": 0.55,
+   "No": 0.45
+  },
+  "volume": 16269.102676999999
+ },
+ {
+  "event": "How many SpaceX Starship launches reach space in 2026?",
+  "market": "Will more than 16 SpaceX Starship launches successfully reach Space in 2026?",
+  "outcomes": {
+   "Yes": 0.016,
+   "No": 0.984
+  },
+  "volume": 13658.096996
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by September 30?",
+  "outcomes": {
+   "Yes": 0.917,
+   "No": 0.083
+  },
+  "volume": 13618.362626000002
+ },
+ {
+  "event": "How many SpaceX Starship launches reach space in 2026?",
+  "market": "Will 13-14 SpaceX Starship launches successfully reach Space in 2026?",
+  "outcomes": {
+   "Yes": 0.0015,
+   "No": 0.9985
+  },
+  "volume": 10170.719004000002
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.435,
+   "No": 0.565
+  },
+  "volume": 9925.86969
+ }
+]
