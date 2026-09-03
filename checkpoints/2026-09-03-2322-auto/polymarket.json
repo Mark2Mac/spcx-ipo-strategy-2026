@@ -1,0 +1,182 @@
+[
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 606999.673596
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by September 30?",
+  "outcomes": {
+   "Yes": 0.039,
+   "No": 0.961
+  },
+  "volume": 354585.21915799996
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will the chopsticks catch SpaceX Starship Flight Test 14 Starship?",
+  "outcomes": {
+   "Yes": 0.0345,
+   "No": 0.9655
+  },
+  "volume": 275027.1791499999
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31?",
+  "outcomes": {
+   "Yes": 0.175,
+   "No": 0.825
+  },
+  "volume": 138325.03805399998
+ },
+ {
+  "event": "SpaceX Starship fully reusable before 2027?",
+  "market": "SpaceX Starship fully reusable before 2027?",
+  "outcomes": {
+   "Yes": 0.4,
+   "No": 0.6
+  },
+  "volume": 121806.89960400005
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by August 31?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 62536.588115
+ },
+ {
+  "event": "Two SpaceX Starships dock together by\u2026?",
+  "market": "Will two SpaceX Starships dock together by December 31, 2026?",
+  "outcomes": {
+   "Yes": 0.055,
+   "No": 0.945
+  },
+  "volume": 42071.274711
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by September 15?",
+  "outcomes": {
+   "Yes": 0.13,
+   "No": 0.87
+  },
+  "volume": 28962.913833999995
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 Superheavy explode?",
+  "outcomes": {
+   "Yes": 0.825,
+   "No": 0.175
+  },
+  "volume": 26882.951886000003
+ },
+ {
+  "event": "SpaceX IPO: Officially added to S&P 500 in 2026?",
+  "market": "SpaceX IPO: Officially added to S&P 500 in 2026?",
+  "outcomes": {
+   "Yes": 0.0075,
+   "No": 0.9925
+  },
+  "volume": 26331.201652000003
+ },
+ {
+  "event": "Two SpaceX Starships dock together by\u2026?",
+  "market": "Will two SpaceX Starships dock together by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.535,
+   "No": 0.465
+  },
+  "volume": 23471.388446
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by September 30?",
+  "outcomes": {
+   "Yes": 0.905,
+   "No": 0.095
+  },
+  "volume": 22472.01649
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.46,
+   "No": 0.54
+  },
+  "volume": 15458.490471
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will the chopsticks catch SpaceX Starship Flight Test 14 Superheavy booster?",
+  "outcomes": {
+   "Yes": 0.0415,
+   "No": 0.9585
+  },
+  "volume": 12620.440988
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by August 22?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 6612.377149
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30, 2027?",
+  "outcomes": {
+   "Yes": 0.305,
+   "No": 0.695
+  },
+  "volume": 4592.985365
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will the Starship for SpaceX Starship Flight Test 14 achieve a successful splashdown?",
+  "outcomes": {
+   "Yes": 0.84,
+   "No": 0.16
+  },
+  "volume": 2298.4746760000003
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by January 31, 2027?",
+  "outcomes": {
+   "Yes": 0.215,
+   "No": 0.785
+  },
+  "volume": 1371.2443780000003
+ },
+ {
+  "event": "SpaceX Starship Flight Test 14",
+  "market": "Will SpaceX Starship Flight Test 14 launch by September 26?",
+  "outcomes": {
+   "Yes": 0.67,
+   "No": 0.33
+  },
+  "volume": 1089.022845
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by February 28, 2027?",
+  "outcomes": {
+   "Yes": 0.23,
+   "No": 0.77
+  },
+  "volume": 943.70775
+ }
+]
