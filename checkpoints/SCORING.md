@@ -1,6 +1,6 @@
 # Auto-scoring (predictions whose verify-date has passed)
 
-Scored 2026-09-14. Each prediction cites its own frozen evidence in the last column — different bases pin to different snapshots. Read-only on PREDICTIONS.md; this file is regenerated, not authoritative.
+Scored 2026-09-17. Each prediction cites its own frozen evidence in the last column — different bases pin to different snapshots. Read-only on PREDICTIONS.md; this file is regenerated, not authoritative.
 
 | # | Prediction | P(ex-ante) | Outcome | Detail | Evidence |
 |---|---|---|---|---|---|
