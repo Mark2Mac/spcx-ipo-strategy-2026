@@ -1,0 +1,6372 @@
+{
+ "listed": true,
+ "last_close": 150.86000061035156,
+ "price_source": "yfinance",
+ "ohlcv_tail": [
+  {
+   "Date": "2026-09-17 00:00:00",
+   "Open": 153.8000030517578,
+   "High": 156.8699951171875,
+   "Low": 152.6300048828125,
+   "Close": 154.80999755859375,
+   "Volume": 83986400
+  },
+  {
+   "Date": "2026-09-18 00:00:00",
+   "Open": 154.60000610351562,
+   "High": 156.60000610351562,
+   "Low": 149.92999267578125,
+   "Close": 152.7100067138672,
+   "Volume": 335670500
+  },
+  {
+   "Date": "2026-09-21 00:00:00",
+   "Open": 154.77000427246094,
+   "High": 158.1300048828125,
+   "Low": 151.60000610351562,
+   "Close": 151.85000610351562,
+   "Volume": 82283700
+  },
+  {
+   "Date": "2026-09-22 00:00:00",
+   "Open": 151.6999969482422,
+   "High": 154.94000244140625,
+   "Low": 150.5500030517578,
+   "Close": 154.72000122070312,
+   "Volume": 59197600
+  },
+  {
+   "Date": "2026-09-23 00:00:00",
+   "Open": 153.27999877929688,
+   "High": 154.25999450683594,
+   "Low": 147.88999938964844,
+   "Close": 148.36000061035156,
+   "Volume": 60641600
+  },
+  {
+   "Date": "2026-09-24 00:00:00",
+   "Open": 148.1999969482422,
+   "High": 149.0,
+   "Low": 145.8800048828125,
+   "Close": 148.02999877929688,
+   "Volume": 72721400
+  },
+  {
+   "Date": "2026-09-25 00:00:00",
+   "Open": 148.3800048828125,
+   "High": 149.6699981689453,
+   "Low": 146.0,
+   "Close": 148.67999267578125,
+   "Volume": 54595200
+  },
+  {
+   "Date": "2026-09-28 00:00:00",
+   "Open": 148.49000549316406,
+   "High": 150.8000030517578,
+   "Low": 145.36000061035156,
+   "Close": 145.47000122070312,
+   "Volume": 83516700
+  },
+  {
+   "Date": "2026-09-29 00:00:00",
+   "Open": 146.67999267578125,
+   "High": 150.05999755859375,
+   "Low": 145.47000122070312,
+   "Close": 149.24000549316406,
+   "Volume": 80056700
+  },
+  {
+   "Date": "2026-09-30 00:00:00",
+   "Open": 148.67999267578125,
+   "High": 152.5800018310547,
+   "Low": 147.75,
+   "Close": 150.86000061035156,
+   "Volume": 79614200
+  }
+ ],
+ "shares_424b4": 13075865175,
+ "shares_424b4_asof": "2026-03-31",
+ "market_cap_424b4": 1972625028281.3748,
+ "option_chains": {
+  "2026-10-02": {
+   "calls": [
+    {
+     "strike": 50.0,
+     "lastPrice": 99.93,
+     "bid": 96.4,
+     "ask": 100.5,
+     "impliedVolatility": 10.35156603027344,
+     "volume": 20,
+     "openInterest": 6
+    },
+    {
+     "strike": 70.0,
+     "lastPrice": 79.57,
+     "bid": 76.4,
+     "ask": 80.5,
+     "impliedVolatility": 7.359375800781249,
+     "volume": 46,
+     "openInterest": 0
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 60.13,
+     "bid": 57.2,
+     "ask": 60.55,
+     "impliedVolatility": 5.910158862304687,
+     "volume": 46,
+     "openInterest": 21
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 54.22,
+     "bid": 51.4,
+     "ask": 55.35,
+     "impliedVolatility": 4.464848168945313,
+     "volume": 45,
+     "openInterest": 5
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 52.13,
+     "bid": 46.8,
+     "ask": 49.5,
+     "impliedVolatility": 3.281251796875,
+     "volume": 7,
+     "openInterest": 121
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 45.1,
+     "bid": 41.4,
+     "ask": 45.35,
+     "impliedVolatility": 3.5820322949218752,
+     "volume": 48,
+     "openInterest": 10
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 39.19,
+     "bid": 36.4,
+     "ask": 40.35,
+     "impliedVolatility": 3.16406458984375,
+     "volume": 49,
+     "openInterest": 9
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 34.95,
+     "bid": 31.4,
+     "ask": 35.35,
+     "impliedVolatility": 2.761721845703125,
+     "volume": 61,
+     "openInterest": 60
+    },
+    {
+     "strike": 118.0,
+     "lastPrice": 32.0,
+     "bid": 29.75,
+     "ask": 32.35,
+     "impliedVolatility": 3.2773455566406247,
+     "volume": 141,
+     "openInterest": 82
+    },
+    {
+     "strike": 119.0,
+     "lastPrice": 30.67,
+     "bid": 28.8,
+     "ask": 31.35,
+     "impliedVolatility": 3.205080112304687,
+     "volume": 171,
+     "openInterest": 108
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 29.4,
+     "bid": 26.85,
+     "ask": 30.3,
+     "impliedVolatility": 2.630862797851563,
+     "volume": 153,
+     "openInterest": 194
+    },
+    {
+     "strike": 121.0,
+     "lastPrice": 29.53,
+     "bid": 26.75,
+     "ask": 29.4,
+     "impliedVolatility": 3.0175805810546876,
+     "volume": 15,
+     "openInterest": 47
+    },
+    {
+     "strike": 122.0,
+     "lastPrice": 29.69,
+     "bid": 25.85,
+     "ask": 28.35,
+     "impliedVolatility": 2.9433620166015624,
+     "volume": 59,
+     "openInterest": 58
+    },
+    {
+     "strike": 123.0,
+     "lastPrice": 27.77,
+     "bid": 24.85,
+     "ask": 27.4,
+     "impliedVolatility": 2.869143452148437,
+     "volume": 68,
+     "openInterest": 23
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 24.33,
+     "bid": 22.55,
+     "ask": 25.35,
+     "impliedVolatility": 2.5488317529296873,
+     "volume": 258,
+     "openInterest": 226
+    },
+    {
+     "strike": 126.0,
+     "lastPrice": 23.42,
+     "bid": 20.4,
+     "ask": 24.35,
+     "impliedVolatility": 1.9082035839843752,
+     "volume": 64,
+     "openInterest": 20
+    },
+    {
+     "strike": 127.0,
+     "lastPrice": 22.62,
+     "bid": 19.4,
+     "ask": 23.5,
+     "impliedVolatility": 1.9218753906250001,
+     "volume": 83,
+     "openInterest": 15
+    },
+    {
+     "strike": 128.0,
+     "lastPrice": 21.32,
+     "bid": 19.2,
+     "ask": 22.6,
+     "impliedVolatility": 2.2402387744140624,
+     "volume": 34,
+     "openInterest": 31
+    },
+    {
+     "strike": 129.0,
+     "lastPrice": 20.45,
+     "bid": 18.2,
+     "ask": 21.6,
+     "impliedVolatility": 2.1523483691406247,
+     "volume": 49,
+     "openInterest": 24
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 19.91,
+     "bid": 17.75,
+     "ask": 20.0,
+     "impliedVolatility": 2.0449267626953125,
+     "volume": 179,
+     "openInterest": 232
+    },
+    {
+     "strike": 131.0,
+     "lastPrice": 18.3,
+     "bid": 15.45,
+     "ask": 19.1,
+     "impliedVolatility": 1.40625296875,
+     "volume": 97,
+     "openInterest": 21
+    },
+    {
+     "strike": 132.0,
+     "lastPrice": 17.53,
+     "bid": 14.65,
+     "ask": 18.35,
+     "impliedVolatility": 1.5761739941406248,
+     "volume": 89,
+     "openInterest": 41
+    },
+    {
+     "strike": 133.0,
+     "lastPrice": 16.95,
+     "bid": 13.8,
+     "ask": 17.3,
+     "impliedVolatility": 1.5390648046875,
+     "volume": 93,
+     "openInterest": 67
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 16.04,
+     "bid": 13.55,
+     "ask": 16.6,
+     "impliedVolatility": 1.8125009374999999,
+     "volume": 30,
+     "openInterest": 24
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 14.86,
+     "bid": 12.85,
+     "ask": 15.0,
+     "impliedVolatility": 1.6298846630859374,
+     "volume": 151,
+     "openInterest": 268
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 13.97,
+     "bid": 11.2,
+     "ask": 14.35,
+     "impliedVolatility": 1.4472683886718751,
+     "volume": 39,
+     "openInterest": 68
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 12.92,
+     "bid": 10.7,
+     "ask": 13.35,
+     "impliedVolatility": 1.5029321728515623,
+     "volume": 42,
+     "openInterest": 134
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 10.5,
+     "bid": 9.9,
+     "ask": 11.45,
+     "impliedVolatility": 1.2089883300781248,
+     "volume": 63,
+     "openInterest": 138
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 9.98,
+     "bid": 8.8,
+     "ask": 9.6,
+     "impliedVolatility": 0.75195560546875,
+     "volume": 101,
+     "openInterest": 304
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 8.09,
+     "bid": 7.95,
+     "ask": 8.35,
+     "impliedVolatility": 0.6210975390625001,
+     "volume": 326,
+     "openInterest": 719
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 8.85,
+     "bid": 6.85,
+     "ask": 7.6,
+     "impliedVolatility": 0.64062859375,
+     "volume": 36,
+     "openInterest": 226
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 6.93,
+     "bid": 6.0,
+     "ask": 7.9,
+     "impliedVolatility": 0.9853517089843751,
+     "volume": 26,
+     "openInterest": 822
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 5.5,
+     "bid": 4.8,
+     "ask": 5.85,
+     "impliedVolatility": 0.5664105859375,
+     "volume": 209,
+     "openInterest": 646
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 4.36,
+     "bid": 4.25,
+     "ask": 4.55,
+     "impliedVolatility": 0.5273484765625001,
+     "volume": 119,
+     "openInterest": 1442
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 3.5,
+     "bid": 3.4,
+     "ask": 3.65,
+     "impliedVolatility": 0.551762294921875,
+     "volume": 525,
+     "openInterest": 2999
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 2.71,
+     "bid": 2.73,
+     "ask": 2.86,
+     "impliedVolatility": 0.5029346582031251,
+     "volume": 1521,
+     "openInterest": 1233
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 2.04,
+     "bid": 2.1,
+     "ask": 2.16,
+     "impliedVolatility": 0.508793974609375,
+     "volume": 1035,
+     "openInterest": 2958
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 1.55,
+     "bid": 1.54,
+     "ask": 1.57,
+     "impliedVolatility": 0.49658706542968756,
+     "volume": 4525,
+     "openInterest": 4667
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 1.07,
+     "bid": 1.09,
+     "ask": 1.11,
+     "impliedVolatility": 0.4931691308593751,
+     "volume": 6390,
+     "openInterest": 4947
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 0.73,
+     "bid": 0.74,
+     "ask": 0.77,
+     "impliedVolatility": 0.49707534179687507,
+     "volume": 40120,
+     "openInterest": 18143
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 0.26,
+     "bid": 0.26,
+     "ask": 0.27,
+     "impliedVolatility": 0.50586431640625,
+     "volume": 79094,
+     "openInterest": 15516
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 0.09,
+     "bid": 0.08,
+     "ask": 0.09,
+     "impliedVolatility": 0.5273484765625001,
+     "volume": 78612,
+     "openInterest": 24311
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 0.04,
+     "bid": 0.04,
+     "ask": 0.05,
+     "impliedVolatility": 0.6015664843750002,
+     "volume": 28287,
+     "openInterest": 15974
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 0.02,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.6640658593750002,
+     "volume": 20044,
+     "openInterest": 24897
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.73437765625,
+     "volume": 5598,
+     "openInterest": 16004
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.8359391406249999,
+     "volume": 4640,
+     "openInterest": 9902
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.937500625,
+     "volume": 927,
+     "openInterest": 3564
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.0312548437500002,
+     "volume": 3462,
+     "openInterest": 12251
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.125004375,
+     "volume": 636,
+     "openInterest": 5560
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.21875390625,
+     "volume": 380,
+     "openInterest": 7117
+    },
+    {
+     "strike": 177.5,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.1875040625,
+     "volume": 54,
+     "openInterest": 1482
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.2500037499999999,
+     "volume": 195,
+     "openInterest": 4988
+    },
+    {
+     "strike": 182.5,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3437532812499997,
+     "volume": 13,
+     "openInterest": 1099
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.4375028125,
+     "volume": 4,
+     "openInterest": 1820
+    },
+    {
+     "strike": 187.5,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5000025,
+     "volume": 8,
+     "openInterest": 1980
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5625021874999998,
+     "volume": 2,
+     "openInterest": 2794
+    },
+    {
+     "strike": 195.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.75000125,
+     "volume": 294,
+     "openInterest": 1435
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.875000625,
+     "volume": 7,
+     "openInterest": 2518
+    },
+    {
+     "strike": 205.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.000005,
+     "volume": 15,
+     "openInterest": 1179
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.1250046874999997,
+     "volume": 1,
+     "openInterest": 1440
+    },
+    {
+     "strike": 215.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.2500043749999996,
+     "volume": 1,
+     "openInterest": 963
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.3750040624999995,
+     "volume": 32,
+     "openInterest": 2090
+    },
+    {
+     "strike": 225.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.50000375,
+     "volume": 5,
+     "openInterest": 3043
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.6250034375,
+     "volume": 12,
+     "openInterest": 1842
+    }
+   ],
+   "puts": [
+    {
+     "strike": 5.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 20.00000375,
+     "volume": 1.0,
+     "openInterest": 62
+    },
+    {
+     "strike": 50.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 6.500001875000001,
+     "volume": 71.0,
+     "openInterest": 83
+    },
+    {
+     "strike": 55.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 5.87500265625,
+     "volume": 6.0,
+     "openInterest": 47
+    },
+    {
+     "strike": 60.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 5.375003281249999,
+     "volume": 4.0,
+     "openInterest": 164
+    },
+    {
+     "strike": 65.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 5.000003749999999,
+     "volume": 2.0,
+     "openInterest": 59
+    },
+    {
+     "strike": 70.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 4.500004375,
+     "volume": 1.0,
+     "openInterest": 43
+    },
+    {
+     "strike": 75.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 4.12500484375,
+     "volume": 1.0,
+     "openInterest": 133
+    },
+    {
+     "strike": 80.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 3.750000625,
+     "volume": 1.0,
+     "openInterest": 459
+    },
+    {
+     "strike": 85.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 3.3750015624999996,
+     "volume": 3.0,
+     "openInterest": 5239
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 3.06250234375,
+     "volume": 171.0,
+     "openInterest": 16116
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.750003125,
+     "volume": 27.0,
+     "openInterest": 15612
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.43750390625,
+     "volume": 3.0,
+     "openInterest": 3390
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.1875045312499997,
+     "volume": 1.0,
+     "openInterest": 2718
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.875000625,
+     "volume": 3.0,
+     "openInterest": 2142
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.625001875,
+     "volume": 8.0,
+     "openInterest": 1793
+    },
+    {
+     "strike": 118.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5000025,
+     "volume": 231.0,
+     "openInterest": 481
+    },
+    {
+     "strike": 119.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.4375028125,
+     "volume": 8.0,
+     "openInterest": 533
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3750031249999999,
+     "volume": 323.0,
+     "openInterest": 7746
+    },
+    {
+     "strike": 121.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3125034374999998,
+     "volume": 229.0,
+     "openInterest": 346
+    },
+    {
+     "strike": 122.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.2812535937499998,
+     "volume": 113.0,
+     "openInterest": 2035
+    },
+    {
+     "strike": 123.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.02,
+     "impliedVolatility": 1.3125034374999998,
+     "volume": 51.0,
+     "openInterest": 467
+    },
+    {
+     "strike": 124.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.3125034374999998,
+     "volume": 77.0,
+     "openInterest": 459
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.2656286718749998,
+     "volume": 375.0,
+     "openInterest": 3196
+    },
+    {
+     "strike": 126.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.21875390625,
+     "volume": 320.0,
+     "openInterest": 919
+    },
+    {
+     "strike": 127.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.02,
+     "impliedVolatility": 1.109379453125,
+     "volume": 145.0,
+     "openInterest": 1185
+    },
+    {
+     "strike": 128.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.109379453125,
+     "volume": 64.0,
+     "openInterest": 2011
+    },
+    {
+     "strike": 129.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.0468797656250002,
+     "volume": 211.0,
+     "openInterest": 1372
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.992187578125,
+     "volume": 856.0,
+     "openInterest": 4897
+    },
+    {
+     "strike": 131.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.9531254687499999,
+     "volume": 151.0,
+     "openInterest": 988
+    },
+    {
+     "strike": 132.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.8906260937499999,
+     "volume": 239.0,
+     "openInterest": 1842
+    },
+    {
+     "strike": 133.0,
+     "lastPrice": 0.03,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.8984385156249999,
+     "volume": 359.0,
+     "openInterest": 3072
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 0.02,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.8437515624999999,
+     "volume": 661.0,
+     "openInterest": 1365
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 0.03,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.789064609375,
+     "volume": 1011.0,
+     "openInterest": 7016
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 0.03,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.7656273437500001,
+     "volume": 945.0,
+     "openInterest": 4960
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 0.03,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.710940390625,
+     "volume": 800.0,
+     "openInterest": 4458
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 0.04,
+     "bid": 0.04,
+     "ask": 0.05,
+     "impliedVolatility": 0.6796907031250001,
+     "volume": 4710.0,
+     "openInterest": 8008
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 0.05,
+     "bid": 0.05,
+     "ask": 0.06,
+     "impliedVolatility": 0.64062859375,
+     "volume": 683.0,
+     "openInterest": 3770
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 0.06,
+     "bid": 0.06,
+     "ask": 0.07,
+     "impliedVolatility": 0.5976602734375001,
+     "volume": 5094.0,
+     "openInterest": 18769
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 0.08,
+     "bid": 0.08,
+     "ask": 0.09,
+     "impliedVolatility": 0.5625043750000001,
+     "volume": 1365.0,
+     "openInterest": 4032
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 0.12,
+     "bid": 0.11,
+     "ask": 0.12,
+     "impliedVolatility": 0.5293015820312501,
+     "volume": 1506.0,
+     "openInterest": 4092
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 0.17,
+     "bid": 0.17,
+     "ask": 0.18,
+     "impliedVolatility": 0.5097705273437501,
+     "volume": 1691.0,
+     "openInterest": 5294
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 0.29,
+     "bid": 0.26,
+     "ask": 0.28,
+     "impliedVolatility": 0.500005,
+     "volume": 4870.0,
+     "openInterest": 5187
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 0.45,
+     "bid": 0.41,
+     "ask": 0.43,
+     "impliedVolatility": 0.48633326171875,
+     "volume": 12229.0,
+     "openInterest": 13504
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 0.69,
+     "bid": 0.64,
+     "ask": 0.67,
+     "impliedVolatility": 0.48242705078125003,
+     "volume": 4572.0,
+     "openInterest": 3863
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 1.01,
+     "bid": 0.97,
+     "ask": 0.99,
+     "impliedVolatility": 0.47510290527343746,
+     "volume": 8925.0,
+     "openInterest": 6475
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 1.46,
+     "bid": 1.38,
+     "ask": 1.43,
+     "impliedVolatility": 0.47363807617187503,
+     "volume": 16603.0,
+     "openInterest": 7689
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 1.98,
+     "bid": 1.9,
+     "ask": 1.98,
+     "impliedVolatility": 0.47363807617187503,
+     "volume": 27886.0,
+     "openInterest": 6246
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 2.7,
+     "bid": 2.44,
+     "ask": 2.67,
+     "impliedVolatility": 0.48633326171875,
+     "volume": 48235.0,
+     "openInterest": 13441
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 4.73,
+     "bid": 3.45,
+     "ask": 4.85,
+     "impliedVolatility": 0.5898478515625001,
+     "volume": 21253.0,
+     "openInterest": 4949
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 7.08,
+     "bid": 5.65,
+     "ask": 7.2,
+     "impliedVolatility": 0.6914093359375001,
+     "volume": 4699.0,
+     "openInterest": 3394
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 8.38,
+     "bid": 8.2,
+     "ask": 10.75,
+     "impliedVolatility": 0.6015664843750002,
+     "volume": 275.0,
+     "openInterest": 681
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 11.05,
+     "bid": 10.45,
+     "ask": 13.3,
+     "impliedVolatility": 1.6630876220703126,
+     "volume": 691.0,
+     "openInterest": 1523
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 11.6,
+     "bid": 12.25,
+     "ask": 15.55,
+     "impliedVolatility": 1.734376328125,
+     "volume": 31.0,
+     "openInterest": 160
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 15.99,
+     "bid": 15.95,
+     "ask": 17.55,
+     "impliedVolatility": 1.611330068359375,
+     "volume": 1313.0,
+     "openInterest": 366
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 16.4,
+     "bid": 17.05,
+     "ask": 21.25,
+     "impliedVolatility": 2.4560585473632814,
+     "volume": 1.0,
+     "openInterest": 3
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 22.0,
+     "bid": 19.55,
+     "ask": 23.4,
+     "impliedVolatility": 2.4560585473632814,
+     "volume": 57.0,
+     "openInterest": 17
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 23.45,
+     "bid": 21.55,
+     "ask": 26.6,
+     "impliedVolatility": 2.9863306591796874,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 26.4,
+     "bid": 24.05,
+     "ask": 29.05,
+     "impliedVolatility": 3.134767788085937,
+     "volume": 3.0,
+     "openInterest": 4
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 28.71,
+     "bid": 29.05,
+     "ask": 34.05,
+     "impliedVolatility": 3.463868527832031,
+     "volume": 3.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 182.5,
+     "lastPrice": 28.85,
+     "bid": 32.25,
+     "ask": 35.75,
+     "impliedVolatility": 3.1523458691406248,
+     "volume": null,
+     "openInterest": 0
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 35.02,
+     "bid": 34.05,
+     "ask": 39.05,
+     "impliedVolatility": 3.7744146264648437,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 187.5,
+     "lastPrice": 39.9,
+     "bid": 35.5,
+     "ask": 40.9,
+     "impliedVolatility": 3.5332042919921873,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 40.35,
+     "bid": 39.05,
+     "ask": 44.2,
+     "impliedVolatility": 4.15332512084961,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 195.0,
+     "lastPrice": 42.28,
+     "bid": 44.05,
+     "ask": 49.05,
+     "impliedVolatility": 4.34961393798828,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 50.85,
+     "bid": 49.45,
+     "ask": 53.0,
+     "impliedVolatility": 3.88281279296875,
+     "volume": 63.0,
+     "openInterest": 16
+    },
+    {
+     "strike": 205.0,
+     "lastPrice": 58.9,
+     "bid": 54.05,
+     "ask": 59.1,
+     "impliedVolatility": 4.904300744628905,
+     "volume": 8.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 59.82,
+     "bid": 58.3,
+     "ask": 63.3,
+     "impliedVolatility": 4.589848012695313,
+     "volume": 2.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 66.5,
+     "bid": 69.05,
+     "ask": 74.1,
+     "impliedVolatility": 5.617190478515624,
+     "volume": 1.0,
+     "openInterest": 0
+    }
+   ]
+  },
+  "2026-10-09": {
+   "calls": [
+    {
+     "strike": 75.0,
+     "lastPrice": 72.33,
+     "bid": 70.9,
+     "ask": 75.6,
+     "impliedVolatility": 2.1269578076171873,
+     "volume": 4,
+     "openInterest": 4
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 58.37,
+     "bid": 50.95,
+     "ask": 55.6,
+     "impliedVolatility": 1.48047134765625,
+     "volume": 2,
+     "openInterest": 0
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 47.65,
+     "bid": 46.0,
+     "ask": 50.65,
+     "impliedVolatility": 1.376956240234375,
+     "volume": 2,
+     "openInterest": 11
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 43.5,
+     "bid": 41.0,
+     "ask": 45.65,
+     "impliedVolatility": 1.2265663671875,
+     "volume": 1,
+     "openInterest": 3
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 37.5,
+     "bid": 36.0,
+     "ask": 40.65,
+     "impliedVolatility": 1.083988955078125,
+     "volume": 1,
+     "openInterest": 164
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 34.21,
+     "bid": 31.05,
+     "ask": 34.6,
+     "impliedVolatility": 1.4209013330078126,
+     "volume": 1,
+     "openInterest": 18
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 29.45,
+     "bid": 26.0,
+     "ask": 30.7,
+     "impliedVolatility": 0.823243955078125,
+     "volume": 2,
+     "openInterest": 31
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 25.39,
+     "bid": 21.05,
+     "ask": 25.75,
+     "impliedVolatility": 0.7128934960937501,
+     "volume": 14,
+     "openInterest": 24
+    },
+    {
+     "strike": 126.0,
+     "lastPrice": 21.6,
+     "bid": 19.95,
+     "ask": 24.75,
+     "impliedVolatility": 0.6630893066406252,
+     "volume": 2,
+     "openInterest": 12
+    },
+    {
+     "strike": 127.0,
+     "lastPrice": 26.5,
+     "bid": 19.1,
+     "ask": 23.75,
+     "impliedVolatility": 0.6689486230468751,
+     "volume": 1,
+     "openInterest": 26
+    },
+    {
+     "strike": 128.0,
+     "lastPrice": 21.48,
+     "bid": 18.1,
+     "ask": 22.75,
+     "impliedVolatility": 0.641605146484375,
+     "volume": 18,
+     "openInterest": 23
+    },
+    {
+     "strike": 129.0,
+     "lastPrice": 20.5,
+     "bid": 17.0,
+     "ask": 21.8,
+     "impliedVolatility": 0.6044961425781252,
+     "volume": 6,
+     "openInterest": 10
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 22.55,
+     "bid": 17.65,
+     "ask": 20.45,
+     "impliedVolatility": 0.7656273437500001,
+     "volume": 3,
+     "openInterest": 352
+    },
+    {
+     "strike": 131.0,
+     "lastPrice": 20.21,
+     "bid": 16.95,
+     "ask": 19.35,
+     "impliedVolatility": 0.75586181640625,
+     "volume": 11,
+     "openInterest": 9
+    },
+    {
+     "strike": 132.0,
+     "lastPrice": 18.41,
+     "bid": 14.65,
+     "ask": 18.5,
+     "impliedVolatility": 0.5800823242187501,
+     "volume": 7,
+     "openInterest": 19
+    },
+    {
+     "strike": 133.0,
+     "lastPrice": 16.77,
+     "bid": 14.2,
+     "ask": 17.9,
+     "impliedVolatility": 0.6679720703125002,
+     "volume": 20,
+     "openInterest": 27
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 15.78,
+     "bid": 12.25,
+     "ask": 16.8,
+     "impliedVolatility": 0.507817421875,
+     "volume": 26,
+     "openInterest": 7
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 15.81,
+     "bid": 13.15,
+     "ask": 14.25,
+     "impliedVolatility": 0.5249070947265625,
+     "volume": 116,
+     "openInterest": 157
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 13.05,
+     "bid": 12.0,
+     "ask": 13.5,
+     "impliedVolatility": 0.50586431640625,
+     "volume": 96,
+     "openInterest": 22
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 11.95,
+     "bid": 11.4,
+     "ask": 12.6,
+     "impliedVolatility": 0.526371923828125,
+     "volume": 105,
+     "openInterest": 51
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 11.11,
+     "bid": 10.5,
+     "ask": 11.35,
+     "impliedVolatility": 0.5559126440429689,
+     "volume": 112,
+     "openInterest": 164
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 10.67,
+     "bid": 9.45,
+     "ask": 10.6,
+     "impliedVolatility": 0.56055126953125,
+     "volume": 73,
+     "openInterest": 363
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 8.95,
+     "bid": 8.95,
+     "ask": 9.3,
+     "impliedVolatility": 0.4760794580078125,
+     "volume": 429,
+     "openInterest": 461
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 9.52,
+     "bid": 7.95,
+     "ask": 8.8,
+     "impliedVolatility": 0.5141650146484374,
+     "volume": 167,
+     "openInterest": 134
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 7.73,
+     "bid": 7.25,
+     "ask": 8.05,
+     "impliedVolatility": 0.5090381127929688,
+     "volume": 71,
+     "openInterest": 187
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 6.87,
+     "bid": 6.55,
+     "ask": 6.95,
+     "impliedVolatility": 0.454107021484375,
+     "volume": 35,
+     "openInterest": 129
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 6.2,
+     "bid": 5.85,
+     "ask": 6.15,
+     "impliedVolatility": 0.43726148681640625,
+     "volume": 188,
+     "openInterest": 392
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 5.4,
+     "bid": 5.3,
+     "ask": 5.45,
+     "impliedVolatility": 0.4292049267578125,
+     "volume": 315,
+     "openInterest": 2146
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 4.7,
+     "bid": 4.35,
+     "ask": 4.85,
+     "impliedVolatility": 0.42896078857421877,
+     "volume": 133,
+     "openInterest": 1023
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 4.15,
+     "bid": 4.05,
+     "ask": 4.3,
+     "impliedVolatility": 0.4294490649414063,
+     "volume": 353,
+     "openInterest": 682
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 3.6,
+     "bid": 3.6,
+     "ask": 3.75,
+     "impliedVolatility": 0.4249325085449219,
+     "volume": 932,
+     "openInterest": 1452
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 3.2,
+     "bid": 3.15,
+     "ask": 3.25,
+     "impliedVolatility": 0.42139250488281255,
+     "volume": 848,
+     "openInterest": 1200
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 2.75,
+     "bid": 2.74,
+     "ask": 2.79,
+     "impliedVolatility": 0.41748629394531245,
+     "volume": 7428,
+     "openInterest": 4867
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 1.86,
+     "bid": 1.85,
+     "ask": 1.89,
+     "impliedVolatility": 0.4157773266601562,
+     "volume": 8688,
+     "openInterest": 3022
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 1.22,
+     "bid": 1.21,
+     "ask": 1.24,
+     "impliedVolatility": 0.41602146484374997,
+     "volume": 19846,
+     "openInterest": 6461
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 0.8,
+     "bid": 0.77,
+     "ask": 0.8,
+     "impliedVolatility": 0.41968353759765625,
+     "volume": 3356,
+     "openInterest": 1788
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 0.51,
+     "bid": 0.49,
+     "ask": 0.52,
+     "impliedVolatility": 0.42774009765625004,
+     "volume": 9202,
+     "openInterest": 6681
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 0.33,
+     "bid": 0.32,
+     "ask": 0.34,
+     "impliedVolatility": 0.437505625,
+     "volume": 2762,
+     "openInterest": 2914
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 0.22,
+     "bid": 0.21,
+     "ask": 0.23,
+     "impliedVolatility": 0.45117736328125,
+     "volume": 3283,
+     "openInterest": 4158
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 0.16,
+     "bid": 0.15,
+     "ask": 0.16,
+     "impliedVolatility": 0.46582565429687506,
+     "volume": 934,
+     "openInterest": 2250
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 0.11,
+     "bid": 0.1,
+     "ask": 0.12,
+     "impliedVolatility": 0.48633326171875,
+     "volume": 1092,
+     "openInterest": 8448
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 0.1,
+     "bid": 0.08,
+     "ask": 0.09,
+     "impliedVolatility": 0.500005,
+     "volume": 908,
+     "openInterest": 2260
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 0.07,
+     "bid": 0.06,
+     "ask": 0.07,
+     "impliedVolatility": 0.5195360546875,
+     "volume": 1436,
+     "openInterest": 6025
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 0.05,
+     "bid": 0.04,
+     "ask": 0.05,
+     "impliedVolatility": 0.5644574804687501,
+     "volume": 1547,
+     "openInterest": 15883
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 0.04,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.6132851171875001,
+     "volume": 2162,
+     "openInterest": 1756
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 0.02,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.6523472265625001,
+     "volume": 325,
+     "openInterest": 535
+    },
+    {
+     "strike": 195.0,
+     "lastPrice": 0.03,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.710940390625,
+     "volume": 220,
+     "openInterest": 1128
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 0.02,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.7656273437500001,
+     "volume": 92,
+     "openInterest": 1241
+    },
+    {
+     "strike": 205.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.7812521875,
+     "volume": 138,
+     "openInterest": 1351
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.8359391406249999,
+     "volume": 508,
+     "openInterest": 1320
+    },
+    {
+     "strike": 215.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.8828136718749999,
+     "volume": 79,
+     "openInterest": 447
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.937500625,
+     "volume": 10,
+     "openInterest": 1442
+    },
+    {
+     "strike": 225.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.98437515625,
+     "volume": 172,
+     "openInterest": 184
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.937500625,
+     "volume": 493,
+     "openInterest": 1340
+    }
+   ],
+   "puts": [
+    {
+     "strike": 5.0,
+     "lastPrice": 0.03,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 7.2500009375,
+     "volume": null,
+     "openInterest": 60
+    },
+    {
+     "strike": 25.0,
+     "lastPrice": 0.03,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 3.750000625,
+     "volume": null,
+     "openInterest": 3
+    },
+    {
+     "strike": 60.0,
+     "lastPrice": 0.04,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.9375003125,
+     "volume": null,
+     "openInterest": 0
+    },
+    {
+     "strike": 65.0,
+     "lastPrice": 0.04,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.75000125,
+     "volume": 4.0,
+     "openInterest": 10
+    },
+    {
+     "strike": 70.0,
+     "lastPrice": 0.1,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5937520312499998,
+     "volume": 2.0,
+     "openInterest": 19
+    },
+    {
+     "strike": 75.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.4375028125,
+     "volume": 3.0,
+     "openInterest": 124
+    },
+    {
+     "strike": 80.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3125034374999998,
+     "volume": 2.0,
+     "openInterest": 144
+    },
+    {
+     "strike": 85.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.1875040625,
+     "volume": 1.0,
+     "openInterest": 387
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.09375453125,
+     "volume": 13.0,
+     "openInterest": 2043
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.9687503125,
+     "volume": 221.0,
+     "openInterest": 1142
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.9609378906249999,
+     "volume": 29.0,
+     "openInterest": 992
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.851563984375,
+     "volume": 24.0,
+     "openInterest": 1287
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 0.03,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.789064609375,
+     "volume": 15.0,
+     "openInterest": 2497
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 0.04,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.7070341796875,
+     "volume": 23.0,
+     "openInterest": 1177
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 0.05,
+     "bid": 0.04,
+     "ask": 0.05,
+     "impliedVolatility": 0.6171913281250001,
+     "volume": 48.0,
+     "openInterest": 1755
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 0.07,
+     "bid": 0.07,
+     "ask": 0.08,
+     "impliedVolatility": 0.5488326367187502,
+     "volume": 475.0,
+     "openInterest": 1371
+    },
+    {
+     "strike": 126.0,
+     "lastPrice": 0.07,
+     "bid": 0.07,
+     "ask": 0.09,
+     "impliedVolatility": 0.5312546875,
+     "volume": 65.0,
+     "openInterest": 363
+    },
+    {
+     "strike": 127.0,
+     "lastPrice": 0.09,
+     "bid": 0.08,
+     "ask": 0.09,
+     "impliedVolatility": 0.5136767382812499,
+     "volume": 39.0,
+     "openInterest": 478
+    },
+    {
+     "strike": 128.0,
+     "lastPrice": 0.09,
+     "bid": 0.09,
+     "ask": 0.11,
+     "impliedVolatility": 0.5048877636718749,
+     "volume": 33.0,
+     "openInterest": 437
+    },
+    {
+     "strike": 129.0,
+     "lastPrice": 0.11,
+     "bid": 0.11,
+     "ask": 0.12,
+     "impliedVolatility": 0.49707534179687507,
+     "volume": 42.0,
+     "openInterest": 308
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 0.13,
+     "bid": 0.13,
+     "ask": 0.14,
+     "impliedVolatility": 0.48633326171875,
+     "volume": 584.0,
+     "openInterest": 2140
+    },
+    {
+     "strike": 131.0,
+     "lastPrice": 0.15,
+     "bid": 0.15,
+     "ask": 0.17,
+     "impliedVolatility": 0.47949739257812496,
+     "volume": 63.0,
+     "openInterest": 467
+    },
+    {
+     "strike": 132.0,
+     "lastPrice": 0.19,
+     "bid": 0.18,
+     "ask": 0.19,
+     "impliedVolatility": 0.46484910156250003,
+     "volume": 62.0,
+     "openInterest": 903
+    },
+    {
+     "strike": 133.0,
+     "lastPrice": 0.21,
+     "bid": 0.21,
+     "ask": 0.23,
+     "impliedVolatility": 0.4580132324218751,
+     "volume": 74.0,
+     "openInterest": 667
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 0.26,
+     "bid": 0.26,
+     "ask": 0.27,
+     "impliedVolatility": 0.44824770507812495,
+     "volume": 265.0,
+     "openInterest": 1167
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 0.32,
+     "bid": 0.31,
+     "ask": 0.33,
+     "impliedVolatility": 0.4419001123046875,
+     "volume": 1305.0,
+     "openInterest": 5525
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 0.39,
+     "bid": 0.38,
+     "ask": 0.4,
+     "impliedVolatility": 0.43555251953125,
+     "volume": 731.0,
+     "openInterest": 1179
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 0.47,
+     "bid": 0.46,
+     "ask": 0.48,
+     "impliedVolatility": 0.4282283740234375,
+     "volume": 1001.0,
+     "openInterest": 1795
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 0.58,
+     "bid": 0.57,
+     "ask": 0.59,
+     "impliedVolatility": 0.4243221630859375,
+     "volume": 370.0,
+     "openInterest": 922
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 0.71,
+     "bid": 0.69,
+     "ask": 0.72,
+     "impliedVolatility": 0.41992767578125,
+     "volume": 1058.0,
+     "openInterest": 982
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 0.86,
+     "bid": 0.84,
+     "ask": 0.87,
+     "impliedVolatility": 0.41528905029296875,
+     "volume": 2525.0,
+     "openInterest": 3932
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 1.05,
+     "bid": 1.02,
+     "ask": 1.06,
+     "impliedVolatility": 0.4128476684570312,
+     "volume": 904.0,
+     "openInterest": 1377
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 1.25,
+     "bid": 1.25,
+     "ask": 1.28,
+     "impliedVolatility": 0.4101621484375,
+     "volume": 7089.0,
+     "openInterest": 1431
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 1.55,
+     "bid": 1.5,
+     "ask": 1.54,
+     "impliedVolatility": 0.40820904296875,
+     "volume": 761.0,
+     "openInterest": 1994
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 1.76,
+     "bid": 1.79,
+     "ask": 1.83,
+     "impliedVolatility": 0.405279384765625,
+     "volume": 1260.0,
+     "openInterest": 735
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 2.16,
+     "bid": 2.13,
+     "ask": 2.17,
+     "impliedVolatility": 0.4035704174804688,
+     "volume": 4263.0,
+     "openInterest": 3544
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 2.56,
+     "bid": 2.51,
+     "ask": 2.56,
+     "impliedVolatility": 0.4028380029296875,
+     "volume": 3571.0,
+     "openInterest": 1239
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 3.05,
+     "bid": 2.94,
+     "ask": 2.99,
+     "impliedVolatility": 0.40161731201171874,
+     "volume": 1237.0,
+     "openInterest": 1186
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 3.45,
+     "bid": 3.4,
+     "ask": 3.5,
+     "impliedVolatility": 0.40430283203125,
+     "volume": 3763.0,
+     "openInterest": 1240
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 4.0,
+     "bid": 3.9,
+     "ask": 4.05,
+     "impliedVolatility": 0.40650007568359375,
+     "volume": 1990.0,
+     "openInterest": 1465
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 4.54,
+     "bid": 4.45,
+     "ask": 4.65,
+     "impliedVolatility": 0.4094297338867187,
+     "volume": 5583.0,
+     "openInterest": 3499
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 6.22,
+     "bid": 6.05,
+     "ask": 6.3,
+     "impliedVolatility": 0.4133359448242187,
+     "volume": 4430.0,
+     "openInterest": 2836
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 8.07,
+     "bid": 7.9,
+     "ask": 8.25,
+     "impliedVolatility": 0.42774009765625004,
+     "volume": 2490.0,
+     "openInterest": 1679
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 10.1,
+     "bid": 10.0,
+     "ask": 10.75,
+     "impliedVolatility": 0.5065967309570312,
+     "volume": 90.0,
+     "openInterest": 481
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 11.35,
+     "bid": 11.3,
+     "ask": 12.85,
+     "impliedVolatility": 0.5100146655273439,
+     "volume": 380.0,
+     "openInterest": 280
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 11.25,
+     "bid": 13.25,
+     "ask": 16.6,
+     "impliedVolatility": 0.7858908129882812,
+     "volume": 27.0,
+     "openInterest": 131
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 15.75,
+     "bid": 16.25,
+     "ask": 19.0,
+     "impliedVolatility": 0.5874064697265625,
+     "volume": 6.0,
+     "openInterest": 215
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 15.75,
+     "bid": 19.25,
+     "ask": 21.6,
+     "impliedVolatility": 0.7133817724609376,
+     "volume": 1.0,
+     "openInterest": 5
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 20.85,
+     "bid": 20.7,
+     "ask": 22.25,
+     "impliedVolatility": 0.5839885351562499,
+     "volume": 61.0,
+     "openInterest": 95
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 23.41,
+     "bid": 24.15,
+     "ask": 26.75,
+     "impliedVolatility": 0.8330094824218748,
+     "volume": 2.0,
+     "openInterest": 10
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 24.3,
+     "bid": 23.0,
+     "ask": 29.3,
+     "impliedVolatility": 1.1518597094726561,
+     "volume": 1.0,
+     "openInterest": 30
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 29.89,
+     "bid": 29.0,
+     "ask": 34.2,
+     "impliedVolatility": 1.2524451440429685,
+     "volume": 2.0,
+     "openInterest": 77
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 33.5,
+     "bid": 34.05,
+     "ask": 39.15,
+     "impliedVolatility": 1.3540071362304684,
+     "volume": 2.0,
+     "openInterest": 2
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 39.1,
+     "bid": 38.75,
+     "ask": 44.05,
+     "impliedVolatility": 1.4389676489257814,
+     "volume": 100.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 195.0,
+     "lastPrice": 47.45,
+     "bid": 43.0,
+     "ask": 49.05,
+     "impliedVolatility": 1.5378441076660154,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 49.09,
+     "bid": 49.05,
+     "ask": 54.2,
+     "impliedVolatility": 1.6640641796875002,
+     "volume": 100.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 205.0,
+     "lastPrice": 50.42,
+     "bid": 53.0,
+     "ask": 59.2,
+     "impliedVolatility": 1.755860595703125,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 55.09,
+     "bid": 58.0,
+     "ask": 64.05,
+     "impliedVolatility": 1.8100595434570312,
+     "volume": null,
+     "openInterest": 0
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 70.0,
+     "bid": 69.05,
+     "ask": 74.1,
+     "impliedVolatility": 1.986328193359375,
+     "volume": null,
+     "openInterest": 0
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 75.66,
+     "bid": 79.0,
+     "ask": 84.2,
+     "impliedVolatility": 2.163578809814453,
+     "volume": null,
+     "openInterest": 0
+    }
+   ]
+  },
+  "2026-10-16": {
+   "calls": [
+    {
+     "strike": 20.0,
+     "lastPrice": 92.0,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 2.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 25.0,
+     "lastPrice": 155.3,
+     "bid": 89.3,
+     "ask": 96.4,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 2.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 35.0,
+     "lastPrice": 96.55,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 10.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 40.0,
+     "lastPrice": 95.19,
+     "bid": 105.95,
+     "ask": 110.55,
+     "impliedVolatility": 2.863284091796875,
+     "volume": 10.0,
+     "openInterest": 29
+    },
+    {
+     "strike": 45.0,
+     "lastPrice": 100.8,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": null,
+     "openInterest": 0
+    },
+    {
+     "strike": 50.0,
+     "lastPrice": 92.65,
+     "bid": 95.85,
+     "ask": 100.55,
+     "impliedVolatility": 2.2968792578125,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 55.0,
+     "lastPrice": 59.0,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 2.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 60.0,
+     "lastPrice": 92.1,
+     "bid": 86.0,
+     "ask": 90.6,
+     "impliedVolatility": 2.0859422851562495,
+     "volume": 1.0,
+     "openInterest": 15
+    },
+    {
+     "strike": 65.0,
+     "lastPrice": 77.05,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 70.0,
+     "lastPrice": 79.15,
+     "bid": 76.65,
+     "ask": 80.6,
+     "impliedVolatility": 2.0273486816406248,
+     "volume": 2.0,
+     "openInterest": 83
+    },
+    {
+     "strike": 75.0,
+     "lastPrice": 78.94,
+     "bid": 70.85,
+     "ask": 75.65,
+     "impliedVolatility": 1.5527366113281247,
+     "volume": 20.0,
+     "openInterest": 33
+    },
+    {
+     "strike": 80.0,
+     "lastPrice": 66.96,
+     "bid": 65.9,
+     "ask": 70.65,
+     "impliedVolatility": 1.4453152734375,
+     "volume": 6.0,
+     "openInterest": 62
+    },
+    {
+     "strike": 85.0,
+     "lastPrice": 63.33,
+     "bid": 61.05,
+     "ask": 65.65,
+     "impliedVolatility": 1.3828155859374998,
+     "volume": 1.0,
+     "openInterest": 93
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 62.33,
+     "bid": 56.35,
+     "ask": 60.7,
+     "impliedVolatility": 1.365237548828125,
+     "volume": 2.0,
+     "openInterest": 245
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 51.8,
+     "bid": 52.25,
+     "ask": 55.6,
+     "impliedVolatility": 1.4033232958984376,
+     "volume": 4.0,
+     "openInterest": 344
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 49.25,
+     "bid": 46.75,
+     "ask": 48.85,
+     "impliedVolatility": 1.2421912890624998,
+     "volume": 10.0,
+     "openInterest": 303
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 42.3,
+     "bid": 41.6,
+     "ask": 45.65,
+     "impliedVolatility": 1.035649353027344,
+     "volume": 3.0,
+     "openInterest": 4735
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 39.74,
+     "bid": 37.15,
+     "ask": 40.55,
+     "impliedVolatility": 0.989257919921875,
+     "volume": 24.0,
+     "openInterest": 5772
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 34.35,
+     "bid": 32.7,
+     "ask": 35.6,
+     "impliedVolatility": 0.9428716650390624,
+     "volume": 13.0,
+     "openInterest": 10782
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 30.41,
+     "bid": 28.0,
+     "ask": 29.5,
+     "impliedVolatility": 0.7270535107421875,
+     "volume": 7.0,
+     "openInterest": 8731
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 24.76,
+     "bid": 22.55,
+     "ask": 24.65,
+     "impliedVolatility": 0.5786174951171875,
+     "volume": 16.0,
+     "openInterest": 2054
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 19.4,
+     "bid": 18.4,
+     "ask": 19.65,
+     "impliedVolatility": 0.5549360913085939,
+     "volume": 54.0,
+     "openInterest": 11524
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 13.95,
+     "bid": 13.95,
+     "ask": 14.65,
+     "impliedVolatility": 0.5224657128906249,
+     "volume": 34.0,
+     "openInterest": 11216
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 11.13,
+     "bid": 10.6,
+     "ask": 11.0,
+     "impliedVolatility": 0.454107021484375,
+     "volume": 22.0,
+     "openInterest": 200
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 10.0,
+     "bid": 9.9,
+     "ask": 10.4,
+     "impliedVolatility": 0.46716841430664063,
+     "volume": 384.0,
+     "openInterest": 4115
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 11.1,
+     "bid": 9.15,
+     "ask": 9.65,
+     "impliedVolatility": 0.4616753051757813,
+     "volume": 8.0,
+     "openInterest": 238
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 9.84,
+     "bid": 8.4,
+     "ask": 8.95,
+     "impliedVolatility": 0.4587456469726563,
+     "volume": 35.0,
+     "openInterest": 287
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 8.43,
+     "bid": 7.75,
+     "ask": 8.05,
+     "impliedVolatility": 0.4351863122558594,
+     "volume": 24.0,
+     "openInterest": 251
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 7.4,
+     "bid": 7.15,
+     "ask": 7.4,
+     "impliedVolatility": 0.4327449304199219,
+     "volume": 202.0,
+     "openInterest": 451
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 6.65,
+     "bid": 6.6,
+     "ask": 6.75,
+     "impliedVolatility": 0.42774009765625004,
+     "volume": 3507.0,
+     "openInterest": 11972
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 6.1,
+     "bid": 5.95,
+     "ask": 6.15,
+     "impliedVolatility": 0.42456630126953127,
+     "volume": 69.0,
+     "openInterest": 477
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 5.5,
+     "bid": 5.4,
+     "ask": 5.65,
+     "impliedVolatility": 0.4272518212890626,
+     "volume": 368.0,
+     "openInterest": 861
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 4.9,
+     "bid": 5.0,
+     "ask": 5.1,
+     "impliedVolatility": 0.42310147216796873,
+     "volume": 513.0,
+     "openInterest": 869
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 4.55,
+     "bid": 4.5,
+     "ask": 4.6,
+     "impliedVolatility": 0.4206600903320313,
+     "volume": 255.0,
+     "openInterest": 773
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 4.0,
+     "bid": 4.05,
+     "ask": 4.15,
+     "impliedVolatility": 0.41968353759765625,
+     "volume": 5414.0,
+     "openInterest": 24192
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 3.07,
+     "bid": 3.05,
+     "ask": 3.15,
+     "impliedVolatility": 0.4163876721191406,
+     "volume": 3741.0,
+     "openInterest": 2477
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 2.29,
+     "bid": 2.3,
+     "ask": 2.34,
+     "impliedVolatility": 0.4138242211914062,
+     "volume": 5921.0,
+     "openInterest": 10618
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 1.71,
+     "bid": 1.68,
+     "ask": 1.72,
+     "impliedVolatility": 0.4138242211914062,
+     "volume": 927.0,
+     "openInterest": 993
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 1.23,
+     "bid": 1.22,
+     "ask": 1.25,
+     "impliedVolatility": 0.415044912109375,
+     "volume": 5203.0,
+     "openInterest": 42677
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 0.88,
+     "bid": 0.88,
+     "ask": 0.91,
+     "impliedVolatility": 0.4184628466796875,
+     "volume": 3319.0,
+     "openInterest": 10510
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 0.65,
+     "bid": 0.64,
+     "ask": 0.66,
+     "impliedVolatility": 0.422857333984375,
+     "volume": 2241.0,
+     "openInterest": 14020
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 0.46,
+     "bid": 0.47,
+     "ask": 0.49,
+     "impliedVolatility": 0.43066975585937506,
+     "volume": 427.0,
+     "openInterest": 1225
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 0.35,
+     "bid": 0.35,
+     "ask": 0.37,
+     "impliedVolatility": 0.43994700683593746,
+     "volume": 11164.0,
+     "openInterest": 19100
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 0.27,
+     "bid": 0.26,
+     "ask": 0.28,
+     "impliedVolatility": 0.44873598144531246,
+     "volume": 920.0,
+     "openInterest": 4277
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 0.21,
+     "bid": 0.21,
+     "ask": 0.22,
+     "impliedVolatility": 0.46094289062500005,
+     "volume": 1151.0,
+     "openInterest": 14674
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 0.13,
+     "bid": 0.13,
+     "ask": 0.14,
+     "impliedVolatility": 0.48438015625,
+     "volume": 787.0,
+     "openInterest": 25453
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 0.1,
+     "bid": 0.09,
+     "ask": 0.1,
+     "impliedVolatility": 0.5097705273437501,
+     "volume": 813.0,
+     "openInterest": 5048
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 0.07,
+     "bid": 0.07,
+     "ask": 0.08,
+     "impliedVolatility": 0.5429733203125001,
+     "volume": 204.0,
+     "openInterest": 7897
+    },
+    {
+     "strike": 195.0,
+     "lastPrice": 0.05,
+     "bid": 0.04,
+     "ask": 0.06,
+     "impliedVolatility": 0.5625043750000001,
+     "volume": 86.0,
+     "openInterest": 2234
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 0.04,
+     "bid": 0.04,
+     "ask": 0.05,
+     "impliedVolatility": 0.5976602734375001,
+     "volume": 615.0,
+     "openInterest": 25730
+    },
+    {
+     "strike": 205.0,
+     "lastPrice": 0.03,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.6250037500000001,
+     "volume": 22.0,
+     "openInterest": 6598
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 0.03,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.6640658593750002,
+     "volume": 273.0,
+     "openInterest": 5882
+    },
+    {
+     "strike": 215.0,
+     "lastPrice": 0.02,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 0.6796907031250001,
+     "volume": 62.0,
+     "openInterest": 3482
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.03,
+     "impliedVolatility": 0.6992217578125001,
+     "volume": 25.0,
+     "openInterest": 3807
+    },
+    {
+     "strike": 225.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.7187528125,
+     "volume": 7.0,
+     "openInterest": 3232
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.7500025,
+     "volume": 8.0,
+     "openInterest": 1257
+    },
+    {
+     "strike": 235.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.7812521875,
+     "volume": 1.0,
+     "openInterest": 446
+    },
+    {
+     "strike": 240.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.8125018749999999,
+     "volume": 101.0,
+     "openInterest": 744
+    },
+    {
+     "strike": 245.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.8437515624999999,
+     "volume": 13.0,
+     "openInterest": 415
+    },
+    {
+     "strike": 250.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 0.87500125,
+     "volume": 1.0,
+     "openInterest": 846
+    },
+    {
+     "strike": 255.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.8125018749999999,
+     "volume": 2.0,
+     "openInterest": 221
+    },
+    {
+     "strike": 260.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.8437515624999999,
+     "volume": 1.0,
+     "openInterest": 5275
+    },
+    {
+     "strike": 265.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.87500125,
+     "volume": 8.0,
+     "openInterest": 549
+    },
+    {
+     "strike": 270.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.9062509375,
+     "volume": 232.0,
+     "openInterest": 2892
+    },
+    {
+     "strike": 275.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.937500625,
+     "volume": 5.0,
+     "openInterest": 386
+    },
+    {
+     "strike": 280.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.937500625,
+     "volume": 5.0,
+     "openInterest": 1646
+    },
+    {
+     "strike": 285.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.9687503125,
+     "volume": 21.0,
+     "openInterest": 273
+    },
+    {
+     "strike": 290.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 0.98437515625,
+     "volume": 8.0,
+     "openInterest": 2958
+    },
+    {
+     "strike": 295.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.0312548437500002,
+     "volume": 8.0,
+     "openInterest": 132
+    },
+    {
+     "strike": 300.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.0312548437500002,
+     "volume": 69.0,
+     "openInterest": 2141
+    },
+    {
+     "strike": 305.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.0625046875000002,
+     "volume": 8.0,
+     "openInterest": 475
+    },
+    {
+     "strike": 310.0,
+     "lastPrice": 0.08,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.09375453125,
+     "volume": 1.0,
+     "openInterest": 182
+    },
+    {
+     "strike": 315.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.125004375,
+     "volume": 13.0,
+     "openInterest": 156
+    },
+    {
+     "strike": 320.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.125004375,
+     "volume": 1.0,
+     "openInterest": 605
+    },
+    {
+     "strike": 325.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.15625421875,
+     "volume": 1.0,
+     "openInterest": 186
+    },
+    {
+     "strike": 330.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.15625421875,
+     "volume": 3.0,
+     "openInterest": 266
+    },
+    {
+     "strike": 335.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.1875040625,
+     "volume": 11.0,
+     "openInterest": 82
+    },
+    {
+     "strike": 340.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.21875390625,
+     "volume": 8.0,
+     "openInterest": 846
+    },
+    {
+     "strike": 345.0,
+     "lastPrice": 0.04,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.21875390625,
+     "volume": 2.0,
+     "openInterest": 136
+    },
+    {
+     "strike": 350.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.2500037499999999,
+     "volume": 11.0,
+     "openInterest": 536
+    },
+    {
+     "strike": 355.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.2500037499999999,
+     "volume": 38.0,
+     "openInterest": 192
+    },
+    {
+     "strike": 360.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.2812535937499998,
+     "volume": 162.0,
+     "openInterest": 289
+    },
+    {
+     "strike": 365.0,
+     "lastPrice": 0.06,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3125034374999998,
+     "volume": 11.0,
+     "openInterest": 113
+    },
+    {
+     "strike": 370.0,
+     "lastPrice": 0.04,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3125034374999998,
+     "volume": 9.0,
+     "openInterest": 46
+    },
+    {
+     "strike": 375.0,
+     "lastPrice": 0.06,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3437532812499997,
+     "volume": 2.0,
+     "openInterest": 31
+    },
+    {
+     "strike": 380.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3437532812499997,
+     "volume": 2.0,
+     "openInterest": 172
+    },
+    {
+     "strike": 385.0,
+     "lastPrice": 0.04,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3750031249999999,
+     "volume": 10.0,
+     "openInterest": 545
+    },
+    {
+     "strike": 390.0,
+     "lastPrice": 0.06,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3750031249999999,
+     "volume": 11.0,
+     "openInterest": 250
+    },
+    {
+     "strike": 395.0,
+     "lastPrice": 0.12,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.40625296875,
+     "volume": 4.0,
+     "openInterest": 27
+    },
+    {
+     "strike": 400.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.4375028125,
+     "volume": 8.0,
+     "openInterest": 699
+    },
+    {
+     "strike": 405.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.4375028125,
+     "volume": 30.0,
+     "openInterest": 92
+    },
+    {
+     "strike": 410.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.4375028125,
+     "volume": 13.0,
+     "openInterest": 177
+    },
+    {
+     "strike": 415.0,
+     "lastPrice": 0.14,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.46875265625,
+     "volume": 1.0,
+     "openInterest": 24
+    },
+    {
+     "strike": 420.0,
+     "lastPrice": 0.08,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5000025,
+     "volume": 22.0,
+     "openInterest": 239
+    },
+    {
+     "strike": 425.0,
+     "lastPrice": 0.08,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5000025,
+     "volume": 1.0,
+     "openInterest": 45
+    },
+    {
+     "strike": 430.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5000025,
+     "volume": 5.0,
+     "openInterest": 161
+    },
+    {
+     "strike": 435.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5312523437499999,
+     "volume": 1.0,
+     "openInterest": 50
+    },
+    {
+     "strike": 440.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5625021874999998,
+     "volume": 1.0,
+     "openInterest": 991
+    },
+    {
+     "strike": 445.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5625021874999998,
+     "volume": 122.0,
+     "openInterest": 293
+    },
+    {
+     "strike": 450.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5625021874999998,
+     "volume": 50.0,
+     "openInterest": 4788
+    }
+   ],
+   "puts": [
+    {
+     "strike": 2.5,
+     "lastPrice": 0.03,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 6.500001875000001,
+     "volume": null,
+     "openInterest": 1
+    },
+    {
+     "strike": 5.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 5.250003437499999,
+     "volume": 9.0,
+     "openInterest": 11
+    },
+    {
+     "strike": 10.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 0.500005,
+     "volume": 500.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 15.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 0.500005,
+     "volume": 7.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 20.0,
+     "lastPrice": 0.25,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 3.0000025,
+     "volume": 1.0,
+     "openInterest": 154
+    },
+    {
+     "strike": 25.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.68750328125,
+     "volume": 3.0,
+     "openInterest": 501
+    },
+    {
+     "strike": 30.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.43750390625,
+     "volume": 100.0,
+     "openInterest": 1614
+    },
+    {
+     "strike": 35.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 2.1875045312499997,
+     "volume": 1.0,
+     "openInterest": 2409
+    },
+    {
+     "strike": 40.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.96875015625,
+     "volume": 2.0,
+     "openInterest": 613
+    },
+    {
+     "strike": 45.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.8125009374999999,
+     "volume": 10.0,
+     "openInterest": 387
+    },
+    {
+     "strike": 50.0,
+     "lastPrice": 0.02,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.6875015625,
+     "volume": 2.0,
+     "openInterest": 2189
+    },
+    {
+     "strike": 55.0,
+     "lastPrice": 0.03,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.5000025,
+     "volume": 10.0,
+     "openInterest": 1120
+    },
+    {
+     "strike": 60.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.3750031249999999,
+     "volume": 2.0,
+     "openInterest": 1528
+    },
+    {
+     "strike": 65.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.2812535937499998,
+     "volume": 11.0,
+     "openInterest": 2310
+    },
+    {
+     "strike": 70.0,
+     "lastPrice": 0.01,
+     "bid": 0.0,
+     "ask": 0.01,
+     "impliedVolatility": 1.15625421875,
+     "volume": 35.0,
+     "openInterest": 4400
+    },
+    {
+     "strike": 75.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.171879140625,
+     "volume": 9.0,
+     "openInterest": 3308
+    },
+    {
+     "strike": 80.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.0625046875000002,
+     "volume": 8.0,
+     "openInterest": 30394
+    },
+    {
+     "strike": 85.0,
+     "lastPrice": 0.03,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 1.015629921875,
+     "volume": 11.0,
+     "openInterest": 27928
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 0.03,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.9531254687499999,
+     "volume": 169.0,
+     "openInterest": 8414
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 0.03,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.85937640625,
+     "volume": 131.0,
+     "openInterest": 5461
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 0.05,
+     "bid": 0.04,
+     "ask": 0.05,
+     "impliedVolatility": 0.789064609375,
+     "volume": 340.0,
+     "openInterest": 51197
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 0.05,
+     "bid": 0.05,
+     "ask": 0.06,
+     "impliedVolatility": 0.7187528125,
+     "volume": 59.0,
+     "openInterest": 9043
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 0.09,
+     "bid": 0.07,
+     "ask": 0.08,
+     "impliedVolatility": 0.6562534375000001,
+     "volume": 126.0,
+     "openInterest": 19552
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 0.09,
+     "bid": 0.09,
+     "ask": 0.1,
+     "impliedVolatility": 0.58789474609375,
+     "volume": 262.0,
+     "openInterest": 6813
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 0.14,
+     "bid": 0.13,
+     "ask": 0.14,
+     "impliedVolatility": 0.5293015820312501,
+     "volume": 570.0,
+     "openInterest": 12408
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 0.22,
+     "bid": 0.22,
+     "ask": 0.23,
+     "impliedVolatility": 0.48438015625,
+     "volume": 1056.0,
+     "openInterest": 20507
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 0.42,
+     "bid": 0.41,
+     "ask": 0.43,
+     "impliedVolatility": 0.44824770507812495,
+     "volume": 3807.0,
+     "openInterest": 20845
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 0.88,
+     "bid": 0.87,
+     "ask": 0.89,
+     "impliedVolatility": 0.42627526855468756,
+     "volume": 2054.0,
+     "openInterest": 30260
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 1.55,
+     "bid": 1.53,
+     "ask": 1.57,
+     "impliedVolatility": 0.414068359375,
+     "volume": 614.0,
+     "openInterest": 2103
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 1.78,
+     "bid": 1.76,
+     "ask": 1.8,
+     "impliedVolatility": 0.4116269775390625,
+     "volume": 2944.0,
+     "openInterest": 12292
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 1.95,
+     "bid": 2.01,
+     "ask": 2.06,
+     "impliedVolatility": 0.4096738720703125,
+     "volume": 299.0,
+     "openInterest": 742
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 2.35,
+     "bid": 2.3,
+     "ask": 2.35,
+     "impliedVolatility": 0.40820904296875,
+     "volume": 566.0,
+     "openInterest": 982
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 2.66,
+     "bid": 2.61,
+     "ask": 2.66,
+     "impliedVolatility": 0.4056455920410156,
+     "volume": 483.0,
+     "openInterest": 1680
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 3.0,
+     "bid": 2.96,
+     "ask": 3.05,
+     "impliedVolatility": 0.40772076660156253,
+     "volume": 659.0,
+     "openInterest": 1839
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 3.3,
+     "bid": 3.3,
+     "ask": 3.4,
+     "impliedVolatility": 0.40332627929687503,
+     "volume": 4154.0,
+     "openInterest": 11653
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 3.79,
+     "bid": 3.75,
+     "ask": 3.8,
+     "impliedVolatility": 0.4007628283691406,
+     "volume": 1445.0,
+     "openInterest": 766
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 4.3,
+     "bid": 4.2,
+     "ask": 4.25,
+     "impliedVolatility": 0.39954213745117195,
+     "volume": 279.0,
+     "openInterest": 683
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 4.7,
+     "bid": 4.65,
+     "ask": 4.75,
+     "impliedVolatility": 0.39978627563476565,
+     "volume": 485.0,
+     "openInterest": 936
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 5.12,
+     "bid": 5.1,
+     "ask": 5.35,
+     "impliedVolatility": 0.4056455920410156,
+     "volume": 438.0,
+     "openInterest": 734
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 5.85,
+     "bid": 5.7,
+     "ask": 5.85,
+     "impliedVolatility": 0.40039662109375,
+     "volume": 1784.0,
+     "openInterest": 20494
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 7.15,
+     "bid": 7.2,
+     "ask": 7.45,
+     "impliedVolatility": 0.4050352465820312,
+     "volume": 1391.0,
+     "openInterest": 731
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 8.95,
+     "bid": 8.9,
+     "ask": 9.15,
+     "impliedVolatility": 0.4024717956542969,
+     "volume": 563.0,
+     "openInterest": 10999
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 10.0,
+     "bid": 10.45,
+     "ask": 11.35,
+     "impliedVolatility": 0.4348201049804688,
+     "volume": 16.0,
+     "openInterest": 2420
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 12.73,
+     "bid": 12.5,
+     "ask": 13.15,
+     "impliedVolatility": 0.41138283935546877,
+     "volume": 233.0,
+     "openInterest": 2801
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 13.75,
+     "bid": 14.05,
+     "ask": 15.35,
+     "impliedVolatility": 0.42017181396484377,
+     "volume": 126.0,
+     "openInterest": 175
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 17.95,
+     "bid": 17.25,
+     "ask": 17.95,
+     "impliedVolatility": 0.4804739453125,
+     "volume": 198.0,
+     "openInterest": 2010
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 16.84,
+     "bid": 15.9,
+     "ask": 22.05,
+     "impliedVolatility": 0.7281521325683593,
+     "volume": 1.0,
+     "openInterest": 42
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 21.1,
+     "bid": 20.6,
+     "ask": 22.7,
+     "impliedVolatility": 0.5249070947265625,
+     "volume": 12.0,
+     "openInterest": 1057
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 20.3,
+     "bid": 21.65,
+     "ask": 26.7,
+     "impliedVolatility": 0.7834494311523439,
+     "volume": null,
+     "openInterest": 14
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 22.07,
+     "bid": 24.9,
+     "ask": 27.75,
+     "impliedVolatility": 0.6118202880859377,
+     "volume": 14.0,
+     "openInterest": 732
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 31.0,
+     "bid": 31.1,
+     "ask": 33.15,
+     "impliedVolatility": 0.5117236328125,
+     "volume": 5.0,
+     "openInterest": 602
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 37.8,
+     "bid": 34.0,
+     "ask": 39.2,
+     "impliedVolatility": 0.9956055126953125,
+     "volume": 4.0,
+     "openInterest": 79
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 40.4,
+     "bid": 40.4,
+     "ask": 43.3,
+     "impliedVolatility": 0.930664755859375,
+     "volume": 290.0,
+     "openInterest": 96
+    },
+    {
+     "strike": 195.0,
+     "lastPrice": 47.26,
+     "bid": 43.6,
+     "ask": 49.25,
+     "impliedVolatility": 1.1530804064941407,
+     "volume": 16.0,
+     "openInterest": 1
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 51.45,
+     "bid": 51.5,
+     "ask": 52.2,
+     "impliedVolatility": 0.7675804492187501,
+     "volume": 1588.0,
+     "openInterest": 2108
+    },
+    {
+     "strike": 205.0,
+     "lastPrice": 50.09,
+     "bid": 55.95,
+     "ask": 59.1,
+     "impliedVolatility": 0.940430283203125,
+     "volume": 2.0,
+     "openInterest": 2
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 59.3,
+     "bid": 59.0,
+     "ask": 64.2,
+     "impliedVolatility": 1.3464388146972652,
+     "volume": 4.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 215.0,
+     "lastPrice": 72.51,
+     "bid": 63.9,
+     "ask": 69.1,
+     "impliedVolatility": 1.3916046044921875,
+     "volume": 7.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 84.2,
+     "bid": 0.0,
+     "ask": 0.0,
+     "impliedVolatility": 1.0000000000000003e-05,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 225.0,
+     "lastPrice": 84.7,
+     "bid": 73.0,
+     "ask": 79.2,
+     "impliedVolatility": 1.5249047192382812,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 73.65,
+     "bid": 78.6,
+     "ask": 84.2,
+     "impliedVolatility": 1.5803243640136717,
+     "volume": 9.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 235.0,
+     "lastPrice": 80.25,
+     "bid": 83.0,
+     "ask": 89.1,
+     "impliedVolatility": 1.6159687170410155,
+     "volume": 2.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 240.0,
+     "lastPrice": 90.0,
+     "bid": 89.0,
+     "ask": 94.25,
+     "impliedVolatility": 1.6948257446289063,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 245.0,
+     "lastPrice": 111.05,
+     "bid": 93.55,
+     "ask": 99.2,
+     "impliedVolatility": 1.736329443359375,
+     "volume": 100.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 250.0,
+     "lastPrice": 97.5,
+     "bid": 99.0,
+     "ask": 104.25,
+     "impliedVolatility": 1.794434621582031,
+     "volume": 2.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 255.0,
+     "lastPrice": 99.7,
+     "bid": 115.95,
+     "ask": 122.85,
+     "impliedVolatility": 3.078859724731445,
+     "volume": 44.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 260.0,
+     "lastPrice": 80.61,
+     "bid": 141.1,
+     "ask": 146.6,
+     "impliedVolatility": 4.850589874267577,
+     "volume": null,
+     "openInterest": 1
+    },
+    {
+     "strike": 265.0,
+     "lastPrice": 87.8,
+     "bid": 146.0,
+     "ask": 151.5,
+     "impliedVolatility": 4.901493130950928,
+     "volume": null,
+     "openInterest": 52
+    },
+    {
+     "strike": 270.0,
+     "lastPrice": 129.79,
+     "bid": 119.0,
+     "ask": 124.25,
+     "impliedVolatility": 1.977050895996094,
+     "volume": 2.0,
+     "openInterest": 2
+    },
+    {
+     "strike": 275.0,
+     "lastPrice": 134.81,
+     "bid": 123.0,
+     "ask": 129.2,
+     "impliedVolatility": 2.0100147406005853,
+     "volume": 2.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 280.0,
+     "lastPrice": 139.85,
+     "bid": 128.7,
+     "ask": 134.05,
+     "impliedVolatility": 2.021001041259766,
+     "volume": 7.0,
+     "openInterest": 7
+    },
+    {
+     "strike": 285.0,
+     "lastPrice": 144.87,
+     "bid": 133.0,
+     "ask": 139.25,
+     "impliedVolatility": 2.1022996661376947,
+     "volume": 7.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 300.0,
+     "lastPrice": 149.5,
+     "bid": 149.0,
+     "ask": 154.2,
+     "impliedVolatility": 2.2085005725097653,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 330.0,
+     "lastPrice": 144.5,
+     "bid": 210.4,
+     "ask": 215.9,
+     "impliedVolatility": 5.49829414276123,
+     "volume": null,
+     "openInterest": 11
+    },
+    {
+     "strike": 365.0,
+     "lastPrice": 207.81,
+     "bid": 245.2,
+     "ask": 250.7,
+     "impliedVolatility": 5.7601346357727055,
+     "volume": null,
+     "openInterest": 2
+    },
+    {
+     "strike": 425.0,
+     "lastPrice": 311.4,
+     "bid": 273.95,
+     "ask": 280.5,
+     "impliedVolatility": 2.1699264501953124,
+     "volume": 4.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 450.0,
+     "lastPrice": 307.35,
+     "bid": 298.0,
+     "ask": 304.25,
+     "impliedVolatility": 3.0781273046874995,
+     "volume": null,
+     "openInterest": 0
+    }
+   ]
+  },
+  "2026-10-23": {
+   "calls": [
+    {
+     "strike": 75.0,
+     "lastPrice": 76.64,
+     "bid": 70.9,
+     "ask": 76.35,
+     "impliedVolatility": 1.5361351318359375,
+     "volume": null,
+     "openInterest": 1
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 49.84,
+     "bid": 44.45,
+     "ask": 50.8,
+     "impliedVolatility": 1.418704078369141,
+     "volume": 1.0,
+     "openInterest": 12
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 46.71,
+     "bid": 41.25,
+     "ask": 47.35,
+     "impliedVolatility": 1.0244189404296877,
+     "volume": 2.0,
+     "openInterest": 5
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 43.26,
+     "bid": 36.25,
+     "ask": 41.35,
+     "impliedVolatility": 0.804689453125,
+     "volume": 2.0,
+     "openInterest": 1
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 36.4,
+     "bid": 31.35,
+     "ask": 35.95,
+     "impliedVolatility": 0.6704134521484376,
+     "volume": 2.0,
+     "openInterest": 3
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 30.49,
+     "bid": 27.75,
+     "ask": 31.05,
+     "impliedVolatility": 0.7170438452148438,
+     "volume": 5.0,
+     "openInterest": 13
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 28.1,
+     "bid": 22.55,
+     "ask": 26.25,
+     "impliedVolatility": 0.6123085644531252,
+     "volume": 1.0,
+     "openInterest": 12
+    },
+    {
+     "strike": 127.0,
+     "lastPrice": 23.4,
+     "bid": 20.9,
+     "ask": 23.3,
+     "impliedVolatility": 0.5280808911132813,
+     "volume": 6.0,
+     "openInterest": 13
+    },
+    {
+     "strike": 128.0,
+     "lastPrice": 22.11,
+     "bid": 19.2,
+     "ask": 23.4,
+     "impliedVolatility": 0.5366257275390626,
+     "volume": 3.0,
+     "openInterest": 1
+    },
+    {
+     "strike": 129.0,
+     "lastPrice": 24.67,
+     "bid": 18.35,
+     "ask": 22.4,
+     "impliedVolatility": 0.5261277856445312,
+     "volume": 4.0,
+     "openInterest": 5
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 22.42,
+     "bid": 17.5,
+     "ask": 21.45,
+     "impliedVolatility": 0.5180712255859375,
+     "volume": 1.0,
+     "openInterest": 96
+    },
+    {
+     "strike": 131.0,
+     "lastPrice": 19.62,
+     "bid": 17.35,
+     "ask": 19.35,
+     "impliedVolatility": 0.5949747534179688,
+     "volume": 15.0,
+     "openInterest": 6
+    },
+    {
+     "strike": 132.0,
+     "lastPrice": 18.09,
+     "bid": 16.4,
+     "ask": 19.4,
+     "impliedVolatility": 0.5241746801757812,
+     "volume": 1.0,
+     "openInterest": 9
+    },
+    {
+     "strike": 133.0,
+     "lastPrice": 18.41,
+     "bid": 15.75,
+     "ask": 17.6,
+     "impliedVolatility": 0.5731243859863282,
+     "volume": 2.0,
+     "openInterest": 10
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 18.0,
+     "bid": 14.8,
+     "ask": 17.5,
+     "impliedVolatility": 0.5051319018554687,
+     "volume": 1.0,
+     "openInterest": 11
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 16.0,
+     "bid": 14.25,
+     "ask": 15.85,
+     "impliedVolatility": 0.5483443603515626,
+     "volume": 9.0,
+     "openInterest": 79
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 15.36,
+     "bid": 13.45,
+     "ask": 15.0,
+     "impliedVolatility": 0.5371140039062501,
+     "volume": 2.0,
+     "openInterest": 5
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 16.7,
+     "bid": 12.8,
+     "ask": 13.95,
+     "impliedVolatility": 0.507817421875,
+     "volume": 8.0,
+     "openInterest": 6
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 13.38,
+     "bid": 11.95,
+     "ask": 13.1,
+     "impliedVolatility": 0.4953663745117188,
+     "volume": 5.0,
+     "openInterest": 9
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 12.48,
+     "bid": 11.55,
+     "ask": 12.7,
+     "impliedVolatility": 0.5185595019531251,
+     "volume": 4.0,
+     "openInterest": 41
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 12.65,
+     "bid": 10.85,
+     "ask": 11.5,
+     "impliedVolatility": 0.4758353198242187,
+     "volume": 37.0,
+     "openInterest": 479
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 12.36,
+     "bid": 9.85,
+     "ask": 11.45,
+     "impliedVolatility": 0.5219774365234374,
+     "volume": 10.0,
+     "openInterest": 70
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 10.7,
+     "bid": 9.45,
+     "ask": 10.5,
+     "impliedVolatility": 0.4968312036132813,
+     "volume": 5.0,
+     "openInterest": 14
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 10.22,
+     "bid": 8.85,
+     "ask": 9.85,
+     "impliedVolatility": 0.4931691308593751,
+     "volume": 14.0,
+     "openInterest": 67
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 9.3,
+     "bid": 8.15,
+     "ask": 9.15,
+     "impliedVolatility": 0.4845022253417969,
+     "volume": 6.0,
+     "openInterest": 92
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 7.88,
+     "bid": 7.6,
+     "ask": 7.9,
+     "impliedVolatility": 0.43530838134765626,
+     "volume": 22.0,
+     "openInterest": 602
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 7.85,
+     "bid": 7.05,
+     "ask": 7.35,
+     "impliedVolatility": 0.43494217407226565,
+     "volume": 18.0,
+     "openInterest": 254
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 6.73,
+     "bid": 6.5,
+     "ask": 6.8,
+     "impliedVolatility": 0.4327449304199219,
+     "volume": 38.0,
+     "openInterest": 200
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 6.2,
+     "bid": 6.0,
+     "ask": 6.25,
+     "impliedVolatility": 0.4288387194824219,
+     "volume": 459.0,
+     "openInterest": 498
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 5.6,
+     "bid": 5.65,
+     "ask": 5.75,
+     "impliedVolatility": 0.42664147583007817,
+     "volume": 87.0,
+     "openInterest": 328
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 5.2,
+     "bid": 5.15,
+     "ask": 5.25,
+     "impliedVolatility": 0.4226131958007812,
+     "volume": 1795.0,
+     "openInterest": 3540
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 4.15,
+     "bid": 4.15,
+     "ask": 4.25,
+     "impliedVolatility": 0.42249112670898437,
+     "volume": 963.0,
+     "openInterest": 1202
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 3.3,
+     "bid": 3.3,
+     "ask": 3.4,
+     "impliedVolatility": 0.42236905761718746,
+     "volume": 906.0,
+     "openInterest": 2459
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 2.62,
+     "bid": 2.59,
+     "ask": 2.64,
+     "impliedVolatility": 0.4184628466796875,
+     "volume": 418.0,
+     "openInterest": 1268
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 2.0,
+     "bid": 2.02,
+     "ask": 2.06,
+     "impliedVolatility": 0.41870698486328123,
+     "volume": 661.0,
+     "openInterest": 1842
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 1.76,
+     "bid": 1.56,
+     "ask": 1.6,
+     "impliedVolatility": 0.41992767578125,
+     "volume": 237.0,
+     "openInterest": 713
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 1.22,
+     "bid": 1.2,
+     "ask": 1.24,
+     "impliedVolatility": 0.42236905761718746,
+     "volume": 405.0,
+     "openInterest": 1579
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 0.94,
+     "bid": 0.93,
+     "ask": 0.96,
+     "impliedVolatility": 0.4255428540039063,
+     "volume": 43.0,
+     "openInterest": 446
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 0.8,
+     "bid": 0.73,
+     "ask": 0.75,
+     "impliedVolatility": 0.43018147949218755,
+     "volume": 331.0,
+     "openInterest": 1375
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 0.64,
+     "bid": 0.57,
+     "ask": 0.59,
+     "impliedVolatility": 0.43579665771484377,
+     "volume": 266.0,
+     "openInterest": 386
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 0.47,
+     "bid": 0.45,
+     "ask": 0.47,
+     "impliedVolatility": 0.44287666503906253,
+     "volume": 484.0,
+     "openInterest": 928
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 0.35,
+     "bid": 0.29,
+     "ask": 0.31,
+     "impliedVolatility": 0.45898978515625005,
+     "volume": 109.0,
+     "openInterest": 1059
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 0.24,
+     "bid": 0.2,
+     "ask": 0.22,
+     "impliedVolatility": 0.47949739257812496,
+     "volume": 84.0,
+     "openInterest": 1203
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 0.16,
+     "bid": 0.14,
+     "ask": 0.16,
+     "impliedVolatility": 0.500005,
+     "volume": 117.0,
+     "openInterest": 734
+    },
+    {
+     "strike": 195.0,
+     "lastPrice": 0.13,
+     "bid": 0.11,
+     "ask": 0.12,
+     "impliedVolatility": 0.51758294921875,
+     "volume": 40.0,
+     "openInterest": 458
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 0.1,
+     "bid": 0.08,
+     "ask": 0.09,
+     "impliedVolatility": 0.5351608984375,
+     "volume": 23.0,
+     "openInterest": 792
+    },
+    {
+     "strike": 205.0,
+     "lastPrice": 0.08,
+     "bid": 0.06,
+     "ask": 0.08,
+     "impliedVolatility": 0.5585981640625001,
+     "volume": 51.0,
+     "openInterest": 1326
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 0.09,
+     "bid": 0.05,
+     "ask": 0.06,
+     "impliedVolatility": 0.57617611328125,
+     "volume": 14.0,
+     "openInterest": 1066
+    },
+    {
+     "strike": 215.0,
+     "lastPrice": 0.07,
+     "bid": 0.05,
+     "ask": 0.06,
+     "impliedVolatility": 0.6093789062500001,
+     "volume": 4.0,
+     "openInterest": 297
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 0.04,
+     "bid": 0.03,
+     "ask": 0.05,
+     "impliedVolatility": 0.6210975390625001,
+     "volume": 332.0,
+     "openInterest": 1076
+    },
+    {
+     "strike": 225.0,
+     "lastPrice": 0.03,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.64062859375,
+     "volume": 202.0,
+     "openInterest": 414
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 0.03,
+     "bid": 0.02,
+     "ask": 0.04,
+     "impliedVolatility": 0.6601596484375001,
+     "volume": 174.0,
+     "openInterest": 374
+    }
+   ],
+   "puts": [
+    {
+     "strike": 50.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.5000025,
+     "volume": 1,
+     "openInterest": 3
+    },
+    {
+     "strike": 55.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.3750031249999999,
+     "volume": 40,
+     "openInterest": 75
+    },
+    {
+     "strike": 60.0,
+     "lastPrice": 0.06,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.2656286718749998,
+     "volume": 4,
+     "openInterest": 44
+    },
+    {
+     "strike": 65.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.15625421875,
+     "volume": 2,
+     "openInterest": 11
+    },
+    {
+     "strike": 70.0,
+     "lastPrice": 0.02,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 1.109379453125,
+     "volume": 1,
+     "openInterest": 35
+    },
+    {
+     "strike": 75.0,
+     "lastPrice": 0.06,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 1.015629921875,
+     "volume": 1,
+     "openInterest": 32
+    },
+    {
+     "strike": 80.0,
+     "lastPrice": 0.04,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.9570316796874999,
+     "volume": 22,
+     "openInterest": 18
+    },
+    {
+     "strike": 85.0,
+     "lastPrice": 0.05,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 0.867188828125,
+     "volume": 100,
+     "openInterest": 114
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 0.04,
+     "bid": 0.04,
+     "ask": 0.05,
+     "impliedVolatility": 0.8085956640624999,
+     "volume": 2,
+     "openInterest": 117
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 0.05,
+     "bid": 0.05,
+     "ask": 0.06,
+     "impliedVolatility": 0.7460962890625,
+     "volume": 1,
+     "openInterest": 234
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 0.07,
+     "bid": 0.06,
+     "ask": 0.07,
+     "impliedVolatility": 0.6816438085937502,
+     "volume": 7,
+     "openInterest": 500
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 0.08,
+     "bid": 0.08,
+     "ask": 0.09,
+     "impliedVolatility": 0.6269568554687501,
+     "volume": 16,
+     "openInterest": 413
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 0.12,
+     "bid": 0.11,
+     "ask": 0.13,
+     "impliedVolatility": 0.579105771484375,
+     "volume": 15,
+     "openInterest": 1131
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 0.16,
+     "bid": 0.17,
+     "ask": 0.18,
+     "impliedVolatility": 0.534184345703125,
+     "volume": 32,
+     "openInterest": 647
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 0.25,
+     "bid": 0.26,
+     "ask": 0.28,
+     "impliedVolatility": 0.49658706542968756,
+     "volume": 73,
+     "openInterest": 697
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 0.45,
+     "bid": 0.44,
+     "ask": 0.47,
+     "impliedVolatility": 0.4643608251953125,
+     "volume": 95,
+     "openInterest": 1436
+    },
+    {
+     "strike": 126.0,
+     "lastPrice": 0.49,
+     "bid": 0.5,
+     "ask": 0.52,
+     "impliedVolatility": 0.4580132324218751,
+     "volume": 26,
+     "openInterest": 353
+    },
+    {
+     "strike": 127.0,
+     "lastPrice": 0.44,
+     "bid": 0.56,
+     "ask": 0.58,
+     "impliedVolatility": 0.4523980541992188,
+     "volume": 22,
+     "openInterest": 359
+    },
+    {
+     "strike": 128.0,
+     "lastPrice": 0.6,
+     "bid": 0.63,
+     "ask": 0.66,
+     "impliedVolatility": 0.44922425781249997,
+     "volume": 33,
+     "openInterest": 211
+    },
+    {
+     "strike": 129.0,
+     "lastPrice": 0.63,
+     "bid": 0.71,
+     "ask": 0.74,
+     "impliedVolatility": 0.44434149414062496,
+     "volume": 24,
+     "openInterest": 214
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 0.84,
+     "bid": 0.8,
+     "ask": 0.83,
+     "impliedVolatility": 0.43970286865234376,
+     "volume": 455,
+     "openInterest": 1858
+    },
+    {
+     "strike": 131.0,
+     "lastPrice": 0.94,
+     "bid": 0.91,
+     "ask": 0.94,
+     "impliedVolatility": 0.436529072265625,
+     "volume": 22,
+     "openInterest": 293
+    },
+    {
+     "strike": 132.0,
+     "lastPrice": 1.05,
+     "bid": 1.03,
+     "ask": 1.06,
+     "impliedVolatility": 0.4331111376953125,
+     "volume": 67,
+     "openInterest": 338
+    },
+    {
+     "strike": 133.0,
+     "lastPrice": 1.08,
+     "bid": 1.16,
+     "ask": 1.2,
+     "impliedVolatility": 0.43066975585937506,
+     "volume": 154,
+     "openInterest": 478
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 1.16,
+     "bid": 1.31,
+     "ask": 1.35,
+     "impliedVolatility": 0.42774009765625004,
+     "volume": 155,
+     "openInterest": 591
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 1.5,
+     "bid": 1.48,
+     "ask": 1.52,
+     "impliedVolatility": 0.4250545776367188,
+     "volume": 349,
+     "openInterest": 2242
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 1.7,
+     "bid": 1.66,
+     "ask": 1.7,
+     "impliedVolatility": 0.42188078125,
+     "volume": 83,
+     "openInterest": 438
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 1.66,
+     "bid": 1.87,
+     "ask": 1.91,
+     "impliedVolatility": 0.41968353759765625,
+     "volume": 53,
+     "openInterest": 241
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 2.03,
+     "bid": 2.09,
+     "ask": 2.14,
+     "impliedVolatility": 0.4177304321289062,
+     "volume": 51,
+     "openInterest": 295
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 2.4,
+     "bid": 2.34,
+     "ask": 2.39,
+     "impliedVolatility": 0.41565525756835936,
+     "volume": 74,
+     "openInterest": 248
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 2.66,
+     "bid": 2.61,
+     "ask": 2.67,
+     "impliedVolatility": 0.4141904284667969,
+     "volume": 1370,
+     "openInterest": 4065
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 2.64,
+     "bid": 2.91,
+     "ask": 2.96,
+     "impliedVolatility": 0.41174904663085937,
+     "volume": 84,
+     "openInterest": 401
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 2.99,
+     "bid": 3.2,
+     "ask": 3.3,
+     "impliedVolatility": 0.41138283935546877,
+     "volume": 79,
+     "openInterest": 442
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 3.2,
+     "bid": 3.55,
+     "ask": 3.65,
+     "impliedVolatility": 0.4097959411621094,
+     "volume": 64,
+     "openInterest": 389
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 3.9,
+     "bid": 3.95,
+     "ask": 4.05,
+     "impliedVolatility": 0.4100400793457031,
+     "volume": 157,
+     "openInterest": 151
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 4.25,
+     "bid": 4.35,
+     "ask": 4.45,
+     "impliedVolatility": 0.40833111206054684,
+     "volume": 765,
+     "openInterest": 2313
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 4.9,
+     "bid": 4.75,
+     "ask": 4.85,
+     "impliedVolatility": 0.40479110839843746,
+     "volume": 48,
+     "openInterest": 345
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 5.35,
+     "bid": 5.2,
+     "ask": 5.3,
+     "impliedVolatility": 0.40296007202148443,
+     "volume": 52,
+     "openInterest": 213
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 4.65,
+     "bid": 5.7,
+     "ask": 5.8,
+     "impliedVolatility": 0.40259386474609377,
+     "volume": 137,
+     "openInterest": 245
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 5.85,
+     "bid": 6.15,
+     "ask": 6.4,
+     "impliedVolatility": 0.40735455932617193,
+     "volume": 293,
+     "openInterest": 332
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 6.5,
+     "bid": 6.7,
+     "ask": 6.95,
+     "impliedVolatility": 0.4067442138671875,
+     "volume": 688,
+     "openInterest": 611
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 7.35,
+     "bid": 8.15,
+     "ask": 8.7,
+     "impliedVolatility": 0.4239559558105469,
+     "volume": 310,
+     "openInterest": 358
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 9.7,
+     "bid": 9.8,
+     "ask": 10.1,
+     "impliedVolatility": 0.405279384765625,
+     "volume": 65,
+     "openInterest": 257
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 11.0,
+     "bid": 11.0,
+     "ask": 12.05,
+     "impliedVolatility": 0.41687594848632803,
+     "volume": 68,
+     "openInterest": 165
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 11.8,
+     "bid": 12.6,
+     "ask": 14.1,
+     "impliedVolatility": 0.42847251220703125,
+     "volume": 79,
+     "openInterest": 651
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 14.0,
+     "bid": 13.45,
+     "ask": 17.2,
+     "impliedVolatility": 0.5266160620117188,
+     "volume": 1,
+     "openInterest": 10
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 14.4,
+     "bid": 16.7,
+     "ask": 18.45,
+     "impliedVolatility": 0.45288633056640626,
+     "volume": 3,
+     "openInterest": 41
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 16.09,
+     "bid": 17.9,
+     "ask": 21.6,
+     "impliedVolatility": 0.5587202331542969,
+     "volume": 6,
+     "openInterest": 26
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 20.48,
+     "bid": 19.95,
+     "ask": 24.2,
+     "impliedVolatility": 0.6084023535156251,
+     "volume": 1,
+     "openInterest": 13
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 25.5,
+     "bid": 20.8,
+     "ask": 26.9,
+     "impliedVolatility": 0.6669955175781253,
+     "volume": 2,
+     "openInterest": 3
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 24.91,
+     "bid": 24.25,
+     "ask": 29.65,
+     "impliedVolatility": 0.7297390307617188,
+     "volume": 1,
+     "openInterest": 16
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 28.0,
+     "bid": 29.1,
+     "ask": 34.15,
+     "impliedVolatility": 0.7497583618164063,
+     "volume": 3,
+     "openInterest": 13
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 32.5,
+     "bid": 34.0,
+     "ask": 39.3,
+     "impliedVolatility": 0.8334977587890623,
+     "volume": 14,
+     "openInterest": 19
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 41.99,
+     "bid": 39.0,
+     "ask": 44.1,
+     "impliedVolatility": 0.8737805590820311,
+     "volume": 1,
+     "openInterest": 1
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 53.15,
+     "bid": 48.0,
+     "ask": 54.45,
+     "impliedVolatility": 1.0344286560058595,
+     "volume": 10,
+     "openInterest": 0
+    }
+   ]
+  },
+  "2026-10-30": {
+   "calls": [
+    {
+     "strike": 85.0,
+     "lastPrice": 67.0,
+     "bid": 61.65,
+     "ask": 66.0,
+     "impliedVolatility": 1.1884806201171876,
+     "volume": 2,
+     "openInterest": 0
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 63.17,
+     "bid": 54.4,
+     "ask": 61.45,
+     "impliedVolatility": 1.5844747338867182,
+     "volume": 1,
+     "openInterest": 3
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 51.8,
+     "bid": 44.7,
+     "ask": 52.4,
+     "impliedVolatility": 0.8090839404296875,
+     "volume": 5,
+     "openInterest": 9
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 40.11,
+     "bid": 36.45,
+     "ask": 39.6,
+     "impliedVolatility": 0.8437515624999999,
+     "volume": 15,
+     "openInterest": 27
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 35.43,
+     "bid": 30.1,
+     "ask": 36.15,
+     "impliedVolatility": 0.9350592431640624,
+     "volume": 4,
+     "openInterest": 1
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 30.53,
+     "bid": 26.7,
+     "ask": 31.3,
+     "impliedVolatility": 0.5656781713867188,
+     "volume": 4,
+     "openInterest": 3
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 27.05,
+     "bid": 23.5,
+     "ask": 25.65,
+     "impliedVolatility": 0.5544478149414063,
+     "volume": 4,
+     "openInterest": 40
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 21.51,
+     "bid": 18.55,
+     "ask": 21.8,
+     "impliedVolatility": 0.5218553674316406,
+     "volume": 1,
+     "openInterest": 56
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 19.24,
+     "bid": 15.6,
+     "ask": 18.15,
+     "impliedVolatility": 0.5009815527343751,
+     "volume": 4,
+     "openInterest": 11
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 17.63,
+     "bid": 14.55,
+     "ask": 17.25,
+     "impliedVolatility": 0.5845988806152342,
+     "volume": 2,
+     "openInterest": 26
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 16.88,
+     "bid": 13.85,
+     "ask": 16.4,
+     "impliedVolatility": 0.5720257641601563,
+     "volume": 1,
+     "openInterest": 47
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 14.82,
+     "bid": 13.5,
+     "ask": 15.6,
+     "impliedVolatility": 0.5625043750000001,
+     "volume": 1,
+     "openInterest": 5
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 16.3,
+     "bid": 12.45,
+     "ask": 14.85,
+     "impliedVolatility": 0.5556685058593751,
+     "volume": 11,
+     "openInterest": 25
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 14.77,
+     "bid": 12.35,
+     "ask": 13.35,
+     "impliedVolatility": 0.4968312036132813,
+     "volume": 1,
+     "openInterest": 22
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 12.76,
+     "bid": 11.65,
+     "ask": 12.5,
+     "impliedVolatility": 0.4826711889648438,
+     "volume": 20,
+     "openInterest": 360
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 12.78,
+     "bid": 10.4,
+     "ask": 12.7,
+     "impliedVolatility": 0.5366257275390626,
+     "volume": 4,
+     "openInterest": 73
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 12.29,
+     "bid": 10.5,
+     "ask": 10.8,
+     "impliedVolatility": 0.45227598510742195,
+     "volume": 4,
+     "openInterest": 12
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 11.25,
+     "bid": 9.25,
+     "ask": 10.7,
+     "impliedVolatility": 0.48352567260742196,
+     "volume": 3,
+     "openInterest": 34
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 10.85,
+     "bid": 8.9,
+     "ask": 10.75,
+     "impliedVolatility": 0.5218553674316406,
+     "volume": 1,
+     "openInterest": 37
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 8.85,
+     "bid": 8.45,
+     "ask": 9.3,
+     "impliedVolatility": 0.4655815161132813,
+     "volume": 135,
+     "openInterest": 353
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 9.07,
+     "bid": 8.15,
+     "ask": 8.45,
+     "impliedVolatility": 0.4459283923339844,
+     "volume": 57,
+     "openInterest": 138
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 7.82,
+     "bid": 7.6,
+     "ask": 7.9,
+     "impliedVolatility": 0.44348701049804684,
+     "volume": 46,
+     "openInterest": 281
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 7.2,
+     "bid": 7.1,
+     "ask": 7.35,
+     "impliedVolatility": 0.43970286865234376,
+     "volume": 169,
+     "openInterest": 351
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 7.28,
+     "bid": 6.65,
+     "ask": 6.9,
+     "impliedVolatility": 0.44067942138671873,
+     "volume": 64,
+     "openInterest": 199
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 6.3,
+     "bid": 6.25,
+     "ask": 6.4,
+     "impliedVolatility": 0.43726148681640625,
+     "volume": 620,
+     "openInterest": 1292
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 5.3,
+     "bid": 5.2,
+     "ask": 5.3,
+     "impliedVolatility": 0.43237872314453124,
+     "volume": 1152,
+     "openInterest": 605
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 4.4,
+     "bid": 4.3,
+     "ask": 4.4,
+     "impliedVolatility": 0.4317683776855469,
+     "volume": 2238,
+     "openInterest": 1876
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 3.55,
+     "bid": 3.5,
+     "ask": 3.6,
+     "impliedVolatility": 0.42969320312500003,
+     "volume": 310,
+     "openInterest": 513
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 2.9,
+     "bid": 2.89,
+     "ask": 2.94,
+     "impliedVolatility": 0.4294490649414063,
+     "volume": 889,
+     "openInterest": 2651
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 2.33,
+     "bid": 2.34,
+     "ask": 2.39,
+     "impliedVolatility": 0.4299373413085938,
+     "volume": 245,
+     "openInterest": 645
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 1.9,
+     "bid": 1.89,
+     "ask": 1.93,
+     "impliedVolatility": 0.4304256176757813,
+     "volume": 657,
+     "openInterest": 1265
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 1.58,
+     "bid": 1.53,
+     "ask": 1.57,
+     "impliedVolatility": 0.4331111376953125,
+     "volume": 333,
+     "openInterest": 520
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 1.24,
+     "bid": 1.23,
+     "ask": 1.27,
+     "impliedVolatility": 0.43555251953125,
+     "volume": 597,
+     "openInterest": 1943
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 1.01,
+     "bid": 1.0,
+     "ask": 1.03,
+     "impliedVolatility": 0.4387263159179688,
+     "volume": 102,
+     "openInterest": 497
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 0.84,
+     "bid": 0.81,
+     "ask": 0.84,
+     "impliedVolatility": 0.4426325268554688,
+     "volume": 643,
+     "openInterest": 1461
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 0.58,
+     "bid": 0.55,
+     "ask": 0.58,
+     "impliedVolatility": 0.4545952978515625,
+     "volume": 223,
+     "openInterest": 1942
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 0.45,
+     "bid": 0.38,
+     "ask": 0.4,
+     "impliedVolatility": 0.46582565429687506,
+     "volume": 72,
+     "openInterest": 859
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 0.28,
+     "bid": 0.27,
+     "ask": 0.29,
+     "impliedVolatility": 0.47998566894531247,
+     "volume": 285,
+     "openInterest": 893
+    },
+    {
+     "strike": 195.0,
+     "lastPrice": 0.23,
+     "bid": 0.2,
+     "ask": 0.22,
+     "impliedVolatility": 0.49658706542968756,
+     "volume": 44,
+     "openInterest": 294
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 0.17,
+     "bid": 0.16,
+     "ask": 0.17,
+     "impliedVolatility": 0.5107470800781251,
+     "volume": 692,
+     "openInterest": 1324
+    },
+    {
+     "strike": 205.0,
+     "lastPrice": 0.14,
+     "bid": 0.12,
+     "ask": 0.13,
+     "impliedVolatility": 0.524418818359375,
+     "volume": 988,
+     "openInterest": 1052
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 0.11,
+     "bid": 0.09,
+     "ask": 0.11,
+     "impliedVolatility": 0.5410202148437502,
+     "volume": 423,
+     "openInterest": 4678
+    },
+    {
+     "strike": 215.0,
+     "lastPrice": 0.09,
+     "bid": 0.08,
+     "ask": 0.09,
+     "impliedVolatility": 0.559574716796875,
+     "volume": 51,
+     "openInterest": 215
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 0.08,
+     "bid": 0.06,
+     "ask": 0.08,
+     "impliedVolatility": 0.57617611328125,
+     "volume": 27,
+     "openInterest": 708
+    },
+    {
+     "strike": 225.0,
+     "lastPrice": 0.06,
+     "bid": 0.05,
+     "ask": 0.06,
+     "impliedVolatility": 0.585941640625,
+     "volume": 41,
+     "openInterest": 371
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 0.05,
+     "bid": 0.04,
+     "ask": 0.06,
+     "impliedVolatility": 0.6074258007812501,
+     "volume": 434,
+     "openInterest": 1021
+    }
+   ],
+   "puts": [
+    {
+     "strike": 45.0,
+     "lastPrice": 0.02,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.4375028125,
+     "volume": 12.0,
+     "openInterest": 17
+    },
+    {
+     "strike": 50.0,
+     "lastPrice": 0.03,
+     "bid": 0.01,
+     "ask": 0.02,
+     "impliedVolatility": 1.3125034374999998,
+     "volume": 1.0,
+     "openInterest": 1
+    },
+    {
+     "strike": 55.0,
+     "lastPrice": 0.01,
+     "bid": 0.01,
+     "ask": 0.03,
+     "impliedVolatility": 1.2343788281249999,
+     "volume": 2.0,
+     "openInterest": 15
+    },
+    {
+     "strike": 60.0,
+     "lastPrice": 0.04,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 1.15625421875,
+     "volume": null,
+     "openInterest": 1
+    },
+    {
+     "strike": 65.0,
+     "lastPrice": 0.04,
+     "bid": 0.02,
+     "ask": 0.03,
+     "impliedVolatility": 1.0546922265625,
+     "volume": 3.0,
+     "openInterest": 5
+    },
+    {
+     "strike": 70.0,
+     "lastPrice": 0.04,
+     "bid": 0.03,
+     "ask": 0.04,
+     "impliedVolatility": 1.000005,
+     "volume": 1.0,
+     "openInterest": 5
+    },
+    {
+     "strike": 75.0,
+     "lastPrice": 0.04,
+     "bid": 0.03,
+     "ask": 0.05,
+     "impliedVolatility": 0.929688203125,
+     "volume": 7.0,
+     "openInterest": 25
+    },
+    {
+     "strike": 80.0,
+     "lastPrice": 0.04,
+     "bid": 0.04,
+     "ask": 0.06,
+     "impliedVolatility": 0.867188828125,
+     "volume": 13.0,
+     "openInterest": 40
+    },
+    {
+     "strike": 85.0,
+     "lastPrice": 0.09,
+     "bid": 0.05,
+     "ask": 0.07,
+     "impliedVolatility": 0.804689453125,
+     "volume": 1.0,
+     "openInterest": 46
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 0.08,
+     "bid": 0.07,
+     "ask": 0.08,
+     "impliedVolatility": 0.7500025,
+     "volume": 30.0,
+     "openInterest": 66
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 0.08,
+     "bid": 0.09,
+     "ask": 0.1,
+     "impliedVolatility": 0.6953155468750001,
+     "volume": 5.0,
+     "openInterest": 98
+    },
+    {
+     "strike": 100.0,
+     "lastPrice": 0.12,
+     "bid": 0.11,
+     "ask": 0.12,
+     "impliedVolatility": 0.64062859375,
+     "volume": 439.0,
+     "openInterest": 2619
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 0.15,
+     "bid": 0.14,
+     "ask": 0.16,
+     "impliedVolatility": 0.5918009570312501,
+     "volume": 7.0,
+     "openInterest": 298
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 0.19,
+     "bid": 0.2,
+     "ask": 0.22,
+     "impliedVolatility": 0.5507857421875001,
+     "volume": 22.0,
+     "openInterest": 371
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 0.29,
+     "bid": 0.29,
+     "ask": 0.31,
+     "impliedVolatility": 0.5112353564453125,
+     "volume": 109.0,
+     "openInterest": 5973
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 0.47,
+     "bid": 0.46,
+     "ask": 0.49,
+     "impliedVolatility": 0.485356708984375,
+     "volume": 341.0,
+     "openInterest": 1293
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 0.76,
+     "bid": 0.77,
+     "ask": 0.79,
+     "impliedVolatility": 0.45972219970703126,
+     "volume": 646.0,
+     "openInterest": 6009
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 1.32,
+     "bid": 1.3,
+     "ask": 1.33,
+     "impliedVolatility": 0.44312080322265623,
+     "volume": 744.0,
+     "openInterest": 3008
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 1.94,
+     "bid": 1.95,
+     "ask": 2.0,
+     "impliedVolatility": 0.4331111376953125,
+     "volume": 272.0,
+     "openInterest": 1064
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 2.2,
+     "bid": 2.16,
+     "ask": 2.21,
+     "impliedVolatility": 0.43103596313476567,
+     "volume": 1032.0,
+     "openInterest": 4153
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 2.4,
+     "bid": 2.38,
+     "ask": 2.43,
+     "impliedVolatility": 0.42847251220703125,
+     "volume": 126.0,
+     "openInterest": 624
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 2.4,
+     "bid": 2.63,
+     "ask": 2.68,
+     "impliedVolatility": 0.4270076831054688,
+     "volume": 399.0,
+     "openInterest": 903
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 2.55,
+     "bid": 2.89,
+     "ask": 2.94,
+     "impliedVolatility": 0.424810439453125,
+     "volume": 161.0,
+     "openInterest": 500
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 3.22,
+     "bid": 3.15,
+     "ask": 3.25,
+     "impliedVolatility": 0.424810439453125,
+     "volume": 57.0,
+     "openInterest": 232
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 3.51,
+     "bid": 3.45,
+     "ask": 3.55,
+     "impliedVolatility": 0.42273526489257807,
+     "volume": 565.0,
+     "openInterest": 2580
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 3.75,
+     "bid": 3.8,
+     "ask": 3.9,
+     "impliedVolatility": 0.4226131958007812,
+     "volume": 28.0,
+     "openInterest": 204
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 4.05,
+     "bid": 4.15,
+     "ask": 4.25,
+     "impliedVolatility": 0.4211483666992188,
+     "volume": 35.0,
+     "openInterest": 331
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 4.16,
+     "bid": 4.5,
+     "ask": 4.6,
+     "impliedVolatility": 0.41809663940429687,
+     "volume": 66.0,
+     "openInterest": 334
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 4.5,
+     "bid": 4.9,
+     "ask": 5.0,
+     "impliedVolatility": 0.41699801757812494,
+     "volume": 33.0,
+     "openInterest": 381
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 5.35,
+     "bid": 5.3,
+     "ask": 5.4,
+     "impliedVolatility": 0.4145566357421875,
+     "volume": 565.0,
+     "openInterest": 3455
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 5.65,
+     "bid": 5.75,
+     "ask": 5.85,
+     "impliedVolatility": 0.41370215209960937,
+     "volume": 85.0,
+     "openInterest": 471
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 6.0,
+     "bid": 6.2,
+     "ask": 6.35,
+     "impliedVolatility": 0.4144345666503906,
+     "volume": 95.0,
+     "openInterest": 784
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 6.75,
+     "bid": 6.7,
+     "ask": 6.8,
+     "impliedVolatility": 0.41089456298828125,
+     "volume": 111.0,
+     "openInterest": 494
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 7.3,
+     "bid": 7.2,
+     "ask": 7.35,
+     "impliedVolatility": 0.4118711157226562,
+     "volume": 140.0,
+     "openInterest": 558
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 7.61,
+     "bid": 7.7,
+     "ask": 7.9,
+     "impliedVolatility": 0.4115049084472656,
+     "volume": 2145.0,
+     "openInterest": 2102
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 8.34,
+     "bid": 9.15,
+     "ask": 9.45,
+     "impliedVolatility": 0.41528905029296875,
+     "volume": 188.0,
+     "openInterest": 721
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 9.7,
+     "bid": 10.7,
+     "ask": 11.0,
+     "impliedVolatility": 0.41089456298828125,
+     "volume": 77.0,
+     "openInterest": 384
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 11.35,
+     "bid": 11.75,
+     "ask": 13.3,
+     "impliedVolatility": 0.4476373596191406,
+     "volume": 15.0,
+     "openInterest": 184
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 12.84,
+     "bid": 13.4,
+     "ask": 14.95,
+     "impliedVolatility": 0.4351863122558594,
+     "volume": 17.0,
+     "openInterest": 280
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 16.0,
+     "bid": 14.2,
+     "ask": 17.9,
+     "impliedVolatility": 0.5095263891601562,
+     "volume": 1.0,
+     "openInterest": 13
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 14.73,
+     "bid": 16.2,
+     "ask": 20.45,
+     "impliedVolatility": 0.5539595385742189,
+     "volume": 1.0,
+     "openInterest": 32
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 18.08,
+     "bid": 18.15,
+     "ask": 22.45,
+     "impliedVolatility": 0.5551802294921876,
+     "volume": 2.0,
+     "openInterest": 8
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 19.88,
+     "bid": 19.7,
+     "ask": 25.4,
+     "impliedVolatility": 0.6267127172851563,
+     "volume": 1.0,
+     "openInterest": 28
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 26.5,
+     "bid": 22.0,
+     "ask": 27.7,
+     "impliedVolatility": 0.6469761865234375,
+     "volume": 1.0,
+     "openInterest": 4
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 23.92,
+     "bid": 23.4,
+     "ask": 28.8,
+     "impliedVolatility": 0.5583540258789064,
+     "volume": 8.0,
+     "openInterest": 10
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 28.45,
+     "bid": 28.2,
+     "ask": 34.7,
+     "impliedVolatility": 0.7038603833007813,
+     "volume": 3.0,
+     "openInterest": 10
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 31.95,
+     "bid": 33.9,
+     "ask": 39.7,
+     "impliedVolatility": 0.7639183764648438,
+     "volume": 3.0,
+     "openInterest": 4
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 38.29,
+     "bid": 38.85,
+     "ask": 44.6,
+     "impliedVolatility": 0.8112811840820311,
+     "volume": 1.0,
+     "openInterest": 28
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 49.42,
+     "bid": 48.0,
+     "ask": 55.95,
+     "impliedVolatility": 1.0440721624755862,
+     "volume": 11.0,
+     "openInterest": 17
+    },
+    {
+     "strike": 210.0,
+     "lastPrice": 61.27,
+     "bid": 58.0,
+     "ask": 65.95,
+     "impliedVolatility": 1.1463665728759764,
+     "volume": 1.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 215.0,
+     "lastPrice": 67.25,
+     "bid": 63.0,
+     "ask": 70.9,
+     "impliedVolatility": 1.1897013171386717,
+     "volume": 6.0,
+     "openInterest": 0
+    },
+    {
+     "strike": 220.0,
+     "lastPrice": 70.9,
+     "bid": 68.0,
+     "ask": 75.85,
+     "impliedVolatility": 1.2312050158691408,
+     "volume": null,
+     "openInterest": 0
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 75.85,
+     "bid": 78.0,
+     "ask": 85.95,
+     "impliedVolatility": 0.6015664843750002,
+     "volume": 2.0,
+     "openInterest": 0
+    }
+   ]
+  },
+  "2026-11-06": {
+   "calls": [
+    {
+     "strike": 120.0,
+     "lastPrice": 32.82,
+     "bid": 25.85,
+     "ask": 31.95,
+     "impliedVolatility": 0.8105487695312499,
+     "volume": 2.0,
+     "openInterest": 15
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 27.72,
+     "bid": 22.3,
+     "ask": 27.45,
+     "impliedVolatility": 0.5283250292968751,
+     "volume": 6.0,
+     "openInterest": 2
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 19.07,
+     "bid": 15.25,
+     "ask": 18.65,
+     "impliedVolatility": 0.504765694580078,
+     "volume": 16.0,
+     "openInterest": 23
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 16.82,
+     "bid": 13.95,
+     "ask": 18.65,
+     "impliedVolatility": 0.5069629382324219,
+     "volume": null,
+     "openInterest": 1
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 15.65,
+     "bid": 11.9,
+     "ask": 16.6,
+     "impliedVolatility": 0.5009815527343751,
+     "volume": 1.0,
+     "openInterest": 2
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 16.48,
+     "bid": 13.05,
+     "ask": 13.8,
+     "impliedVolatility": 0.510869149169922,
+     "volume": 5.0,
+     "openInterest": 69
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 15.6,
+     "bid": 11.4,
+     "ask": 13.55,
+     "impliedVolatility": 0.5024463818359376,
+     "volume": 2.0,
+     "openInterest": 7
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 12.7,
+     "bid": 10.2,
+     "ask": 14.1,
+     "impliedVolatility": 0.5159960510253907,
+     "volume": 2.0,
+     "openInterest": 4
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 11.15,
+     "bid": 10.15,
+     "ask": 11.4,
+     "impliedVolatility": 0.5338181384277343,
+     "volume": 17.0,
+     "openInterest": 74
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 10.58,
+     "bid": 9.7,
+     "ask": 10.95,
+     "impliedVolatility": 0.5028125891113282,
+     "volume": 5.0,
+     "openInterest": 57
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 12.9,
+     "bid": 8.3,
+     "ask": 11.95,
+     "impliedVolatility": 0.5188036401367188,
+     "volume": 16.0,
+     "openInterest": 106
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 8.95,
+     "bid": 8.5,
+     "ask": 9.4,
+     "impliedVolatility": 0.5053760400390624,
+     "volume": 20.0,
+     "openInterest": 298
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 9.63,
+     "bid": 8.3,
+     "ask": 8.85,
+     "impliedVolatility": 0.5006153454589843,
+     "volume": 9.0,
+     "openInterest": 163
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 8.0,
+     "bid": 7.9,
+     "ask": 8.3,
+     "impliedVolatility": 0.49493913269042966,
+     "volume": 270.0,
+     "openInterest": 650
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 7.03,
+     "bid": 6.9,
+     "ask": 7.05,
+     "impliedVolatility": 0.48340360351562506,
+     "volume": 113.0,
+     "openInterest": 171
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 5.98,
+     "bid": 5.95,
+     "ask": 6.05,
+     "impliedVolatility": 0.4797415307617187,
+     "volume": 273.0,
+     "openInterest": 286
+    },
+    {
+     "strike": 157.5,
+     "lastPrice": 5.6,
+     "bid": 5.1,
+     "ask": 5.2,
+     "impliedVolatility": 0.4787039434814453,
+     "volume": 107.0,
+     "openInterest": 111
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 4.4,
+     "bid": 4.35,
+     "ask": 4.45,
+     "impliedVolatility": 0.47803256347656253,
+     "volume": 810.0,
+     "openInterest": 401
+    },
+    {
+     "strike": 162.5,
+     "lastPrice": 3.9,
+     "bid": 3.7,
+     "ask": 3.8,
+     "impliedVolatility": 0.47803256347656253,
+     "volume": 68.0,
+     "openInterest": 186
+    },
+    {
+     "strike": 165.0,
+     "lastPrice": 3.4,
+     "bid": 3.15,
+     "ask": 3.25,
+     "impliedVolatility": 0.47937532348632805,
+     "volume": 702.0,
+     "openInterest": 292
+    },
+    {
+     "strike": 167.5,
+     "lastPrice": 2.96,
+     "bid": 2.67,
+     "ask": 2.73,
+     "impliedVolatility": 0.4777884252929688,
+     "volume": 69.0,
+     "openInterest": 233
+    },
+    {
+     "strike": 170.0,
+     "lastPrice": 2.3,
+     "bid": 2.26,
+     "ask": 2.31,
+     "impliedVolatility": 0.47864290893554684,
+     "volume": 264.0,
+     "openInterest": 569
+    },
+    {
+     "strike": 172.5,
+     "lastPrice": 1.98,
+     "bid": 1.91,
+     "ask": 1.96,
+     "impliedVolatility": 0.4804739453125,
+     "volume": 56.0,
+     "openInterest": 207
+    },
+    {
+     "strike": 175.0,
+     "lastPrice": 1.73,
+     "bid": 1.61,
+     "ask": 1.67,
+     "impliedVolatility": 0.4831594653320313,
+     "volume": 250.0,
+     "openInterest": 534
+    },
+    {
+     "strike": 180.0,
+     "lastPrice": 1.23,
+     "bid": 1.16,
+     "ask": 1.21,
+     "impliedVolatility": 0.48901878173828134,
+     "volume": 85.0,
+     "openInterest": 197
+    },
+    {
+     "strike": 185.0,
+     "lastPrice": 0.9,
+     "bid": 0.84,
+     "ask": 0.88,
+     "impliedVolatility": 0.49561051269531253,
+     "volume": 72.0,
+     "openInterest": 103
+    },
+    {
+     "strike": 190.0,
+     "lastPrice": 0.65,
+     "bid": 0.62,
+     "ask": 0.65,
+     "impliedVolatility": 0.5009815527343751,
+     "volume": 113.0,
+     "openInterest": 314
+    },
+    {
+     "strike": 200.0,
+     "lastPrice": 0.38,
+     "bid": 0.34,
+     "ask": 0.37,
+     "impliedVolatility": 0.5185595019531251,
+     "volume": 147.0,
+     "openInterest": 218
+    },
+    {
+     "strike": 230.0,
+     "lastPrice": 0.11,
+     "bid": 0.09,
+     "ask": 0.11,
+     "impliedVolatility": 0.5898478515625001,
+     "volume": 271.0,
+     "openInterest": 32
+    }
+   ],
+   "puts": [
+    {
+     "strike": 80.0,
+     "lastPrice": 0.1,
+     "bid": 0.07,
+     "ask": 0.09,
+     "impliedVolatility": 0.82226740234375,
+     "volume": 12,
+     "openInterest": 11
+    },
+    {
+     "strike": 85.0,
+     "lastPrice": 0.09,
+     "bid": 0.09,
+     "ask": 0.11,
+     "impliedVolatility": 0.7695335546875001,
+     "volume": 5,
+     "openInterest": 13
+    },
+    {
+     "strike": 90.0,
+     "lastPrice": 0.15,
+     "bid": 0.11,
+     "ask": 0.13,
+     "impliedVolatility": 0.7148466015625,
+     "volume": 1,
+     "openInterest": 2
+    },
+    {
+     "strike": 95.0,
+     "lastPrice": 0.15,
+     "bid": 0.15,
+     "ask": 0.17,
+     "impliedVolatility": 0.6718782812500002,
+     "volume": 2,
+     "openInterest": 12
+    },
+    {
+     "strike": 105.0,
+     "lastPrice": 0.27,
+     "bid": 0.27,
+     "ask": 0.3,
+     "impliedVolatility": 0.5898478515625001,
+     "volume": 66,
+     "openInterest": 79
+    },
+    {
+     "strike": 110.0,
+     "lastPrice": 0.42,
+     "bid": 0.39,
+     "ask": 0.43,
+     "impliedVolatility": 0.5576216113281252,
+     "volume": 18,
+     "openInterest": 172
+    },
+    {
+     "strike": 115.0,
+     "lastPrice": 0.62,
+     "bid": 0.59,
+     "ask": 0.63,
+     "impliedVolatility": 0.5302781347656251,
+     "volume": 78,
+     "openInterest": 81
+    },
+    {
+     "strike": 120.0,
+     "lastPrice": 0.96,
+     "bid": 0.92,
+     "ask": 0.97,
+     "impliedVolatility": 0.5100146655273439,
+     "volume": 66,
+     "openInterest": 350
+    },
+    {
+     "strike": 125.0,
+     "lastPrice": 1.46,
+     "bid": 1.45,
+     "ask": 1.49,
+     "impliedVolatility": 0.49622085815429695,
+     "volume": 563,
+     "openInterest": 1088
+    },
+    {
+     "strike": 130.0,
+     "lastPrice": 2.27,
+     "bid": 2.23,
+     "ask": 2.29,
+     "impliedVolatility": 0.48413601806640627,
+     "volume": 504,
+     "openInterest": 1049
+    },
+    {
+     "strike": 134.0,
+     "lastPrice": 2.86,
+     "bid": 3.1,
+     "ask": 3.2,
+     "impliedVolatility": 0.4781546325683594,
+     "volume": 361,
+     "openInterest": 158
+    },
+    {
+     "strike": 135.0,
+     "lastPrice": 3.4,
+     "bid": 3.35,
+     "ask": 3.45,
+     "impliedVolatility": 0.47559118164062497,
+     "volume": 1047,
+     "openInterest": 692
+    },
+    {
+     "strike": 136.0,
+     "lastPrice": 3.6,
+     "bid": 3.6,
+     "ask": 3.7,
+     "impliedVolatility": 0.4721732470703125,
+     "volume": 85,
+     "openInterest": 313
+    },
+    {
+     "strike": 137.0,
+     "lastPrice": 3.6,
+     "bid": 3.9,
+     "ask": 4.0,
+     "impliedVolatility": 0.4710746252441406,
+     "volume": 121,
+     "openInterest": 28
+    },
+    {
+     "strike": 138.0,
+     "lastPrice": 3.97,
+     "bid": 4.2,
+     "ask": 4.35,
+     "impliedVolatility": 0.4720511779785156,
+     "volume": 289,
+     "openInterest": 242
+    },
+    {
+     "strike": 139.0,
+     "lastPrice": 4.3,
+     "bid": 4.55,
+     "ask": 4.65,
+     "impliedVolatility": 0.4687553125,
+     "volume": 147,
+     "openInterest": 73
+    },
+    {
+     "strike": 140.0,
+     "lastPrice": 4.95,
+     "bid": 4.85,
+     "ask": 5.0,
+     "impliedVolatility": 0.46753462158203124,
+     "volume": 1381,
+     "openInterest": 926
+    },
+    {
+     "strike": 141.0,
+     "lastPrice": 4.96,
+     "bid": 5.25,
+     "ask": 5.35,
+     "impliedVolatility": 0.46533737792968755,
+     "volume": 31,
+     "openInterest": 270
+    },
+    {
+     "strike": 142.0,
+     "lastPrice": 5.2,
+     "bid": 5.6,
+     "ask": 5.75,
+     "impliedVolatility": 0.46497117065429694,
+     "volume": 41,
+     "openInterest": 642
+    },
+    {
+     "strike": 143.0,
+     "lastPrice": 5.55,
+     "bid": 6.0,
+     "ask": 6.15,
+     "impliedVolatility": 0.46362841064453125,
+     "volume": 354,
+     "openInterest": 229
+    },
+    {
+     "strike": 144.0,
+     "lastPrice": 5.95,
+     "bid": 6.45,
+     "ask": 6.55,
+     "impliedVolatility": 0.4611870288085938,
+     "volume": 23,
+     "openInterest": 49
+    },
+    {
+     "strike": 145.0,
+     "lastPrice": 6.82,
+     "bid": 6.85,
+     "ask": 7.0,
+     "impliedVolatility": 0.460515648803711,
+     "volume": 134,
+     "openInterest": 353
+    },
+    {
+     "strike": 146.0,
+     "lastPrice": 6.85,
+     "bid": 7.35,
+     "ask": 7.45,
+     "impliedVolatility": 0.4588677160644532,
+     "volume": 32,
+     "openInterest": 239
+    },
+    {
+     "strike": 147.0,
+     "lastPrice": 7.3,
+     "bid": 7.8,
+     "ask": 7.95,
+     "impliedVolatility": 0.4588677160644532,
+     "volume": 30,
+     "openInterest": 70
+    },
+    {
+     "strike": 148.0,
+     "lastPrice": 7.78,
+     "bid": 8.3,
+     "ask": 8.45,
+     "impliedVolatility": 0.4578911633300782,
+     "volume": 64,
+     "openInterest": 120
+    },
+    {
+     "strike": 149.0,
+     "lastPrice": 8.2,
+     "bid": 8.8,
+     "ask": 8.95,
+     "impliedVolatility": 0.4559380578613281,
+     "volume": 103,
+     "openInterest": 57
+    },
+    {
+     "strike": 150.0,
+     "lastPrice": 9.3,
+     "bid": 9.35,
+     "ask": 9.5,
+     "impliedVolatility": 0.4556939196777344,
+     "volume": 265,
+     "openInterest": 129
+    },
+    {
+     "strike": 152.5,
+     "lastPrice": 9.67,
+     "bid": 10.7,
+     "ask": 11.2,
+     "impliedVolatility": 0.4682670361328125,
+     "volume": 12,
+     "openInterest": 55
+    },
+    {
+     "strike": 155.0,
+     "lastPrice": 11.53,
+     "bid": 11.25,
+     "ask": 12.75,
+     "impliedVolatility": 0.4670463452148438,
+     "volume": 58,
+     "openInterest": 18
+    },
+    {
+     "strike": 160.0,
+     "lastPrice": 14.58,
+     "bid": 13.15,
+     "ask": 17.95,
+     "impliedVolatility": 0.5694623132324219,
+     "volume": 4,
+     "openInterest": 9
+    }
+   ]
+  }
+ },
+ "derived_atm_iv": {
+  "2026-10-02": {
+   "atm_strike": 150.0,
+   "call_iv": null,
+   "put_iv": null,
+   "avg_iv": null,
+   "T_years": 0.0
+  },
+  "2026-10-09": {
+   "atm_strike": 150.0,
+   "call_iv": 0.2679,
+   "put_iv": 0.6039,
+   "avg_iv": 0.4359,
+   "T_years": 0.0192
+  },
+  "2026-10-16": {
+   "atm_strike": 150.0,
+   "call_iv": 0.2913,
+   "put_iv": 0.544,
+   "avg_iv": 0.4177,
+   "T_years": 0.0384
+  },
+  "2026-10-23": {
+   "atm_strike": 150.0,
+   "call_iv": 0.3174,
+   "put_iv": 0.4937,
+   "avg_iv": 0.4056,
+   "T_years": 0.0575
+  },
+  "2026-10-30": {
+   "atm_strike": 150.0,
+   "call_iv": 0.3378,
+   "put_iv": 0.4984,
+   "avg_iv": 0.4181,
+   "T_years": 0.0767
+  },
+  "2026-11-06": {
+   "atm_strike": 150.0,
+   "call_iv": 0.3909,
+   "put_iv": 0.5406,
+   "avg_iv": 0.4657,
+   "T_years": 0.0959
+  }
+ },
+ "shares_outstanding": 7571396888,
+ "market_cap_reported": 1950701977600,
+ "market_cap_computed": 1142220939144.894,
+ "cap_sane": true,
+ "identity_suspect": true,
+ "quality_flags": [
+  "periodic filing(s) ['10-Q'] dated after 424B4 basis 2026-03-31 \u2014 re-verify shares_424b4"
+ ]
+}
