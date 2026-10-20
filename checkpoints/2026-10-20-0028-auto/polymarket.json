@@ -1,0 +1,182 @@
+[
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 606999.673596
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by September 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 415591.306079
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31?",
+  "outcomes": {
+   "Yes": 0.175,
+   "No": 0.825
+  },
+  "volume": 291052.732395
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30, 2027?",
+  "outcomes": {
+   "Yes": 0.525,
+   "No": 0.475
+  },
+  "volume": 50245.99631799999
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.645,
+   "No": 0.355
+  },
+  "volume": 47654.114309000004
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by January 31, 2027?",
+  "outcomes": {
+   "Yes": 0.325,
+   "No": 0.675
+  },
+  "volume": 26427.995480999998
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by February 28, 2027?",
+  "outcomes": {
+   "Yes": 0.355,
+   "No": 0.645
+  },
+  "volume": 24999.697453
+ },
+ {
+  "event": "Google x SpaceX agree to put data centers in space by...?",
+  "market": "Google x SpaceX agree to put data centers in space by June 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 23659.009840000144
+ },
+ {
+  "event": "SpaceX Starship Flight Test 15?",
+  "market": "Will SpaceX Starship Flight Test 15 launch by October 31, 2026?",
+  "outcomes": {
+   "Yes": 0.0085,
+   "No": 0.9915
+  },
+  "volume": 11367.460665999999
+ },
+ {
+  "event": "SpaceX becomes a US mobile carrier by ___?",
+  "market": "SpaceX becomes a US mobile carrier by June 30, 2027?",
+  "outcomes": {
+   "Yes": 0.085,
+   "No": 0.915
+  },
+  "volume": 10674.906744
+ },
+ {
+  "event": "SpaceX becomes a US mobile carrier by ___?",
+  "market": "SpaceX becomes a US mobile carrier by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.245,
+   "No": 0.755
+  },
+  "volume": 7412.912572000001
+ },
+ {
+  "event": "SpaceX Starship Flight Test 15?",
+  "market": "Will SpaceX Starship Flight Test 15 launch by November 30, 2026?",
+  "outcomes": {
+   "Yes": 0.705,
+   "No": 0.295
+  },
+  "volume": 6135.448538
+ },
+ {
+  "event": "SpaceX Starship Flight Test 15?",
+  "market": "Will the chopsticks catch the Starship for SpaceX Starship Flight Test 15?",
+  "outcomes": {
+   "Yes": 0.455,
+   "No": 0.545
+  },
+  "volume": 6068.10189
+ },
+ {
+  "event": "Google x SpaceX agree to put data centers in space by...?",
+  "market": "Google x SpaceX agree to put data centers in space by December 31?",
+  "outcomes": {
+   "Yes": 0.27,
+   "No": 0.73
+  },
+  "volume": 5414.7523949999995
+ },
+ {
+  "event": "SpaceX Starship Flight Test 15?",
+  "market": "Will the chopsticks catch SpaceX Starship Flight Test 15 Super Heavy booster?",
+  "outcomes": {
+   "Yes": 0.605,
+   "No": 0.395
+  },
+  "volume": 4448.534207000001
+ },
+ {
+  "event": "SpaceX Starship Flight Test 15?",
+  "market": "Will SpaceX Starship Flight Test 15 launch by November 15, 2026?",
+  "outcomes": {
+   "Yes": 0.05,
+   "No": 0.95
+  },
+  "volume": 4240.421108
+ },
+ {
+  "event": "SpaceX Starship Flight Test 15?",
+  "market": "Will the SpaceX Starship Flight Test 15 Super Heavy booster explode?",
+  "outcomes": {
+   "Yes": 0.44,
+   "No": 0.56
+  },
+  "volume": 2039.687541
+ },
+ {
+  "event": "How many SpaceX launches in October 2026?",
+  "market": "Will SpaceX have fewer than 14 launches in October 2026?",
+  "outcomes": {
+   "Yes": 0.8985,
+   "No": 0.1015
+  },
+  "volume": 1079.876223
+ },
+ {
+  "event": "SpaceX Starship Flight Test 15?",
+  "market": "Will the Starship for SpaceX Starship Flight Test 15 achieve a successful splashdown?",
+  "outcomes": {
+   "Yes": 0.305,
+   "No": 0.695
+  },
+  "volume": 840.310525
+ },
+ {
+  "event": "How many SpaceX launches in October 2026?",
+  "market": "Will SpaceX have 17+ launches in October 2026?",
+  "outcomes": {
+   "Yes": 0.0155,
+   "No": 0.9845
+  },
+  "volume": 152.025
+ }
+]
