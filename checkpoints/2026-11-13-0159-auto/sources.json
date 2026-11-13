@@ -1,0 +1,15 @@
+{
+ "GOOGL": "yfinance",
+ "TSLA": "yfinance",
+ "NDAQ": "yfinance",
+ "HOOD": "yfinance",
+ "VIRT": "yfinance",
+ "GS": "yfinance",
+ "MS": "yfinance",
+ "RKLB": "yfinance",
+ "ASTS": "yfinance",
+ "LMT": "yfinance",
+ "^GSPC": "yfinance",
+ "^NDX": "yfinance",
+ "^VIX": "yfinance"
+}
