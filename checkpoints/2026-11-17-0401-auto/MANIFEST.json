@@ -1,0 +1,39 @@
+{
+ "checkpoint": "2026-11-17-0401-auto",
+ "created_utc": "2026-11-17T04:01:52.022003+00:00",
+ "git_head": "7c4957cad3e07700f06352f90e4736f71e5ceeac",
+ "python": "3.13.18",
+ "universe": [
+  "GOOGL",
+  "TSLA",
+  "NDAQ",
+  "HOOD",
+  "VIRT",
+  "GS",
+  "MS",
+  "RKLB",
+  "ASTS",
+  "LMT",
+  "^GSPC",
+  "^NDX",
+  "^VIX"
+ ],
+ "artifacts": {
+  "universe_prices.parquet": "2a68789b95d4b472",
+  "quality_reports.json": "f0e3a957709e6df6",
+  "sources.json": "c686ea1eacb27a05",
+  "polymarket.json": "97376be3ae865e26",
+  "edgar_filings.json": "0f20619264fbf906",
+  "hn_attention.csv": "ac7eb7079d5d5376",
+  "hn_meta.json": "09ce855fddd95f8a",
+  "wikipedia_pageviews.csv": "919df32475f4360c",
+  "risk_free.json": "49dfe78662cbc12f",
+  "benchmarks.json": "03e149d25e7f0432",
+  "spcx_ohlcv.parquet": "1c39475a3ea9a5a7",
+  "spcx_market.json": "fd693717f72a36d7",
+  "montecarlo.json": "bdcf60cf20fcb109",
+  "pip_freeze.txt": "87d5986a76a66f26"
+ },
+ "errors": {},
+ "purpose": "Frozen evidence for the ex-post evaluation protocol in EVALUATION.md"
+}
