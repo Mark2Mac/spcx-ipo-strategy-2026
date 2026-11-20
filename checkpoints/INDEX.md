@@ -62,3 +62,4 @@ One frozen snapshot per milestone. Never modified after creation — git history
 | 2026-11-10-0340-auto | d842de3f | 14 artifacts | |
 | 2026-11-13-0159-auto | 7abd5b80 | 14 artifacts | |
 | 2026-11-17-0401-auto | 7c4957ca | 14 artifacts | |
+| 2026-11-20-0227-auto | e9daf637 | 14 artifacts | |

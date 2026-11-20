@@ -1,0 +1,182 @@
+[
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 606999.673596
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31?",
+  "outcomes": {
+   "Yes": 0.165,
+   "No": 0.835
+  },
+  "volume": 427903.5282510001
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by September 30?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 415591.306079
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.865,
+   "No": 0.135
+  },
+  "volume": 130204.54511300001
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have 200 or more launches in 2026?",
+  "outcomes": {
+   "Yes": 0.01,
+   "No": 0.99
+  },
+  "volume": 108144.788863
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 160-179 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.0045,
+   "No": 0.9955
+  },
+  "volume": 104278.57891000001
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by June 30, 2027?",
+  "outcomes": {
+   "Yes": 0.725,
+   "No": 0.275
+  },
+  "volume": 101564.140565
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by January 31, 2027?",
+  "outcomes": {
+   "Yes": 0.435,
+   "No": 0.565
+  },
+  "volume": 86960.43314100002
+ },
+ {
+  "event": "Tesla and SpaceX merger officially announced by...?",
+  "market": "Tesla and SpaceX merger officially announced by February 28, 2027?",
+  "outcomes": {
+   "Yes": 0.585,
+   "No": 0.415
+  },
+  "volume": 67323.064562
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 180-199 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.048,
+   "No": 0.952
+  },
+  "volume": 62323.335738999995
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 140-159 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.5615,
+   "No": 0.4385
+  },
+  "volume": 52189.337697
+ },
+ {
+  "event": "SpaceX Starship Florida Launch by\u2026?",
+  "market": "Will the SpaceX Starship launch from Florida by December 31, 2026?",
+  "outcomes": {
+   "Yes": 0.05,
+   "No": 0.95
+  },
+  "volume": 12356.844941999998
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 100-119 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 9657.065314000001
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have between 120-139 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.4185,
+   "No": 0.5815
+  },
+  "volume": 7231.203244
+ },
+ {
+  "event": "How many SpaceX launches in 2026?",
+  "market": "Will SpaceX have less than 100 launches in 2026?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 5815.401229000001
+ },
+ {
+  "event": "1 million American kids get SpaceX shares by December 31, 2027?",
+  "market": "1 million American kids get SpaceX shares by December 31, 2027?",
+  "outcomes": {
+   "Yes": 0.65,
+   "No": 0.35
+  },
+  "volume": 4481.545665000001
+ },
+ {
+  "event": "SpaceX Starship Florida Launch by\u2026?",
+  "market": "Will the SpaceX Starship launch from Florida by August 31, 2026?",
+  "outcomes": {
+   "Yes": 0.0,
+   "No": 1.0
+  },
+  "volume": 1794.412175
+ },
+ {
+  "event": "SpaceX Starship Florida Launch by\u2026?",
+  "market": "Will the SpaceX Starship launch from Florida by June 30, 2027?",
+  "outcomes": {
+   "Yes": 0.9275,
+   "No": 0.0725
+  },
+  "volume": 677.9326480000001
+ },
+ {
+  "event": "How many SpaceX launches in November 2026?",
+  "market": "Will SpaceX have fewer than 13 launches in November 2026?",
+  "outcomes": {
+   "Yes": 0.9505,
+   "No": 0.0495
+  },
+  "volume": 448.948223
+ },
+ {
+  "event": "How many SpaceX launches in November 2026?",
+  "market": "Will SpaceX have 16+ launches in November 2026?",
+  "outcomes": {
+   "Yes": 0.0055,
+   "No": 0.9945
+  },
+  "volume": 232.1921
+ }
+]
